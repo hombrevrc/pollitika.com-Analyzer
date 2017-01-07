@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="pollitika.com_Analyzer.Post">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAIAABAAAAAAAQAAAAAAAAAAIAAAAAEAAAAA=</HashCode>
+      <FileName>Post.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_author" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listComments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="pollitika.com_Analyzer.Comment">
+    <Position X="2" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAQAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Comment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pollitika.com_Analyzer.User">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAIBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_listPosts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="pollitika.com_Analyzer.Vote">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vote.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="pollitika.com_Analyzer.Analyzer">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAgAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Analyzer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

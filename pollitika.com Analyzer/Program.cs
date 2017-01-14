@@ -69,7 +69,7 @@ namespace pollitika.com_Analyzer
             HtmlDocument htmlDocument = htmlWeb.Load(pageUrl);
             HtmlNode main = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            int numComments = GetPostCommentsNum(main);
+            int numComments = Analyzer.GetPostCommentsNum(main);
 
             HtmlNode comments = main.Descendants().SingleOrDefault(x => x.Id == "comments");
             List<HtmlNode> listComment = comments.ChildNodes.Where( x => x.Id.StartsWith("comment")).ToList();
@@ -77,17 +77,6 @@ namespace pollitika.com_Analyzer
             int b = 3;
         }
 
-        private static int GetPostCommentsNum(HtmlNode mainNode)
-        {
-            List<HtmlNode> commonPosts = mainNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("broj-komentara")).ToList();
-
-            int numComments = -1;
-            if (commonPosts[0] != null)
-            {
-                numComments = Convert.ToInt32(commonPosts[0].InnerText);
-            }
-
-            return numComments;
-        }
+ 
     }
 }

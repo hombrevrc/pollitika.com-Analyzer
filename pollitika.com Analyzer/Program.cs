@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 using ScrapySharp.Extensions;
 using ScrapySharp.Network;
 
@@ -14,8 +15,11 @@ namespace pollitika.com_Analyzer
         {
             for (int i = 0; i < 1; i++)
             {
-                Console.WriteLine("DOING PAGE - {0}", i);
-                AnalyzeFrontPage(i);
+                //Console.WriteLine("DOING PAGE - {0}", i);
+                //AnalyzeFrontPage(i);
+
+                string href = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
+                AnalyzePost(href);
             }
         }
 
@@ -50,6 +54,40 @@ namespace pollitika.com_Analyzer
                     Console.WriteLine(title + " - " + href);
                 }
             }
+        }
+
+        private static void AnalyzePost(string pageUrl)
+        {
+            ScrapingBrowser Browser = new ScrapingBrowser();
+            Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup
+            Browser.AllowMetaRedirect = true;
+            Browser.Encoding = Encoding.UTF8;
+
+            //WebPage PageResult = Browser.NavigateToPage(new Uri(pageUrl));
+
+            HtmlWeb htmlWeb = new HtmlWeb();
+            HtmlDocument htmlDocument = htmlWeb.Load(pageUrl);
+            HtmlNode main = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
+
+            int numComments = GetPostCommentsNum(main);
+
+            HtmlNode comments = main.Descendants().SingleOrDefault(x => x.Id == "comments");
+            List<HtmlNode> listComment = comments.ChildNodes.Where( x => x.Id.StartsWith("comment")).ToList();
+
+            int b = 3;
+        }
+
+        private static int GetPostCommentsNum(HtmlNode mainNode)
+        {
+            List<HtmlNode> commonPosts = mainNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("broj-komentara")).ToList();
+
+            int numComments = -1;
+            if (commonPosts[0] != null)
+            {
+                numComments = Convert.ToInt32(commonPosts[0].InnerText);
+            }
+
+            return numComments;
         }
     }
 }

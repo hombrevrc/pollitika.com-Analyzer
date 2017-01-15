@@ -13,6 +13,8 @@ namespace pollitika.com_Analyzer
     {
         static void Main(string[] args)
         {
+            // setup - repozitoriji za spremanje podataka
+
             for (int i = 0; i < 1; i++)
             {
                 //Console.WriteLine("DOING PAGE - {0}", i);

@@ -11,7 +11,7 @@ namespace pollitika.com_Analyzer_Tests
     public class AnalyzePostsTests
     {
         [TestMethod]
-        public void AnalyzePost_TestPost1()
+        public void AnalyzePost_TestPostAttributes1()
         {
             Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
 
@@ -22,7 +22,7 @@ namespace pollitika.com_Analyzer_Tests
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void AnalyzePost_TestExtractAuthor1()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 

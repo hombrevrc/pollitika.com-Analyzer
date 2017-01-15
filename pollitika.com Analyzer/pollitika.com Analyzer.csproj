@@ -61,7 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyzer.cs" />
+    <Compile Include="AnalyzeComments.cs" />
+    <Compile Include="AnalyzePosts.cs" />
+    <Compile Include="AnalyzeVotes.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Program.cs" />

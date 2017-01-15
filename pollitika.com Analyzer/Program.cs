@@ -19,7 +19,7 @@ namespace pollitika.com_Analyzer
                 //AnalyzeFrontPage(i);
 
                 string href = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
-                Analyzer.AnalyzePost(href);
+                AnalyzePosts.AnalyzePost(href);
             }
         }
 
@@ -38,7 +38,7 @@ namespace pollitika.com_Analyzer
             HtmlDocument htmlDocument = htmlWeb.Load(pageUrl);
             HtmlNode main = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            int numComments = Analyzer.GetPostCommentsNum(main);
+            int numComments = AnalyzePosts.GetPostCommentsNum(main);
 
             HtmlNode comments = main.Descendants().SingleOrDefault(x => x.Id == "comments");
             List<HtmlNode> listComment = comments.ChildNodes.Where( x => x.Id.StartsWith("comment")).ToList();

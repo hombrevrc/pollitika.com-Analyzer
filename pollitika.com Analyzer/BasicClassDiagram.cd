@@ -68,11 +68,11 @@
       <Field Name="_byUser" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="pollitika.com_Analyzer.Analyzer">
+  <Class Name="pollitika.com_Analyzer.AnalyzePosts">
     <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BBAAAAAAgAAAAAAAAAAAQAAAAAAACAABAAAAABAABEA=</HashCode>
-      <FileName>Analyzer.cs</FileName>
+      <FileName>AnalyzePosts.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

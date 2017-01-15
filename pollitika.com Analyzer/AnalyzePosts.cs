@@ -8,7 +8,7 @@ using ScrapySharp.Network;
 
 namespace pollitika.com_Analyzer
 {
-    public class Analyzer
+    public class AnalyzePosts
     {
         // return list of URLs of posts from the front page
         private static List<string> AnalyzeFrontPage(int pageIndex)
@@ -66,7 +66,7 @@ namespace pollitika.com_Analyzer
 
             int nodeId;
             string votesLink;
-            if (Analyzer.GetPostID(main, out nodeId, out votesLink))
+            if (AnalyzePosts.GetPostID(main, out nodeId, out votesLink))
             {
                 newPost.Id = nodeId;
                 newPost.VotesLink = votesLink;
@@ -74,9 +74,9 @@ namespace pollitika.com_Analyzer
 
             HtmlNode userDetails = htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb"));
             string author, authorHtml;
-            Analyzer.GetPostAuthor(userDetails, out author, out authorHtml);
+            AnalyzePosts.GetPostAuthor(userDetails, out author, out authorHtml);
 
-            newPost.NumCommentsScrapped = Analyzer.GetPostCommentsNum(main);
+            newPost.NumCommentsScrapped = AnalyzePosts.GetPostCommentsNum(main);
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("Error scrapping number of comments");
 

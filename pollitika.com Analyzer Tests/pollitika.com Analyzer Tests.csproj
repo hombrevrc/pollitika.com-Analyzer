@@ -70,6 +70,10 @@
       <Project>{24c08472-e6e2-48d5-97d1-efb8599d048d}</Project>
       <Name>pollitika.com Analyzer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\pollitika.com_Model\pollitika.com_Model.csproj">
+      <Project>{BB0B0987-EAFC-4F02-A9AF-DEE327291DA3}</Project>
+      <Name>pollitika.com_Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

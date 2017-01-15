@@ -19,42 +19,11 @@ namespace pollitika.com_Analyzer
                 //AnalyzeFrontPage(i);
 
                 string href = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
-                AnalyzePost(href);
+                Analyzer.AnalyzePost(href);
             }
         }
 
-        private static void AnalyzeFrontPage(int pageIndex)
-        {
-            ScrapingBrowser Browser = new ScrapingBrowser();
-            Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup
-            Browser.AllowMetaRedirect = true;
-            Browser.Encoding = Encoding.UTF8;
 
-            string pageUrl = pageIndex <= 0 ? "http://www.pollitika.com/node" : "http://pollitika.com/node?page=" + pageIndex.ToString();
-
-            WebPage PageResult = Browser.NavigateToPage(new Uri(pageUrl));
-
-            List<string> Names = new List<string>();
-            var Table = PageResult.Html.CssSelect(".node");
-
-            foreach (var post in Table)
-            {
-                var a = post.CssSelect(".first");
-
-                foreach (var row in post.SelectNodes("h1"))
-                {
-                    string title = row.InnerText;
-                    string html = row.InnerHtml;
-
-                    int start = html.IndexOf("href=\"");
-                    int end = html.IndexOf("\">");
-
-                    string href = html.Substring(start + 6, end - start - 6);
-
-                    Console.WriteLine(title + " - " + href);
-                }
-            }
-        }
 
         private static void AnalyzePost(string pageUrl)
         {

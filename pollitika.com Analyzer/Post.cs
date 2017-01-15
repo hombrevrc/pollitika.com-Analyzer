@@ -11,17 +11,17 @@ namespace pollitika.com_Analyzer
         private int _id;                    // Id of the node
         private string _hrefLink;
 
-        private string  _title;
-        private User _author;
-        private DateTime _datePosted;
-        private string  _text;
-        private int     _numCommentsScrapped;
-        private bool _isOnFrontPage;
+        private string      _title;
+        private User        _author;
+        private DateTime    _datePosted;
+        private string      _text;
+        private int         _numCommentsScrapped;
+        private bool        _isOnFrontPage;
 
         private List<Comment> _listComments;
 
-        private string _votesLink;
-        private List<Vote> _listVotes;
+        private string      _votesLink;
+        private List<Vote>  _listVotes;
 
         public string Title
         {

@@ -27,7 +27,7 @@
       <Path>
         <Point X="3.5" Y="6.947" />
         <Point X="7.688" Y="6.947" />
-        <Point X="7.688" Y="5.296" />
+        <Point X="7.688" Y="5.488" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -51,7 +51,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAIBAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAACAAAAABQAAAAAAAAAAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>

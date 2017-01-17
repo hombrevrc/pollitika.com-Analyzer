@@ -15,6 +15,14 @@ namespace pollitika.com_Analyzer
         {
             // setup - repozitoriji za spremanje podataka
 
+            // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
+
+            // zatim prolazimo kroz sve korisnike
+
+                // i za svakog od njih proći kroz sve njegove dnevnike
+                    
+                    // i za svaki dnevnik provjeriti da li je već dodan, i ak onije dodati ga
+
             for (int i = 0; i < 1; i++)
             {
                 //Console.WriteLine("DOING PAGE - {0}", i);

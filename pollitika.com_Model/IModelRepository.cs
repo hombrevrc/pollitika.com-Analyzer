@@ -7,7 +7,7 @@ using pollitika.com_Analyzer;
 
 namespace pollitika.com_Model
 {
-    interface IModelRepository
+    public interface IModelRepository
     {
         void AddPost(Post newPost);
         void AddUser(User newUser);

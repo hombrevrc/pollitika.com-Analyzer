@@ -32,30 +32,5 @@ namespace pollitika.com_Analyzer
                 AnalyzePosts.AnalyzePost(href);
             }
         }
-
-
-
-        private static void AnalyzePost(string pageUrl)
-        {
-            ScrapingBrowser Browser = new ScrapingBrowser();
-            Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup
-            Browser.AllowMetaRedirect = true;
-            Browser.Encoding = Encoding.UTF8;
-
-            //WebPage PageResult = Browser.NavigateToPage(new Uri(pageUrl));
-
-            HtmlWeb htmlWeb = new HtmlWeb();
-            HtmlDocument htmlDocument = htmlWeb.Load(pageUrl);
-            HtmlNode main = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
-
-            int numComments = AnalyzePosts.GetPostCommentsNum(main);
-
-            HtmlNode comments = main.Descendants().SingleOrDefault(x => x.Id == "comments");
-            List<HtmlNode> listComment = comments.ChildNodes.Where( x => x.Id.StartsWith("comment")).ToList();
-
-            int b = 3;
-        }
-
- 
     }
 }

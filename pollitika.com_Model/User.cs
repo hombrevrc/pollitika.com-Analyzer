@@ -10,7 +10,18 @@ namespace pollitika.com_Analyzer
     {
         private string _name;
         private string _nameHtml;
-        private string _blogHref;
         private List<Post> _listPosts;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
+        public string NameHtml
+        {
+            get { return _nameHtml; }
+            set { _nameHtml = value; }
+        }
     }
 }

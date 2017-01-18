@@ -18,7 +18,12 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(15395, post.Id);
             Assert.AreEqual("Hrvatsko zdravstvo i sovjetska automobilska industrija", post.Title);
             Assert.AreEqual("/node/15397/who_voted", post.VotesLink);
-            //Assert.AreEqual(1, post.AuthorHtml);
+            Assert.AreEqual("žaki", post.Author.Name);
+            Assert.AreEqual("zaki", post.Author.NameHtml);
+            Assert.AreEqual(13, post.NumCommentsScrapped);
+            Assert.AreEqual(24, post.GetNumberOfVotes());
+            Assert.AreEqual(13, post.GetNumberOfComments());
+            Assert.AreEqual(new DateTime(2016, 11, 14, 18, 7, 0), post.DatePosted);
         }
 
         [TestMethod]

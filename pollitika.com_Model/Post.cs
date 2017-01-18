@@ -64,5 +64,20 @@ namespace pollitika.com_Analyzer
             get { return _votesLink; }
             set { _votesLink = value; }
         }
+
+        public DateTime DatePosted
+        {
+            get { return _datePosted; }
+            set { _datePosted = value; }
+        }
+
+        public int GetNumberOfVotes()
+        {
+            return _listVotes.Count;
+        }
+        public int GetNumberOfComments()
+        {
+            return _listVotes.Count;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using HtmlAgilityPack;
@@ -15,7 +16,7 @@ namespace pollitika.com_Analyzer_Tests
         {
             Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
 
-            Assert.AreEqual(15395, post.Id);
+            Assert.AreEqual(15397, post.Id);
             Assert.AreEqual("Hrvatsko zdravstvo i sovjetska automobilska industrija", post.Title);
             Assert.AreEqual("/node/15397/who_voted", post.VotesLink);
             Assert.AreEqual("žaki", post.Author.Name);
@@ -24,6 +25,14 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(24, post.GetNumberOfVotes());
             Assert.AreEqual(13, post.GetNumberOfComments());
             Assert.AreEqual(new DateTime(2016, 11, 14, 18, 7, 0), post.DatePosted);
+        }
+
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes1()
+        {
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(15397);
+
+            Assert.AreEqual(24, listVotes.Count);
         }
 
         [TestMethod]

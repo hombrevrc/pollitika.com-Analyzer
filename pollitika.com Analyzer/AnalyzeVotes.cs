@@ -12,7 +12,7 @@ namespace pollitika.com_Analyzer
     {
         public string userNick;
         public int voteValue;
-        public DateTime datePoste;
+        public DateTime datePosted;
     }
 
     public class AnalyzeVotes
@@ -41,6 +41,9 @@ namespace pollitika.com_Analyzer
                 newVote.voteValue = Convert.ToInt32(value);
 
                 string time = rowCels[2].InnerText.Substring(13).TrimEnd();
+                newVote.datePosted = Utility.ExtractDateTime(time);
+
+                listVotes.Add(newVote);
             }
             return listVotes;
         } 

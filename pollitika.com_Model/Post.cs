@@ -8,7 +8,7 @@ namespace pollitika.com_Analyzer
 {
     public class Post
     {
-        private int _id;                    // Id of the node
+        private int _id = -1;                    // Id of the node
         private string _hrefLink;
 
         private string      _title;

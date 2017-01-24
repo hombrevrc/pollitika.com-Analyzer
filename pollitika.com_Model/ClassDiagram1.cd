@@ -33,8 +33,8 @@
       <Field Name="_parentComment" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
-      <Field Name="_listVotes" />
       <Field Name="_childComments" />
+      <Field Name="_listVotes" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="pollitika.com_Analyzer.Post">
@@ -54,7 +54,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>EAAmAAIBEIAAgEAAgABAQAAAAAAAAAAICAAACEAAACA=</HashCode>
+      <HashCode>EAAmAAIBEIAAgEAAgABAQAAgAAAAAAAICAAAikAAACA=</HashCode>
       <FileName>Post.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -75,7 +75,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAACAAAAABQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAACQAAAAAQAAAAAAAAAAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -85,7 +85,7 @@
   <Class Name="pollitika.com_Analyzer.Vote">
     <Position X="5.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAgAIAAAAAAABAAAgAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Vote.cs</FileName>
     </TypeIdentifier>
   </Class>

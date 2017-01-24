@@ -86,6 +86,8 @@ namespace pollitika.com_Analyzer
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("Error scrapping number of comments");
 
+            List<Vote> lVote = AnalyzeVotes.ScrapeListVotesForPost(newPost.Id);
+
             return newPost;
         }
 

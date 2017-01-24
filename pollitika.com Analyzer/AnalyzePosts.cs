@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using HtmlAgilityPack;
 using ScrapySharp.Extensions;
 using ScrapySharp.Network;
@@ -11,7 +14,7 @@ namespace pollitika.com_Analyzer
     public class AnalyzePosts
     {
         // return list of URLs of posts from the front page
-        private static List<string> AnalyzeFrontPage(int pageIndex)
+        private static List<string> GetPostLinksFromFrontPage(int pageIndex)
         {
             List<string> retList = new List<string>();
 
@@ -48,6 +51,7 @@ namespace pollitika.com_Analyzer
 
             return retList;
         }
+
         public static Post AnalyzePost(string inPostUrl)
         {
             Post newPost = new Post();
@@ -62,21 +66,23 @@ namespace pollitika.com_Analyzer
 
             HtmlWeb htmlWeb = new HtmlWeb();
             HtmlDocument htmlDocument = htmlWeb.Load(inPostUrl);
-            HtmlNode main = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
+            HtmlNode mainContent = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
             int nodeId;
             string votesLink;
-            if (AnalyzePosts.GetPostID(main, out nodeId, out votesLink))
+            if (AnalyzePosts.GetPostID(mainContent, out nodeId, out votesLink))
             {
                 newPost.Id = nodeId;
                 newPost.VotesLink = votesLink;
             }
 
+            newPost.DatePosted = GetPostDate(mainContent);
+
             HtmlNode userDetails = htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb"));
             string author, authorHtml;
             AnalyzePosts.GetPostAuthor(userDetails, out author, out authorHtml);
 
-            newPost.NumCommentsScrapped = AnalyzePosts.GetPostCommentsNum(main);
+            newPost.NumCommentsScrapped = AnalyzePosts.GetPostCommentsNum(mainContent);
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("Error scrapping number of comments");
 
@@ -116,7 +122,34 @@ namespace pollitika.com_Analyzer
         }
         public static DateTime GetPostDate(HtmlNode nodeContentMain)
         {
-            return DateTime.Now;
+            var commonPosts = nodeContentMain.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("article-meta article-meta-top")).Descendants("li").ToList();
+
+            // extracting date
+            DateTime dt1 = new DateTime();
+            var regexDate = new Regex(@"\b\d{2}/\d{2}/\d{4}\b");
+            foreach (Match m in regexDate.Matches(commonPosts[0].InnerText))
+            {
+                if (DateTime.TryParseExact(m.Value, "dd/MM/yyyy", null, DateTimeStyles.None, out dt1))
+                {
+                    break;
+                }
+            }
+            // extracting time
+            int hh=0, mm=0;
+            var regexTime = new Regex(@"\b\d{2}:\d{2}\b");
+            foreach (Match m in regexTime.Matches(commonPosts[0].InnerText))
+            {
+                var values = m.Value.Split(':');
+                hh = Convert.ToInt32(values[0]);
+                mm = Convert.ToInt32(values[1]);
+            }
+
+            DateTime retDate = new DateTime(dt1.Year, dt1.Month, dt1.Day, hh, mm, 0);
+
+            // Text - "Dnevnik žaki - Pon, 14/11/2016 - 18:07"
+            // InnerHtml - "<span class=\"meta-title\">Dnevnik</span> žaki - Pon, 14/11/2016 - 18:07"
+
+            return retDate;
         }
         public static int GetPostCommentsNum(HtmlNode nodeContentMain)
         {

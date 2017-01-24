@@ -86,7 +86,7 @@ namespace pollitika.com_Analyzer
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("Error scrapping number of comments");
 
-            List<Vote> lVote = AnalyzeVotes.ScrapeListVotesForPost(newPost.Id);
+            //List<ScrappedVote> lVote = AnalyzeVotes.ScrapeListVotesForPost(newPost.Id);
 
             return newPost;
         }
@@ -126,30 +126,11 @@ namespace pollitika.com_Analyzer
         {
             var commonPosts = nodeContentMain.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("article-meta article-meta-top")).Descendants("li").ToList();
 
-            // extracting date
-            DateTime dt1 = new DateTime();
-            var regexDate = new Regex(@"\b\d{2}/\d{2}/\d{4}\b");
-            foreach (Match m in regexDate.Matches(commonPosts[0].InnerText))
-            {
-                if (DateTime.TryParseExact(m.Value, "dd/MM/yyyy", null, DateTimeStyles.None, out dt1))
-                {
-                    break;
-                }
-            }
-            // extracting time
-            int hh=0, mm=0;
-            var regexTime = new Regex(@"\b\d{2}:\d{2}\b");
-            foreach (Match m in regexTime.Matches(commonPosts[0].InnerText))
-            {
-                var values = m.Value.Split(':');
-                hh = Convert.ToInt32(values[0]);
-                mm = Convert.ToInt32(values[1]);
-            }
-
-            DateTime retDate = new DateTime(dt1.Year, dt1.Month, dt1.Day, hh, mm, 0);
-
+            // Date formats
             // Text - "Dnevnik žaki - Pon, 14/11/2016 - 18:07"
             // InnerHtml - "<span class=\"meta-title\">Dnevnik</span> žaki - Pon, 14/11/2016 - 18:07"
+
+            DateTime retDate = Utility.ExtractDateTime(commonPosts[0].InnerText);
 
             return retDate;
         }

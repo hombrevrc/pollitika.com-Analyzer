@@ -8,11 +8,18 @@ using ScrapySharp.Extensions;
 
 namespace pollitika.com_Analyzer
 {
+    public class ScrappedVote
+    {
+        public string userNick;
+        public int voteValue;
+        public DateTime datePoste;
+    }
+
     public class AnalyzeVotes
     {
-        public static List<Vote> ScrapeListVotesForPost(int nodeID)
+        public static List<ScrappedVote> ScrapeListVotesForPost(int nodeID)
         {
-            List<Vote> listVotes = new List<Vote>();
+            List<ScrappedVote> listVotes = new List<ScrappedVote>();
 
             string href = "http://pollitika.com/node/" + nodeID.ToString() + "/who_voted";
 
@@ -26,11 +33,14 @@ namespace pollitika.com_Analyzer
             {
                 var rowCels = row.SelectNodes("th|td");
 
-                string user = rowCels[0].InnerText.Substring(13).TrimEnd();
-                string value = rowCels[1].InnerText.Substring(13).TrimEnd();
-                string time = rowCels[2].InnerText.Substring(13).TrimEnd();
+                ScrappedVote newVote = new ScrappedVote();
 
-                Vote newVote = new Vote();
+                newVote.userNick = rowCels[0].InnerText.Substring(13).TrimEnd();
+
+                string value = rowCels[1].InnerText.Substring(13).TrimEnd();
+                newVote.voteValue = Convert.ToInt32(value);
+
+                string time = rowCels[2].InnerText.Substring(13).TrimEnd();
             }
             return listVotes;
         } 

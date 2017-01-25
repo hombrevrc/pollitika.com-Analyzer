@@ -62,9 +62,61 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_TestGetPostVotes1()
         {
+            // "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija"
+
             List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(15397);
 
             Assert.AreEqual(24, listVotes.Count);
+        }
+
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes2()
+        {
+            // "http://pollitika.com/socijalist-ili"
+
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(14171);
+
+            Assert.AreEqual(22, listVotes.Count);
+        }
+
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes3()
+        {
+            // "http://pollitika.com/che-guevarina-skola"
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(11768);
+
+            // TODO - ima glasova i na sljedećoj stranici!!!!
+            Assert.AreEqual(33, listVotes.Count);
+        }
+
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes4()
+        {
+            // "http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot"
+
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(2898);
+
+            Assert.AreEqual(17, listVotes.Count);
+        }
+
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes5()
+        {
+            // "http://pollitika.com/sramim-se"
+
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(406);
+
+            Assert.AreEqual(0, listVotes.Count);
+        }
+
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes6()
+        {
+            // "http://pollitika.com/nered-na-trzi-tu-dobra-stvar"
+
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(50);
+
+            Assert.AreEqual(0, listVotes.Count);
         }
     }
 }

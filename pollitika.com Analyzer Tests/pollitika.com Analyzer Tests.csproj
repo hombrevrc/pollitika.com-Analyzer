@@ -58,8 +58,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AnalyzeCommentsTests.cs" />
+    <Compile Include="AnalyzeVotesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AnalyzePostsTests.cs" />
+    <Compile Include="AnalyzeCompletePostTests.cs" />
+    <Compile Include="AnalyzeDatesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

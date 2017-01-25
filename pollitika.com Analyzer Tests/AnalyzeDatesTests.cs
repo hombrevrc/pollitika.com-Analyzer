@@ -1,40 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using HtmlAgilityPack;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pollitika.com_Analyzer;
 
 namespace pollitika.com_Analyzer_Tests
 {
     [TestClass]
-    public class AnalyzePostsTests
+    public class AnalyzeDatesTests
     {
-        [TestMethod]
-        public void AnalyzePost_TestPostAttributes1()
-        {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
-
-            Assert.AreEqual(15397, post.Id);
-            Assert.AreEqual("Hrvatsko zdravstvo i sovjetska automobilska industrija", post.Title);
-            Assert.AreEqual("/node/15397/who_voted", post.VotesLink);
-            Assert.AreEqual("žaki", post.Author.Name);
-            Assert.AreEqual("zaki", post.Author.NameHtml);
-            Assert.AreEqual(13, post.NumCommentsScrapped);
-            Assert.AreEqual(24, post.GetNumberOfVotes());
-            Assert.AreEqual(13, post.GetNumberOfComments());
-            Assert.AreEqual(new DateTime(2016, 11, 14, 18, 7, 0), post.DatePosted);
-        }
-
-        [TestMethod]
-        public void AnalyzePost_TestGetPostVotes1()
-        {
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(15397);
-
-            Assert.AreEqual(24, listVotes.Count);
-        }
-
         [TestMethod]
         public void AnalyzePost_TestGetPostDate1()
         {
@@ -71,7 +43,7 @@ namespace pollitika.com_Analyzer_Tests
         public void AnalyzePost_TestGetPostDate6()
         {
             Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot");
-            Assert.AreEqual(new DateTime(2007,12, 14, 22, 49, 0), post.DatePosted);     // 14/12/2007 - 22:49
+            Assert.AreEqual(new DateTime(2007, 12, 14, 22, 49, 0), post.DatePosted);     // 14/12/2007 - 22:49
         }
         [TestMethod]
         public void AnalyzePost_TestGetPostDate7()
@@ -96,20 +68,6 @@ namespace pollitika.com_Analyzer_Tests
         {
             Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/nered-na-trzi-tu-dobra-stvar");
             Assert.AreEqual(new DateTime(2006, 10, 13, 0, 37, 0), post.DatePosted);     // 13/10/2006 - 00:37
-        }
-
-        [TestMethod]
-        public void AnalyzePost_TestExtractAuthor1()
-        {
-            HtmlWeb htmlWeb = new HtmlWeb();
-
-            HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
-
-            string author, authorHtml;
-            AnalyzePosts.GetPostAuthor(htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb")), out author, out authorHtml);
-
-            Assert.AreEqual("žaki", author);
-            Assert.AreEqual("zaki", authorHtml);
         }
     }
 }

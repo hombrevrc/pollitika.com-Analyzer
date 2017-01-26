@@ -25,31 +25,54 @@ namespace pollitika.com_Analyzer
 
             HtmlWeb htmlWeb = new HtmlWeb();
             HtmlDocument htmlDocument = htmlWeb.Load(href);
-            var voteList = htmlDocument.DocumentNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
 
-            var content = voteList.First();
-            var table = content.SelectNodes("table");
+            // najprije, da vidimo da li je samo jedna stranica s glasovima ili ih ima više
+            var itemlist = htmlDocument.DocumentNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("pager"));
 
-            if (table == null) // it means there is no table with votes
-                return listVotes;
-
-            var tList = table[0].ChildNodes[3]; // .ChildNodes[3]; // ("tbody");
-
-            foreach (HtmlNode row in tList.SelectNodes("tr"))
+            int pageCount = 1;
+            if (itemlist.Count() > 0)
             {
-                var rowCels = row.SelectNodes("th|td");
+                pageCount = itemlist.First().ChildNodes.Count/2 - 2;
+            }
 
-                ScrappedVote newVote = new ScrappedVote();
+            for (int i = 0; i < pageCount; i++)
+            {
+                var voteList =
+                    htmlDocument.DocumentNode.Descendants()
+                        .Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
 
-                newVote.userNick = rowCels[0].InnerText.Substring(13).TrimEnd();
+                var content = voteList.First();
+                var table = content.SelectNodes("table");
 
-                string value = rowCels[1].InnerText.Substring(13).TrimEnd();
-                newVote.voteValue = Convert.ToInt32(value);
+                if (table == null) // it means there is no table with votes
+                    return listVotes;
 
-                string time = rowCels[2].InnerText.Substring(13).TrimEnd();
-                newVote.datePosted = Utility.ExtractDateTime(time);
+                var tList = table[0].ChildNodes[3];         // picking up tbody
 
-                listVotes.Add(newVote);
+                foreach (HtmlNode row in tList.SelectNodes("tr"))
+                {
+                    var rowCels = row.SelectNodes("th|td");
+
+                    ScrappedVote newVote = new ScrappedVote();
+
+                    newVote.userNick = rowCels[0].InnerText.Substring(13).TrimEnd();
+
+                    string value = rowCels[1].InnerText.Substring(13).TrimEnd();
+                    newVote.voteValue = Convert.ToInt32(value);
+
+                    string time = rowCels[2].InnerText.Substring(13).TrimEnd();
+                    newVote.datePosted = Utility.ExtractDateTime(time);
+
+                    listVotes.Add(newVote);
+                }
+
+                // reinicijaliziramo učitani HTML za sljedeću stranicu
+                if (i < pageCount-1)
+                {
+                    href = "http://pollitika.com/node/" + nodeID.ToString() + "/who_voted?page=" + (i+1).ToString();
+
+                    htmlDocument = htmlWeb.Load(href);
+                }
             }
             return listVotes;
         } 

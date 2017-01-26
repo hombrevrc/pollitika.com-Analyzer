@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyzeComments.cs" />
+    <Compile Include="AnalyzeFrontPage.cs" />
     <Compile Include="AnalyzePosts.cs" />
     <Compile Include="AnalyzeVotes.cs" />
     <Compile Include="Program.cs" />

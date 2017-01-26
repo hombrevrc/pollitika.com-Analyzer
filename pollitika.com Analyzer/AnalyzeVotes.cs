@@ -25,11 +25,17 @@ namespace pollitika.com_Analyzer
 
             HtmlWeb htmlWeb = new HtmlWeb();
             HtmlDocument htmlDocument = htmlWeb.Load(href);
-            HtmlNode voteList = htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("views-table cols-24"));
+            var voteList = htmlDocument.DocumentNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
 
-            var table = voteList.SelectNodes("tbody");
+            var content = voteList.First();
+            var table = content.SelectNodes("table");
 
-            foreach (HtmlNode row in table[0].SelectNodes("tr"))
+            if (table == null) // it means there is no table with votes
+                return listVotes;
+
+            var tList = table[0].ChildNodes[3]; // .ChildNodes[3]; // ("tbody");
+
+            foreach (HtmlNode row in tList.SelectNodes("tr"))
             {
                 var rowCels = row.SelectNodes("th|td");
 

@@ -80,7 +80,7 @@ namespace pollitika.com_Analyzer_Tests
         }
 
         [TestMethod]
-        public void AnalyzePost_TestGetPostVotes3()
+        public void AnalyzePost_TestGetPostVotes3_TwoPageOfVotes()
         {
             // "http://pollitika.com/che-guevarina-skola"
             List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(11768);
@@ -100,7 +100,7 @@ namespace pollitika.com_Analyzer_Tests
         }
 
         [TestMethod]
-        public void AnalyzePost_TestGetPostVotes5()
+        public void AnalyzePost_TestGetPostVotes5_NoVotes()
         {
             // "http://pollitika.com/sramim-se"
 
@@ -110,13 +110,22 @@ namespace pollitika.com_Analyzer_Tests
         }
 
         [TestMethod]
-        public void AnalyzePost_TestGetPostVotes6()
+        public void AnalyzePost_TestGetPostVotes6_NoVotes()
         {
             // "http://pollitika.com/nered-na-trzi-tu-dobra-stvar"
 
             List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(50);
 
             Assert.AreEqual(0, listVotes.Count);
+        }
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes7_FourPagesOfVotes()
+        {
+            // "http://pollitika.com/sve-sto-vam-nitko-nije-htio-rei-o-birakim-popisima"
+
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(6085);
+
+            Assert.AreEqual(92, listVotes.Count);
         }
     }
 }

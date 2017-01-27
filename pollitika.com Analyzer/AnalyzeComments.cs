@@ -9,15 +9,21 @@ namespace pollitika.com_Analyzer
 {
     public class ScrappedComment
     {
-        private int _id;
-        private string _text;
-        private string _authorNick;
-        private DateTime _datePosted;
+        public int _id;                 // node ID
+        public string _text;
+        public string _authorNick;
+        public DateTime _datePosted;
 
-        private Comment _parentComment;     // if null, then it is first level comment (in the first level below post)
-        private List<Comment> _childComments;
+        public int _parentCommentID;            // if 0, then it is first level comment (in the first level below post)
+        public List<int> _childCommentsIDs;
 
-        private List<ScrappedVote> _listVotes;
+        public List<ScrappedVote> _listVotes;
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
     }
 
     public class AnalyzeComments
@@ -40,8 +46,37 @@ namespace pollitika.com_Analyzer
             List<ScrappedComment> listComments = new List<ScrappedComment>();
 
             HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
-            List<HtmlNode> firstLevelComments = comments.ChildNodes.Where(x => x.Id.StartsWith("comment")).ToList();
+            List<HtmlNode> allComments = comments.Descendants().Where(x => x.Id.StartsWith("comment-content")).ToList();
 
+            foreach (var comment in allComments)
+            {
+                ScrappedComment newComment = new ScrappedComment();
+
+                newComment._text = comment.InnerText;
+                string commentId = comment.Id;
+                int dashPos = commentId.LastIndexOf('-');
+
+                if (dashPos > 0)
+                {
+                    string idValue = commentId.Substring(dashPos + 1, commentId.Length - dashPos - 1);
+
+                    newComment.Id = Convert.ToInt32(idValue);
+                }
+                else
+                {
+                    Console.WriteLine("ERROR in getting comment ID");
+                }
+
+                listComments.Add(newComment);
+            }
+
+            //List<HtmlNode> firstLevelComments = comments.ChildNodes.Where(x => x.Id.StartsWith("comment")).ToList();
+            //foreach (var com1 in firstLevelComments)
+            //{
+            //    if( com1.Name == "div" )
+            //        Console.WriteLine("DIV DIV DIV ******************************************\n" + com1.InnerHtml);
+
+            //}
 
 
             return listComments;

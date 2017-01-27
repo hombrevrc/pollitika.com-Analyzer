@@ -27,10 +27,6 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(new DateTime(2016, 11, 14, 18, 7, 0), post.DatePosted);
         }
 
-
-
- 
-
         [TestMethod]
         public void AnalyzePost_TestExtractAuthor1()
         {
@@ -39,7 +35,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
 
             string author, authorHtml;
-            AnalyzePosts.GetPostAuthor(htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb")), out author, out authorHtml);
+            AnalyzePosts.GetPostAuthor(htmlDocument, out author, out authorHtml);
 
             Assert.AreEqual("žaki", author);
             Assert.AreEqual("zaki", authorHtml);

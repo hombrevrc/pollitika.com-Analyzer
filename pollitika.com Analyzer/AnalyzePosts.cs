@@ -37,9 +37,8 @@ namespace pollitika.com_Analyzer
 
             newPost.DatePosted = GetPostDate(mainContent);
 
-            HtmlNode userDetails = htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb"));
             string author, authorHtml;
-            AnalyzePosts.GetPostAuthor(userDetails, out author, out authorHtml);
+            AnalyzePosts.GetPostAuthor(htmlDocument, out author, out authorHtml);
 
             newPost.NumCommentsScrapped = AnalyzeComments.GetPostCommentsNum(mainContent);
             if (newPost.NumCommentsScrapped < 0)
@@ -73,19 +72,21 @@ namespace pollitika.com_Analyzer
 
             return true;
         }
-        public static string GetPostAuthor(HtmlNode nodeContentMain, out string authorName, out string authorHtmlName)
+        public static string GetPostAuthor(HtmlDocument htmlDocument, out string authorName, out string authorHtmlName)
         {
-            string name = nodeContentMain.LastChild.InnerHtml;
+            HtmlNode userDetails = htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb"));
+
+            string name = userDetails.LastChild.InnerHtml;
             authorName = name.Substring(0, name.Length - 12);
 
-            string html = nodeContentMain.InnerHtml;
+            string html = userDetails.InnerHtml;
             int ind1 = html.IndexOf("/blog/");
             int ind2 = html.IndexOf("\">", ind1);
 
             authorHtmlName = html.Substring(ind1+6, ind2 - ind1 - 6);
 
-            string href = nodeContentMain.InnerHtml;   // <a href="/node/15397/who_voted">Tko je glasao</a>
-            //
+            string href = userDetails.InnerHtml;   // <a href="/node/15397/who_voted">Tko je glasao</a>
+            
             return "";
         }
         public static DateTime GetPostDate(HtmlNode nodeContentMain)
@@ -102,26 +103,6 @@ namespace pollitika.com_Analyzer
         }
  
 
-        private List<Vote> GetPostVotes()
-        {
-            List<Vote> listVotes = new List<Vote>();
-
-            return listVotes;
-        }
-
-        private List<Comment> GetPostComments()
-        {
-            List<Comment> listComments = new List<Comment>();
-
-            return listComments;
-        }
-
-        private List<Vote> GetCommentVotes()
-        {
-            List<Vote> listVotes = new List<Vote>();
-
-            return listVotes;
-        }
 
 
     }

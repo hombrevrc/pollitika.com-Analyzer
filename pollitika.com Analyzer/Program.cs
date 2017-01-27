@@ -22,8 +22,6 @@ namespace pollitika.com_Analyzer
             // i za svakog od njih proći kroz sve njegove dnevnike
 
             // i za svaki dnevnik provjeriti da li je već dodan, i ak onije dodati ga
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForPost(14171);
-
 
             for (int i = 0; i < 1; i++)
             {

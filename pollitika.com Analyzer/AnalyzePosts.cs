@@ -23,11 +23,9 @@ namespace pollitika.com_Analyzer
             Browser.AllowMetaRedirect = true;
             Browser.Encoding = Encoding.UTF8;
 
-            //WebPage PageResult = Browser.NavigateToPage(new Uri(pageUrl));
-
-            HtmlWeb htmlWeb = new HtmlWeb();
+            HtmlWeb      htmlWeb = new HtmlWeb();
             HtmlDocument htmlDocument = htmlWeb.Load(inPostUrl);
-            HtmlNode mainContent = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
+            HtmlNode     mainContent = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
             int nodeId;
             string votesLink;
@@ -43,7 +41,7 @@ namespace pollitika.com_Analyzer
             string author, authorHtml;
             AnalyzePosts.GetPostAuthor(userDetails, out author, out authorHtml);
 
-            newPost.NumCommentsScrapped = AnalyzePosts.GetPostCommentsNum(mainContent);
+            newPost.NumCommentsScrapped = AnalyzeComments.GetPostCommentsNum(mainContent);
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("Error scrapping number of comments");
 
@@ -53,6 +51,8 @@ namespace pollitika.com_Analyzer
 
                 // TODO - from User repozitory we have to fetch user with this name and set a reference into Vote
             }
+
+            List<ScrappedComment> listComm = AnalyzeComments.GetPostComments(mainContent);
 
             return newPost;
         }
@@ -100,30 +100,7 @@ namespace pollitika.com_Analyzer
 
             return retDate;
         }
-        public static int GetPostCommentsNum(HtmlNode nodeContentMain)
-        {
-            List<HtmlNode> commonPosts = nodeContentMain.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("broj-komentara")).ToList();
-
-            int numComments = -1;
-            if (commonPosts[0] != null)
-            {
-                numComments = Convert.ToInt32(commonPosts[0].InnerText);
-            }
-
-            return numComments;
-        }
-
-        public static List<Comment> GetPostComments(HtmlNode mainNode)
-        {
-            List<Comment> listComments = new List<Comment>();
-
-            HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
-            List<HtmlNode> firstLevelComments = comments.ChildNodes.Where(x => x.Id.StartsWith("comment")).ToList();
-
-
-
-            return listComments;
-        }
+ 
 
         private List<Vote> GetPostVotes()
         {

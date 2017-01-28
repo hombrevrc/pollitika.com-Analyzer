@@ -36,6 +36,12 @@ namespace pollitika.com_Analyzer
             get { return _authorNick; }
             set { _authorNick = value; }
         }
+
+        public string Text
+        {
+            get { return _text; }
+            set { _text = value; }
+        }
     }
 
     public class AnalyzeComments
@@ -64,10 +70,22 @@ namespace pollitika.com_Analyzer
             {
                 ScrappedComment newComment = new ScrappedComment();
 
-                newComment._text = comment.InnerText;
+                //comment.ChildNodes[1] ima "\n    Skviki &mdash; Pon, 28/11/2016 - 16:16.  
+                string  strNameDate = comment.ChildNodes[1].InnerText;
+                int     mdashPos = strNameDate.IndexOf("&mdash");
+                string  name = strNameDate.Substring(2, mdashPos - 2);
+
+                newComment.AuthorNick = name.Trim();
+
+                int     lastCommaPos = strNameDate.LastIndexOf(',');
+                string  date = strNameDate.Substring(lastCommaPos+1, strNameDate.Length - lastCommaPos-1);
+
+                newComment.DatePosted = Utility.ExtractDateTime(date.Trim());
+
+                newComment.Text = comment.ChildNodes[3].InnerText;
+
                 string commentId = comment.Id;
                 int dashPos = commentId.LastIndexOf('-');
-
                 if (dashPos > 0)
                 {
                     string idValue = commentId.Substring(dashPos + 1, commentId.Length - dashPos - 1);

@@ -159,6 +159,21 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual("Skviki", comm.AuthorNick);
             Assert.AreEqual(522047, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);
+
+            comm = listVotes[4];
+            Assert.AreEqual("magarac", comm.AuthorNick);
+            Assert.AreEqual(521866, comm.Id);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 11, 19, 0), comm.DatePosted);
+
+            comm = listVotes[6];
+            Assert.AreEqual("lignja", comm.AuthorNick);
+            Assert.AreEqual(521868, comm.Id);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 14, 03, 0), comm.DatePosted);
+
+            comm = listVotes[10];
+            Assert.AreEqual("sjenka", comm.AuthorNick);
+            Assert.AreEqual(522048, comm.Id);
+            Assert.AreEqual(new DateTime(2016, 11, 28, 17, 27, 0), comm.DatePosted);
         }
         #endregion
 

@@ -10,6 +10,7 @@ namespace pollitika.com_Analyzer_Tests
     [TestClass]
     public class AnalyzeCommentsTests
     {
+        #region Tests for GetPostCommentsNum
         [TestMethod]
         public void GetPostCommentsNum_Test1()
         {
@@ -30,7 +31,10 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument5 = htmlWeb.Load("http://pollitika.com/destiliranje-viska-vrijednosti");
             Assert.AreEqual(107, AnalyzeComments.GetPostCommentsNum(htmlDocument5.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
         }
+        #endregion
 
+
+        #region Simple tests for GetPostComments - testing number of fetched comments
         [TestMethod]
         public void GetPostComments_Test1()
         {
@@ -136,6 +140,27 @@ namespace pollitika.com_Analyzer_Tests
             // TODO dvije stranice skomentarima
             Assert.AreEqual(8, listVotes.Count);
         }
+        #endregion
+
+        #region Complex tests
+        [TestMethod]
+        public void GetPostComments_TestCompleteCommentList()
+        {
+            HtmlWeb htmlWeb = new HtmlWeb();
+
+            HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
+            HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
+
+            List<ScrappedComment> listVotes = AnalyzeComments.GetPostComments(mainContent);
+
+            Assert.AreEqual(13, listVotes.Count);
+
+            ScrappedComment comm = listVotes[0];
+            Assert.AreEqual("Skviki", comm.AuthorNick);
+            Assert.AreEqual(522047, comm.Id);
+            Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);
+        }
+        #endregion
 
     }
 }

@@ -24,6 +24,18 @@ namespace pollitika.com_Analyzer
             get { return _id; }
             set { _id = value; }
         }
+
+        public DateTime DatePosted
+        {
+            get { return _datePosted; }
+            set { _datePosted = value; }
+        }
+
+        public string AuthorNick
+        {
+            get { return _authorNick; }
+            set { _authorNick = value; }
+        }
     }
 
     public class AnalyzeComments

@@ -157,23 +157,33 @@ namespace pollitika.com_Analyzer_Tests
 
             ScrappedComment comm = listVotes[0];
             Assert.AreEqual("Skviki", comm.AuthorNick);
+            Assert.AreEqual(0, comm.NumScrappedVotes);
             Assert.AreEqual(522047, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);
 
             comm = listVotes[4];
             Assert.AreEqual("magarac", comm.AuthorNick);
+            Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(521866, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 11, 19, 0), comm.DatePosted);
 
             comm = listVotes[6];
             Assert.AreEqual("lignja", comm.AuthorNick);
+            Assert.AreEqual(4, comm.NumScrappedVotes);
             Assert.AreEqual(521868, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 14, 03, 0), comm.DatePosted);
 
             comm = listVotes[10];
             Assert.AreEqual("sjenka", comm.AuthorNick);
+            Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(522048, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 17, 27, 0), comm.DatePosted);
+
+            comm = listVotes[11];
+            Assert.AreEqual("ppetra", comm.AuthorNick);
+            Assert.AreEqual(-1, comm.NumScrappedVotes);
+            Assert.AreEqual(521867, comm.Id);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 12, 55, 0), comm.DatePosted);
         }
         #endregion
 

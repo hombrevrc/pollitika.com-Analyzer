@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
@@ -17,6 +18,7 @@ namespace pollitika.com_Analyzer
         public int _parentCommentID;            // if 0, then it is first level comment (in the first level below post)
         public List<int> _childCommentsIDs;
 
+        private int _numScrappedVotes;          // scrapped from page
         public List<ScrappedVote> _listVotes;
 
         public int Id
@@ -41,6 +43,12 @@ namespace pollitika.com_Analyzer
         {
             get { return _text; }
             set { _text = value; }
+        }
+
+        public int NumScrappedVotes
+        {
+            get { return _numScrappedVotes; }
+            set { _numScrappedVotes = value; }
         }
     }
 
@@ -80,6 +88,11 @@ namespace pollitika.com_Analyzer
                 int     lastCommaPos = strNameDate.LastIndexOf(',');
                 string  date = strNameDate.Substring(lastCommaPos+1, strNameDate.Length - lastCommaPos-1);
 
+                var numVotes = comment.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("total-votes-plain")).ToList();
+                string resultString = Regex.Match(numVotes[0].InnerText, @"-?\d+").Value;
+
+                newComment.NumScrappedVotes = Int32.Parse(resultString);
+
                 newComment.DatePosted = Utility.ExtractDateTime(date.Trim());
 
                 newComment.Text = comment.ChildNodes[3].InnerText;
@@ -105,7 +118,6 @@ namespace pollitika.com_Analyzer
             //{
             //    if( com1.Name == "div" )
             //        Console.WriteLine("DIV DIV DIV ******************************************\n" + com1.InnerHtml);
-
             //}
 
 

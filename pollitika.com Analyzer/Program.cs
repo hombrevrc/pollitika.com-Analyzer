@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using pollitika.com_Data;
 using ScrapySharp.Extensions;
 using ScrapySharp.Network;
 
@@ -14,6 +15,7 @@ namespace pollitika.com_Analyzer
         static void Main(string[] args)
         {
             // setup - repozitoriji za spremanje podataka
+            ModelRepository repo = new ModelRepository();
 
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
 
@@ -29,7 +31,7 @@ namespace pollitika.com_Analyzer
                 //AnalyzeFrontPage(i);
 
                 string href = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
-                AnalyzePosts.AnalyzePost(href);
+                AnalyzePosts.AnalyzePost(href, repo);
             }
         }
     }

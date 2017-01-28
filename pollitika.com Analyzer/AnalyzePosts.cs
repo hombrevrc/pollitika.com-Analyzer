@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using HtmlAgilityPack;
+using pollitika.com_Model;
 using ScrapySharp.Extensions;
 using ScrapySharp.Network;
 
@@ -13,7 +14,7 @@ namespace pollitika.com_Analyzer
 {
     public class AnalyzePosts
     {
-        public static Post AnalyzePost(string inPostUrl)
+        public static Post AnalyzePost(string inPostUrl, IModelRepository inRepo)
         {
             Post newPost = new Post();
             newPost.HrefLink = inPostUrl;
@@ -46,7 +47,7 @@ namespace pollitika.com_Analyzer
 
             if (newPost.Id > 0)
             {
-                List<ScrappedVote> lVote = AnalyzeVotes.ScrapeListVotesForPost(newPost.Id);
+                List<ScrappedVote> lVote = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id);
 
                 // TODO - from User repozitory we have to fetch user with this name and set a reference into Vote
             }

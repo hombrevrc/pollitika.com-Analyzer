@@ -8,6 +8,7 @@ namespace pollitika.com_Analyzer
     public class Vote
     {
         private User _byUser;
+        private int _voteOnNodeID;
         private DateTime _datePosted;
         private int _upOrDown;
 
@@ -27,6 +28,12 @@ namespace pollitika.com_Analyzer
         {
             get { return _upOrDown; }
             set { _upOrDown = value; }
+        }
+
+        public int VoteOnNodeId
+        {
+            get { return _voteOnNodeID; }
+            set { _voteOnNodeID = value; }
         }
     }
 }

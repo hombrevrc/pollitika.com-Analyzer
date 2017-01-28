@@ -17,7 +17,7 @@ namespace pollitika.com_Analyzer
 
     public class AnalyzeVotes
     {
-        public static List<ScrappedVote> ScrapeListVotesForPost(int nodeID)
+        public static List<ScrappedVote> ScrapeListVotesForNode(int nodeID)
         {
             List<ScrappedVote> listVotes = new List<ScrappedVote>();
 

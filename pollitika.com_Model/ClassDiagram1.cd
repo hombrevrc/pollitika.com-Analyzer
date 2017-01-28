@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="pollitika.com_Analyzer.Comment">
-    <Position X="2.5" Y="6" Width="1.5" />
+    <Position X="2.5" Y="6.5" Width="1.5" />
     <AssociationLine Name="_parentComment" Type="pollitika.com_Analyzer.Comment" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.875" Y="7.488" />
-        <Point X="2.875" Y="7.863" />
-        <Point X="3.688" Y="7.863" />
-        <Point X="3.688" Y="7.488" />
+        <Point X="2.875" Y="7.988" />
+        <Point X="2.875" Y="8.363" />
+        <Point X="3.75" Y="8.363" />
+        <Point X="3.75" Y="7.988" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.193" Y="0.091" />
@@ -15,13 +15,13 @@
     </AssociationLine>
     <AssociationLine Name="_childComments" Type="pollitika.com_Analyzer.Comment" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.5" Y="6.375" />
-        <Point X="2.156" Y="6.375" />
-        <Point X="2.156" Y="7.188" />
-        <Point X="2.5" Y="7.188" />
+        <Point X="2.5" Y="6.875" />
+        <Point X="2.156" Y="6.875" />
+        <Point X="2.156" Y="7.688" />
+        <Point X="2.5" Y="7.688" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.027" Y="0.07" />
+        <Position X="0.069" Y="0.153" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
@@ -42,8 +42,8 @@
     <AssociationLine Name="_author" Type="pollitika.com_Analyzer.User" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="4" Y="2.625" />
-        <Point X="9" Y="2.625" />
-        <Point X="9" Y="4.5" />
+        <Point X="8.875" Y="2.625" />
+        <Point X="8.875" Y="4.5" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="_listVotes" Type="pollitika.com_Analyzer.Vote" FixedFromPoint="true" FixedToPoint="true">
@@ -85,14 +85,14 @@
   <Class Name="pollitika.com_Analyzer.Vote">
     <Position X="5.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAgAIAAAAAAABAAAgAAAAAAAAAAAAAAAAACA=</HashCode>
+      <HashCode>AAAAgAAAAgAIAAAAAAABAAAwAAAAAAAAAAACAAAAACA=</HashCode>
       <FileName>Vote.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="pollitika.com_Model.IModelRepository">
-    <Position X="10.75" Y="3" Width="1.5" />
+    <Position X="12.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAE=</HashCode>
       <FileName>IModelRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>

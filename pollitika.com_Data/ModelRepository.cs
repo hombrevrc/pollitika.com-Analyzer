@@ -10,14 +10,21 @@ namespace pollitika.com_Data
 {
     public class ModelRepository : IModelRepository
     {
+        private DataStore _dataStore = new DataStore();
+         
         public void AddPost(Post newPost)
         {
-            throw new NotImplementedException();
+            _dataStore.Posts.Add(newPost);
         }
 
         public void AddUser(User newUser)
         {
-            throw new NotImplementedException();
+            _dataStore.Users.Add(newUser);
+        }
+
+        public User GetUserByNick(string inNick)
+        {
+            return _dataStore.Users.FirstOrDefault(p => p.NameHtml == inNick);
         }
     }
 }

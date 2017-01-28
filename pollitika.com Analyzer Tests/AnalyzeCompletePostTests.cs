@@ -14,7 +14,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_TestPostAttributes1()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", null);
 
             Assert.AreEqual(15397, post.Id);
             Assert.AreEqual("Hrvatsko zdravstvo i sovjetska automobilska industrija", post.Title);

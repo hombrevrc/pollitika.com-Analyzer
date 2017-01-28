@@ -74,11 +74,13 @@ namespace pollitika.com_Analyzer
             HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
             List<HtmlNode> allComments = comments.Descendants().Where(x => x.Id.StartsWith("comment-content")).ToList();
 
+            // TODO - ishendlati kad ima više stranica s komentarima
+
             foreach (var comment in allComments)
             {
                 ScrappedComment newComment = new ScrappedComment();
 
-                //comment.ChildNodes[1] ima "\n    Skviki &mdash; Pon, 28/11/2016 - 16:16.  
+                //comment.ChildNodes[1] has "\n    Skviki &mdash; Pon, 28/11/2016 - 16:16.  
                 string  strNameDate = comment.ChildNodes[1].InnerText;
                 int     mdashPos = strNameDate.IndexOf("&mdash");
                 string  name = strNameDate.Substring(2, mdashPos - 2);
@@ -111,6 +113,12 @@ namespace pollitika.com_Analyzer
                 }
 
                 listComments.Add(newComment);
+            }
+
+            // and now we have to fetch list of votes for each one
+            foreach (var comm in listComments)
+            {
+                List<ScrappedVote> listCommentVotes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id);
             }
 
             //List<HtmlNode> firstLevelComments = comments.ChildNodes.Where(x => x.Id.StartsWith("comment")).ToList();

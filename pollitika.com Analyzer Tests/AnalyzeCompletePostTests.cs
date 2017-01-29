@@ -5,18 +5,23 @@ using System.Net;
 using HtmlAgilityPack;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pollitika.com_Analyzer;
+using pollitika.com_Data;
+using pollitika.com_Model;
 
 namespace pollitika.com_Analyzer_Tests
 {
     [TestClass]
     public class AnalyzeCompletePostTests
     {
+        IModelRepository _repo = new ModelRepository();
+
         [TestMethod]
         public void AnalyzePost_TestPostAttributes1()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", null);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo);
 
             Assert.AreEqual(15397, post.Id);
+            Assert.AreEqual("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", post.HrefLink);
             Assert.AreEqual("Hrvatsko zdravstvo i sovjetska automobilska industrija", post.Title);
             Assert.AreEqual("/node/15397/who_voted", post.VotesLink);
             Assert.AreEqual("žaki", post.Author.Name);

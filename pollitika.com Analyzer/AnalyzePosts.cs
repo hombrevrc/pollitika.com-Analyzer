@@ -62,7 +62,7 @@ namespace pollitika.com_Analyzer
                 // TODO - from User repozitory we have to fetch user with this name and set a reference into Vote
             }
 
-            List<ScrappedComment> listComm = AnalyzeComments.ScrapePostComments(mainContent, inRepo);
+            List<Comment> listComm = AnalyzeComments.ScrapePostComments(mainContent, inRepo);
 
             return newPost;
         }

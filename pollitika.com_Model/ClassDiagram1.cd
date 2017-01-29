@@ -4,10 +4,10 @@
     <Position X="2.5" Y="6.5" Width="1.5" />
     <AssociationLine Name="_parentComment" Type="pollitika.com_Analyzer.Comment" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.875" Y="7.988" />
-        <Point X="2.875" Y="8.363" />
-        <Point X="3.75" Y="8.363" />
-        <Point X="3.75" Y="7.988" />
+        <Point X="2.875" Y="9.593" />
+        <Point X="2.875" Y="9.844" />
+        <Point X="3.75" Y="9.844" />
+        <Point X="3.75" Y="9.594" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.193" Y="0.091" />
@@ -15,17 +15,17 @@
     </AssociationLine>
     <AssociationLine Name="_childComments" Type="pollitika.com_Analyzer.Comment" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.5" Y="6.875" />
-        <Point X="2.156" Y="6.875" />
-        <Point X="2.156" Y="7.688" />
-        <Point X="2.5" Y="7.688" />
+        <Point X="2.5" Y="7.28" />
+        <Point X="2.156" Y="7.28" />
+        <Point X="2.156" Y="8.97" />
+        <Point X="2.5" Y="8.97" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.069" Y="0.153" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AIAAAAABAAAAAAAAAABAQAAAAAAAAAAIAAAAAQAAACA=</HashCode>
+      <HashCode>AIACAAABAAAQAAAAgABARAAgAAAAAAAIAAAAiQAAACA=</HashCode>
       <FileName>Comment.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

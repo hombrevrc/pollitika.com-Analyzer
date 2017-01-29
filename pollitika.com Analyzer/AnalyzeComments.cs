@@ -9,51 +9,7 @@ using pollitika.com_Model;
 
 namespace pollitika.com_Analyzer
 {
-    public class ScrappedComment
-    {
-        public int _id;                 // node ID
-        public string _text;
-        public string _authorNick;
-        public DateTime _datePosted;
-
-        public int _parentCommentID;            // if 0, then it is first level comment (in the first level below post)
-        public List<int> _childCommentsIDs;
-
-        private int _numScrappedVotes;          // scrapped from page
-        public List<Vote> _listVotes;
-
-        public int Id
-        {
-            get { return _id; }
-            set { _id = value; }
-        }
-
-        public DateTime DatePosted
-        {
-            get { return _datePosted; }
-            set { _datePosted = value; }
-        }
-
-        public string AuthorNick
-        {
-            get { return _authorNick; }
-            set { _authorNick = value; }
-        }
-
-        public string Text
-        {
-            get { return _text; }
-            set { _text = value; }
-        }
-
-        public int NumScrappedVotes
-        {
-            get { return _numScrappedVotes; }
-            set { _numScrappedVotes = value; }
-        }
-    }
-
-    public class AnalyzeComments
+ public class AnalyzeComments
     {
         public static int ScrapePostCommentsNum(HtmlNode nodeContentMain)
         {
@@ -68,9 +24,9 @@ namespace pollitika.com_Analyzer
             return numComments;
         }
 
-        public static List<ScrappedComment> ScrapePostComments(HtmlNode mainNode, IModelRepository inRepo)
+        public static List<Comment> ScrapePostComments(HtmlNode mainNode, IModelRepository inRepo)
         {
-            List<ScrappedComment> listComments = new List<ScrappedComment>();
+            List<Comment> listComments = new List<Comment>();
 
             HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
             List<HtmlNode> allComments = comments.Descendants().Where(x => x.Id.StartsWith("comment-content")).ToList();
@@ -79,14 +35,22 @@ namespace pollitika.com_Analyzer
 
             foreach (var comment in allComments)
             {
-                ScrappedComment newComment = new ScrappedComment();
+                Comment newComment = new Comment();
 
                 //comment.ChildNodes[1] has "\n    Skviki &mdash; Pon, 28/11/2016 - 16:16.  
                 string  strNameDate = comment.ChildNodes[1].InnerText;
                 int     mdashPos = strNameDate.IndexOf("&mdash");
                 string  name = strNameDate.Substring(2, mdashPos - 2);
 
-                newComment.AuthorNick = name.Trim();
+                string authorNick = name.Trim();
+                // check if user exists, add him if not
+                User user = inRepo.GetUserByName(authorNick);
+                if (user == null)
+                {
+                    user = new User { Name = authorNick, NameHtml = authorNick };
+                    inRepo.AddUser(user);
+                }
+                newComment.Author = user;
 
                 int     lastCommaPos = strNameDate.LastIndexOf(',');
                 string  date = strNameDate.Substring(lastCommaPos+1, strNameDate.Length - lastCommaPos-1);

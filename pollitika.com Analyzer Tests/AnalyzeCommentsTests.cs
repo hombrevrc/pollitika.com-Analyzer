@@ -47,7 +47,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment > listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment > listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             Assert.AreEqual(13, listVotes.Count);
         }
@@ -60,7 +60,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/destiliranje-viska-vrijednosti");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO - ima tri stranice komentara
             Assert.AreEqual(107, listVotes.Count);
@@ -73,7 +73,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/nitko-da-ne-dodje-do-prijatelj-drag");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO - dvije stranice s komentarima
             Assert.AreEqual(56, listVotes.Count);
@@ -86,7 +86,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/trijumf-trollova");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO - 4 stranice s komentarima
             Assert.AreEqual(159, listVotes.Count);
@@ -99,7 +99,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/kapetan-amerika-protiv-klime");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
             Assert.AreEqual(51, listVotes.Count);
@@ -113,7 +113,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/nered-na-trzi-tu-dobra-stvar");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
             Assert.AreEqual(4, listVotes.Count);
@@ -126,7 +126,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
             Assert.AreEqual(19, listVotes.Count);
@@ -139,7 +139,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/socijalist-ili");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
             Assert.AreEqual(8, listVotes.Count);
@@ -155,36 +155,36 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<ScrappedComment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             Assert.AreEqual(13, listVotes.Count);
 
-            ScrappedComment comm = listVotes[0];
-            Assert.AreEqual("Skviki", comm.AuthorNick);
+            Comment comm = listVotes[0];
+            Assert.AreEqual("Skviki", comm.Author.Name);
             Assert.AreEqual(0, comm.NumScrappedVotes);
             Assert.AreEqual(522047, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);
 
             comm = listVotes[4];
-            Assert.AreEqual("magarac", comm.AuthorNick);
+            Assert.AreEqual("magarac", comm.Author.Name);
             Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(521866, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 11, 19, 0), comm.DatePosted);
 
             comm = listVotes[6];
-            Assert.AreEqual("lignja", comm.AuthorNick);
+            Assert.AreEqual("lignja", comm.Author.Name);
             Assert.AreEqual(4, comm.NumScrappedVotes);
             Assert.AreEqual(521868, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 14, 03, 0), comm.DatePosted);
 
             comm = listVotes[10];
-            Assert.AreEqual("sjenka", comm.AuthorNick);
+            Assert.AreEqual("sjenka", comm.Author.Name);
             Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(522048, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 17, 27, 0), comm.DatePosted);
 
             comm = listVotes[11];
-            Assert.AreEqual("ppetra", comm.AuthorNick);
+            Assert.AreEqual("ppetra", comm.Author.Name);
             Assert.AreEqual(-1, comm.NumScrappedVotes);
             Assert.AreEqual(521867, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 12, 55, 0), comm.DatePosted);

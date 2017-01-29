@@ -65,7 +65,7 @@ namespace pollitika.com_Analyzer
                     newVote.UpOrDown = Convert.ToInt32(value);
 
                     string time = rowCels[2].InnerText.Substring(13).TrimEnd();
-                    newVote.DatePosted = Utility.ExtractDateTime(time);
+                    newVote.DatePosted = Utility.ExtractDateTime2(time);
 
                     listVotes.Add(newVote);
                 }

@@ -18,10 +18,10 @@ namespace pollitika.com_Analyzer
         private int         _numCommentsScrapped;
         private bool        _isOnFrontPage;
 
-        private List<Comment> _listComments;
+        private List<Comment> _listComments = new List<Comment>();
 
         private string      _votesLink;
-        private List<Vote>  _listVotes;
+        private List<Vote>  _listVotes = new List<Vote>();
 
         public string Title
         {
@@ -71,13 +71,25 @@ namespace pollitika.com_Analyzer
             set { _datePosted = value; }
         }
 
+        public List<Vote> Votes
+        {
+            get { return _listVotes; }
+            set { _listVotes = value; }
+        }
+
+        public List<Comment> Comments
+        {
+            get { return _listComments; }
+            set { _listComments = value; }
+        }
+
         public int GetNumberOfVotes()
         {
-            return _listVotes.Count;
+            return Votes.Count;
         }
         public int GetNumberOfComments()
         {
-            return _listVotes.Count;
+            return Comments.Count;
         }
     }
 }

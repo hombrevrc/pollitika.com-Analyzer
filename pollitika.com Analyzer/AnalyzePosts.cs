@@ -57,12 +57,10 @@ namespace pollitika.com_Analyzer
 
             if (newPost.Id > 0)
             {
-                List<Vote> lVote = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, inRepo);
-
-                // TODO - from User repozitory we have to fetch user with this name and set a reference into Vote
+                newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, inRepo);
             }
 
-            List<Comment> listComm = AnalyzeComments.ScrapePostComments(mainContent, inRepo);
+            newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inRepo);
 
             return newPost;
         }

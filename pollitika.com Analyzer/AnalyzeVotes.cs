@@ -9,18 +9,12 @@ using ScrapySharp.Extensions;
 
 namespace pollitika.com_Analyzer
 {
-    public class ScrappedVote
-    {
-        public string userNick;
-        public int voteValue;
-        public DateTime datePosted;
-    }
 
     public class AnalyzeVotes
     {
-        public static List<ScrappedVote> ScrapeListVotesForNode(int nodeID, IModelRepository inRepo)
+        public static List<Vote> ScrapeListVotesForNode(int nodeID, IModelRepository inRepo)
         {
-            List<ScrappedVote> listVotes = new List<ScrappedVote>();
+            List<Vote> listVotes = new List<Vote>();
 
             string href = "http://pollitika.com/node/" + nodeID.ToString() + "/who_voted";
 
@@ -45,7 +39,7 @@ namespace pollitika.com_Analyzer
                 var content = voteList.First();
                 var table = content.SelectNodes("table");
 
-                if (table == null) // it means there is no table with votes
+                if (table == null)              // it means there is no table with votes
                     return listVotes;
 
                 var tList = table[0].ChildNodes[3];         // picking up tbody
@@ -54,15 +48,24 @@ namespace pollitika.com_Analyzer
                 {
                     var rowCels = row.SelectNodes("th|td");
 
-                    ScrappedVote newVote = new ScrappedVote();
+                    Vote newVote = new Vote();
 
-                    newVote.userNick = rowCels[0].InnerText.Substring(13).TrimEnd();
+                    string userNick = rowCels[0].InnerText.Substring(13).TrimEnd();
+                    // check if user exists, add him if not
+                    User user = inRepo.GetUserByName(userNick);
+                    if (user == null)
+                    {
+                        user = new User { Name = userNick, NameHtml = userNick };
+                        inRepo.AddUser(user);
+                    }
+
+                    newVote.ByUser = user;
 
                     string value = rowCels[1].InnerText.Substring(13).TrimEnd();
-                    newVote.voteValue = Convert.ToInt32(value);
+                    newVote.UpOrDown = Convert.ToInt32(value);
 
                     string time = rowCels[2].InnerText.Substring(13).TrimEnd();
-                    newVote.datePosted = Utility.ExtractDateTime(time);
+                    newVote.DatePosted = Utility.ExtractDateTime(time);
 
                     listVotes.Add(newVote);
                 }

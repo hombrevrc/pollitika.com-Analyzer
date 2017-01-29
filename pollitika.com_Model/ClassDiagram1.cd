@@ -75,7 +75,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAACQAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAACQAAAAAQAAAAAAAAgAgAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -92,7 +92,7 @@
   <Interface Name="pollitika.com_Model.IModelRepository">
     <Position X="12.5" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAE=</HashCode>
       <FileName>IModelRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>

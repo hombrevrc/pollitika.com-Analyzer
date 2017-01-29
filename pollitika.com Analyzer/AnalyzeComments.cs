@@ -20,7 +20,7 @@ namespace pollitika.com_Analyzer
         public List<int> _childCommentsIDs;
 
         private int _numScrappedVotes;          // scrapped from page
-        public List<ScrappedVote> _listVotes;
+        public List<Vote> _listVotes;
 
         public int Id
         {
@@ -119,7 +119,7 @@ namespace pollitika.com_Analyzer
             // and now we have to fetch list of votes for each one
             foreach (var comm in listComments)
             {
-                List<ScrappedVote> listCommentVotes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id, inRepo);
+                List<Vote> listCommentVotes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id, inRepo);
             }
 
             //List<HtmlNode> firstLevelComments = comments.ChildNodes.Where(x => x.Id.StartsWith("comment")).ToList();

@@ -10,6 +10,7 @@ namespace pollitika.com_Analyzer
     {
         private string _name;
         private string _nameHtml;
+        private string _memberSince;
         private List<Post> _listPosts;
 
         public string Name
@@ -22,6 +23,12 @@ namespace pollitika.com_Analyzer
         {
             get { return _nameHtml; }
             set { _nameHtml = value; }
+        }
+
+        public string MemberSince
+        {
+            get { return _memberSince; }
+            set { _memberSince = value; }
         }
     }
 }

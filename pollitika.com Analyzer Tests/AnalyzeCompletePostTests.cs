@@ -35,7 +35,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
 
             string author, authorHtml;
-            AnalyzePosts.GetPostAuthor(htmlDocument, out author, out authorHtml);
+            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
 
             Assert.AreEqual("žaki", author);
             Assert.AreEqual("zaki", authorHtml);

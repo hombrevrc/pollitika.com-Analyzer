@@ -3,6 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pollitika.com_Analyzer;
+using pollitika.com_Data;
+using pollitika.com_Model;
 
 namespace pollitika.com_Analyzer_Tests
 {
@@ -12,6 +14,8 @@ namespace pollitika.com_Analyzer_Tests
     [TestClass]
     public class AnalyzeVotesTests
     {
+        private IModelRepository _repo = new ModelRepository();
+
         public AnalyzeVotesTests()
         {
             //
@@ -64,7 +68,7 @@ namespace pollitika.com_Analyzer_Tests
         {
             // "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija"
 
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(15397);
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(15397, _repo);
 
             Assert.AreEqual(24, listVotes.Count);
         }
@@ -74,7 +78,7 @@ namespace pollitika.com_Analyzer_Tests
         {
             // "http://pollitika.com/socijalist-ili"
 
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(14171);
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(14171, _repo);
 
             Assert.AreEqual(22, listVotes.Count);
         }
@@ -83,7 +87,7 @@ namespace pollitika.com_Analyzer_Tests
         public void AnalyzePost_TestGetPostVotes3_TwoPageOfVotes()
         {
             // "http://pollitika.com/che-guevarina-skola"
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(11768);
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(11768, _repo);
 
             // TODO - ima glasova i na sljedećoj stranici!!!!
             Assert.AreEqual(33, listVotes.Count);
@@ -94,7 +98,7 @@ namespace pollitika.com_Analyzer_Tests
         {
             // "http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot"
 
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(2898);
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(2898, _repo);
 
             Assert.AreEqual(17, listVotes.Count);
         }
@@ -104,7 +108,7 @@ namespace pollitika.com_Analyzer_Tests
         {
             // "http://pollitika.com/sramim-se"
 
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(406);
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(406, _repo);
 
             Assert.AreEqual(0, listVotes.Count);
         }
@@ -114,7 +118,7 @@ namespace pollitika.com_Analyzer_Tests
         {
             // "http://pollitika.com/nered-na-trzi-tu-dobra-stvar"
 
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(50);
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(50, _repo);
 
             Assert.AreEqual(0, listVotes.Count);
         }
@@ -123,7 +127,7 @@ namespace pollitika.com_Analyzer_Tests
         {
             // "http://pollitika.com/sve-sto-vam-nitko-nije-htio-rei-o-birakim-popisima"
 
-            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(6085);
+            List<ScrappedVote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(6085, _repo);
 
             Assert.AreEqual(92, listVotes.Count);
         }

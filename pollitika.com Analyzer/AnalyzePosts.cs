@@ -30,34 +30,44 @@ namespace pollitika.com_Analyzer
 
             int nodeId;
             string votesLink;
-            if (AnalyzePosts.GetPostID(mainContent, out nodeId, out votesLink))
+            if (AnalyzePosts.ScrapePostID(mainContent, out nodeId, out votesLink))
             {
                 newPost.Id = nodeId;
                 newPost.VotesLink = votesLink;
             }
 
-            newPost.DatePosted = GetPostDate(mainContent);
+            newPost.DatePosted = ScrapePostDate(mainContent);
 
             string author, authorHtml;
-            AnalyzePosts.GetPostAuthor(htmlDocument, out author, out authorHtml);
+            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
 
-            newPost.NumCommentsScrapped = AnalyzeComments.GetPostCommentsNum(mainContent);
+            // check if user exists, add him if not
+            User user = inRepo.GetUserByName(author);
+            if (user == null)
+            {
+                user = new User{Name = author, NameHtml = authorHtml};
+                inRepo.AddUser(user);
+            }
+
+            newPost.Author = user;
+
+            newPost.NumCommentsScrapped = AnalyzeComments.ScrapePostCommentsNum(mainContent);
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("Error scrapping number of comments");
 
             if (newPost.Id > 0)
             {
-                List<ScrappedVote> lVote = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id);
+                List<ScrappedVote> lVote = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, inRepo);
 
                 // TODO - from User repozitory we have to fetch user with this name and set a reference into Vote
             }
 
-            List<ScrappedComment> listComm = AnalyzeComments.GetPostComments(mainContent);
+            List<ScrappedComment> listComm = AnalyzeComments.ScrapePostComments(mainContent, inRepo);
 
             return newPost;
         }
 
-        public static bool GetPostID(HtmlNode nodeContentMain, out int outNodeId, out string votesLink)
+        public static bool ScrapePostID(HtmlNode nodeContentMain, out int outNodeId, out string votesLink)
         {
             List<HtmlNode> commonPosts = nodeContentMain.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("tabs primary")).Descendants("li").ToList();
             //List<HtmlNode> commonPosts = nodeContentMain.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("tabs primary")).Single().Descendants("li").ToList();
@@ -73,7 +83,7 @@ namespace pollitika.com_Analyzer
 
             return true;
         }
-        public static string GetPostAuthor(HtmlDocument htmlDocument, out string authorName, out string authorHtmlName)
+        public static string ScrapePostAuthor(HtmlDocument htmlDocument, out string authorName, out string authorHtmlName)
         {
             HtmlNode userDetails = htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb"));
 
@@ -90,7 +100,7 @@ namespace pollitika.com_Analyzer
             
             return "";
         }
-        public static DateTime GetPostDate(HtmlNode nodeContentMain)
+        public static DateTime ScrapePostDate(HtmlNode nodeContentMain)
         {
             var commonPosts = nodeContentMain.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("article-meta article-meta-top")).Descendants("li").ToList();
 

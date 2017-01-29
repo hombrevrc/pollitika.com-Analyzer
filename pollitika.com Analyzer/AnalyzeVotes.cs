@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using pollitika.com_Model;
 using ScrapySharp.Extensions;
 
 namespace pollitika.com_Analyzer
@@ -17,7 +18,7 @@ namespace pollitika.com_Analyzer
 
     public class AnalyzeVotes
     {
-        public static List<ScrappedVote> ScrapeListVotesForNode(int nodeID)
+        public static List<ScrappedVote> ScrapeListVotesForNode(int nodeID, IModelRepository inRepo)
         {
             List<ScrappedVote> listVotes = new List<ScrappedVote>();
 

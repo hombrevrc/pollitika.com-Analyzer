@@ -14,14 +14,20 @@ namespace pollitika.com_Data
          
         public void AddPost(Post newPost)
         {
+            // TODO - check for already existing Post ID
             _dataStore.Posts.Add(newPost);
         }
 
         public void AddUser(User newUser)
         {
+            // TODO - check if user with name already exists
             _dataStore.Users.Add(newUser);
         }
 
+        public User GetUserByName(string inName)
+        {
+            return _dataStore.Users.FirstOrDefault(p => p.Name == inName);
+        }
         public User GetUserByNick(string inNick)
         {
             return _dataStore.Users.FirstOrDefault(p => p.NameHtml == inNick);

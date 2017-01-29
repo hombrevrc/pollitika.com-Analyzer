@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using pollitika.com_Model;
 
 namespace pollitika.com_Analyzer
 {
@@ -54,7 +55,7 @@ namespace pollitika.com_Analyzer
 
     public class AnalyzeComments
     {
-        public static int GetPostCommentsNum(HtmlNode nodeContentMain)
+        public static int ScrapePostCommentsNum(HtmlNode nodeContentMain)
         {
             List<HtmlNode> commonPosts = nodeContentMain.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("broj-komentara")).ToList();
 
@@ -67,7 +68,7 @@ namespace pollitika.com_Analyzer
             return numComments;
         }
 
-        public static List<ScrappedComment> GetPostComments(HtmlNode mainNode)
+        public static List<ScrappedComment> ScrapePostComments(HtmlNode mainNode, IModelRepository inRepo)
         {
             List<ScrappedComment> listComments = new List<ScrappedComment>();
 
@@ -118,7 +119,7 @@ namespace pollitika.com_Analyzer
             // and now we have to fetch list of votes for each one
             foreach (var comm in listComments)
             {
-                List<ScrappedVote> listCommentVotes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id);
+                List<ScrappedVote> listCommentVotes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id, inRepo);
             }
 
             //List<HtmlNode> firstLevelComments = comments.ChildNodes.Where(x => x.Id.StartsWith("comment")).ToList();

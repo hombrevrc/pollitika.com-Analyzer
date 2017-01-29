@@ -12,6 +12,7 @@ namespace pollitika.com_Model
         void AddPost(Post newPost);
         void AddUser(User newUser);
 
+        User GetUserByName(string inName);
         User GetUserByNick(string inNick);
     }
 }

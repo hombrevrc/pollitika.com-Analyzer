@@ -36,6 +36,7 @@ namespace pollitika.com_Analyzer
                     htmlDocument.DocumentNode.Descendants()
                         .Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
 
+                // TODO - naći onaj u voteList koji u sebi sadrži "views-table" string
                 var content = voteList.First();
                 var table = content.SelectNodes("table");
 

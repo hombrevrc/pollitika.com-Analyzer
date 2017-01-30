@@ -16,7 +16,7 @@ namespace pollitika.com_Analyzer
         private List<Comment> _childComments;
 
         private int _numScrappedVotes;          // scrapped from page
-        private List<Vote> _listVotes;
+        private List<Vote> _listVotes = new List<Vote>();
 
         public int Id
         {

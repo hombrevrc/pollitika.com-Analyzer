@@ -32,6 +32,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(13, post.GetNumberOfComments());
             Assert.AreEqual(new DateTime(2016, 11, 14, 18, 7, 0), post.DatePosted);
 
+
             // testing votes
             Assert.AreEqual("ppetra", post.Votes[0].ByUser.Name);
             Assert.AreEqual(new DateTime(2016, 12, 8, 22, 53, 0), post.Votes[0].DatePosted); 
@@ -41,6 +42,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(new DateTime(2016, 11, 16, 10, 52, 0), post.Votes[6].DatePosted);
             Assert.AreEqual(1, post.Votes[6].UpOrDown);
 
+
             // testing comments
             Assert.AreEqual(13, post.Comments.Count);
 
@@ -49,24 +51,57 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(0, comm.NumScrappedVotes);
             Assert.AreEqual(522047, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);
+            Assert.AreEqual(0, comm.NumScrappedVotes);
+            Assert.AreEqual(2, comm.ListVotes.Count);
+            Assert.AreEqual("Liberty Valance", post.Votes[0].ByUser.Name);
+            Assert.AreEqual(new DateTime(2017, 01, 28, 12, 18, 0), post.Votes[0].DatePosted);
+            Assert.AreEqual(-1, post.Votes[0].UpOrDown);
+            Assert.AreEqual("Zvone Radikalni", post.Votes[1].ByUser.Name);
+            Assert.AreEqual(new DateTime(2017, 01, 28, 12, 16, 0), post.Votes[1].DatePosted);
+            Assert.AreEqual(1, post.Votes[1].UpOrDown);
 
             comm = post.Comments[4];
             Assert.AreEqual("magarac", comm.Author.Name);
             Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(521866, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 11, 19, 0), comm.DatePosted);
+            Assert.AreEqual(2, comm.NumScrappedVotes);
+            Assert.AreEqual(2, comm.ListVotes.Count);
+            Assert.AreEqual("fuminanti", post.Votes[0].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 22, 10, 46, 0), post.Votes[0].DatePosted);
+            Assert.AreEqual(1, post.Votes[0].UpOrDown);
+            Assert.AreEqual("hlad", post.Votes[1].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 11, 39, 0), post.Votes[1].DatePosted);
+            Assert.AreEqual(1, post.Votes[1].UpOrDown);
+
 
             comm = post.Comments[6];
             Assert.AreEqual("lignja", comm.Author.Name);
             Assert.AreEqual(4, comm.NumScrappedVotes);
             Assert.AreEqual(521868, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 14, 03, 0), comm.DatePosted);
+            Assert.AreEqual(4, comm.NumScrappedVotes);
+            Assert.AreEqual(4, comm.ListVotes.Count);
+            Assert.AreEqual("mario121", post.Votes[0].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 22, 22, 0), post.Votes[0].DatePosted);
+            Assert.AreEqual(1, post.Votes[0].UpOrDown);
+            Assert.AreEqual("Skviki", post.Votes[1].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 16, 01, 0), post.Votes[1].DatePosted);
+            Assert.AreEqual(1, post.Votes[1].UpOrDown);
+            Assert.AreEqual("indian", post.Votes[2].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 15, 51, 0), post.Votes[2].DatePosted);
+            Assert.AreEqual(1, post.Votes[2].UpOrDown);
+            Assert.AreEqual("magarac", post.Votes[3].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 15, 34, 0), post.Votes[3].DatePosted);
+            Assert.AreEqual(1, post.Votes[3].UpOrDown);
+
 
             comm = post.Comments[10];
             Assert.AreEqual("sjenka", comm.Author.Name);
             Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(522048, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 17, 27, 0), comm.DatePosted);
+
 
             comm = post.Comments[11];
             Assert.AreEqual("ppetra", comm.Author.Name);

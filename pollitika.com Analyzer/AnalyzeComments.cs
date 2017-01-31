@@ -29,6 +29,10 @@ namespace pollitika.com_Analyzer
             List<Comment> listComments = new List<Comment>();
 
             HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
+
+            if( comments == null )      // No comments?
+                return listComments;
+
             List<HtmlNode> allComments = comments.Descendants().Where(x => x.Id.StartsWith("comment-content")).ToList();
 
             // TODO - ishendlati kad ima više stranica s komentarima

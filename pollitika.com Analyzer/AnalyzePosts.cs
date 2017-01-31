@@ -60,7 +60,7 @@ namespace pollitika.com_Analyzer
                 newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, "node", inRepo);
             }
 
-            newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inRepo);
+            newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inPostUrl, inRepo);
 
             return newPost;
         }

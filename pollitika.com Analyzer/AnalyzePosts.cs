@@ -57,7 +57,7 @@ namespace pollitika.com_Analyzer
 
             if (newPost.Id > 0)
             {
-                newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, inRepo);
+                newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, "node", inRepo);
             }
 
             newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inRepo);

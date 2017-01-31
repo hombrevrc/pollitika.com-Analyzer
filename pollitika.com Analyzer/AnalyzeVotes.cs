@@ -12,11 +12,12 @@ namespace pollitika.com_Analyzer
 
     public class AnalyzeVotes
     {
-        public static List<Vote> ScrapeListVotesForNode(int nodeID, IModelRepository inRepo)
+        // inType: "node" - for getting votes for posts, "comment" - for getting votes for comments
+        public static List<Vote> ScrapeListVotesForNode(int nodeID, string inType, IModelRepository inRepo)
         {
             List<Vote> listVotes = new List<Vote>();
 
-            string href = "http://pollitika.com/node/" + nodeID.ToString() + "/who_voted";
+            string href = "http://pollitika.com/" + inType + "/" + nodeID.ToString() + "/who_voted";
 
             HtmlWeb htmlWeb = new HtmlWeb();
             HtmlDocument htmlDocument = htmlWeb.Load(href);

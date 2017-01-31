@@ -36,7 +36,7 @@ namespace pollitika.com_Analyzer
             set { _datePosted = value; }
         }
 
-        public List<Vote> ListVotes
+        public List<Vote> Votes
         {
             get { return _listVotes; }
             set { _listVotes = value; }

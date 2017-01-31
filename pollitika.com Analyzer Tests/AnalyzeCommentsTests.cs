@@ -47,9 +47,9 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment > listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment > listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
-            Assert.AreEqual(13, listVotes.Count);
+            Assert.AreEqual(13, listComments.Count);
         }
 
         [TestMethod]
@@ -60,10 +60,10 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/destiliranje-viska-vrijednosti");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO - ima tri stranice komentara
-            Assert.AreEqual(107, listVotes.Count);
+            Assert.AreEqual(107, listComments.Count);
         }
         [TestMethod]
         public void GetPostComments_Test3()
@@ -73,10 +73,10 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/nitko-da-ne-dodje-do-prijatelj-drag");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO - dvije stranice s komentarima
-            Assert.AreEqual(56, listVotes.Count);
+            Assert.AreEqual(56, listComments.Count);
         }
         [TestMethod]
         public void GetPostComments_Test4()
@@ -86,10 +86,10 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/trijumf-trollova");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO - 4 stranice s komentarima
-            Assert.AreEqual(159, listVotes.Count);
+            Assert.AreEqual(159, listComments.Count);
         }
         [TestMethod]
         public void GetPostComments_Test5()
@@ -99,10 +99,10 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/kapetan-amerika-protiv-klime");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
-            Assert.AreEqual(51, listVotes.Count);
+            Assert.AreEqual(51, listComments.Count);
         }
 
         [TestMethod]
@@ -113,10 +113,10 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/nered-na-trzi-tu-dobra-stvar");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
-            Assert.AreEqual(4, listVotes.Count);
+            Assert.AreEqual(4, listComments.Count);
         }
         [TestMethod]
         public void GetPostComments_Test7()
@@ -126,10 +126,10 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
-            Assert.AreEqual(19, listVotes.Count);
+            Assert.AreEqual(19, listComments.Count);
         }
         [TestMethod]
         public void GetPostComments_Test8()
@@ -139,11 +139,56 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/socijalist-ili");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
             // TODO dvije stranice skomentarima
-            Assert.AreEqual(8, listVotes.Count);
+            Assert.AreEqual(8, listComments.Count);
         }
+        #endregion
+
+
+        #region Testing votes in comments
+        [TestMethod]
+        public void GetPostComments_TestVotesOnComments()
+        {
+            HtmlWeb htmlWeb = new HtmlWeb();
+
+            HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
+            HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
+
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+
+            Assert.AreEqual(13, listComments.Count);
+
+            Comment comm = listComments[0];
+            Assert.AreEqual("Skviki", comm.Author.Name);
+            Assert.AreEqual(0, comm.NumScrappedVotes);
+            Assert.AreEqual(522047, comm.Id);
+            Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);
+            Assert.AreEqual(0, comm.NumScrappedVotes);
+            Assert.AreEqual(2, comm.ListVotes.Count);
+            Assert.AreEqual("Liberty Valance", comm.ListVotes[0].ByUser.Name);
+            Assert.AreEqual(new DateTime(2017, 01, 28, 12, 18, 0), comm.ListVotes[0].DatePosted);
+            Assert.AreEqual(-1, comm.ListVotes[0].UpOrDown);
+            Assert.AreEqual("Zvone Radikalni", comm.ListVotes[1].ByUser.Name);
+            Assert.AreEqual(new DateTime(2017, 01, 28, 12, 16, 0), comm.ListVotes[1].DatePosted);
+            Assert.AreEqual(1, comm.ListVotes[1].UpOrDown);
+
+            comm = listComments[4];
+            Assert.AreEqual("magarac", comm.Author.Name);
+            Assert.AreEqual(2, comm.NumScrappedVotes);
+            Assert.AreEqual(521866, comm.Id);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 11, 19, 0), comm.DatePosted);
+            Assert.AreEqual(2, comm.NumScrappedVotes);
+            Assert.AreEqual(2, comm.ListVotes.Count);
+            Assert.AreEqual("fuminanti", comm.ListVotes[0].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 22, 10, 46, 0), comm.ListVotes[0].DatePosted);
+            Assert.AreEqual(1, comm.ListVotes[0].UpOrDown);
+            Assert.AreEqual("hlad", comm.ListVotes[1].ByUser.Name);
+            Assert.AreEqual(new DateTime(2016, 11, 16, 11, 39, 0), comm.ListVotes[1].DatePosted);
+            Assert.AreEqual(1, comm.ListVotes[1].UpOrDown);
+        }
+
         #endregion
 
         #region Complex tests
@@ -155,35 +200,35 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listVotes = AnalyzeComments.ScrapePostComments(mainContent, _repo);
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, _repo);
 
-            Assert.AreEqual(13, listVotes.Count);
+            Assert.AreEqual(13, listComments.Count);
 
-            Comment comm = listVotes[0];
+            Comment comm = listComments[0];
             Assert.AreEqual("Skviki", comm.Author.Name);
             Assert.AreEqual(0, comm.NumScrappedVotes);
             Assert.AreEqual(522047, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);
 
-            comm = listVotes[4];
+            comm = listComments[4];
             Assert.AreEqual("magarac", comm.Author.Name);
             Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(521866, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 11, 19, 0), comm.DatePosted);
 
-            comm = listVotes[6];
+            comm = listComments[6];
             Assert.AreEqual("lignja", comm.Author.Name);
             Assert.AreEqual(4, comm.NumScrappedVotes);
             Assert.AreEqual(521868, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 16, 14, 03, 0), comm.DatePosted);
 
-            comm = listVotes[10];
+            comm = listComments[10];
             Assert.AreEqual("sjenka", comm.Author.Name);
             Assert.AreEqual(2, comm.NumScrappedVotes);
             Assert.AreEqual(522048, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 17, 27, 0), comm.DatePosted);
 
-            comm = listVotes[11];
+            comm = listComments[11];
             Assert.AreEqual("ppetra", comm.Author.Name);
             Assert.AreEqual(-1, comm.NumScrappedVotes);
             Assert.AreEqual(521867, comm.Id);

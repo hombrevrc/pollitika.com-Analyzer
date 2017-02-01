@@ -14,7 +14,7 @@ namespace pollitika.com_Analyzer
 {
     public class AnalyzePosts
     {
-        public static Post AnalyzePost(string inPostUrl, IModelRepository inRepo)
+        public static Post AnalyzePost(string inPostUrl, IModelRepository inRepo, bool inFetchCommentsVotes = true)
         {
             Post newPost = new Post();
             newPost.HrefLink = inPostUrl;
@@ -60,7 +60,7 @@ namespace pollitika.com_Analyzer
                 newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, "node", inRepo);
             }
 
-            newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inPostUrl, inRepo);
+            newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inPostUrl, inRepo, inFetchCommentsVotes);
 
             return newPost;
         }

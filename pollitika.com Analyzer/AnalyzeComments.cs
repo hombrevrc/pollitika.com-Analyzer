@@ -24,7 +24,7 @@ namespace pollitika.com_Analyzer
             return numComments;
         }
 
-        public static List<Comment> ScrapePostComments(HtmlNode mainNode, string inHref, IModelRepository inRepo)
+        public static List<Comment> ScrapePostComments(HtmlNode mainNode, string inHref, IModelRepository inRepo, bool inFetchCommentsVotes = true)
         {
             List<Comment> listComments = new List<Comment>();
 
@@ -113,10 +113,13 @@ namespace pollitika.com_Analyzer
             }
 
             // and now we have to fetch list of votes for each one
-            foreach (var comm in listComments)
+            if (inFetchCommentsVotes)
             {
-                comm.Votes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id, "comment", inRepo);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 }
+                foreach (var comm in listComments)
+                {
+                    comm.Votes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id, "comment", inRepo);
+                }
+            }
 
             //List<HtmlNode> firstLevelComments = comments.ChildNodes.Where(x => x.Id.StartsWith("comment")).ToList();
             //foreach (var com1 in firstLevelComments)

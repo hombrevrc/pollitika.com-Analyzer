@@ -36,6 +36,8 @@ namespace pollitika.com_Analyzer
                 newPost.VotesLink = votesLink;
             }
 
+            var titleHtml = mainContent.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("node")).Descendants("h1").ToList();
+            newPost.Title = titleHtml[0].InnerText;
             newPost.DatePosted = ScrapePostDate(mainContent);
 
             string author, authorHtml;

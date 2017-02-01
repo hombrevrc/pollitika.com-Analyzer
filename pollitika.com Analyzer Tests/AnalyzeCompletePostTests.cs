@@ -23,7 +23,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(15397, post.Id);
             Assert.AreEqual("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", post.HrefLink);
-            //Assert.AreEqual("Hrvatsko zdravstvo i sovjetska automobilska industrija", post.Title);
+            Assert.AreEqual("Hrvatsko zdravstvo i sovjetska automobilska industrija", post.Title);
             Assert.AreEqual("/node/15397/who_voted", post.VotesLink);
             Assert.AreEqual("žaki", post.Author.Name);
             Assert.AreEqual("zaki", post.Author.NameHtml);
@@ -119,10 +119,10 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(12480, post.Id);
             Assert.AreEqual("http://pollitika.com/kukavicje-jaje", post.HrefLink);
-            //Assert.AreEqual("Kukavičje jaje", post.Title);
+            Assert.AreEqual("Kukavičje jaje", post.Title);
             Assert.AreEqual("/node/12480/who_voted", post.VotesLink);
             Assert.AreEqual("Rebel", post.Author.Name);
-            Assert.AreEqual("Rebel", post.Author.NameHtml);
+            Assert.AreEqual("rebel", post.Author.NameHtml);
             Assert.AreEqual(55, post.NumCommentsScrapped);
             Assert.AreEqual(26, post.GetNumberOfVotes());
             Assert.AreEqual(55, post.GetNumberOfComments());
@@ -137,7 +137,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(14888, post.Id);
             Assert.AreEqual("http://pollitika.com/trijumf-trollova", post.HrefLink);
-            //Assert.AreEqual("Trijumf trollova", post.Title);
+            Assert.AreEqual("Trijumf trollova", post.Title);
             Assert.AreEqual("/node/14888/who_voted", post.VotesLink);
             Assert.AreEqual("magarac", post.Author.Name);
             Assert.AreEqual("magarac", post.Author.NameHtml);
@@ -155,7 +155,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(6425, post.Id);
             Assert.AreEqual("http://pollitika.com/dubrovnik-dubravka-cijepanje-drva-uz-sviranje-klavira", post.HrefLink);
-            //Assert.AreEqual("Dubrovnik, Dubravka, cijepanje drva uz sviranje klavira", post.Title);
+            Assert.AreEqual(" Dubrovnik, Dubravka, cijepanje drva uz sviranje klavira", post.Title);
             Assert.AreEqual("/node/6425/who_voted", post.VotesLink);
             Assert.AreEqual("Marshal", post.Author.Name);
             Assert.AreEqual("marshal", post.Author.NameHtml);
@@ -173,7 +173,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(11768, post.Id);
             Assert.AreEqual("http://pollitika.com/che-guevarina-skola", post.HrefLink);
-            //Assert.AreEqual("Che-guevarina škola", post.Title);
+            Assert.AreEqual("Che-guevarina škola", post.Title);
             Assert.AreEqual("/node/11768/who_voted", post.VotesLink);
             Assert.AreEqual("Golgota", post.Author.Name);
             Assert.AreEqual("golgota", post.Author.NameHtml);
@@ -191,7 +191,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(406, post.Id);
             Assert.AreEqual("http://pollitika.com/sramim-se", post.HrefLink);
-            //Assert.AreEqual("Sramim se", post.Title);
+            Assert.AreEqual("Sramim se!", post.Title);
             Assert.AreEqual("/node/406/who_voted", post.VotesLink);
             Assert.AreEqual("drlesar", post.Author.Name);
             Assert.AreEqual("drlesar", post.Author.NameHtml);
@@ -209,7 +209,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(50, post.Id);
             Assert.AreEqual("http://pollitika.com/nered-na-trzi-tu-dobra-stvar", post.HrefLink);
-            //Assert.AreEqual("Nered na tržištu, dobra stvar", post.Title);
+            Assert.AreEqual("Nered na tržištu, dobra stvar", post.Title);
             Assert.AreEqual("/node/50/who_voted", post.VotesLink);
             Assert.AreEqual("Simun", post.Author.Name);
             Assert.AreEqual("simun", post.Author.NameHtml);

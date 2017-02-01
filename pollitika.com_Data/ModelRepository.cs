@@ -78,14 +78,18 @@ namespace pollitika.com_Data
         #endregion
         public void AddPost(Post newPost)
         {
-            // TODO - check for already existing Post ID
-            _dataStore.Posts.Add(newPost);
+            if (_dataStore.Posts.Count(p => p.Id == newPost.Id) == 0)
+            {
+                _dataStore.Posts.Add(newPost);
+
+                // TODO - dodati sve glasove, komentare i glasove na komentare u odgovarajuće liste
+            }
         }
 
         public void AddUser(User newUser)
         {
-            // TODO - check if user with name already exists
-            _dataStore.Users.Add(newUser);
+            if( _dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
+                _dataStore.Users.Add(newUser);
         }
 
         public User GetUserByName(string inName)

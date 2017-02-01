@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace pollitika.com_Analyzer
 {
+    [Serializable]
     public class Post
     {
         private int _id = -1;                    // Id of the node

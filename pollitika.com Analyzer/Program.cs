@@ -17,7 +17,7 @@ namespace pollitika.com_Analyzer
             // setup - repozitoriji za spremanje podataka
             ModelRepository repo = new ModelRepository();
 
-            repo.OpenDataStore("");
+            repo.OpenDataStore("pollitika.db");
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
 
             // zatim prolazimo kroz sve korisnike
@@ -32,9 +32,11 @@ namespace pollitika.com_Analyzer
                 //AnalyzeFrontPage(i);
 
                 string href = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
-                AnalyzePosts.AnalyzePost(href, repo);
+                Post newPost = AnalyzePosts.AnalyzePost(href, repo);
+
+                repo.AddPost(newPost);
             }
-            repo.UpdateDataStore("");
+            repo.UpdateDataStore("pollitika.db");
         }
     }
 }

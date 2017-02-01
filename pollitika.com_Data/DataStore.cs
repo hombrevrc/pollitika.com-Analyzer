@@ -7,6 +7,7 @@ using pollitika.com_Analyzer;
 
 namespace pollitika.com_Data
 {
+    [Serializable]
     public class DataStore
     {
         List<Post> _listPosts = new List<Post>(); 

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace pollitika.com_Analyzer
 {
+    [Serializable]
     public class Comment
     {
         private int _id;

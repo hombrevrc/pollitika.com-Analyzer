@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace pollitika.com_Analyzer
 {
+    [Serializable]
     public class User
     {
         private string _name;

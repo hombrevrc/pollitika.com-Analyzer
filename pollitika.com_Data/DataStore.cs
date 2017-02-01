@@ -27,5 +27,10 @@ namespace pollitika.com_Data
         {
             get { return _listVotes; }
         }
+
+        public void Clear()
+        {
+            
+        }
     }
 }

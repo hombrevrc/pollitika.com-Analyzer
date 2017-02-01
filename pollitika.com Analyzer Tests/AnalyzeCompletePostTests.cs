@@ -173,7 +173,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(11768, post.Id);
             Assert.AreEqual("http://pollitika.com/che-guevarina-skola", post.HrefLink);
-            Assert.AreEqual("Che-guevarina škola", post.Title);
+            Assert.AreEqual("Che Guevarina škola", post.Title);
             Assert.AreEqual("/node/11768/who_voted", post.VotesLink);
             Assert.AreEqual("Golgota", post.Author.Name);
             Assert.AreEqual("golgota", post.Author.NameHtml);

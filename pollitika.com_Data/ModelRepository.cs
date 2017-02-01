@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using pollitika.com_Analyzer;
 using pollitika.com_Model;
 
@@ -11,7 +15,67 @@ namespace pollitika.com_Data
     public class ModelRepository : IModelRepository
     {
         private DataStore _dataStore = new DataStore();
-         
+
+        #region Data Store operations
+
+        // ove dvije operacije imaju kao postcondition inicijaliziran JumanjiData objekt u skladu sa sadržajem fajla
+        public bool CreateNewDataStore(string inFileName)
+        {
+            try
+            {
+                IFormatter formatter = new BinaryFormatter();
+                Stream stream = new FileStream(inFileName, FileMode.Create, FileAccess.Write, FileShare.None);
+                formatter.Serialize(stream, _dataStore);
+                stream.Close();
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool   OpenDataStore(string inFileName)
+        {
+            DataStore LoadedData;
+
+            try
+            {
+                IFormatter formatter = new BinaryFormatter();
+                Stream stream = new FileStream(inFileName, FileMode.Open, FileAccess.Read, FileShare.Read);
+                LoadedData = (DataStore)formatter.Deserialize(stream);
+                stream.Close();
+
+                _dataStore.Clear();
+                _dataStore = LoadedData;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception occured : " + e.Message);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool UpdateDataStore(string inFileName)
+        {
+            try
+            {
+                IFormatter formatter = new BinaryFormatter();
+                Stream stream = new FileStream(inFileName, FileMode.Create, FileAccess.Write, FileShare.None);
+                formatter.Serialize(stream, _dataStore);
+                stream.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception occured : " + e.Message);
+                return false;
+            }
+            return true;
+        }
+
+        #endregion
         public void AddPost(Post newPost)
         {
             // TODO - check for already existing Post ID

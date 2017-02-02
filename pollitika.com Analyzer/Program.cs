@@ -17,25 +17,23 @@ namespace pollitika.com_Analyzer
             // setup - repozitoriji za spremanje podataka
             ModelRepository repo = new ModelRepository();
 
-            repo.CreateNewDataStore("pollitika.db");
+            repo.OpenDataStore("pollitika.db");
 
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
-            //Console.WriteLine("DOING PAGE - {0}", i);
-            var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(0);
-
-            int count = 0;
-            foreach (string postUrl in listPosts)
+            for (int i = 0; i < 5; i++)
             {
-                //Console.WriteLine("Post url {0}", postUrl);
-                Post newPost = AnalyzePosts.AnalyzePost("http://pollitika.com" + postUrl, repo, true);
+                Console.WriteLine("DOING PAGE - {0}", i);
 
-                if( newPost != null )
-                    repo.AddPost(newPost);
+                var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(i);
 
-                count++;
+                foreach (string postUrl in listPosts)
+                {
+                    //Console.WriteLine("Post url {0}", postUrl);
+                    Post newPost = AnalyzePosts.AnalyzePost("http://pollitika.com" + postUrl, repo, true);
 
-                if (count > 5)
-                    break;
+                    if (newPost != null)
+                        repo.AddPost(newPost);
+                }
             }
 
             // zatim prolazimo kroz sve korisnike

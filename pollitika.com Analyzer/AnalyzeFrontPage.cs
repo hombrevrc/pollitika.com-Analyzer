@@ -11,7 +11,7 @@ namespace pollitika.com_Analyzer
     public class AnalyzeFrontPage
     {
         // return list of URLs of posts from the front page
-        private static List<string> GetPostLinksFromFrontPage(int pageIndex)
+        internal static List<string> GetPostLinksFromFrontPage(int pageIndex)
         {
             List<string> retList = new List<string>();
 
@@ -42,7 +42,7 @@ namespace pollitika.com_Analyzer
                     string href = html.Substring(start + 6, end - start - 6);
 
                     retList.Add(href);
-                    Console.WriteLine(title + " - " + href);
+                    //Console.WriteLine(title + " - " + href);
                 }
             }
 

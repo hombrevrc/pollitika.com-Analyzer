@@ -26,16 +26,17 @@ namespace pollitika.com_Analyzer
 
             // i za svaki dnevnik provjeriti da li je već dodan, i ak onije dodati ga
 
-            for (int i = 0; i < 1; i++)
+            //Console.WriteLine("DOING PAGE - {0}", i);
+            var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(0);
+
+            foreach (string postUrl in listPosts)
             {
-                //Console.WriteLine("DOING PAGE - {0}", i);
-                //AnalyzeFrontPage(i);
+                Console.WriteLine("Post url {0}", postUrl);
+                //Post newPost = AnalyzePosts.AnalyzePost("http://pollitika.com" + postUrl, repo, true);
 
-                string href = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
-                Post newPost = AnalyzePosts.AnalyzePost(href, repo);
-
-                repo.AddPost(newPost);
+                //repo.AddPost(newPost);
             }
+
             repo.UpdateDataStore("pollitika.db");
         }
     }

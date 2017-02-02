@@ -58,7 +58,7 @@ namespace pollitika.com_Analyzer
             AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
 
             Console.WriteLine("  Username - {0}", author);
-            Console.WriteLine("  DatNick  - {0}", authorHtml);
+            Console.WriteLine("  Nick     - {0}", authorHtml);
 
             // check if user exists, add him if not
             User user = inRepo.GetUserByName(author);
@@ -73,6 +73,8 @@ namespace pollitika.com_Analyzer
             newPost.NumCommentsScrapped = AnalyzeComments.ScrapePostCommentsNum(mainContent);
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("ERROR - scrapping number of comments");
+
+            Console.WriteLine("  Num.comm - {0}", newPost.NumCommentsScrapped);
 
             if (newPost.Id > 0)
             {

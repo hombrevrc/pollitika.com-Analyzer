@@ -10,10 +10,10 @@ namespace pollitika.com_Data
     [Serializable]
     public class DataStore
     {
-        List<Post> _listPosts = new List<Post>();
+        List<Post>    _listPosts = new List<Post>();
         List<Comment> _listComments = new List<Comment>(); 
-        List<User>  _listUsers = new List<User>(); 
-        List<Vote>  _listVotes = new List<Vote>();
+        List<User>    _listUsers = new List<User>(); 
+        List<Vote>    _listVotes = new List<Vote>();
 
         public List<Post> Posts
         {
@@ -33,7 +33,6 @@ namespace pollitika.com_Data
         public List<Comment> Comments
         {
             get { return _listComments; }
-            set { _listComments = value; }
         }
 
         public void Clear()

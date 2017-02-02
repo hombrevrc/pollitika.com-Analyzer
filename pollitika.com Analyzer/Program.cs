@@ -17,7 +17,7 @@ namespace pollitika.com_Analyzer
             // setup - repozitoriji za spremanje podataka
             ModelRepository repo = new ModelRepository();
 
-            repo.OpenDataStore("pollitika.db");
+            repo.CreateNewDataStore("pollitika.db");
 
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
             //Console.WriteLine("DOING PAGE - {0}", i);

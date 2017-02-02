@@ -14,7 +14,7 @@ namespace pollitika.com_Analyzer
         private DateTime _datePosted;
 
         private Comment _parentComment;     // if null, then it is first level comment (in the first level below post)
-        private List<Comment> _childComments;
+        private List<Comment> _childComments = new List<Comment>();
 
         private int _numScrappedVotes;          // scrapped from page
         private List<Vote> _listVotes = new List<Vote>();

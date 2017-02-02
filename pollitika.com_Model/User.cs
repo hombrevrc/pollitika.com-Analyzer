@@ -12,7 +12,8 @@ namespace pollitika.com_Analyzer
         private string _name;
         private string _nameHtml;
         private string _memberSince;
-        private List<Post> _listPosts;
+        private readonly List<Post>     _listPostsByUser = new List<Post>();
+        private readonly List<Comment>  _listCommentsByUser = new List<Comment>();
 
         public string Name
         {
@@ -30,6 +31,18 @@ namespace pollitika.com_Analyzer
         {
             get { return _memberSince; }
             set { _memberSince = value; }
+        }
+
+
+        public void AddPostToList(Post inPost)
+        {
+            if (_listPostsByUser.Count(p => p.Id == inPost.Id) == 0)
+                _listPostsByUser.Add(inPost);
+        }
+        public void AddCommentToList(Comment inComment)
+        {
+            if (_listCommentsByUser.Count(p => p.Id == inComment.Id) == 0)
+                _listCommentsByUser.Add(inComment);
         }
     }
 }

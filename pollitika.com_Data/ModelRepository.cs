@@ -82,6 +82,10 @@ namespace pollitika.com_Data
             {
                 _dataStore.Posts.Add(newPost);
 
+                // add this post to list of posts by user
+                User user = this.GetUserByNick(newPost.Author.NameHtml);
+                user.AddPostToList(newPost);
+
                 // adding all votes, comments and votes on comment to lists
                 foreach (var vote in newPost.Votes)
                     _dataStore.Votes.Add(vote);

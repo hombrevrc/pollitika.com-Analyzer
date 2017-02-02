@@ -20,7 +20,7 @@ namespace pollitika.com_Analyzer
             repo.OpenDataStore("pollitika.db");
 
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 0; i++)
             {
                 Console.WriteLine("DOING PAGE - {0}", i);
 
@@ -43,7 +43,7 @@ namespace pollitika.com_Analyzer
             // i za svaki dnevnik provjeriti da li je već dodan, i ak onije dodati ga
 
 
-            repo.UpdateDataStore("pollitika.db");
+            //repo.UpdateDataStore("pollitika.db");
         }
     }
 }

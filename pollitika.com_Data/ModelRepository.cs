@@ -82,8 +82,17 @@ namespace pollitika.com_Data
             {
                 _dataStore.Posts.Add(newPost);
 
-                // TODO - dodati sve glasove, komentare i glasove na komentare u odgovarajuće liste
+                // adding all votes, comments and votes on comment to lists
+                foreach (var vote in newPost.Votes)
+                    _dataStore.Votes.Add(vote);
 
+                foreach (var comment in newPost.Comments)
+                {
+                    _dataStore.Comments.Add(comment);
+
+                    foreach (var commentVote in comment.Votes)
+                        _dataStore.Votes.Add(commentVote);
+                }
             }
         }
 

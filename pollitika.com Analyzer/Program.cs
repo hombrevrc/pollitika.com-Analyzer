@@ -18,17 +18,12 @@ namespace pollitika.com_Analyzer
             ModelRepository repo = new ModelRepository();
 
             repo.OpenDataStore("pollitika.db");
+
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
-
-            // zatim prolazimo kroz sve korisnike
-
-            // i za svakog od njih proći kroz sve njegove dnevnike
-
-            // i za svaki dnevnik provjeriti da li je već dodan, i ak onije dodati ga
-
             //Console.WriteLine("DOING PAGE - {0}", i);
             var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(0);
 
+            int count = 0;
             foreach (string postUrl in listPosts)
             {
                 //Console.WriteLine("Post url {0}", postUrl);
@@ -36,7 +31,19 @@ namespace pollitika.com_Analyzer
 
                 if( newPost != null )
                     repo.AddPost(newPost);
+
+                count++;
+
+                if (count > 5)
+                    break;
             }
+
+            // zatim prolazimo kroz sve korisnike
+
+            // i za svakog od njih proći kroz sve njegove dnevnike
+
+            // i za svaki dnevnik provjeriti da li je već dodan, i ak onije dodati ga
+
 
             repo.UpdateDataStore("pollitika.db");
         }

@@ -83,8 +83,18 @@ namespace pollitika.com_Data
                 _dataStore.Posts.Add(newPost);
 
                 // TODO - dodati sve glasove, komentare i glasove na komentare u odgovarajuće liste
+
             }
         }
+
+        public bool PostAlreadyExists(int inPostID)
+        {
+            if (_dataStore.Posts.Count(p => p.Id == inPostID) == 0)
+                return false;
+            else
+                return true;
+        }
+
 
         public void AddUser(User newUser)
         {
@@ -100,5 +110,6 @@ namespace pollitika.com_Data
         {
             return _dataStore.Users.FirstOrDefault(p => p.NameHtml == inNick);
         }
+
     }
 }

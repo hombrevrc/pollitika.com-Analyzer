@@ -39,6 +39,12 @@ namespace pollitika.com_Analyzer
             }
 
             // check for Post ID already in the repo
+            if (inRepo.PostAlreadyExists(newPost.Id))
+            {
+                Console.WriteLine("  WARNING - Post with ID {0} already in the database", newPost.Id);
+
+                return null;
+            }
             Console.WriteLine("  Post ID  - {0}", newPost.Id);
 
             var titleHtml = mainContent.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("node")).Descendants("h1").ToList();

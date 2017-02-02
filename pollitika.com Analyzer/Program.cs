@@ -31,10 +31,10 @@ namespace pollitika.com_Analyzer
 
             foreach (string postUrl in listPosts)
             {
-                Console.WriteLine("Post url {0}", postUrl);
-                //Post newPost = AnalyzePosts.AnalyzePost("http://pollitika.com" + postUrl, repo, true);
+                //Console.WriteLine("Post url {0}", postUrl);
+                Post newPost = AnalyzePosts.AnalyzePost("http://pollitika.com" + postUrl, repo, true);
 
-                //repo.AddPost(newPost);
+                repo.AddPost(newPost);
             }
 
             repo.UpdateDataStore("pollitika.db");

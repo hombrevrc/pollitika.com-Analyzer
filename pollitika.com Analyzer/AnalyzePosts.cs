@@ -19,6 +19,8 @@ namespace pollitika.com_Analyzer
             Post newPost = new Post();
             newPost.HrefLink = inPostUrl;
 
+            Console.WriteLine("Analyzing post - {0}", inPostUrl);
+
             ScrapingBrowser Browser = new ScrapingBrowser();
             Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup
             Browser.AllowMetaRedirect = true;
@@ -36,12 +38,21 @@ namespace pollitika.com_Analyzer
                 newPost.VotesLink = votesLink;
             }
 
+            // check for Post ID already in the repo
+            Console.WriteLine("  Post ID  - {0}", newPost.Id);
+
             var titleHtml = mainContent.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("node")).Descendants("h1").ToList();
             newPost.Title = titleHtml[0].InnerText;
             newPost.DatePosted = ScrapePostDate(mainContent);
 
+            Console.WriteLine("  Title    - {0}", newPost.Title);
+            Console.WriteLine("  Date     - {0}", newPost.DatePosted);
+
             string author, authorHtml;
             AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+
+            Console.WriteLine("  Username - {0}", author);
+            Console.WriteLine("  DatNick  - {0}", authorHtml);
 
             // check if user exists, add him if not
             User user = inRepo.GetUserByName(author);
@@ -55,14 +66,18 @@ namespace pollitika.com_Analyzer
 
             newPost.NumCommentsScrapped = AnalyzeComments.ScrapePostCommentsNum(mainContent);
             if (newPost.NumCommentsScrapped < 0)
-                Console.WriteLine("Error scrapping number of comments");
+                Console.WriteLine("ERROR - scrapping number of comments");
 
             if (newPost.Id > 0)
             {
                 newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, "node", inRepo);
             }
 
+            Console.WriteLine("  Votes    - {0}", newPost.Votes.Count);
+
             newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inPostUrl, inRepo, inFetchCommentsVotes);
+
+            Console.WriteLine("  Comments - {0}", newPost.Comments.Count);
 
             return newPost;
         }

@@ -14,12 +14,14 @@ namespace pollitika.com_Analyzer
 {
     public class AnalyzePosts
     {
-        public static Post AnalyzePost(string inPostUrl, IModelRepository inRepo, bool inFetchCommentsVotes = true)
+        public static Post AnalyzePost(string inPostUrl, IModelRepository inRepo, bool isOnFrontPage, bool inFetchCommentsVotes = false)
         {
             Post newPost = new Post();
             newPost.HrefLink = inPostUrl;
+            newPost.IsOnFrontPage = isOnFrontPage;
 
-            Console.WriteLine("Analyzing post - {0}", inPostUrl);
+            StringBuilder output = new StringBuilder();
+            output.AppendFormat("Post - {0,-80}", inPostUrl);
 
             ScrapingBrowser Browser = new ScrapingBrowser();
             Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup
@@ -45,20 +47,20 @@ namespace pollitika.com_Analyzer
 
                 return null;
             }
-            Console.WriteLine("  Post ID  - {0}", newPost.Id);
+            output.AppendFormat(" ID - {0}", newPost.Id);
 
             var titleHtml = mainContent.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("node")).Descendants("h1").ToList();
             newPost.Title = titleHtml[0].InnerText;
             newPost.DatePosted = ScrapePostDate(mainContent);
 
-            Console.WriteLine("  Title    - {0}", newPost.Title);
-            Console.WriteLine("  Date     - {0}", newPost.DatePosted);
+            //Console.WriteLine("  Title    - {0}", newPost.Title);
+            output.AppendFormat(" Date - {0,-20}", newPost.DatePosted);
 
             string author, authorHtml;
             AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
 
-            Console.WriteLine("  Username - {0}", author);
-            Console.WriteLine("  Nick     - {0}", authorHtml);
+            output.AppendFormat(" Username - {0,-18}", author);
+            //Console.WriteLine("  Nick     - {0}", authorHtml);
 
             // check if user exists, add him if not
             User user = inRepo.GetUserByName(author);
@@ -74,18 +76,20 @@ namespace pollitika.com_Analyzer
             if (newPost.NumCommentsScrapped < 0)
                 Console.WriteLine("ERROR - scrapping number of comments");
 
-            Console.WriteLine("  Num.comm - {0}", newPost.NumCommentsScrapped);
+            output.AppendFormat("  Num.comm - {0}", newPost.NumCommentsScrapped);
 
             if (newPost.Id > 0)
             {
                 newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, "node", inRepo);
             }
 
-            Console.WriteLine("  Votes    - {0}", newPost.Votes.Count);
+            output.AppendFormat("  Votes    - {0}", newPost.Votes.Count);
+
+            Console.WriteLine(output.ToString());
 
             newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inPostUrl, inRepo, inFetchCommentsVotes);
 
-            Console.WriteLine("  Comments - {0}", newPost.Comments.Count);
+            //Console.WriteLine("  Comments - {0}", newPost.Comments.Count);
 
             return newPost;
         }
@@ -111,16 +115,35 @@ namespace pollitika.com_Analyzer
             HtmlNode userDetails = htmlDocument.DocumentNode.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("breadcrumb"));
 
             string name = userDetails.LastChild.InnerHtml;
-            authorName = name.Substring(0, name.Length - 12);
 
-            string html = userDetails.InnerHtml;
-            int ind1 = html.IndexOf("/blog/");
-            int ind2 = html.IndexOf("\">", ind1);
+            if (name.Length > 12)
+            {
+                authorName = name.Substring(0, name.Length - 12);
 
-            authorHtmlName = html.Substring(ind1+6, ind2 - ind1 - 6);
+                string html = userDetails.InnerHtml;
+                int ind1 = html.IndexOf("/blog/");
+                int ind2 = html.IndexOf("\">", ind1);
 
-            string href = userDetails.InnerHtml;   // <a href="/node/15397/who_voted">Tko je glasao</a>
-            
+                authorHtmlName = html.Substring(ind1 + 6, ind2 - ind1 - 6);
+
+                string href = userDetails.InnerHtml; // <a href="/node/15397/who_voted">Tko je glasao</a>
+            }
+            else
+            {
+                var userDetails1 = htmlDocument.DocumentNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("article-meta article-meta-top")).ToList();
+
+                var str = userDetails1[0].InnerText;
+                int startInd = 14;
+                int endInd = str.IndexOf('-');
+
+                authorName = str.Substring(startInd - 1, endInd - startInd);
+                authorHtmlName = str.Substring(startInd - 1, endInd - startInd);
+
+                // "\n    Dnevnik mrak - Čet, 04/08/2011 - 15:05\n    Glasujte \n    Komentari 83 dodaj komentar\n  "
+
+
+            }
+
             return "";
         }
         public static DateTime ScrapePostDate(HtmlNode nodeContentMain)

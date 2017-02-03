@@ -18,7 +18,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_CompletePostTest1()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, true);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, true, true);
 
             // testing post attributes
             Assert.AreEqual(15397, post.Id);
@@ -114,7 +114,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_CompletePostTest2()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/kukavicje-jaje", _repo, true);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/kukavicje-jaje", _repo, true, true);
 
             // testing post attributes
             Assert.AreEqual(12480, post.Id);
@@ -132,7 +132,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_CompletePostTest3()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/trijumf-trollova", _repo, true);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/trijumf-trollova", _repo, true, true);
 
             // testing post attributes
             Assert.AreEqual(14888, post.Id);
@@ -150,7 +150,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_CompletePostTest4()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/dubrovnik-dubravka-cijepanje-drva-uz-sviranje-klavira", _repo, true);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/dubrovnik-dubravka-cijepanje-drva-uz-sviranje-klavira", _repo, true, true);
 
             // testing post attributes
             Assert.AreEqual(6425, post.Id);
@@ -168,7 +168,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_CompletePostTest5()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/che-guevarina-skola", _repo, true);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/che-guevarina-skola", _repo, true, true);
 
             // testing post attributes
             Assert.AreEqual(11768, post.Id);
@@ -186,7 +186,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_CompletePostTest6()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/sramim-se", _repo, true);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/sramim-se", _repo, true, true);
 
             // testing post attributes
             Assert.AreEqual(406, post.Id);
@@ -204,7 +204,7 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void AnalyzePost_CompletePostTest7()
         {
-            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/nered-na-trzi-tu-dobra-stvar", _repo, true);
+            Post post = AnalyzePosts.AnalyzePost("http://pollitika.com/nered-na-trzi-tu-dobra-stvar", _repo, true, true);
 
             // testing post attributes
             Assert.AreEqual(50, post.Id);
@@ -217,22 +217,6 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(0, post.GetNumberOfVotes());
             Assert.AreEqual(4, post.GetNumberOfComments());
             Assert.AreEqual(new DateTime(2006, 10, 13, 0, 37, 0), post.DatePosted);
-        }
-
-
-
-        [TestMethod]
-        public void AnalyzePost_TestExtractAuthor1()
-        {
-            HtmlWeb htmlWeb = new HtmlWeb();
-
-            HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
-
-            string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
-
-            Assert.AreEqual("žaki", author);
-            Assert.AreEqual("zaki", authorHtml);
         }
     }
 }

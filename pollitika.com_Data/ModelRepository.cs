@@ -48,6 +48,10 @@ namespace pollitika.com_Data
 
                 _dataStore.Clear();
                 _dataStore = LoadedData;
+
+                // temporary fix
+                foreach (Post p in _dataStore.Posts)
+                    p.IsOnFrontPage = true;
             }
             catch (Exception e)
             {
@@ -135,7 +139,7 @@ namespace pollitika.com_Data
 
             Console.WriteLine("Users with most posts:");
             foreach (var user in list)
-                Console.WriteLine("User {0}   - posts {1}", user.NameHtml, user.PostsByUser.Count);
+                Console.WriteLine("User {0,-18}   - posts {1}", user.NameHtml, user.PostsByUser.Count);
             Console.WriteLine("");
         }
         public void GetUsersWithMostComments(int numUsers)
@@ -144,7 +148,7 @@ namespace pollitika.com_Data
 
             Console.WriteLine("Users with most comments:");
             foreach (var user in list)
-                Console.WriteLine("User {0}   - comments {1}", user.NameHtml, user.CommentsByUser.Count);
+                Console.WriteLine("User {0,-18}   - comments {1}", user.NameHtml, user.CommentsByUser.Count);
             Console.WriteLine("");
         }
 
@@ -154,7 +158,7 @@ namespace pollitika.com_Data
 
             Console.WriteLine("Posts with most votes:");
             foreach (var post in list)
-                Console.WriteLine("Post {0}   - votes {1}", post.Title, post.GetNumberOfVotes());
+                Console.WriteLine("Post by {0,-18}, votes {1}, post - {2}", post.Author.NameHtml, post.GetNumberOfVotes(), post.Title);
             Console.WriteLine("");
         }
 
@@ -164,7 +168,16 @@ namespace pollitika.com_Data
 
             Console.WriteLine("Post with max sum of votes:");
             foreach (var post in list)
-                Console.WriteLine("Post {0}   - sum of votes {1}", post.Title, post.GetSumOfVotes());
+                Console.WriteLine("Post by {0,-18}, votes {1}, post - {2}", post.Author.NameHtml, post.GetSumOfVotes(), post.Title);
+            Console.WriteLine("");
+        }
+        public void GetPostsWithZeroVotes()
+        {
+            List<Post> list = _dataStore.Posts.Where(p => p.GetNumberOfVotes() == 0).ToList();
+
+            Console.WriteLine("Post with zero votes:");
+            foreach (var post in list)
+                Console.WriteLine("Post by {0,-18}, votes {1}, date - {2}, post - {3}", post.Author.NameHtml, post.GetNumberOfVotes(), post.DatePosted, post.Title);
             Console.WriteLine("");
         }
 

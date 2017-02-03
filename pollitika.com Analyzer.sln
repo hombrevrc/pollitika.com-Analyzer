@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pollitika.com_Model", "poll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pollitika.com_Data", "pollitika.com_Data\pollitika.com_Data.csproj", "{CD8B81F5-A6BE-4993-A3D7-1B303928C9BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{F73CC50F-D54A-4EA7-A787-57BE9F8E9324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMultithreadedQueue", "Testing\TestMultithreadedQueue\TestMultithreadedQueue.csproj", "{903B5B95-3C46-4ECE-BE9A-042F56AF818D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,8 +42,15 @@ Global
 		{CD8B81F5-A6BE-4993-A3D7-1B303928C9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8B81F5-A6BE-4993-A3D7-1B303928C9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD8B81F5-A6BE-4993-A3D7-1B303928C9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903B5B95-3C46-4ECE-BE9A-042F56AF818D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903B5B95-3C46-4ECE-BE9A-042F56AF818D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903B5B95-3C46-4ECE-BE9A-042F56AF818D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903B5B95-3C46-4ECE-BE9A-042F56AF818D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{903B5B95-3C46-4ECE-BE9A-042F56AF818D} = {F73CC50F-D54A-4EA7-A787-57BE9F8E9324}
 	EndGlobalSection
 EndGlobal

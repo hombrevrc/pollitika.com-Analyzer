@@ -84,6 +84,12 @@ namespace pollitika.com_Analyzer
             set { _listComments = value; }
         }
 
+        public bool IsOnFrontPage
+        {
+            get { return _isOnFrontPage; }
+            set { _isOnFrontPage = value; }
+        }
+
         public int GetNumberOfVotes()
         {
             return Votes.Count;

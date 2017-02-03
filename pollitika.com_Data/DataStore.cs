@@ -37,7 +37,12 @@ namespace pollitika.com_Data
 
         public void Clear()
         {
-            
+            _listPosts.Clear();
+            _listComments.Clear();
+            _listUsers.Clear();
+            _listVotes.Clear();
         }
+
+ 
     }
 }

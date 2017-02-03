@@ -19,6 +19,8 @@ namespace pollitika.com_Analyzer
 
             repo.OpenDataStore("pollitika.db");
 
+            repo.GetUsersWithMaxPosts(10);
+
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
             for (int i = 0; i < 0; i++)
             {
@@ -34,6 +36,8 @@ namespace pollitika.com_Analyzer
                     if (newPost != null)
                         repo.AddPost(newPost);
                 }
+
+                repo.UpdateDataStore("pollitika.db");
             }
 
             // zatim prolazimo kroz sve korisnike
@@ -43,7 +47,6 @@ namespace pollitika.com_Analyzer
             // i za svaki dnevnik provjeriti da li je već dodan, i ak onije dodati ga
 
 
-            //repo.UpdateDataStore("pollitika.db");
         }
     }
 }

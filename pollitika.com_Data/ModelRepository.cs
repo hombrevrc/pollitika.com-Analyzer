@@ -86,12 +86,17 @@ namespace pollitika.com_Data
                 User user = this.GetUserByNick(newPost.Author.NameHtml);
                 user.AddPostToList(newPost);
 
-                // adding all votes, comments and votes on comment to lists
+                // adding all votes to lists
                 foreach (var vote in newPost.Votes)
                     _dataStore.Votes.Add(vote);
 
+                // add all comments to the list of comments
                 foreach (var comment in newPost.Comments)
                 {
+                    // for the user that made the comment, add comment to his list
+                    user = this.GetUserByNick(comment.Author.NameHtml);
+                    user.AddCommentToList(comment);
+
                     _dataStore.Comments.Add(comment);
 
                     foreach (var commentVote in comment.Votes)
@@ -124,5 +129,18 @@ namespace pollitika.com_Data
             return _dataStore.Users.FirstOrDefault(p => p.NameHtml == inNick);
         }
 
+        public void GetUsersWithMaxPosts(int numUsers)
+        {
+            List<User> list = _dataStore.Users.OrderByDescending(p => p.PostsByUser.Count).ToList();
+
+            int cnt = 0;
+            foreach (var user in list)
+            {
+                Console.WriteLine("User {0}   - posts {1}", user.NameHtml, user.PostsByUser.Count);
+                cnt++;
+                if (cnt > numUsers)
+                    break;
+            }
+        }
     }
 }

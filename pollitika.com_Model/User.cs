@@ -33,16 +33,26 @@ namespace pollitika.com_Analyzer
             set { _memberSince = value; }
         }
 
+        public List<Post> PostsByUser
+        {
+            get { return _listPostsByUser; }
+        }
+
+        public List<Comment> CommentsByUser
+        {
+            get { return _listCommentsByUser; }
+        }
+
 
         public void AddPostToList(Post inPost)
         {
-            if (_listPostsByUser.Count(p => p.Id == inPost.Id) == 0)
-                _listPostsByUser.Add(inPost);
+            if (PostsByUser.Count(p => p.Id == inPost.Id) == 0)
+                PostsByUser.Add(inPost);
         }
         public void AddCommentToList(Comment inComment)
         {
-            if (_listCommentsByUser.Count(p => p.Id == inComment.Id) == 0)
-                _listCommentsByUser.Add(inComment);
+            if (CommentsByUser.Count(p => p.Id == inComment.Id) == 0)
+                CommentsByUser.Add(inComment);
         }
     }
 }

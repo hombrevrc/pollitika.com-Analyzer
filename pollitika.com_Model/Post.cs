@@ -88,6 +88,15 @@ namespace pollitika.com_Analyzer
         {
             return Votes.Count;
         }
+        public int GetSumOfVotes()
+        {
+            int sum = 0;
+            foreach (var vote in _listVotes)
+                sum += vote.UpOrDown;
+
+            return sum;
+        }
+
         public int GetNumberOfComments()
         {
             return Comments.Count;

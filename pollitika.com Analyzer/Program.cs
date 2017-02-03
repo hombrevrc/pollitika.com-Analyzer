@@ -19,7 +19,13 @@ namespace pollitika.com_Analyzer
 
             repo.OpenDataStore("pollitika.db");
 
-            repo.GetUsersWithMaxPosts(10);
+            repo.GetUsersWithMostPosts(10);
+
+            repo.GetUsersWithMostComments(20);
+
+            repo.GetPostsWithMostNumberOfVotes(5);
+
+            repo.GetPostsWithMostSumOfVotes(5);
 
             // prođemo kroz naslovnicu i pokupimo sve postove (i sve komentare i dodamo sve korisnike)
             for (int i = 0; i < 0; i++)

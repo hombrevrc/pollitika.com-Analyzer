@@ -129,18 +129,44 @@ namespace pollitika.com_Data
             return _dataStore.Users.FirstOrDefault(p => p.NameHtml == inNick);
         }
 
-        public void GetUsersWithMaxPosts(int numUsers)
+        public void GetUsersWithMostPosts(int numUsers)
         {
-            List<User> list = _dataStore.Users.OrderByDescending(p => p.PostsByUser.Count).ToList();
+            List<User> list = _dataStore.Users.OrderByDescending(p => p.PostsByUser.Count).Take(numUsers).ToList();
 
-            int cnt = 0;
+            Console.WriteLine("Users with most posts:");
             foreach (var user in list)
-            {
                 Console.WriteLine("User {0}   - posts {1}", user.NameHtml, user.PostsByUser.Count);
-                cnt++;
-                if (cnt > numUsers)
-                    break;
-            }
+            Console.WriteLine("");
         }
+        public void GetUsersWithMostComments(int numUsers)
+        {
+            List<User> list = _dataStore.Users.OrderByDescending(p => p.CommentsByUser.Count).Take(numUsers).ToList();
+
+            Console.WriteLine("Users with most comments:");
+            foreach (var user in list)
+                Console.WriteLine("User {0}   - comments {1}", user.NameHtml, user.CommentsByUser.Count);
+            Console.WriteLine("");
+        }
+
+        public void GetPostsWithMostNumberOfVotes(int numPosts)
+        {
+            List<Post> list = _dataStore.Posts.OrderByDescending(p => p.GetNumberOfVotes()).Take(numPosts).ToList();
+
+            Console.WriteLine("Posts with most votes:");
+            foreach (var post in list)
+                Console.WriteLine("Post {0}   - votes {1}", post.Title, post.GetNumberOfVotes());
+            Console.WriteLine("");
+        }
+
+        public void GetPostsWithMostSumOfVotes(int numPosts)
+        {
+            List<Post> list = _dataStore.Posts.OrderByDescending(p => p.GetSumOfVotes()).Take(numPosts).ToList();
+
+            Console.WriteLine("Post with max sum of votes:");
+            foreach (var post in list)
+                Console.WriteLine("Post {0}   - sum of votes {1}", post.Title, post.GetSumOfVotes());
+            Console.WriteLine("");
+        }
+
     }
 }

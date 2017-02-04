@@ -28,15 +28,17 @@ namespace pollitika.com_Analyzer
 
         public static void PrintStatistics(ModelRepository repo)
         {
-            repo.GetUsersWithMostPosts(30);
+            StatisticsPosts.GetSummary(repo);
 
-            repo.GetUsersWithMostComments(30);
+            StatisticsUsers.GetUsersWithMostPosts(30, repo);
 
-            repo.GetPostsWithMostNumberOfVotes(50);
+            StatisticsUsers.GetUsersWithMostComments(30, repo);
 
-            repo.GetPostsWithMostSumOfVotes(50);
+            StatisticsPosts.GetPostsWithMostNumberOfVotes(50, repo);
 
-            repo.GetPostsWithZeroVotes();
+            StatisticsPosts.GetPostsWithMostSumOfVotes(50, repo);
+
+            //StatisticsPosts.GetPostsWithZeroVotes(repo);
         }
 
         public static void FixOnFrontPage()

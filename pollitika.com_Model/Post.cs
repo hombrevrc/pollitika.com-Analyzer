@@ -102,6 +102,15 @@ namespace pollitika.com_Analyzer
 
             return sum;
         }
+        public int GetNumberOfNegativeVotes()
+        {
+            int sum = 0;
+            foreach (var vote in _listVotes)
+                if(vote.UpOrDown == -1)
+                    sum++;
+
+            return sum;
+        }
 
         public int GetNumberOfComments()
         {

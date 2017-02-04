@@ -38,6 +38,12 @@ namespace pollitika.com_Analyzer
 
             StatisticsPosts.GetPostsWithMostSumOfVotes(50, repo);
 
+            StatisticsPosts.GetPostsWithMostNegativeVotes(50, repo);
+
+            StatisticsPosts.GetMostControversialPosts(50, repo);
+
+            StatisticsPosts.GetMostCommentedPosts(50, repo);
+
             //StatisticsPosts.GetPostsWithZeroVotes(repo);
         }
 

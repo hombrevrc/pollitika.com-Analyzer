@@ -21,7 +21,7 @@ namespace pollitika.com_Analyzer
             newPost.IsOnFrontPage = isOnFrontPage;
 
             StringBuilder output = new StringBuilder();
-            output.AppendFormat("Post - {0,-80}", inPostUrl);
+            output.AppendFormat("Post - {0,-90}", inPostUrl);
 
             ScrapingBrowser Browser = new ScrapingBrowser();
             Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup

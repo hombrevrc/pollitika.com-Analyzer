@@ -19,9 +19,9 @@ namespace pollitika.com_Analyzer
 
             repo.OpenDataStore("pollitika.db");
 
-            //MultithreadedScrapper.AnalyzeFrontPage_Multithreaded(repo);
+            MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
 
-            //repo.UpdateDataStore("pollitika.db");
+            repo.UpdateDataStore("pollitika.db");
 
             PrintStatistics(repo);
         }

@@ -44,6 +44,9 @@
     <Compile Include="DataStore.cs" />
     <Compile Include="ModelRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticsPosts.cs" />
+    <Compile Include="StatisticsUsers.cs" />
+    <Compile Include="StatisticsVotes.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\pollitika.com_Model\pollitika.com_Model.csproj">

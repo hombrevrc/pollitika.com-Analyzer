@@ -14,7 +14,7 @@ namespace pollitika.com_Data
 {
     public class ModelRepository : IModelRepository
     {
-        private DataStore _dataStore = new DataStore();
+        internal DataStore _dataStore = new DataStore();
 
         #region Data Store operations
 

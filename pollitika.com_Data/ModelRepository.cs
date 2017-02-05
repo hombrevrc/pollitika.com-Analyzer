@@ -80,6 +80,27 @@ namespace pollitika.com_Data
         }
 
         #endregion
+
+        public void FixVotes()
+        {
+            foreach (var post in _dataStore.Posts)
+            {
+                foreach (var vote in post.Votes)
+                {
+                    vote.ByUser.VotesByUser.Add(vote);
+                }
+
+                foreach (var comment in post.Comments)
+                {
+                    foreach (var commentVote in comment.Votes)
+                    {
+                        commentVote.ByUser.VotesByUser.Add(commentVote);
+                    }
+
+                }
+            }
+        }
+
         public void AddPost(Post newPost)
         {
             if (_dataStore.Posts.Count(p => p.Id == newPost.Id) == 0)
@@ -92,7 +113,11 @@ namespace pollitika.com_Data
 
                 // adding all votes to lists
                 foreach (var vote in newPost.Votes)
+                {
                     _dataStore.Votes.Add(vote);
+
+                    vote.ByUser.VotesByUser.Add(vote);
+                }
 
                 // add all comments to the list of comments
                 foreach (var comment in newPost.Comments)
@@ -104,7 +129,11 @@ namespace pollitika.com_Data
                     _dataStore.Comments.Add(comment);
 
                     foreach (var commentVote in comment.Votes)
+                    {
                         _dataStore.Votes.Add(commentVote);
+
+                        commentVote.ByUser.VotesByUser.Add(commentVote);
+                    }
                 }
             }
         }

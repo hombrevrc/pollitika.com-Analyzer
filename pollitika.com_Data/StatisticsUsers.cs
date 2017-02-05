@@ -27,5 +27,14 @@ namespace pollitika.com_Data
                 Console.WriteLine("User {0,-18}   - comments {1}", user.NameHtml, user.CommentsByUser.Count);
             Console.WriteLine("");
         }
+        public static void GetUsersWhoGaveMostVotes(int numUsers, ModelRepository inRepo)
+        {
+            List<User> list = inRepo._dataStore.Users.OrderByDescending(p => p.VotesByUser.Count).Take(numUsers).ToList();
+
+            Console.WriteLine("Users who gave most votes:");
+            foreach (var user in list)
+                Console.WriteLine("User {0,-18}   - num.comm {1}", user.NameHtml, user.VotesByUser.Count);
+            Console.WriteLine("");
+        }
     }
 }

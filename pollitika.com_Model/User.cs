@@ -14,6 +14,7 @@ namespace pollitika.com_Analyzer
         private string _memberSince;
         private readonly List<Post>     _listPostsByUser = new List<Post>();
         private readonly List<Comment>  _listCommentsByUser = new List<Comment>();
+        private List<Vote>     _listVotesByUser = new List<Vote>();
 
         public string Name
         {
@@ -43,6 +44,16 @@ namespace pollitika.com_Analyzer
             get { return _listCommentsByUser; }
         }
 
+        public List<Vote> VotesByUser
+        {
+            get
+            {
+                if( _listVotesByUser == null )
+                    _listVotesByUser = new List<Vote>();
+
+                return _listVotesByUser;
+            }
+        }
 
         public void AddPostToList(Post inPost)
         {
@@ -53,6 +64,11 @@ namespace pollitika.com_Analyzer
         {
             if (CommentsByUser.Count(p => p.Id == inComment.Id) == 0)
                 CommentsByUser.Add(inComment);
+        }
+        public void AddVoteToList(Vote inVote)
+        {
+            if (VotesByUser.Count(p => p.VoteOnNodeId == inVote.VoteOnNodeId) == 0)
+                VotesByUser.Add(inVote);
         }
     }
 }

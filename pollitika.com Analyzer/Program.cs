@@ -19,9 +19,12 @@ namespace pollitika.com_Analyzer
 
             repo.OpenDataStore("pollitika.db");
 
-            //MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
+            MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
 
-            //repo.UpdateDataStore("pollitika.db");
+            //Console.WriteLine("FIXING");
+            //repo.FixVotes();
+
+            repo.UpdateDataStore("pollitika.db");
 
             PrintStatistics(repo);
         }
@@ -33,6 +36,8 @@ namespace pollitika.com_Analyzer
             StatisticsUsers.GetUsersWithMostPosts(30, repo);
 
             StatisticsUsers.GetUsersWithMostComments(30, repo);
+
+            StatisticsUsers.GetUsersWhoGaveMostVotes(50, repo);
 
             StatisticsPosts.GetPostsWithMostNumberOfVotes(50, repo);
 

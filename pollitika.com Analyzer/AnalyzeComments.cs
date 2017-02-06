@@ -11,6 +11,8 @@ namespace pollitika.com_Analyzer
 {
  public class AnalyzeComments
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public static int ScrapePostCommentsNum(HtmlNode nodeContentMain)
         {
             List<HtmlNode> commonPosts = nodeContentMain.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("broj-komentara")).ToList();
@@ -93,7 +95,7 @@ namespace pollitika.com_Analyzer
                     }
                     else
                     {
-                        Console.WriteLine("ERROR in getting comment ID");
+                        log.Error("ERROR in getting comment ID " + inHref);
                     }
 
                     listComments.Add(newComment);
@@ -109,7 +111,6 @@ namespace pollitika.com_Analyzer
 
                     mainNode = htmlDocument.DocumentNode;
                 }
-
             }
 
             // and now we have to fetch list of votes for each one

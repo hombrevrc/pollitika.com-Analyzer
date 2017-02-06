@@ -14,6 +14,8 @@ namespace pollitika.com_Analyzer
 {
     public class AnalyzePosts
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public static Post AnalyzePost(string inPostUrl, IModelRepository inRepo, bool isOnFrontPage, bool inFetchCommentsVotes = false)
         {
             Post newPost = new Post();
@@ -21,7 +23,7 @@ namespace pollitika.com_Analyzer
             newPost.IsOnFrontPage = isOnFrontPage;
 
             StringBuilder output = new StringBuilder();
-            output.AppendFormat("Post - {0,-90}", inPostUrl);
+            output.AppendFormat("Analyzing post - {0,-90}", inPostUrl);
 
             ScrapingBrowser Browser = new ScrapingBrowser();
             Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup
@@ -43,7 +45,7 @@ namespace pollitika.com_Analyzer
             // check for Post ID already in the repo
             if (inRepo.PostAlreadyExists(newPost.Id))
             {
-                Console.WriteLine("  WARNING - Post with ID {0} already in the database", newPost.Id);
+                log.WarnFormat("WARNING - Post with ID {0} already in the database", newPost.Id);
 
                 return null;
             }
@@ -74,9 +76,9 @@ namespace pollitika.com_Analyzer
 
             newPost.NumCommentsScrapped = AnalyzeComments.ScrapePostCommentsNum(mainContent);
             if (newPost.NumCommentsScrapped < 0)
-                Console.WriteLine("ERROR - scrapping number of comments");
+                log.Error("ERROR - scrapping number of comments");
 
-            output.AppendFormat("  Num.comm - {0}", newPost.NumCommentsScrapped);
+            output.AppendFormat("  Num.comm - {0,3}", newPost.NumCommentsScrapped);
 
             if (newPost.Id > 0)
             {
@@ -85,7 +87,7 @@ namespace pollitika.com_Analyzer
 
             output.AppendFormat("  Votes    - {0}", newPost.Votes.Count);
 
-            Console.WriteLine(output.ToString());
+            log.Info(output.ToString());
 
             newPost.Comments = AnalyzeComments.ScrapePostComments(mainContent, inPostUrl, inRepo, inFetchCommentsVotes);
 

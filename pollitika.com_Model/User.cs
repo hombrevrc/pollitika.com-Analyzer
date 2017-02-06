@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using pollitika.com_Model;
 
 namespace pollitika.com_Analyzer
 {
@@ -53,6 +54,38 @@ namespace pollitika.com_Analyzer
 
                 return _listVotesByUser;
             }
+        }
+
+        public int GetNumberOfNegativeVotes()
+        {
+            int sum = 0;
+            foreach (var vote in _listVotesByUser)
+                if (vote.UpOrDown == -1)
+                    sum++;
+
+            return sum;
+
+        }
+        public int GetNumberOfVotesOnPosts(IModelRepository inRepo)        // TODO - mroati će se proslijediti lista svih postova
+        {
+            return 0;
+        }
+        public int GetNumberOfVotesOnComments(IModelRepository inRepo)
+        {
+            return 0;
+        }
+
+        public double GetAverageVotesPerPost()
+        {
+            double sum = _listPostsByUser.Aggregate(0.0, (current, post) => current + post.GetNumberOfVotes());
+
+            return sum / _listPostsByUser.Count;
+        }
+        public double GetAverageVotesPerComment()
+        {
+            double sum = _listCommentsByUser.Aggregate(0.0, (current, comment) => current + comment.Votes.Count);
+
+            return sum / _listCommentsByUser.Count;
         }
 
         public void AddPostToList(Post inPost)

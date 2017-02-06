@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using log4net;
 using pollitika.com_Data;
 using pollitika.com_Model;
 
@@ -60,20 +61,23 @@ namespace pollitika.com_Analyzer
 
         static public void AnalyzeFrontPage_Multithreaded2(ModelRepository repo)
         {
+            ILog log = log4net.LogManager.GetLogger(typeof(Program));
+
             List<string> listOfPosts = new List<string>();
 
-            for (int j = 0; j <= 500; j += 100)
-                for (int i = 75; i < 80; i++)
+            for (int j = 0; j <= 50; j += 100)
+                for (int i = 0; i < 2; i++)               // došli smo do 90
                 {
-                    Console.WriteLine("DOING PAGE - {0}", j + i);
+                    log.InfoFormat("DOING PAGE - {0}", j + i);
 
                     var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
 
                     listOfPosts.AddRange(listPosts);
                 }
 
+            log.Info("LIST OF POSTS TO ANALYZE:");
             for (int i = 0; i < listOfPosts.Count; i++)
-                Console.WriteLine(listOfPosts[i]);
+                log.Info(listOfPosts[i]);
 
             int batchInd = 0;
             int batchSize = 50;
@@ -81,9 +85,8 @@ namespace pollitika.com_Analyzer
 
             while (batchInd*batchSize < listOfPosts.Count)
             {
-                Console.Write("DOING BATCH {0} of {1}", batchInd, numBatches);
+                log.InfoFormat("DOING BATCH {0} of {1}", batchInd, numBatches);
 
-                int cnt = 0;
                 int startInd = batchInd*batchSize;
                 List<string> postsToProcessInBatch = new List<string>();
 
@@ -94,17 +97,17 @@ namespace pollitika.com_Analyzer
 
                 int k = 0;
                 List<Task> listTasks = WebCrawl(() => postsToProcessInBatch[k++],
-                    (url, neki_repo) => MultithreadedAnalyzePost("http://pollitika.com" + url, repo),
-                    200,
-                    repo);
+                                                (url, neki_repo) => MultithreadedAnalyzePost("http://pollitika.com" + url, repo),
+                                                200,
+                                                repo);
 
-                //Console.WriteLine("Starting wait for tasks to finish!");
+                log.Debug("Starting wait for tasks to finish!");
                 while (listTasks.Count(task => task.IsCompleted == false) > 0)
                 {
                     Thread.Sleep(1000);
                 }
 
-                Console.WriteLine("Updating store");
+                log.Info("Updating store");
 
                 repo.UpdateDataStore("pollitika.db");
 
@@ -116,10 +119,12 @@ namespace pollitika.com_Analyzer
                                           int pauseInMilli,                             // if all threads engaged, waits for n milliseconds
                                           IModelRepository inRepo)
         {
-            const int maxQueueLength = 10;
+            const int maxQueueLength = 7;
             string currentUrl = null;
             int queueLength = 0;
             List<Task> listTasks = new List<Task>();
+
+            ILog log = log4net.LogManager.GetLogger(typeof(Program));
 
             while ((currentUrl = getNextUrlToCrawl()) != null)
             {
@@ -138,9 +143,9 @@ namespace pollitika.com_Analyzer
                                                         )
                                                 .ContinueWith((t) => {
                                                                         if (t.IsFaulted)
-                                                                            Console.WriteLine(t.Exception.ToString());
-                                                                        //else
-                                                                        //    Console.WriteLine("Successfully done " + url);
+                                                                            log.Error(t.Exception.ToString());
+                                                                        else
+                                                                            log.Debug("Successfully analyzed " + url);
                                                                         Interlocked.Decrement(ref queueLength);
                                                                      }
                                                 );
@@ -148,7 +153,7 @@ namespace pollitika.com_Analyzer
                 }
                 else
                 {
-                    //  Console.WriteLine("Waiting");
+                    log.Debug("Waiting for free thread");
                     Thread.Sleep(pauseInMilli);
 
                     goto repeat;
@@ -161,7 +166,9 @@ namespace pollitika.com_Analyzer
 
         static public void MultithreadedAnalyzePost(string postUrl, IModelRepository inRepo)
         {
-            //Console.WriteLine("Starting post url {0}", postUrl);
+            ILog log = log4net.LogManager.GetLogger(typeof(Program));
+
+            log.DebugFormat("Starting post url {0}", postUrl);
 
             try
             {
@@ -172,7 +179,7 @@ namespace pollitika.com_Analyzer
             }
             catch (Exception ex)
             {
-                Console.WriteLine("ERROR " + postUrl + " MSG: " + ex.Message);
+                log.Error("ERROR " + postUrl + " MSG: " + ex.Message);
             }
         }
     }

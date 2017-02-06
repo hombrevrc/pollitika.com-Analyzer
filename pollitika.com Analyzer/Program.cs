@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using log4net;
 using pollitika.com_Data;
 using pollitika.com_Model;
 using ScrapySharp.Extensions;
@@ -13,18 +14,24 @@ namespace pollitika.com_Analyzer
 {
     class Program
     {
+        private static readonly ILog Logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         static void Main(string[] args)
         {
             ModelRepository repo = new ModelRepository();
 
+            Logger.Info("Opening data store");
+
             repo.OpenDataStore("pollitika.db");
 
-            MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
+            Logger.Info("Data store opened");
+
+            //MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
 
             //Console.WriteLine("FIXING");
             //repo.FixVotes();
 
-            repo.UpdateDataStore("pollitika.db");
+            //repo.UpdateDataStore("pollitika.db");
 
             PrintStatistics(repo);
         }
@@ -38,6 +45,12 @@ namespace pollitika.com_Analyzer
             StatisticsUsers.GetUsersWithMostComments(30, repo);
 
             StatisticsUsers.GetUsersWhoGaveMostVotes(50, repo);
+
+            StatisticsUsers.GetUsersWhoGaveMostNegativeVotes(50, repo);
+
+            StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerPost(50, repo);
+
+            StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerComment(50, repo);
 
             StatisticsPosts.GetPostsWithMostNumberOfVotes(50, repo);
 

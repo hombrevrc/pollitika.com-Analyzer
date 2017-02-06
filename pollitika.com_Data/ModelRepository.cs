@@ -50,8 +50,8 @@ namespace pollitika.com_Data
                 _dataStore = LoadedData;
 
                 // temporary fix
-                foreach (Post p in _dataStore.Posts)
-                    p.IsOnFrontPage = true;
+                //foreach (Post p in _dataStore.Posts)
+                //    p.IsOnFrontPage = true;
             }
             catch (Exception e)
             {

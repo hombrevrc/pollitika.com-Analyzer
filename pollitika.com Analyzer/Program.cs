@@ -52,13 +52,17 @@ namespace pollitika.com_Analyzer
 
             StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerComment(50, repo);
 
+            StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 40, repo);
+
+            StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 50, repo);
+
             StatisticsPosts.GetPostsWithMostNumberOfVotes(50, repo);
 
-            StatisticsPosts.GetPostsWithMostSumOfVotes(50, repo);
+            //StatisticsPosts.GetPostsWithMostSumOfVotes(50, repo);
 
             StatisticsPosts.GetPostsWithMostNegativeVotes(50, repo);
 
-            StatisticsPosts.GetMostControversialPosts(50, repo);
+            //StatisticsPosts.GetMostControversialPosts(50, repo);
 
             StatisticsPosts.GetMostCommentedPosts(50, repo);
 

@@ -96,6 +96,10 @@ namespace pollitika.com_Analyzer
 
             return sum / _listCommentsByUser.Count;
         }
+        public int GetNumberOfPostsWithOverNVotes(int N)
+        {
+            return _listPostsByUser.Count(p => p.GetNumberOfVotes() > N);
+        }
 
         public void AddPostToList(Post inPost)
         {

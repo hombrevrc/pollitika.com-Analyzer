@@ -22,10 +22,16 @@ namespace pollitika.com_Data
                 List<Post> postByDate = user.PostsByUser.OrderBy(p => p.DatePosted).ToList();
                 List<Post> postByVotes = user.PostsByUser.OrderByDescending(p => p.GetNumberOfVotes()).ToList();
                 List<Post> postByComments = user.PostsByUser.OrderByDescending(p => p.GetNumberOfComments()).ToList();
+
+                Console.WriteLine("Ordered by date:");
                 foreach (var post in postByDate)
                     Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+
+                Console.WriteLine("Ordered by number of votes:");
                 foreach (var post in postByVotes)
                     Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+
+                Console.WriteLine("Ordered by number of comments:");
                 foreach (var post in postByComments)
                     Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
             }
@@ -102,6 +108,16 @@ namespace pollitika.com_Data
             Console.WriteLine("Users with highest average of votes per comment:");
             foreach (var user in list)
                 Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetAverageVotesPerComment());
+            Console.WriteLine("");
+        }
+
+        public static void GetUsersWithBiggestNumberOfPostsWithOverNVotes(int numUsers, int numVotes, ModelRepository inRepo)
+        {
+            List<User> list = inRepo._dataStore.Users.Where(p => p.PostsByUser.Count > 10).OrderByDescending(p => p.GetNumberOfPostsWithOverNVotes(numVotes)).Take(numUsers).ToList();
+
+            Console.WriteLine("Users with highest number of posts with over {0} votes:", numVotes);
+            foreach (var user in list)
+                Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetNumberOfPostsWithOverNVotes(numVotes));
             Console.WriteLine("");
         }
 

@@ -62,6 +62,8 @@ namespace pollitika.com_Analyzer
 
             StatisticsPosts.GetMostCommentedPosts(50, repo);
 
+            StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);
+
             //StatisticsPosts.GetPostsWithZeroVotes(repo);
         }
 

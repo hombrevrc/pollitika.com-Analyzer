@@ -66,7 +66,7 @@ namespace pollitika.com_Analyzer
             return sum;
 
         }
-        public int GetNumberOfVotesOnPosts(IModelRepository inRepo)        // TODO - mroati će se proslijediti lista svih postova
+        public int GetNumberOfVotesOnPosts(IModelRepository inRepo)        // TODO - morati će se proslijediti lista svih postova
         {
             return 0;
         }
@@ -77,9 +77,18 @@ namespace pollitika.com_Analyzer
 
         public double GetAverageVotesPerPost()
         {
-            double sum = _listPostsByUser.Aggregate(0.0, (current, post) => current + post.GetNumberOfVotes());
+            double sum = 0.0;
+            int cnt = 0;
+            foreach (var post in _listPostsByUser)
+            {
+                if (post.Id > 1485 && post.DatePosted > new DateTime(2007, 9, 22))
+                {
+                    sum = sum + post.GetNumberOfVotes();
+                    cnt++;
+                }
+            }
 
-            return sum / _listPostsByUser.Count;
+            return sum / cnt;
         }
         public double GetAverageVotesPerComment()
         {

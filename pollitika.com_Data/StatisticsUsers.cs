@@ -9,6 +9,27 @@ namespace pollitika.com_Data
 {
     public class StatisticsUsers
     {
+        public static void GetUserStatistics(string inUserName, ModelRepository inRepo)
+        {
+            User user = inRepo.GetUserByName(inUserName);
+
+            if (user != null)
+            {
+                Console.WriteLine("Posts   : {0}", user.PostsByUser.Count);
+                Console.WriteLine("Comments: {0}", user.CommentsByUser.Count);
+                Console.WriteLine("Votes   : {0}", user.VotesByUser.Count);
+
+                List<Post> postByDate = user.PostsByUser.OrderBy(p => p.DatePosted).ToList();
+                List<Post> postByVotes = user.PostsByUser.OrderByDescending(p => p.GetNumberOfVotes()).ToList();
+                List<Post> postByComments = user.PostsByUser.OrderByDescending(p => p.GetNumberOfComments()).ToList();
+                foreach (var post in postByDate)
+                    Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+                foreach (var post in postByVotes)
+                    Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+                foreach (var post in postByComments)
+                    Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+            }
+        }
         public static void GetUsersWithMostPosts(int numUsers, ModelRepository inRepo)
         {
             List<User> list = inRepo._dataStore.Users.OrderByDescending(p => p.PostsByUser.Count).Take(numUsers).ToList();

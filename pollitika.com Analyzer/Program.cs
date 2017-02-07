@@ -44,27 +44,29 @@ namespace pollitika.com_Analyzer
 
             StatisticsUsers.GetUsersWithMostComments(30, repo);
 
-            StatisticsUsers.GetUsersWhoGaveMostVotes(50, repo);
+            StatisticsUsers.GetUsersWhoGaveMostVotes(30, repo);
 
-            StatisticsUsers.GetUsersWhoGaveMostNegativeVotes(50, repo);
+            StatisticsUsers.GetUsersWhoGaveMostNegativeVotes(30, repo);
 
-            StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerPost(50, repo);
+            StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerPost(30, repo);
 
-            StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerComment(50, repo);
+            StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerComment(30, repo);
+
+            StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 30, repo);
 
             StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 40, repo);
 
             StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 50, repo);
 
-            StatisticsPosts.GetPostsWithMostNumberOfVotes(50, repo);
+            StatisticsPosts.GetPostsWithMostNumberOfVotes(30, repo);
 
-            //StatisticsPosts.GetPostsWithMostSumOfVotes(50, repo);
+            StatisticsPosts.GetPostsWithMostSumOfVotes(30, repo);
 
-            StatisticsPosts.GetPostsWithMostNegativeVotes(50, repo);
+            StatisticsPosts.GetPostsWithMostNegativeVotes(30, repo);
 
-            //StatisticsPosts.GetMostControversialPosts(50, repo);
+            StatisticsPosts.GetMostControversialPosts(30, repo);
 
-            StatisticsPosts.GetMostCommentedPosts(50, repo);
+            StatisticsPosts.GetMostCommentedPosts(30, repo);
 
             StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);
 

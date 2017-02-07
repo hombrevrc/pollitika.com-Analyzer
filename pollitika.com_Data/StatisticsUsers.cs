@@ -25,15 +25,15 @@ namespace pollitika.com_Data
 
                 Console.WriteLine("Ordered by date:");
                 foreach (var post in postByDate)
-                    Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+                    Console.WriteLine("  Post: {0, -90}, Date: {1}, Votes: {2,3}, Num.comments: {3,3}", post.Title, post.DatePosted.ToString("dd/MM/yyy hh:mm:ss"), post.Votes.Count, post.Comments.Count);
 
                 Console.WriteLine("Ordered by number of votes:");
                 foreach (var post in postByVotes)
-                    Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+                    Console.WriteLine("  Post: {0, -90}, Date: {1}, Votes: {2,3}, Num.comments: {3,3}", post.Title, post.DatePosted.ToString("dd/MM/yyy hh:mm:ss"), post.Votes.Count, post.Comments.Count);
 
                 Console.WriteLine("Ordered by number of comments:");
                 foreach (var post in postByComments)
-                    Console.WriteLine("  Post: {0, -90}  Votes: {1,3}, Num.comments: {2,3}", post.Title, post.Votes.Count, post.Comments.Count);
+                    Console.WriteLine("  Post: {0, -90}, Date: {1}, Votes: {2,3}, Num.comments: {3,3}", post.Title, post.DatePosted.ToString("dd/MM/yyy hh:mm:ss"), post.Votes.Count, post.Comments.Count);
             }
         }
         public static void GetUsersWithMostPosts(int numUsers, ModelRepository inRepo)
@@ -95,9 +95,9 @@ namespace pollitika.com_Data
         {
             List<User> list = inRepo._dataStore.Users.Where(p => p.PostsByUser.Count > 10).OrderByDescending(p => p.GetAverageVotesPerPost()).Take(numUsers).ToList();
 
-            Console.WriteLine("Users with highest average of votes per post:");
+            Console.WriteLine("Users with highest average number of votes per post:");
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - votes per post: {1}, total posts: {2}", user.NameHtml, user.GetAverageVotesPerPost(), user.PostsByUser.Count);
+                Console.WriteLine("User {0,-18}   - votes per post: {1:N2}, total posts: {2,3}", user.NameHtml, user.GetAverageVotesPerPost(), user.PostsByUser.Count);
             Console.WriteLine("");
         }
 
@@ -105,9 +105,9 @@ namespace pollitika.com_Data
         {
             List<User> list = inRepo._dataStore.Users.Where(p => p.CommentsByUser.Count > 10).OrderByDescending(p => p.GetAverageVotesPerComment()).Take(numUsers).ToList();
 
-            Console.WriteLine("Users with highest average of votes per comment:");
+            Console.WriteLine("Users with highest average number of votes per comment:");
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - votes per comment {1}, total comments {2}", user.NameHtml, user.GetAverageVotesPerComment(), user.CommentsByUser.Count);
+                Console.WriteLine("User {0,-18}   - votes per comment {1:N2}, total comments {2,3}", user.NameHtml, user.GetAverageVotesPerComment(), user.CommentsByUser.Count);
             Console.WriteLine("");
         }
 

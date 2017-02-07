@@ -97,7 +97,7 @@ namespace pollitika.com_Data
 
             Console.WriteLine("Users with highest average of votes per post:");
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetAverageVotesPerPost());
+                Console.WriteLine("User {0,-18}   - votes per post: {1}, total posts: {2}", user.NameHtml, user.GetAverageVotesPerPost(), user.PostsByUser.Count);
             Console.WriteLine("");
         }
 
@@ -107,7 +107,7 @@ namespace pollitika.com_Data
 
             Console.WriteLine("Users with highest average of votes per comment:");
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetAverageVotesPerComment());
+                Console.WriteLine("User {0,-18}   - votes per comment {1}, total comments {2}", user.NameHtml, user.GetAverageVotesPerComment(), user.CommentsByUser.Count);
             Console.WriteLine("");
         }
 

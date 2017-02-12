@@ -32,15 +32,26 @@ namespace pollitika.com_Analyzer
 
             // first - check if we have multiple pages of comments
             // najprije, da vidimo da li je samo jedna stranica s glasovima ili ih ima više
-            var itemlist = mainNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("pager"));
+            var itemlist = mainNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("pager")).ToList();
 
-            int pageCount = 1;
-            if (itemlist.Count() > 0)
+            int pageCount = 0;
+            if (itemlist.Count > 0)
             {
-                pageCount = itemlist.First().ChildNodes.Count / 2 - 2;
+                string s = itemlist[0].LastChild.PreviousSibling.InnerHtml;
+
+                int n1 = s.IndexOf("?page=");
+                int n2 = s.IndexOf("\"", n1);
+                string num = s.Substring(n1 + 6, n2 - n1 - 6);
+
+                pageCount = Convert.ToInt32(num);
             }
 
-            for (int i = 0; i < pageCount; i++)
+            //if (itemlist.Count() > 0)
+            //{
+            //    pageCount = itemlist.First().ChildNodes.Count / 2 - 2;
+            //}
+
+            for (int i = 0; i <= pageCount; i++)
             {
 
                 HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
@@ -102,7 +113,7 @@ namespace pollitika.com_Analyzer
                 }
 
                 // reinicijaliziramo učitani HTML za sljedeću stranicu
-                if (i < pageCount - 1)
+                if (i < pageCount)
                 {
                     string href = inHref + "?page=" + (i + 1).ToString();
 

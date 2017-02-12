@@ -117,6 +117,7 @@ namespace pollitika.com_Data
                     _dataStore.Votes.Add(vote);
 
                     vote.ByUser.VotesByUser.Add(vote);
+                    vote.VoteForUser.ReceivedVotes.Add(vote);
                 }
 
                 // add all comments to the list of comments
@@ -133,6 +134,7 @@ namespace pollitika.com_Data
                         _dataStore.Votes.Add(commentVote);
 
                         commentVote.ByUser.VotesByUser.Add(commentVote);
+                        commentVote.VoteForUser.ReceivedVotes.Add(commentVote);
                     }
                 }
             }

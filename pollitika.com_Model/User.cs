@@ -16,6 +16,7 @@ namespace pollitika.com_Analyzer
         private readonly List<Post>     _listPostsByUser = new List<Post>();
         private readonly List<Comment>  _listCommentsByUser = new List<Comment>();
         private List<Vote>     _listVotesByUser = new List<Vote>();
+        private List<Vote>     _listReceivedVotes = new List<Vote>();
 
         public string Name
         {
@@ -54,6 +55,11 @@ namespace pollitika.com_Analyzer
 
                 return _listVotesByUser;
             }
+        }
+
+        public List<Vote> ReceivedVotes
+        {
+            get { return _listReceivedVotes; }
         }
 
         public int GetNumberOfNegativeVotes()

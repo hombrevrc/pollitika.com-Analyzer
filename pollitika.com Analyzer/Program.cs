@@ -22,16 +22,16 @@ namespace pollitika.com_Analyzer
 
             Logger.Info("Opening data store");
 
-            repo.OpenDataStore("pollitika.db");
+            repo.CreateNewDataStore("pollitika.db");
 
             Logger.Info("Data store opened");
 
-            //MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
+            MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
 
             //Console.WriteLine("FIXING");
             //repo.FixVotes();
 
-            //repo.UpdateDataStore("pollitika.db");
+            repo.UpdateDataStore("pollitika.db");
 
             PrintStatistics(repo);
         }

@@ -48,6 +48,8 @@ namespace pollitika.com_Analyzer
 
             StatisticsUsers.GetUsersWhoGaveMostNegativeVotes(30, repo);
 
+            StatisticsUsers.GetUsersWhoReceivedMostNegativeVotes(30, repo);
+
             StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerPost(30, repo);
 
             StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerComment(30, repo);

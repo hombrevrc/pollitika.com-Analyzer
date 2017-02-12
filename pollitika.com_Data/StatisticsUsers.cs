@@ -65,11 +65,20 @@ namespace pollitika.com_Data
         }
         public static void GetUsersWhoGaveMostNegativeVotes(int numUsers, ModelRepository inRepo)
         {
-            List<User> list = inRepo._dataStore.Users.OrderByDescending(p => p.GetNumberOfNegativeVotes()).Take(numUsers).ToList();
+            List<User> list = inRepo._dataStore.Users.OrderByDescending(p => p.GetNumberOfGivenNegativeVotes()).Take(numUsers).ToList();
 
             Console.WriteLine("Users who gave most negative votes:");
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetNumberOfNegativeVotes());
+                Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetNumberOfGivenNegativeVotes());
+            Console.WriteLine("");
+        }
+        public static void GetUsersWhoReceivedMostNegativeVotes(int numUsers, ModelRepository inRepo)
+        {
+            List<User> list = inRepo._dataStore.Users.OrderByDescending(p => p.GetNumberOfReceivedNegativeVotes()).Take(numUsers).ToList();
+
+            Console.WriteLine("Users who received most negative votes:");
+            foreach (var user in list)
+                Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetNumberOfReceivedNegativeVotes());
             Console.WriteLine("");
         }
         public static void GetUsersWhoGaveMostVotesOnPosts(int numUsers, ModelRepository inRepo)

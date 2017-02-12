@@ -62,7 +62,7 @@ namespace pollitika.com_Analyzer
             get { return _listReceivedVotes; }
         }
 
-        public int GetNumberOfNegativeVotes()
+        public int GetNumberOfGivenNegativeVotes()
         {
             int sum = 0;
             foreach (var vote in _listVotesByUser)
@@ -70,7 +70,15 @@ namespace pollitika.com_Analyzer
                     sum++;
 
             return sum;
+        }
+        public int GetNumberOfReceivedNegativeVotes()
+        {
+            int sum = 0;
+            foreach (var vote in _listReceivedVotes)
+                if (vote.UpOrDown == -1)
+                    sum++;
 
+            return sum;
         }
         public int GetNumberOfVotesOnPosts(IModelRepository inRepo)        // TODO - morati će se proslijediti lista svih postova
         {

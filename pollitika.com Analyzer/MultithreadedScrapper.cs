@@ -66,7 +66,7 @@ namespace pollitika.com_Analyzer
             List<string> listOfPosts = new List<string>();
 
             for (int j = 0; j <= 600; j += 100)
-                for (int i = 0; i < 1; i++)               // došli smo do 90
+                for (int i = 1; i < 5; i++)               
                 {
                     log.InfoFormat("DOING PAGE - {0}", j + i);
 

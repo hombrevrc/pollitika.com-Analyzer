@@ -34,6 +34,7 @@ namespace pollitika.com_Analyzer
             HtmlDocument htmlDocument = htmlWeb.Load(inPostUrl);
             HtmlNode     mainContent = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
+            // first, Node ID
             int nodeId;
             string votesLink;
             if (AnalyzePosts.ScrapePostID(mainContent, out nodeId, out votesLink))
@@ -42,27 +43,38 @@ namespace pollitika.com_Analyzer
                 newPost.VotesLink = votesLink;
             }
 
-            // check for Post ID already in the repo
-            if (inRepo.PostAlreadyExists(newPost.Id))
+            if (inRepo.PostAlreadyExists(newPost.Id))            // check for Post ID already in the repo
             {
                 log.WarnFormat("WARNING - Post with ID {0} already in the database", newPost.Id);
 
                 return null;
             }
-            output.AppendFormat(" ID - {0}", newPost.Id);
+            output.AppendFormat(" ID - {0,5}", newPost.Id);
 
+            // title
             var titleHtml = mainContent.Descendants().Single(n => n.GetAttributeValue("class", "").Equals("node")).Descendants("h1").ToList();
             newPost.Title = titleHtml[0].InnerText;
+
+            // text of the post
+            /*
+             * TEMPORARILY TURNED OFF
+            var postText = mainContent.Descendants().First(n => n.GetAttributeValue("class", "").Equals("node"));
+            if (postText != null)
+            {
+                int n1 = postText.InnerText.IndexOf("dodaj komentar");
+
+                newPost.Text = postText.InnerText.Substring(n1 + 20);
+            }
+            */
+
+            // date posted
             newPost.DatePosted = ScrapePostDate(mainContent);
+            output.AppendFormat(" Date - {0}", newPost.DatePosted.ToString("dd/MM/yyy hh:mm"));
 
-            //Console.WriteLine("  Title    - {0}", newPost.Title);
-            output.AppendFormat(" Date - {0,-20}", newPost.DatePosted);
-
+            // author
             string author, authorHtml;
             AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
-
             output.AppendFormat(" Username - {0,-18}", author);
-            //Console.WriteLine("  Nick     - {0}", authorHtml);
 
             // check if user exists, add him if not
             User user = inRepo.GetUserByName(author);

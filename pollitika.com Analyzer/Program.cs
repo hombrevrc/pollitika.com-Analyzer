@@ -22,7 +22,7 @@ namespace pollitika.com_Analyzer
 
             Logger.Info("Opening data store");
 
-            repo.CreateNewDataStore("pollitika.db");
+            repo.OpenDataStore("pollitika.db");
 
             Logger.Info("Data store opened");
 

@@ -131,5 +131,14 @@ namespace pollitika.com_Analyzer_Tests
 
             Assert.AreEqual(92, listVotes.Count);
         }
+        [TestMethod]
+        public void AnalyzePost_TestGetPostVotes8_MostVotes_100()
+        {
+            // "http://pollitika.com/node/8084"
+
+            List<Vote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(8084, null, "node", _repo);
+
+            Assert.AreEqual(100, listVotes.Count);
+        }
     }
 }

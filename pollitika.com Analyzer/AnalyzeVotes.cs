@@ -13,7 +13,7 @@ namespace pollitika.com_Analyzer
     public class AnalyzeVotes
     {
         // inType: "node" - for getting votes for posts, "comment" - for getting votes for comments
-        public static List<Vote> ScrapeListVotesForNode(int nodeID, string inType, IModelRepository inRepo)
+        public static List<Vote> ScrapeListVotesForNode(int nodeID, User nodeAuthor, string inType, IModelRepository inRepo)
         {
             List<Vote> listVotes = new List<Vote>();
 
@@ -33,9 +33,7 @@ namespace pollitika.com_Analyzer
 
             for (int i = 0; i < pageCount; i++)
             {
-                var voteList =
-                    htmlDocument.DocumentNode.Descendants()
-                        .Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
+                var voteList = htmlDocument.DocumentNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
 
                 var content = voteList.First();
                 var table = content.SelectNodes("table");
@@ -61,6 +59,7 @@ namespace pollitika.com_Analyzer
                     }
 
                     newVote.ByUser = user;
+                    newVote.VoteForUser = nodeAuthor;
 
                     string value = rowCels[1].InnerText.Substring(13).TrimEnd();
                     newVote.UpOrDown = Convert.ToInt32(value);

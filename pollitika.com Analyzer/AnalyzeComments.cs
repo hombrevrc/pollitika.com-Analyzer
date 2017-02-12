@@ -118,7 +118,7 @@ namespace pollitika.com_Analyzer
             {
                 foreach (var comm in listComments)
                 {
-                    comm.Votes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id, "comment", inRepo);
+                    comm.Votes = AnalyzeVotes.ScrapeListVotesForNode(comm.Id, comm.Author, "comment", inRepo);
                 }
             }
 

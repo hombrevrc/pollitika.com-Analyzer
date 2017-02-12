@@ -82,7 +82,7 @@ namespace pollitika.com_Analyzer
 
             if (newPost.Id > 0)
             {
-                newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, "node", inRepo);
+                newPost.Votes = AnalyzeVotes.ScrapeListVotesForNode(newPost.Id, newPost.Author, "node", inRepo);
             }
 
             output.AppendFormat("  Votes    - {0}", newPost.Votes.Count);

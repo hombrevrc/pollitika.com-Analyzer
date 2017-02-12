@@ -12,6 +12,7 @@ namespace pollitika.com_Analyzer
         private int _voteOnNodeID;
         private DateTime _datePosted;
         private int _upOrDown;
+        private User _voteForUser = null;
 
         public User ByUser
         {
@@ -35,6 +36,12 @@ namespace pollitika.com_Analyzer
         {
             get { return _voteOnNodeID; }
             set { _voteOnNodeID = value; }
+        }
+
+        public User VoteForUser
+        {
+            get { return _voteForUser; }
+            set { _voteForUser = value; }
         }
     }
 }

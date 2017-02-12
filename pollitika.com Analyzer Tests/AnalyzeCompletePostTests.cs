@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using HtmlAgilityPack;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pollitika.com_Analyzer;
 using pollitika.com_Data;
@@ -34,6 +31,16 @@ namespace pollitika.com_Analyzer_Tests
 
 
             // testing votes
+            List<string> usersWhoVoted = new List<string>
+            {
+                "ppetra", "leddevet", "otpisani", "Quinquaginta", "z00ey", "NolS", "magarac", "antonac", "martin", "profesor", "Elnino",
+                "pravednik vz", "boltek", "marival", "lunoprof", "Skviki", "lignja", "Jura", "mario121", "hlad", "gledamokosebe", "zaphod", "indian", "Bigulica"
+            };
+
+            // check all user names who voted
+            for( int i=0; i<usersWhoVoted.Count; i++ )
+                Assert.AreEqual(usersWhoVoted[i], post.Votes[i].ByUser.Name);
+
             Assert.AreEqual("ppetra", post.Votes[0].ByUser.Name);
             Assert.AreEqual(new DateTime(2016, 12, 8, 22, 53, 0), post.Votes[0].DatePosted); 
             Assert.AreEqual(1, post.Votes[0].UpOrDown);
@@ -46,6 +53,9 @@ namespace pollitika.com_Analyzer_Tests
             // testing comments
             Assert.AreEqual(13, post.Comments.Count);
 
+            // check all user names who commentes
+
+            // check individual comments
             Comment comm = post.Comments[0];
             Assert.AreEqual("Skviki", comm.Author.Name);
             Assert.AreEqual(0, comm.NumScrappedVotes);
@@ -141,9 +151,9 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual("/node/14888/who_voted", post.VotesLink);
             Assert.AreEqual("magarac", post.Author.Name);
             Assert.AreEqual("magarac", post.Author.NameHtml);
-            Assert.AreEqual(159, post.NumCommentsScrapped);
+            Assert.AreEqual(161, post.NumCommentsScrapped);
             Assert.AreEqual(41, post.GetNumberOfVotes());
-            Assert.AreEqual(159, post.GetNumberOfComments());
+            Assert.AreEqual(161, post.GetNumberOfComments());
             Assert.AreEqual(new DateTime(2016, 3, 17, 17, 34, 0), post.DatePosted);
         }
 
@@ -209,7 +219,7 @@ namespace pollitika.com_Analyzer_Tests
             // testing post attributes
             Assert.AreEqual(50, post.Id);
             Assert.AreEqual("http://pollitika.com/nered-na-trzi-tu-dobra-stvar", post.HrefLink);
-            Assert.AreEqual("Nered na tržištu, dobra stvar", post.Title);
+            Assert.AreEqual("Nered na tržištu - dobra stvar?", post.Title);
             Assert.AreEqual("/node/50/who_voted", post.VotesLink);
             Assert.AreEqual("Simun", post.Author.Name);
             Assert.AreEqual("simun", post.Author.NameHtml);

@@ -12,7 +12,7 @@ namespace pollitika.com_Analyzer
 {
     public class MultithreadedScrapper
     {
-        static public void AnalyzeFrontPage_Multithreaded(ModelRepository repo)
+        static public void AnalyzeFrontPage_SimpleMultithreaded(ModelRepository repo)
         {
             List<string> listOfPosts = new List<string>();
 
@@ -59,14 +59,14 @@ namespace pollitika.com_Analyzer
             }
         }
 
-        static public void AnalyzeFrontPage_Multithreaded2(ModelRepository repo)
+        static public void AnalyzeFrontPage_Multithreaded(ModelRepository repo)
         {
             ILog log = log4net.LogManager.GetLogger(typeof(Program));
 
             List<string> listOfPosts = new List<string>();
 
             for (int j = 0; j <= 600; j += 100)
-                for (int i = 1; i < 5; i++)               
+                for (int i = 50; i < 60; i++)               
                 {
                     log.InfoFormat("DOING PAGE - {0}", j + i);
 
@@ -85,7 +85,7 @@ namespace pollitika.com_Analyzer
 
             while (batchInd*batchSize < listOfPosts.Count)
             {
-                log.InfoFormat("DOING BATCH {0} of {1}", batchInd, numBatches);
+                log.InfoFormat("DOING BATCH {0} of {1}", batchInd+1, numBatches);
 
                 int startInd = batchInd*batchSize;
                 List<string> postsToProcessInBatch = new List<string>();
@@ -119,7 +119,7 @@ namespace pollitika.com_Analyzer
                                           int pauseInMilli,                             // if all threads engaged, waits for n milliseconds
                                           IModelRepository inRepo)
         {
-            const int maxQueueLength = 7;
+            const int maxQueueLength = 8;
             string currentUrl = null;
             int queueLength = 0;
             List<Task> listTasks = new List<Task>();
@@ -137,17 +137,18 @@ namespace pollitika.com_Analyzer
                     var url = currentUrl;               // needed for closure capture
                     Interlocked.Increment(ref queueLength);
                     Task newTask = Task.Factory.StartNew(
-                                                         () =>  {
-                                                                    crawlUrl(temp, inRepo);
-                                                                }
-                                                        )
-                                                .ContinueWith((t) => {
-                                                                        if (t.IsFaulted)
-                                                                            log.Error(t.Exception.ToString());
-                                                                        else
-                                                                            log.Debug("Successfully analyzed " + url);
-                                                                        Interlocked.Decrement(ref queueLength);
-                                                                     }
+                                                    () => {
+                                                            crawlUrl(temp, inRepo);
+                                                          }
+                                                )
+                                                .ContinueWith(
+                                                    (t) => {
+                                                            if (t.IsFaulted)
+                                                                log.Error(t.Exception.ToString());
+                                                            else
+                                                                log.Debug("Successfully analyzed " + url);
+                                                            Interlocked.Decrement(ref queueLength);
+                                                           }
                                                 );
                     listTasks.Add(newTask);
                 }
@@ -157,7 +158,6 @@ namespace pollitika.com_Analyzer
                     Thread.Sleep(pauseInMilli);
 
                     goto repeat;
-
                 }
             }
 

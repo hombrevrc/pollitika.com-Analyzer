@@ -26,7 +26,7 @@ namespace pollitika.com_Analyzer
 
             Logger.Info("Data store opened");
 
-            MultithreadedScrapper.AnalyzeFrontPage_Multithreaded2(repo);
+            MultithreadedScrapper.AnalyzeFrontPage_Multithreaded(repo);
 
             //Console.WriteLine("FIXING");
             //repo.FixVotes();

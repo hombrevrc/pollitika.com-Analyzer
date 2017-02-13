@@ -17,21 +17,26 @@ namespace pollitika.com_Data
             {
                 Console.WriteLine("Posts   : {0}", user.PostsByUser.Count);
                 Console.WriteLine("Comments: {0}", user.CommentsByUser.Count);
-                Console.WriteLine("Votes   : {0}", user.VotesByUser.Count);
+                Console.WriteLine("Votes given    : {0}", user.VotesByUser.Count);
+                Console.WriteLine("      positive : {0}", user.VotesByUser.Count(p => p.UpOrDown == 1));
+                Console.WriteLine("      negative : {0}", user.VotesByUser.Count(p => p.UpOrDown == -1));
+                Console.WriteLine("Votes received : {0}", user.ReceivedVotes.Count);
+                Console.WriteLine("      positive : {0}", user.ReceivedVotes.Count(p => p.UpOrDown == 1));
+                Console.WriteLine("      negative : {0}", user.ReceivedVotes.Count(p => p.UpOrDown == -1));
 
                 List<Post> postByDate = user.PostsByUser.OrderBy(p => p.DatePosted).ToList();
                 List<Post> postByVotes = user.PostsByUser.OrderByDescending(p => p.GetNumberOfVotes()).ToList();
                 List<Post> postByComments = user.PostsByUser.OrderByDescending(p => p.GetNumberOfComments()).ToList();
 
-                Console.WriteLine("Ordered by date:");
+                Console.WriteLine("\nOrdered by date:");
                 foreach (var post in postByDate)
                     Console.WriteLine("  Post: {0, -90}, Date: {1}, Votes: {2,3}, Num.comments: {3,3}", post.Title, post.DatePosted.ToString("dd/MM/yyy hh:mm:ss"), post.Votes.Count, post.Comments.Count);
 
-                Console.WriteLine("Ordered by number of votes:");
+                Console.WriteLine("\nOrdered by number of votes:");
                 foreach (var post in postByVotes)
                     Console.WriteLine("  Post: {0, -90}, Date: {1}, Votes: {2,3}, Num.comments: {3,3}", post.Title, post.DatePosted.ToString("dd/MM/yyy hh:mm:ss"), post.Votes.Count, post.Comments.Count);
 
-                Console.WriteLine("Ordered by number of comments:");
+                Console.WriteLine("\nOrdered by number of comments:");
                 foreach (var post in postByComments)
                     Console.WriteLine("  Post: {0, -90}, Date: {1}, Votes: {2,3}, Num.comments: {3,3}", post.Title, post.DatePosted.ToString("dd/MM/yyy hh:mm:ss"), post.Votes.Count, post.Comments.Count);
             }

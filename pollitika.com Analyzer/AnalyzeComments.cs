@@ -59,8 +59,7 @@ namespace pollitika.com_Analyzer
                 if (comments == null) // No comments?
                     return listComments;
 
-                List<HtmlNode> allComments =
-                    comments.Descendants().Where(x => x.Id.StartsWith("comment-content")).ToList();
+                List<HtmlNode> allComments = comments.Descendants().Where(x => x.Id.StartsWith("comment-content")).ToList();
 
                 foreach (var comment in allComments)
                 {

@@ -63,6 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AnalyzeCompletePostTests.cs" />
     <Compile Include="AnalyzeDatesTests.cs" />
+    <Compile Include="AnalyzeUserPostsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

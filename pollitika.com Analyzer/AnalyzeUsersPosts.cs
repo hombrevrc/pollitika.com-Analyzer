@@ -13,7 +13,7 @@ namespace pollitika.com_Analyzer
     public class AnalyzeUsersPosts
     {
         // return list of URLs of posts for given user
-        internal static List<string> GetListOfUserPosts(string userName)
+        public static List<string> GetListOfUserPosts(string userName)
         {
             List<string> retList = new List<string>();
 
@@ -69,7 +69,6 @@ namespace pollitika.com_Analyzer
                             string href = html.Substring(start + 6, end - start - 6);
 
                             retList.Add(href);
-                            //Console.WriteLine(title + " - " + href);
                         }
                     }
                     Console.WriteLine("Done page " + pageIndex);
@@ -78,7 +77,7 @@ namespace pollitika.com_Analyzer
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Done");
+                    Console.WriteLine("Exception");
                     break;
                 }
                

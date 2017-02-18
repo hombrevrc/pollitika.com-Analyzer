@@ -26,10 +26,10 @@ namespace pollitika.com_Analyzer
 
             Logger.Info("Data store opened");
 
-
-            var a = AnalyzeUsersPosts.GetListOfUserPosts("zvone-radikalni");
+            var a = AnalyzeUsersPosts.GetListOfUserPosts("mrak");
+            int c = 0;
             foreach (string b in a)
-                Console.WriteLine(b);
+                Console.WriteLine("{0,3} - {1}", c++, b);
 
             //MultithreadedScrapper.AnalyzeFrontPage_Multithreaded(repo);
 

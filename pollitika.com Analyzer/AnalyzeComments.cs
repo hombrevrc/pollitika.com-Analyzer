@@ -46,17 +46,12 @@ namespace pollitika.com_Analyzer
                 pageCount = Convert.ToInt32(num);
             }
 
-            //if (itemlist.Count() > 0)
-            //{
-            //    pageCount = itemlist.First().ChildNodes.Count / 2 - 2;
-            //}
-
             for (int i = 0; i <= pageCount; i++)
             {
 
                 HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
 
-                if (comments == null) // No comments?
+                if (comments == null)           // No comments?
                     return listComments;
 
                 List<HtmlNode> allComments = comments.Descendants().Where(x => x.Id.StartsWith("comment-content")).ToList();

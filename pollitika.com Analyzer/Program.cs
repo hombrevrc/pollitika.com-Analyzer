@@ -22,16 +22,21 @@ namespace pollitika.com_Analyzer
 
             Logger.Info("Opening data store");
 
-            repo.OpenDataStore("pollitika.db");
+            //repo.OpenDataStore("pollitika.db");
 
             Logger.Info("Data store opened");
 
-            MultithreadedScrapper.AnalyzeFrontPage_Multithreaded(repo);
+
+            var a = AnalyzeUsersPosts.GetListOfUserPosts("zvone-radikalni");
+            foreach (string b in a)
+                Console.WriteLine(b);
+
+            //MultithreadedScrapper.AnalyzeFrontPage_Multithreaded(repo);
 
             //Console.WriteLine("FIXING");
             //repo.FixVotes();
 
-            repo.UpdateDataStore("pollitika.db");
+            //repo.UpdateDataStore("pollitika.db");
 
             PrintStatistics(repo);
         }

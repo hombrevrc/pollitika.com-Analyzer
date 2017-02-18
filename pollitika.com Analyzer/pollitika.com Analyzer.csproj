@@ -68,6 +68,7 @@
     <Compile Include="AnalyzeComments.cs" />
     <Compile Include="AnalyzeFrontPage.cs" />
     <Compile Include="AnalyzePosts.cs" />
+    <Compile Include="AnalyzeUsersPosts.cs" />
     <Compile Include="AnalyzeVotes.cs" />
     <Compile Include="MultithreadedScrapper.cs" />
     <Compile Include="Program.cs" />

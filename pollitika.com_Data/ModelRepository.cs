@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using pollitika.com_Analyzer;
@@ -14,6 +16,8 @@ namespace pollitika.com_Data
 {
     public class ModelRepository : IModelRepository
     {
+        private static Mutex mutexAddPost = new Mutex();
+
         internal DataStore _dataStore = new DataStore();
 
         #region Data Store operations
@@ -103,6 +107,13 @@ namespace pollitika.com_Data
 
         public void AddPost(Post newPost)
         {
+            Stopwatch timer = new Stopwatch();
+
+            timer.Start();
+            mutexAddPost.WaitOne();
+            timer.Stop();
+            Console.WriteLine("Waited for mutex = {0}", timer.Elapsed);
+
             if (_dataStore.Posts.Count(p => p.Id == newPost.Id) == 0)
             {
                 _dataStore.Posts.Add(newPost);
@@ -138,6 +149,8 @@ namespace pollitika.com_Data
                     }
                 }
             }
+
+            mutexAddPost.ReleaseMutex();
         }
 
         public bool PostAlreadyExists(int inPostID)

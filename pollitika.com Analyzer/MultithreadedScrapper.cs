@@ -65,8 +65,8 @@ namespace pollitika.com_Analyzer
 
             List<string> listOfPosts = new List<string>();
 
-            for (int j = 0; j <= 600; j += 100)
-                for (int i = 50; i < 60; i++)               
+            for (int j = 0; j <= 500; j += 100)
+                for (int i = 0; i < 3; i++)               
                 {
                     log.InfoFormat("DOING PAGE - {0}", j + i);
 
@@ -119,7 +119,7 @@ namespace pollitika.com_Analyzer
                                           int pauseInMilli,                             // if all threads engaged, waits for n milliseconds
                                           IModelRepository inRepo)
         {
-            const int maxQueueLength = 8;
+            const int maxQueueLength = 15;
             string currentUrl = null;
             int queueLength = 0;
             List<Task> listTasks = new List<Task>();

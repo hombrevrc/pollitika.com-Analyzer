@@ -12,72 +12,9 @@ namespace pollitika.com_Analyzer
 {
     public class MultithreadedScrapper
     {
-        static public void AnalyzeFrontPage_SimpleMultithreaded(ModelRepository repo)
-        {
-            List<string> listOfPosts = new List<string>();
-
-            for (int j=0; j <=600; j+=100)
-                for (int i = 20; i < 30; i++)
-                {
-                    Console.WriteLine("DOING PAGE - {0}", j + i);
-
-                    var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
-
-                    listOfPosts.AddRange(listPosts);
-                }
-
-            for( int i=0; i<listOfPosts.Count; i++ )
-                Console.WriteLine(listOfPosts[i]);
-
-            for (int i = 0; i < listOfPosts.Count; i+=10)
-            {
-                string postUrl1 = listOfPosts[i];
-                string postUrl2 = listOfPosts[i+1];
-                string postUrl3 = listOfPosts[i+2];
-                string postUrl4 = listOfPosts[i+3];
-                string postUrl5 = listOfPosts[i + 4];
-                string postUrl6 = listOfPosts[i + 5];
-                string postUrl7 = listOfPosts[i + 6];
-                string postUrl8 = listOfPosts[i + 7];
-                string postUrl9 = listOfPosts[i + 8];
-                string postUrl10 = listOfPosts[i+9];
-
-                Parallel.Invoke(
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl1, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl2, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl3, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl4, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl5, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl6, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl7, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl8, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl9, repo),
-                        () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl10, repo)
-                    );
-
-                repo.UpdateDataStore("pollitika.db");
-            }
-        }
-
-        static public void AnalyzeFrontPage_Multithreaded(ModelRepository repo)
+        static public void AnalyzeListOfPosts_Multithreaded(List<string> listOfPosts, ModelRepository repo, bool isFrontPage, bool fetchCommentVotes)
         {
             ILog log = log4net.LogManager.GetLogger(typeof(Program));
-
-            List<string> listOfPosts = new List<string>();
-
-            for (int j = 0; j <= 500; j += 100)
-                for (int i = 0; i < 3; i++)               
-                {
-                    log.InfoFormat("DOING PAGE - {0}", j + i);
-
-                    var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
-
-                    listOfPosts.AddRange(listPosts);
-                }
-
-            log.Info("LIST OF POSTS TO ANALYZE:");
-            for (int i = 0; i < listOfPosts.Count; i++)
-                log.Info(listOfPosts[i]);
 
             int batchInd = 0;
             int batchSize = 50;
@@ -97,8 +34,8 @@ namespace pollitika.com_Analyzer
 
                 int k = 0;
                 List<Task> listTasks = WebCrawl(() => postsToProcessInBatch[k++],
-                                                (url, neki_repo) => MultithreadedAnalyzePost("http://pollitika.com" + url, repo),
-                                                200,
+                                                (url, neki_repo) => MultithreadedAnalyzePost("http://pollitika.com" + url, repo, isFrontPage, fetchCommentVotes),
+                                                1000,
                                                 repo);
 
                 log.Debug("Starting wait for tasks to finish!");
@@ -109,7 +46,7 @@ namespace pollitika.com_Analyzer
 
                 log.Info("Updating store");
 
-                repo.UpdateDataStore("pollitika.db");
+                repo.UpdateDataStore();
 
                 batchInd++;
             }
@@ -119,7 +56,7 @@ namespace pollitika.com_Analyzer
                                           int pauseInMilli,                             // if all threads engaged, waits for n milliseconds
                                           IModelRepository inRepo)
         {
-            const int maxQueueLength = 15;
+            const int maxQueueLength = 8;
             string currentUrl = null;
             int queueLength = 0;
             List<Task> listTasks = new List<Task>();
@@ -164,7 +101,7 @@ namespace pollitika.com_Analyzer
             return listTasks;
         }
 
-        static public void MultithreadedAnalyzePost(string postUrl, IModelRepository inRepo)
+        static public void MultithreadedAnalyzePost(string postUrl, IModelRepository inRepo, bool isFrontPage, bool fetchCommentVotes)
         {
             ILog log = log4net.LogManager.GetLogger(typeof(Program));
 
@@ -172,7 +109,7 @@ namespace pollitika.com_Analyzer
 
             try
             {
-                Post newPost = AnalyzePosts.AnalyzePost(postUrl, inRepo, true, true);
+                Post newPost = AnalyzePosts.AnalyzePost(postUrl, inRepo, isFrontPage, fetchCommentVotes);
 
                 if (newPost != null)
                     inRepo.AddPost(newPost);
@@ -182,5 +119,53 @@ namespace pollitika.com_Analyzer
                 log.Error("ERROR " + postUrl + " MSG: " + ex.Message);
             }
         }
+
+        //static public void AnalyzeFrontPage_SimpleMultithreaded(ModelRepository repo)
+        //{
+        //    List<string> listOfPosts = new List<string>();
+
+        //    for (int j = 0; j <= 600; j += 100)
+        //        for (int i = 20; i < 30; i++)
+        //        {
+        //            Console.WriteLine("DOING PAGE - {0}", j + i);
+
+        //            var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
+
+        //            listOfPosts.AddRange(listPosts);
+        //        }
+
+        //    for (int i = 0; i < listOfPosts.Count; i++)
+        //        Console.WriteLine(listOfPosts[i]);
+
+        //    for (int i = 0; i < listOfPosts.Count; i += 10)
+        //    {
+        //        string postUrl1 = listOfPosts[i];
+        //        string postUrl2 = listOfPosts[i + 1];
+        //        string postUrl3 = listOfPosts[i + 2];
+        //        string postUrl4 = listOfPosts[i + 3];
+        //        string postUrl5 = listOfPosts[i + 4];
+        //        string postUrl6 = listOfPosts[i + 5];
+        //        string postUrl7 = listOfPosts[i + 6];
+        //        string postUrl8 = listOfPosts[i + 7];
+        //        string postUrl9 = listOfPosts[i + 8];
+        //        string postUrl10 = listOfPosts[i + 9];
+
+        //        Parallel.Invoke(
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl1, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl2, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl3, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl4, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl5, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl6, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl7, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl8, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl9, repo),
+        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl10, repo)
+        //            );
+
+        //        repo.UpdateDataStore();
+        //    }
+        //}
+
     }
 }

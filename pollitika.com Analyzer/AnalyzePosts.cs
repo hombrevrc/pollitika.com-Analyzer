@@ -23,7 +23,7 @@ namespace pollitika.com_Analyzer
             newPost.IsOnFrontPage = isOnFrontPage;
 
             StringBuilder output = new StringBuilder();
-            output.AppendFormat("Analyzing post - {0,-90}", inPostUrl);
+            output.AppendFormat("Post - {0,-90}", inPostUrl);
 
             ScrapingBrowser Browser = new ScrapingBrowser();
             Browser.AllowAutoRedirect = true; // Browser has settings you can access in setup
@@ -56,8 +56,6 @@ namespace pollitika.com_Analyzer
             newPost.Title = titleHtml[0].InnerText;
 
             // text of the post
-            /*
-             * TEMPORARILY TURNED OFF
             var postText = mainContent.Descendants().First(n => n.GetAttributeValue("class", "").Equals("node"));
             if (postText != null)
             {
@@ -65,8 +63,7 @@ namespace pollitika.com_Analyzer
 
                 newPost.Text = postText.InnerText.Substring(n1 + 20);
             }
-            */
-
+            
             // date posted
             newPost.DatePosted = ScrapePostDate(mainContent);
             output.AppendFormat(" Date - {0}", newPost.DatePosted.ToString("dd/MM/yyy hh:mm"));

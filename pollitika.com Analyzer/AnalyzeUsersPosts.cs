@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using HtmlAgilityPack;
+using log4net;
 using ScrapySharp.Extensions;
 using ScrapySharp.Network;
 
@@ -15,6 +16,8 @@ namespace pollitika.com_Analyzer
         // return list of URLs of posts for given user
         public static List<string> GetListOfUserPosts(string userName)
         {
+            ILog log = log4net.LogManager.GetLogger(typeof(Program));
+
             List<string> retList = new List<string>();
 
             ScrapingBrowser Browser = new ScrapingBrowser();
@@ -40,6 +43,8 @@ namespace pollitika.com_Analyzer
                 pageCount = Convert.ToInt32(num);
             }
 
+            log.Info("Getting posts for user " + userName + " Number of pages " + pageCount.ToString());
+
             int pageIndex = 0;
             while (pageIndex <= pageCount)
             {
@@ -47,7 +52,7 @@ namespace pollitika.com_Analyzer
 
                 try
                 {
-                    Console.WriteLine("Doing page " + pageUrl);
+                    log.Debug("Doing page " + pageUrl);
 
                     WebPage PageResult = Browser.NavigateToPage(new Uri(pageUrl));
 
@@ -71,16 +76,14 @@ namespace pollitika.com_Analyzer
                             retList.Add(href);
                         }
                     }
-                    Console.WriteLine("Done page " + pageIndex);
 
                     pageIndex++;
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Exception");
+                    log.Error("Exception while getting user posts. Msg: " + e.Message);
                     break;
                 }
-               
             }
 
             return retList;

@@ -18,25 +18,92 @@ namespace pollitika.com_Analyzer
 
         static void Main(string[] args)
         {
+            AnalyzeFrontPagePosts("pollitika.db");
+            //CreateTestDatabase("pollitikaTest.db");
+        }
+
+        static void AnalyzeFrontPagePosts(string inFileName)
+        {
             ModelRepository repo = new ModelRepository();
+            List<string> listOfPosts = new List<string>();
 
-            Logger.Info("Opening data store");
+            Logger.Info("Opening data store: " + inFileName);
+            repo.OpenDataStore(inFileName);
 
-            //repo.OpenDataStore("pollitika.db");
+            Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
+            for (int j = 0; j <= 600; j += 100)
+                for (int i = 1; i < 15; i++)
+                {
+                    Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
+                    var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
 
-            Logger.Info("Data store opened");
+                    listOfPosts.AddRange(listPosts);
+                }
 
-            var a = AnalyzeUsersPosts.GetListOfUserPosts("mrak");
-            int c = 0;
-            foreach (string b in a)
-                Console.WriteLine("{0,3} - {1}", c++, b);
+            Logger.Info("\nLIST OF POSTS TO ANALYZE:");
+            for (int i = 0; i < listOfPosts.Count; i++)
+                Logger.Info((i + 1).ToString() + ". " + listOfPosts[i]);
 
-            //MultithreadedScrapper.AnalyzeFrontPage_Multithreaded(repo);
+            Logger.Info("\nSTARTING ANALYSIS:");
+            MultithreadedScrapper.AnalyzeListOfPosts_Multithreaded(listOfPosts, repo, true, true);
 
-            //Console.WriteLine("FIXING");
-            //repo.FixVotes();
+            repo.UpdateDataStore();
 
-            //repo.UpdateDataStore("pollitika.db");
+            PrintStatistics(repo);
+        }
+
+        static void CreateTestDatabase(string inFileName)
+        {
+            ModelRepository repo = new ModelRepository();
+            List<string> listOfPosts = new List<string>();
+
+            Logger.Info("Creating data store: " + inFileName);
+            repo.CreateNewDataStore(inFileName);
+
+            Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
+            for (int j = 0; j <= 650; j += 700)
+                for (int i = 0; i < 1; i++)
+                {
+                    Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
+                    var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
+
+                    listOfPosts.AddRange(listPosts);
+                }
+
+            Logger.Info("\nLIST OF POSTS TO ANALYZE:");
+            for (int i = 0; i < listOfPosts.Count; i++)
+                Logger.Info((i+1).ToString() + ". " + listOfPosts[i]);
+
+            Logger.Info("\nSTARTING ANALYSIS:");
+            MultithreadedScrapper.AnalyzeListOfPosts_Multithreaded(listOfPosts, repo, true, true);
+
+            // now we will fetch posts from some users
+            Logger.Info("\nANALYZING USERS POSTS:");
+            listOfPosts.Clear();
+            List<string> usersTofetch = new List<string>
+            {
+                //"mrak",
+                //"zoran-ostric",
+                "ppetra",
+                "zvone-radikalni",
+                "otpisani"
+            };
+
+            foreach (string user in usersTofetch)
+            {
+                var list = AnalyzeUsersPosts.GetListOfUserPosts(user);
+
+                listOfPosts.AddRange(list);
+            }
+
+            Logger.Info("\nLIST OF USERS POSTS TO ANALYZE:");
+            for (int i = 0; i < listOfPosts.Count; i++)
+                Logger.Info((i + 1).ToString() + ". " + listOfPosts[i]);
+
+            Logger.Info("\nSTARTING ANALYSIS:");
+            MultithreadedScrapper.AnalyzeListOfPosts_Multithreaded(listOfPosts, repo, true, true);
+
+            repo.UpdateDataStore();
 
             PrintStatistics(repo);
         }
@@ -80,15 +147,6 @@ namespace pollitika.com_Analyzer
             //StatisticsPosts.GetPostsWithZeroVotes(repo);
         }
 
-        public static void FixOnFrontPage()
-        {
-            ModelRepository repo = new ModelRepository();
-
-            repo.OpenDataStore("pollitika.db");
-
-            //foreach(var post in repo.)
-        }
-
         static public void FetchPosts()
         {
             // setup - repozitoriji za spremanje podataka
@@ -113,7 +171,7 @@ namespace pollitika.com_Analyzer
                             repo.AddPost(newPost);
                     }
 
-                    repo.UpdateDataStore("pollitika.db");
+                    repo.UpdateDataStore();
                 }
 
             // zatim prolazimo kroz sve korisnike

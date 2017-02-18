@@ -18,7 +18,14 @@ namespace pollitika.com_Data
     {
         private static Mutex mutexAddPost = new Mutex();
 
-        internal DataStore _dataStore = new DataStore();
+        internal string     _dataStoreName = "";
+        internal DataStore  _dataStore = new DataStore();
+
+        internal string DataStoreName
+        {
+            get { return _dataStoreName; }
+            set { _dataStoreName = value; }
+        }
 
         #region Data Store operations
 
@@ -31,6 +38,8 @@ namespace pollitika.com_Data
                 Stream stream = new FileStream(inFileName, FileMode.Create, FileAccess.Write, FileShare.None);
                 formatter.Serialize(stream, _dataStore);
                 stream.Close();
+
+                DataStoreName = inFileName;
             }
             catch (Exception e)
             {
@@ -53,6 +62,8 @@ namespace pollitika.com_Data
                 _dataStore.Clear();
                 _dataStore = LoadedData;
 
+                DataStoreName = inFileName;
+
                 // temporary fix
                 //foreach (Post p in _dataStore.Posts)
                 //    p.IsOnFrontPage = true;
@@ -66,12 +77,12 @@ namespace pollitika.com_Data
             return true;
         }
 
-        public bool UpdateDataStore(string inFileName)
+        public bool UpdateDataStore()
         {
             try
             {
                 IFormatter formatter = new BinaryFormatter();
-                Stream stream = new FileStream(inFileName, FileMode.Create, FileAccess.Write, FileShare.None);
+                Stream stream = new FileStream(DataStoreName, FileMode.Create, FileAccess.Write, FileShare.None);
                 formatter.Serialize(stream, _dataStore);
                 stream.Close();
             }
@@ -109,10 +120,10 @@ namespace pollitika.com_Data
         {
             Stopwatch timer = new Stopwatch();
 
-            timer.Start();
+            //timer.Start();
             mutexAddPost.WaitOne();
-            timer.Stop();
-            Console.WriteLine("Waited for mutex = {0}", timer.Elapsed);
+            //timer.Stop();
+            //Console.WriteLine("Waited for mutex = {0}", timer.Elapsed);
 
             if (_dataStore.Posts.Count(p => p.Id == newPost.Id) == 0)
             {
@@ -164,8 +175,12 @@ namespace pollitika.com_Data
 
         public void AddUser(User newUser)
         {
-            if( _dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
+            mutexAddPost.WaitOne();
+
+            if ( _dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
                 _dataStore.Users.Add(newUser);
+
+            mutexAddPost.ReleaseMutex();
         }
 
         public User GetUserByName(string inName)
@@ -176,10 +191,5 @@ namespace pollitika.com_Data
         {
             return _dataStore.Users.FirstOrDefault(p => p.NameHtml == inNick);
         }
-
-
-
-
-
     }
 }

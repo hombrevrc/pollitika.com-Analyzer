@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,21 +19,53 @@ namespace pollitika.com_Analyzer
 
         static void Main(string[] args)
         {
-            AnalyzeFrontPagePosts("pollitika.db");
+            string repoName = "pollitikaListTest.db";
+            ModelRepository repo = new ModelRepository();
+
+            Logger.Info("Opening data store: " + repoName);
+            repo.OpenDataStore(repoName);
+
+            List<string> listPosts = LoadListOfPostsFromFile("ListaPostova.txt");
+
+            AnalyzePostsFromList(repo, listPosts, true);
+
+
+            //AnalyzeFrontPagePosts("pollitika.db");
             //CreateTestDatabase("pollitikaTest.db");
         }
 
-        static void AnalyzeFrontPagePosts(string inFileName)
+        static List<string> LoadListOfPostsFromFile(string inFileName)
+        {
+            List<string> lines = System.IO.File.ReadAllLines(inFileName).ToList();
+
+            return lines;
+        }
+
+        static void AnalyzePostsFromList(ModelRepository repo, List<string> inListPosts, bool isFrontPage)
+        {
+            Logger.Info("\nLIST OF POSTS TO ANALYZE:");
+            for (int i = 0; i < inListPosts.Count; i++)
+                Logger.Info((i + 1).ToString() + ". " + inListPosts[i]);
+
+            Logger.Info("\nSTARTING ANALYSIS:");
+            MultithreadedScrapper.AnalyzeListOfPosts_Multithreaded(inListPosts, repo, isFrontPage, true);
+
+            repo.UpdateDataStore();
+
+            PrintStatistics(repo);
+        }
+
+        static void AnalyzeFrontPagePosts(string inRepoFileName)
         {
             ModelRepository repo = new ModelRepository();
             List<string> listOfPosts = new List<string>();
 
-            Logger.Info("Opening data store: " + inFileName);
-            repo.OpenDataStore(inFileName);
+            Logger.Info("Opening data store: " + inRepoFileName);
+            repo.OpenDataStore(inRepoFileName);
 
             Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
-            for (int j = 0; j <= 600; j += 100)
-                for (int i = 1; i < 15; i++)
+            for (int j = 0; j <= 500; j += 100)
+                for (int i = 85; i < 100; i++)
                 {
                     Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
                     var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);

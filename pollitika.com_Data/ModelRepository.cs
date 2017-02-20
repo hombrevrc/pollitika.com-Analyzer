@@ -116,6 +116,15 @@ namespace pollitika.com_Data
             }
         }
 
+        public void AddUser(User newUser)
+        {
+            mutexAddPost.WaitOne();
+
+            if (_dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
+                _dataStore.Users.Add(newUser);
+
+            mutexAddPost.ReleaseMutex();
+        }
         public void AddPost(Post newPost)
         {
             Stopwatch timer = new Stopwatch();
@@ -171,16 +180,12 @@ namespace pollitika.com_Data
             else
                 return true;
         }
-
-
-        public void AddUser(User newUser)
+        public bool PostAlreadyExists(string inPostUrl)
         {
-            mutexAddPost.WaitOne();
-
-            if ( _dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
-                _dataStore.Users.Add(newUser);
-
-            mutexAddPost.ReleaseMutex();
+            if (_dataStore.Posts.Count(p => p.HrefLink == inPostUrl) == 0)
+                return false;
+            else
+                return true;
         }
 
         public User GetUserByName(string inName)

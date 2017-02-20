@@ -28,7 +28,13 @@ namespace pollitika.com_Analyzer
                 List<string> postsToProcessInBatch = new List<string>();
 
                 for (int ind = startInd; ind < startInd + batchSize && ind < listOfPosts.Count; ind++)
-                    postsToProcessInBatch.Add(listOfPosts[ind]);
+                {
+                    string postUrl = "http://pollitika.com" + listOfPosts[ind];
+                    if ( repo.PostAlreadyExists(postUrl) == false )
+                        postsToProcessInBatch.Add(listOfPosts[ind]);
+                    else
+                        log.WarnFormat("Post with url {0} ALREADY EXISTS IN DATABASE", listOfPosts[ind]);
+                }
 
                 postsToProcessInBatch.Add(null);    // adding terminator for WebCrawl
 

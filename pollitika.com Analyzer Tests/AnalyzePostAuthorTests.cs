@@ -103,5 +103,18 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual("Simun", author);
             Assert.AreEqual("simun", authorHtml);
         }
+        [TestMethod]
+        public void AnalyzePost_TestExtractAuthor8()
+        {
+            HtmlWeb htmlWeb = new HtmlWeb();
+
+            HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/zvoni-radikalnom-naden-kratki-spoj-u-mozgu ");
+
+            string author, authorHtml;
+            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+
+            Assert.AreEqual("Zvone Radikalni", author);
+            Assert.AreEqual("zvone-radikalni", authorHtml);
+        }
     }
 }

@@ -121,7 +121,10 @@ namespace pollitika.com_Data
             mutexAddPost.WaitOne();
 
             if (_dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
+            {
+                Console.WriteLine(newUser.Name + " ; " + newUser.NameHtml);
                 _dataStore.Users.Add(newUser);
+            }
 
             mutexAddPost.ReleaseMutex();
         }
@@ -195,6 +198,18 @@ namespace pollitika.com_Data
         public User GetUserByNick(string inNick)
         {
             return _dataStore.Users.FirstOrDefault(p => p.NameHtml == inNick);
+        }
+
+        public void WriteListOfUsersInFile(string inFileName)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(inFileName))
+            {
+                foreach (User user in _dataStore.Users)
+                {
+                    file.WriteLine(user.Name + " ; " + user.NameHtml);
+                }
+            }
+
         }
     }
 }

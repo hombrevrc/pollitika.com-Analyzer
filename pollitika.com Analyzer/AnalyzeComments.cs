@@ -51,6 +51,23 @@ namespace pollitika.com_Analyzer
 
                 HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
 
+                string html = comments.InnerHtml;
+                Console.WriteLine(html);
+
+                int startInd = 0;
+                while (true)
+                {
+                    int ind = html.IndexOf("/user/", startInd);
+                    if (ind != -1)
+                    {
+                        string str = html.Substring(ind, 20);
+                    }
+
+                    startInd = ind + 5;
+                    if (ind == -1)
+                        break;
+                }
+
                 if (comments == null)           // No comments?
                     return listComments;
 

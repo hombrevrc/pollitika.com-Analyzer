@@ -19,7 +19,9 @@ namespace pollitika.com_Analyzer
 
         static void Main(string[] args)
         {
-            string repoName = "pollitikaListTest.db";
+            TestComments();
+
+            /*string repoName = "pollitikaListTest.db";
             ModelRepository repo = new ModelRepository();
 
             Logger.Info("Opening data store: " + repoName);
@@ -29,9 +31,38 @@ namespace pollitika.com_Analyzer
 
             AnalyzePostsFromList(repo, listPosts, true);
 
+            repo.WriteListOfUsersInFile("ListOfUsers.txt");*/
+
+
 
             //AnalyzeFrontPagePosts("pollitika.db");
             //CreateTestDatabase("pollitikaTest.db");
+        }
+
+        static void TestComments()
+        {
+            string test = "http://pollitika.com/ptracker?page=211&type=blog";
+            string test1 = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
+
+            HtmlWeb htmlWeb = new HtmlWeb();
+            HtmlDocument htmlDocument = htmlWeb.Load(test);
+            HtmlNode mainNode = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
+
+            Console.WriteLine(htmlDocument.DocumentNode.InnerHtml);
+
+            //Console.WriteLine(mainNode.InnerHtml);
+            HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
+
+            var link = htmlDocument.DocumentNode.Descendants()
+                  .Where(x => x.Attributes["class"] != null
+                           && x.Attributes["class"].Value == "submitted").ToList();
+
+            int a = 3;
+            //foreach (HtmlNode link in htmlDocument.DocumentNode.SelectNodes("//a[@href]") )
+            // {
+            //    string href = link.OuterHtml;
+            //    Console.WriteLine("Href= " + href);
+            // }
         }
 
         static List<string> LoadListOfPostsFromFile(string inFileName)

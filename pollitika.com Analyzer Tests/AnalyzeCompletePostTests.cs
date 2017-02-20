@@ -67,6 +67,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(new DateTime(2017, 01, 28, 12, 18, 0), comm.Votes[0].DatePosted);
             Assert.AreEqual(-1, comm.Votes[0].UpOrDown);
             Assert.AreEqual("Zvone Radikalni", comm.Votes[1].ByUser.Name);
+            Assert.AreEqual("zvone-radikalni", comm.Votes[1].ByUser.NameHtml);
             Assert.AreEqual(new DateTime(2017, 01, 28, 12, 16, 0), comm.Votes[1].DatePosted);
             Assert.AreEqual(1, comm.Votes[1].UpOrDown);
 

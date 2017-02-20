@@ -269,6 +269,7 @@ namespace pollitika.com_Analyzer_Tests
 
             Comment comm = listComments[0];
             Assert.AreEqual("Skviki", comm.Author.Name);
+            //Assert.AreEqual("skviki", comm.Author.NameHtml);
             Assert.AreEqual(0, comm.NumScrappedVotes);
             Assert.AreEqual(522047, comm.Id);
             Assert.AreEqual(new DateTime(2016, 11, 28, 16, 16, 0), comm.DatePosted);

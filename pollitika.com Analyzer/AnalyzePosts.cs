@@ -77,7 +77,11 @@ namespace pollitika.com_Analyzer
             User user = inRepo.GetUserByName(author);
             if (user == null)
             {
+
                 user = new User{Name = author, NameHtml = authorHtml};
+
+                Console.WriteLine(user.Name + " ; " + user.NameHtml);
+
                 inRepo.AddUser(user);
             }
 

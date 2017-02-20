@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using HtmlAgilityPack;
 using log4net;
 using pollitika.com_Data;
 using pollitika.com_Model;
 using ScrapySharp.Extensions;
 using ScrapySharp.Network;
+using ScrapySharp.Extensions;
+using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
 namespace pollitika.com_Analyzer
 {
@@ -45,7 +50,7 @@ namespace pollitika.com_Analyzer
             string test1 = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
 
             HtmlWeb htmlWeb = new HtmlWeb();
-            HtmlDocument htmlDocument = htmlWeb.Load(test);
+            HtmlDocument htmlDocument = LoadHtmlWithBrowser(test1);
             HtmlNode mainNode = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
             Console.WriteLine(htmlDocument.DocumentNode.InnerHtml);
@@ -63,6 +68,55 @@ namespace pollitika.com_Analyzer
             //    string href = link.OuterHtml;
             //    Console.WriteLine("Href= " + href);
             // }
+        }
+
+        static HtmlDocument LoadHtmlWithBrowser(String url)
+        {
+            WebBrowser webBrowser1 = new WebBrowser();
+
+            webBrowser1.ScriptErrorsSuppressed = true;
+            webBrowser1.Navigate(new Uri(url));
+
+            waitTillLoad(webBrowser1);
+
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            var documentAsIHtmlDocument3 = (mshtml.IHTMLDocument3)webBrowser1.Document.DomDocument;
+            StringReader sr = new StringReader(documentAsIHtmlDocument3.documentElement.outerHTML);
+            doc.Load(sr);
+
+            return doc;
+        }
+
+        static void waitTillLoad(WebBrowser webBrControl)
+        {
+            WebBrowserReadyState loadStatus;
+            int waittime = 100000;
+            int counter = 0;
+            while (true)
+            {
+                loadStatus = webBrControl.ReadyState;
+                //MediaTypeNames.Application.DoEvents();
+                if ((counter > waittime) || (loadStatus == WebBrowserReadyState.Uninitialized) || (loadStatus == WebBrowserReadyState.Loading) || (loadStatus == WebBrowserReadyState.Interactive))
+                {
+                    break;
+                }
+                counter++;
+                Thread.Sleep(100);
+            }
+
+            counter = 0;
+            while (true)
+            {
+                loadStatus = webBrControl.ReadyState;
+                //MediaTypeNames.Application.DoEvents();
+                if (loadStatus == WebBrowserReadyState.Complete && webBrControl.IsBusy != true)
+                {
+                    break;
+                }
+                counter++;
+                Thread.Sleep(100);
+
+            }
         }
 
         static List<string> LoadListOfPostsFromFile(string inFileName)

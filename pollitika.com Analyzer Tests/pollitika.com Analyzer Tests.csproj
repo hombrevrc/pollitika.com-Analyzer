@@ -88,9 +88,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\pollitika.com Analyzer\pollitika.com Analyzer.csproj">
-      <Project>{24c08472-e6e2-48d5-97d1-efb8599d048d}</Project>
-      <Name>pollitika.com Analyzer</Name>
+    <ProjectReference Include="..\pollitika.com_AnalyzerLib\pollitika.com_AnalyzerLib.csproj">
+      <Project>{eb900d7a-8665-4afc-86a3-2ad086836a75}</Project>
+      <Name>pollitika.com_AnalyzerLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\pollitika.com_Data\pollitika.com_Data.csproj">
       <Project>{cd8b81f5-a6be-4993-a3d7-1b303928c9bb}</Project>

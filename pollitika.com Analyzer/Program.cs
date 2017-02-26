@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using log4net;
+using pollitika.com_AnalyzerLib;
 using pollitika.com_Data;
 using pollitika.com_Model;
 using ScrapySharp.Extensions;
@@ -24,8 +25,6 @@ namespace pollitika.com_Analyzer
 
         static void Main(string[] args)
         {
-            TestComments();
-
             /*string repoName = "pollitikaListTest.db";
             ModelRepository repo = new ModelRepository();
 
@@ -42,81 +41,6 @@ namespace pollitika.com_Analyzer
 
             //AnalyzeFrontPagePosts("pollitika.db");
             //CreateTestDatabase("pollitikaTest.db");
-        }
-
-        static void TestComments()
-        {
-            string test = "http://pollitika.com/ptracker?page=211&type=blog";
-            string test1 = "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija";
-
-            HtmlWeb htmlWeb = new HtmlWeb();
-            HtmlDocument htmlDocument = LoadHtmlWithBrowser(test1);
-            HtmlNode mainNode = htmlDocument.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
-
-            Console.WriteLine(htmlDocument.DocumentNode.InnerHtml);
-
-            //Console.WriteLine(mainNode.InnerHtml);
-            HtmlNode comments = mainNode.Descendants().SingleOrDefault(x => x.Id == "comments");
-
-            var link = htmlDocument.DocumentNode.Descendants()
-                  .Where(x => x.Attributes["class"] != null
-                           && x.Attributes["class"].Value == "submitted").ToList();
-
-            int a = 3;
-            //foreach (HtmlNode link in htmlDocument.DocumentNode.SelectNodes("//a[@href]") )
-            // {
-            //    string href = link.OuterHtml;
-            //    Console.WriteLine("Href= " + href);
-            // }
-        }
-
-        static HtmlDocument LoadHtmlWithBrowser(String url)
-        {
-            WebBrowser webBrowser1 = new WebBrowser();
-
-            webBrowser1.ScriptErrorsSuppressed = true;
-            webBrowser1.Navigate(new Uri(url));
-
-            waitTillLoad(webBrowser1);
-
-            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-            var documentAsIHtmlDocument3 = (mshtml.IHTMLDocument3)webBrowser1.Document.DomDocument;
-            StringReader sr = new StringReader(documentAsIHtmlDocument3.documentElement.outerHTML);
-            doc.Load(sr);
-
-            return doc;
-        }
-
-        static void waitTillLoad(WebBrowser webBrControl)
-        {
-            WebBrowserReadyState loadStatus;
-            int waittime = 100000;
-            int counter = 0;
-            while (true)
-            {
-                loadStatus = webBrControl.ReadyState;
-                //MediaTypeNames.Application.DoEvents();
-                if ((counter > waittime) || (loadStatus == WebBrowserReadyState.Uninitialized) || (loadStatus == WebBrowserReadyState.Loading) || (loadStatus == WebBrowserReadyState.Interactive))
-                {
-                    break;
-                }
-                counter++;
-                Thread.Sleep(100);
-            }
-
-            counter = 0;
-            while (true)
-            {
-                loadStatus = webBrControl.ReadyState;
-                //MediaTypeNames.Application.DoEvents();
-                if (loadStatus == WebBrowserReadyState.Complete && webBrControl.IsBusy != true)
-                {
-                    break;
-                }
-                counter++;
-                Thread.Sleep(100);
-
-            }
         }
 
         static List<string> LoadListOfPostsFromFile(string inFileName)
@@ -153,7 +77,7 @@ namespace pollitika.com_Analyzer
                 for (int i = 85; i < 100; i++)
                 {
                     Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
-                    var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
+                    var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);
 
                     listOfPosts.AddRange(listPosts);
                 }
@@ -183,7 +107,7 @@ namespace pollitika.com_Analyzer
                 for (int i = 0; i < 1; i++)
                 {
                     Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
-                    var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
+                    var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);
 
                     listOfPosts.AddRange(listPosts);
                 }
@@ -209,7 +133,7 @@ namespace pollitika.com_Analyzer
 
             foreach (string user in usersTofetch)
             {
-                var list = AnalyzeUsersPosts.GetListOfUserPosts(user);
+                var list = UserPostsAnalyzer.GetListOfUserPosts(user);
 
                 listOfPosts.AddRange(list);
             }
@@ -278,12 +202,12 @@ namespace pollitika.com_Analyzer
                 {
                     Console.WriteLine("DOING PAGE - {0}", j + i);
 
-                    var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
+                    var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);
 
                     foreach (string postUrl in listPosts)
                     {
                         //Console.WriteLine("Post url {0}", postUrl);
-                        Post newPost = AnalyzePosts.AnalyzePost("http://pollitika.com" + postUrl, repo, true, true);
+                        Post newPost = PostAnalyzer.AnalyzePost("http://pollitika.com" + postUrl, repo, true, true);
 
                         if (newPost != null)
                             repo.AddPost(newPost);

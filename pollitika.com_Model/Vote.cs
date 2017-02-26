@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pollitika.com_Analyzer
+namespace pollitika.com_Model
 {
     [Serializable]
     public class Vote

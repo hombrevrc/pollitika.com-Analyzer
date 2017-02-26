@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using log4net;
+using pollitika.com_AnalyzerLib;
 using pollitika.com_Data;
 using pollitika.com_Model;
 
@@ -115,7 +116,7 @@ namespace pollitika.com_Analyzer
 
             try
             {
-                Post newPost = AnalyzePosts.AnalyzePost(postUrl, inRepo, isFrontPage, fetchCommentVotes);
+                Post newPost = PostAnalyzer.AnalyzePost(postUrl, inRepo, isFrontPage, fetchCommentVotes);
 
                 if (newPost != null)
                     inRepo.AddPost(newPost);
@@ -126,52 +127,7 @@ namespace pollitika.com_Analyzer
             }
         }
 
-        //static public void AnalyzeFrontPage_SimpleMultithreaded(ModelRepository repo)
-        //{
-        //    List<string> listOfPosts = new List<string>();
-
-        //    for (int j = 0; j <= 600; j += 100)
-        //        for (int i = 20; i < 30; i++)
-        //        {
-        //            Console.WriteLine("DOING PAGE - {0}", j + i);
-
-        //            var listPosts = AnalyzeFrontPage.GetPostLinksFromFrontPage(j + i);
-
-        //            listOfPosts.AddRange(listPosts);
-        //        }
-
-        //    for (int i = 0; i < listOfPosts.Count; i++)
-        //        Console.WriteLine(listOfPosts[i]);
-
-        //    for (int i = 0; i < listOfPosts.Count; i += 10)
-        //    {
-        //        string postUrl1 = listOfPosts[i];
-        //        string postUrl2 = listOfPosts[i + 1];
-        //        string postUrl3 = listOfPosts[i + 2];
-        //        string postUrl4 = listOfPosts[i + 3];
-        //        string postUrl5 = listOfPosts[i + 4];
-        //        string postUrl6 = listOfPosts[i + 5];
-        //        string postUrl7 = listOfPosts[i + 6];
-        //        string postUrl8 = listOfPosts[i + 7];
-        //        string postUrl9 = listOfPosts[i + 8];
-        //        string postUrl10 = listOfPosts[i + 9];
-
-        //        Parallel.Invoke(
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl1, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl2, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl3, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl4, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl5, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl6, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl7, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl8, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl9, repo),
-        //                () => MultithreadedAnalyzePost("http://pollitika.com" + postUrl10, repo)
-        //            );
-
-        //        repo.UpdateDataStore();
-        //    }
-        //}
+ 
 
     }
 }

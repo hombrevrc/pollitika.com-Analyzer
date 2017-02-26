@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using pollitika.com_Model;
 
-namespace pollitika.com_Analyzer
+namespace pollitika.com_Model
 {
     [Serializable]
     public class User

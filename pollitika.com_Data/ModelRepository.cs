@@ -9,13 +9,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using pollitika.com_Analyzer;
+
 using pollitika.com_Model;
 
 namespace pollitika.com_Data
 {
     public class ModelRepository : IModelRepository
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private static Mutex mutexAddPost = new Mutex();
 
         internal string     _dataStoreName = "";
@@ -120,9 +122,14 @@ namespace pollitika.com_Data
         {
             mutexAddPost.WaitOne();
 
-            if (_dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
+            if (newUser.NameHtml != "" && _dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
             {
                 Console.WriteLine(newUser.Name + " ; " + newUser.NameHtml);
+                _dataStore.Users.Add(newUser);
+            }
+            else if( newUser.NameHtml == "" && _dataStore.Users.Count(p => p.Name == newUser.Name) == 0)
+            {
+                log.Warn("Adding user without nick: " + newUser.Name);
                 _dataStore.Users.Add(newUser);
             }
 

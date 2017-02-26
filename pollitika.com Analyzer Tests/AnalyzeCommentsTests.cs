@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using HtmlAgilityPack;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using pollitika.com_Analyzer;
+using pollitika.com_AnalyzerLib;
 using pollitika.com_Data;
 using pollitika.com_Model;
 using ScrapySharp.Html.Forms;
@@ -23,19 +23,19 @@ namespace pollitika.com_Analyzer_Tests
             HtmlWeb htmlWeb = new HtmlWeb();
 
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
-            Assert.AreEqual(13, AnalyzeComments.ScrapePostCommentsNum(htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
+            Assert.AreEqual(13, CommentsAnalyzer.ScrapePostCommentsNum(htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
 
             HtmlDocument htmlDocument2 = htmlWeb.Load("http://pollitika.com/nitko-da-ne-dodje-do-prijatelj-drag");
-            Assert.AreEqual(56, AnalyzeComments.ScrapePostCommentsNum(htmlDocument2.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
+            Assert.AreEqual(56, CommentsAnalyzer.ScrapePostCommentsNum(htmlDocument2.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
 
             HtmlDocument htmlDocument3 = htmlWeb.Load("http://pollitika.com/trijumf-trollova");
-            Assert.AreEqual(161, AnalyzeComments.ScrapePostCommentsNum(htmlDocument3.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
+            Assert.AreEqual(161, CommentsAnalyzer.ScrapePostCommentsNum(htmlDocument3.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
 
             HtmlDocument htmlDocument4 = htmlWeb.Load("http://pollitika.com/kapetan-amerika-protiv-klime");
-            Assert.AreEqual(51, AnalyzeComments.ScrapePostCommentsNum(htmlDocument4.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
+            Assert.AreEqual(51, CommentsAnalyzer.ScrapePostCommentsNum(htmlDocument4.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
 
             HtmlDocument htmlDocument5 = htmlWeb.Load("http://pollitika.com/destiliranje-viska-vrijednosti");
-            Assert.AreEqual(107, AnalyzeComments.ScrapePostCommentsNum(htmlDocument5.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
+            Assert.AreEqual(107, CommentsAnalyzer.ScrapePostCommentsNum(htmlDocument5.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main")));
         }
         #endregion
 
@@ -52,8 +52,8 @@ namespace pollitika.com_Analyzer_Tests
 
             HtmlNode mainContent = PageResult.Html.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent,
-                "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent,
+                "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, true);
 
             Assert.AreEqual(13, listComments.Count);
 
@@ -70,7 +70,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment > listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, false);
+            List<Comment > listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, false);
 
             Assert.AreEqual(13, listComments.Count);
         }
@@ -83,7 +83,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/destiliranje-viska-vrijednosti");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/destiliranje-viska-vrijednosti", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/destiliranje-viska-vrijednosti", _repo, false);
 
             Assert.AreEqual(107, listComments.Count);
         }
@@ -95,7 +95,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/nitko-da-ne-dodje-do-prijatelj-drag");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/nitko-da-ne-dodje-do-prijatelj-drag", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/nitko-da-ne-dodje-do-prijatelj-drag", _repo, false);
 
             Assert.AreEqual(56, listComments.Count);
         }
@@ -107,7 +107,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/trijumf-trollova");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/trijumf-trollova", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/trijumf-trollova", _repo, false);
 
             Assert.AreEqual(161, listComments.Count);
         }
@@ -119,7 +119,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/kapetan-amerika-protiv-klime");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/kapetan-amerika-protiv-klime", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/kapetan-amerika-protiv-klime", _repo, false);
 
             Assert.AreEqual(51, listComments.Count);
         }
@@ -132,7 +132,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/nered-na-trzi-tu-dobra-stvar");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/nered-na-trzi-tu-dobra-stvar", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/nered-na-trzi-tu-dobra-stvar", _repo, false);
 
             Assert.AreEqual(4, listComments.Count);
         }
@@ -144,7 +144,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot", _repo, false);
 
             Assert.AreEqual(19, listComments.Count);
         }
@@ -156,7 +156,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/socijalist-ili");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/socijalist-ili", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/socijalist-ili", _repo, false);
 
             Assert.AreEqual(8, listComments.Count);
         }
@@ -168,7 +168,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/zamp-cekajuci-prava-pitanja");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/zamp-cekajuci-prava-pitanja", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/zamp-cekajuci-prava-pitanja", _repo, false);
 
             Assert.AreEqual(519, listComments.Count);
         }
@@ -180,7 +180,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/prvi-potezi-vlade");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/prvi-potezi-vlade", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/prvi-potezi-vlade", _repo, false);
 
             Assert.AreEqual(491, listComments.Count);
         }
@@ -192,7 +192,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/eu-skeptik");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/eu-skeptik", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/eu-skeptik", _repo, false);
 
             Assert.AreEqual(569, listComments.Count);
         }
@@ -204,7 +204,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/socijalist-ili");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/socijalist-ili", _repo, false);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/socijalist-ili", _repo, false);
 
             Assert.AreEqual(8, listComments.Count);
         }
@@ -222,7 +222,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, true);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, true);
 
             Assert.AreEqual(13, listComments.Count);
 
@@ -286,7 +286,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument1 = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
             HtmlNode mainContent = htmlDocument1.DocumentNode.Descendants().SingleOrDefault(x => x.Id == "content-main");
 
-            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent, "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo);
+            List<Comment> listComments = CommentsAnalyzer.ScrapePostComments(mainContent, "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo, true);
 
             Assert.AreEqual(13, listComments.Count);
 

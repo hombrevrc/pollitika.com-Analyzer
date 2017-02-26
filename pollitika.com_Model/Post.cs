@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace pollitika.com_Analyzer
+namespace pollitika.com_Model
 {
     [Serializable]
     public class Post

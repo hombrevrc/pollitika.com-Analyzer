@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using pollitika.com_Analyzer;
+
+using pollitika.com_AnalyzerLib;
 
 namespace pollitika.com_Analyzer_Tests
 {
@@ -20,7 +21,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("žaki", author);
             Assert.AreEqual("zaki", authorHtml);
@@ -33,7 +34,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/kukavicje-jaje");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("Rebel", author);
             Assert.AreEqual("rebel", authorHtml);
@@ -46,7 +47,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/pollitika-kao-quotevo-siljim-drvo-da-ubijem-meduquot");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("Mali Hans", author);
             Assert.AreEqual("mali-hans", authorHtml);
@@ -59,7 +60,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/spam-modul");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("mrak", author);
             Assert.AreEqual("mrak", authorHtml);
@@ -72,7 +73,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/tko-drma-hac-om");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("2bbc", author);
             Assert.AreEqual("2bbc", authorHtml);
@@ -85,7 +86,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/sramim-se");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("drlesar", author);
             Assert.AreEqual("drlesar", authorHtml);
@@ -98,7 +99,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/nered-na-trzi-tu-dobra-stvar");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("Simun", author);
             Assert.AreEqual("simun", authorHtml);
@@ -111,7 +112,7 @@ namespace pollitika.com_Analyzer_Tests
             HtmlDocument htmlDocument = htmlWeb.Load("http://pollitika.com/zvoni-radikalnom-naden-kratki-spoj-u-mozgu ");
 
             string author, authorHtml;
-            AnalyzePosts.ScrapePostAuthor(htmlDocument, out author, out authorHtml);
+            PostAnalyzer.ScrapePostAuthor(htmlDocument.DocumentNode, out author, out authorHtml);
 
             Assert.AreEqual("Zvone Radikalni", author);
             Assert.AreEqual("zvone-radikalni", authorHtml);

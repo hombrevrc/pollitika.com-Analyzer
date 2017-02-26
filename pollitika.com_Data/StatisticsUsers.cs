@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using pollitika.com_Analyzer;
+
+using pollitika.com_Model;
 
 namespace pollitika.com_Data
 {

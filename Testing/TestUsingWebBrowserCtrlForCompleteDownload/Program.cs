@@ -53,7 +53,7 @@ namespace TestUsingWebBrowserCtrlForCompleteDownload
                 var cts = new CancellationTokenSource((int)TimeSpan.FromMinutes(3).TotalMilliseconds);
 
                 var task = ScrapSitesAsync(
-                    new[] { "http://example.com", "http://example.org", "http://example.net" },
+                    new[] { "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", "http://example.org", "http://example.net" },
                     cts.Token);
 
                 task.Wait();

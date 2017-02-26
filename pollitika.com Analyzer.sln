@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pollitika.com_ConsoleRunner
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUsingWebBrowserCtrlForCompleteDownload", "Testing\TestUsingWebBrowserCtrlForCompleteDownload\TestUsingWebBrowserCtrlForCompleteDownload.csproj", "{86D31F1B-3F34-4317-A8E8-278A46811F51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBrowserSession", "Testing\TestBrowserSession\TestBrowserSession.csproj", "{6A9B1441-6443-49D5-9B7B-809103918BBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{86D31F1B-3F34-4317-A8E8-278A46811F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86D31F1B-3F34-4317-A8E8-278A46811F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86D31F1B-3F34-4317-A8E8-278A46811F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A9B1441-6443-49D5-9B7B-809103918BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A9B1441-6443-49D5-9B7B-809103918BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A9B1441-6443-49D5-9B7B-809103918BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A9B1441-6443-49D5-9B7B-809103918BBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +84,6 @@ Global
 		{903B5B95-3C46-4ECE-BE9A-042F56AF818D} = {F73CC50F-D54A-4EA7-A787-57BE9F8E9324}
 		{B546C8AE-A2DD-4A54-A9A4-AA5F7EC5F80D} = {F73CC50F-D54A-4EA7-A787-57BE9F8E9324}
 		{86D31F1B-3F34-4317-A8E8-278A46811F51} = {F73CC50F-D54A-4EA7-A787-57BE9F8E9324}
+		{6A9B1441-6443-49D5-9B7B-809103918BBA} = {F73CC50F-D54A-4EA7-A787-57BE9F8E9324}
 	EndGlobalSection
 EndGlobal

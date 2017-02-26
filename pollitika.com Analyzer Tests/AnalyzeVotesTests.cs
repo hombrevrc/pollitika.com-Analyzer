@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pollitika.com_Analyzer;
 using pollitika.com_Data;
 using pollitika.com_Model;
+using ScrapySharp.Network;
 
 namespace pollitika.com_Analyzer_Tests
 {
@@ -68,9 +69,30 @@ namespace pollitika.com_Analyzer_Tests
         {
             // "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija"
 
-            List<Vote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(15397, null, "node", _repo);
+            ScrapingBrowser browser = Utility.GetLoggedBrowser();
+
+            List<Vote> listVotes = AnalyzeVotes.ScrapeListVotesForNode(15397, null, "node", _repo, browser);
 
             Assert.AreEqual(24, listVotes.Count);
+
+            // testing votes
+            List<string> usersWhoVoted = new List<string>
+            {
+                "ppetra", "leddevet", "otpisani", "Quinquaginta", "z00ey", "NolS", "magarac", "antonac", "martin", "profesor", "Elnino",
+                "pravednik vz", "boltek", "marival", "lunoprof", "Skviki", "lignja", "Jura", "mario121", "hlad", "gledamokosebe", "zaphod", "indian", "Bigulica"
+            };
+            List<string> usersWhoVotedNicks = new List<string>
+            {
+                "ppetra", "leddevet", "otpisani", "quinquaginta", "z00ey", "nols", "magarac", "antonac", "martin", "profesor", "elnino",
+                "pravednik-vz", "boltek", "marival", "lunoprof", "skviki", "lignja", "jura", "mario121", "hlad", "gledamokosebe", "zaphod", "indian", "bigulica"
+            };
+
+            // check all user names who voted
+            for (int i = 0; i < usersWhoVoted.Count; i++)
+            {
+                Assert.AreEqual(usersWhoVoted[i], listVotes[i].ByUser.Name);
+                Assert.AreEqual(usersWhoVotedNicks[i], listVotes[i].ByUser.NameHtml);
+            }
         }
 
         [TestMethod]

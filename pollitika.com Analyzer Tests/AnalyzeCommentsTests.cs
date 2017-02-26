@@ -44,23 +44,11 @@ namespace pollitika.com_Analyzer_Tests
         [TestMethod]
         public void ScrapePostComments_TestCommentAuthor()
         {
-            ScrapingBrowser Browser = new ScrapingBrowser();
-            Browser.AllowAutoRedirect = true; // Browser has many settings you can access in setup
-            Browser.AllowMetaRedirect = true;
+            ScrapingBrowser Browser = Utility.GetLoggedBrowser();
 
-            //go to the home page
-            WebPage PageResult = Browser.NavigateToPage(new Uri("http://www.pollitika.com"));
+            WebPage PageResult = Browser.NavigateToPage(new Uri("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija"));
 
-            PageWebForm form = PageResult.FindFormById("user-login-form");
-            // assign values to the form fields
-            form["name"] = "Zvone Radikalni";
-            form["pass"] = "economist0";
-            form.Method = HttpVerb.Post;
-            WebPage resultsPage = form.Submit();
-
-            PageResult = Browser.NavigateToPage(new Uri("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija"));
-
-            Console.WriteLine(PageResult.Html.InnerHtml);
+            //Console.WriteLine(PageResult.Html.InnerHtml);
 
             HtmlNode mainContent = PageResult.Html.Descendants().SingleOrDefault(x => x.Id == "content-main");
 

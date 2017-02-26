@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HtmlAgilityPack;
 using pollitika.com_Model;
 using ScrapySharp.Extensions;
+using ScrapySharp.Network;
 
 namespace pollitika.com_Analyzer
 {
@@ -13,17 +14,26 @@ namespace pollitika.com_Analyzer
     public class AnalyzeVotes
     {
         // inType: "node" - for getting votes for posts, "comment" - for getting votes for comments
-        public static List<Vote> ScrapeListVotesForNode(int nodeID, User nodeAuthor, string inType, IModelRepository inRepo)
+        public static List<Vote> ScrapeListVotesForNode(int nodeID, User nodeAuthor, string inType, IModelRepository inRepo, ScrapingBrowser inBrowser=null)
         {
             List<Vote> listVotes = new List<Vote>();
 
             string href = "http://pollitika.com/" + inType + "/" + nodeID.ToString() + "/who_voted";
 
-            HtmlWeb htmlWeb = new HtmlWeb();
-            HtmlDocument htmlDocument = htmlWeb.Load(href);
+            HtmlNode mainNode = null;
+            if (inBrowser == null)
+            {
+                HtmlWeb htmlWeb = new HtmlWeb();
+                HtmlDocument  htmlDocument = htmlWeb.Load(href);
+                mainNode = htmlDocument.DocumentNode;
+            }
+            else {
+                WebPage PageResult = inBrowser.NavigateToPage(new Uri(href));
+                mainNode = PageResult.Html;
+            }
 
             // najprije, da vidimo da li je samo jedna stranica s glasovima ili ih ima više
-            var itemlist = htmlDocument.DocumentNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("pager"));
+            var itemlist = mainNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("pager"));
 
             int pageCount = 1;
             if (itemlist.Count() > 0)
@@ -33,7 +43,7 @@ namespace pollitika.com_Analyzer
 
             for (int i = 0; i < pageCount; i++)
             {
-                var voteList = htmlDocument.DocumentNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
+                var voteList = mainNode.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("view-content"));
 
                 var content = voteList.First();
                 var table = content.SelectNodes("table");
@@ -49,12 +59,23 @@ namespace pollitika.com_Analyzer
 
                     Vote newVote = new Vote();
 
-                    string userNick = rowCels[0].InnerText.Substring(13).TrimEnd();
+                    string userName = rowCels[0].InnerText.Substring(13).TrimEnd();
+
+                    // let's see if we can get his html nick
+                    string userNick = "";
+                    string str = rowCels[0].InnerHtml;
+                    int usrInd = str.IndexOf("/user/");
+                    if (usrInd != -1)
+                    {
+                        int usrInd2 = str.IndexOf("title=", usrInd);
+                        userNick = str.Substring(usrInd + 6, usrInd2 - usrInd - 8);
+                    }
+
                     // check if user exists, add him if not
-                    User user = inRepo.GetUserByName(userNick);
+                    User user = inRepo.GetUserByName(userName);
                     if (user == null)
                     {
-                        user = new User { Name = userNick, NameHtml = userNick };
+                        user = new User { Name = userName, NameHtml = userNick };
                         inRepo.AddUser(user);
                     }
 
@@ -75,7 +96,17 @@ namespace pollitika.com_Analyzer
                 {
                     href = "http://pollitika.com/node/" + nodeID.ToString() + "/who_voted?page=" + (i+1).ToString();
 
-                    htmlDocument = htmlWeb.Load(href);
+                    if (inBrowser == null)
+                    {
+                        HtmlWeb htmlWeb = new HtmlWeb();
+                        HtmlDocument htmlDocument = htmlWeb.Load(href);
+                        mainNode = htmlDocument.DocumentNode;
+                    }
+                    else
+                    {
+                        WebPage PageResult = inBrowser.NavigateToPage(new Uri(href));
+                        mainNode = PageResult.Html;
+                    }
                 }
             }
             return listVotes;

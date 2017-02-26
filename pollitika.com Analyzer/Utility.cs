@@ -5,11 +5,31 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using ScrapySharp.Html.Forms;
+using ScrapySharp.Network;
 
 namespace pollitika.com_Analyzer
 {
     public class Utility
     {
+        public static ScrapingBrowser GetLoggedBrowser()
+        {
+            ScrapingBrowser Browser = new ScrapingBrowser();
+            Browser.AllowAutoRedirect = true; // Browser has many settings you can access in setup
+            Browser.AllowMetaRedirect = true;
+
+            //go to the home page
+            WebPage PageResult = Browser.NavigateToPage(new Uri("http://www.pollitika.com"));
+
+            PageWebForm form = PageResult.FindFormById("user-login-form");
+            // assign values to the form fields
+            form["name"] = "Zvone Radikalni";
+            form["pass"] = "economist0";
+            form.Method = HttpVerb.Post;
+            WebPage resultsPage = form.Submit();
+
+            return Browser;
+        }
         public static DateTime ExtractDateTime(string inStr)
         {
             // extracting date

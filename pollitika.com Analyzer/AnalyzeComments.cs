@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using HtmlAgilityPack;
 using pollitika.com_Model;
+using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
 namespace pollitika.com_Analyzer
 {
@@ -81,13 +83,22 @@ namespace pollitika.com_Analyzer
                     string strNameDate = comment.ChildNodes[1].InnerText;
                     int mdashPos = strNameDate.IndexOf("&mdash");
                     string name = strNameDate.Substring(2, mdashPos - 2);
+                    string authorName = name.Trim();
 
-                    string authorNick = name.Trim();
+                    // let's see if we can get his html nick
+                    string authorNick = "";
+                    string str = comment.ChildNodes[1].InnerHtml;
+                    int usrInd = str.IndexOf("/user/");
+                    if (usrInd != -1)
+                    {
+                        int usrInd2 = str.IndexOf("title=", usrInd);
+                        authorNick = str.Substring(usrInd + 6, usrInd2 - usrInd - 8);
+                    }
                     // check if user exists, add him if not
-                    User user = inRepo.GetUserByName(authorNick);
+                    User user = inRepo.GetUserByName(authorName);
                     if (user == null)
                     {
-                        user = new User {Name = authorNick, NameHtml = authorNick};
+                        user = new User {Name = authorName, NameHtml = authorNick};
                         inRepo.AddUser(user);
                     }
                     newComment.Author = user;

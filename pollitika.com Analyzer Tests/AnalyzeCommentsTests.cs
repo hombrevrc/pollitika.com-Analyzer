@@ -6,6 +6,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pollitika.com_Analyzer;
 using pollitika.com_Data;
 using pollitika.com_Model;
+using ScrapySharp.Html.Forms;
+using ScrapySharp.Network;
 
 namespace pollitika.com_Analyzer_Tests
 {
@@ -37,10 +39,43 @@ namespace pollitika.com_Analyzer_Tests
         }
         #endregion
 
+        #region Test fetching correct name and nameHtml for users that commented
 
-        #region Simple tests for ScrapePostComments - testing number of fetched comments
         [TestMethod]
-        public void GetPostComments_Test1()
+        public void ScrapePostComments_TestCommentAuthor()
+        {
+            ScrapingBrowser Browser = new ScrapingBrowser();
+            Browser.AllowAutoRedirect = true; // Browser has many settings you can access in setup
+            Browser.AllowMetaRedirect = true;
+
+            //go to the home page
+            WebPage PageResult = Browser.NavigateToPage(new Uri("http://www.pollitika.com"));
+
+            PageWebForm form = PageResult.FindFormById("user-login-form");
+            // assign values to the form fields
+            form["name"] = "Zvone Radikalni";
+            form["pass"] = "economist0";
+            form.Method = HttpVerb.Post;
+            WebPage resultsPage = form.Submit();
+
+            PageResult = Browser.NavigateToPage(new Uri("http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija"));
+
+            Console.WriteLine(PageResult.Html.InnerHtml);
+
+            HtmlNode mainContent = PageResult.Html.Descendants().SingleOrDefault(x => x.Id == "content-main");
+
+            List<Comment> listComments = AnalyzeComments.ScrapePostComments(mainContent,
+                "http://pollitika.com/hrvatsko-zdravstvo-i-sovjetska-automobilska-industrija", _repo);
+
+            Assert.AreEqual(13, listComments.Count);
+
+        }
+
+        #endregion
+
+            #region Simple tests for ScrapePostComments - testing number of fetched comments
+        [TestMethod]
+        public void ScrapePostComments_VerifyNum_Test1()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -53,7 +88,7 @@ namespace pollitika.com_Analyzer_Tests
         }
 
         [TestMethod]
-        public void GetPostComments_Test2()
+        public void ScrapePostComments_VerifyNum_Test2()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -65,7 +100,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(107, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test3()
+        public void ScrapePostComments_VerifyNum_Test3()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -77,7 +112,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(56, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test4()
+        public void ScrapePostComments_VerifyNum_Test4()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -89,7 +124,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(161, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test5()
+        public void ScrapePostComments_VerifyNum_Test5()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -102,7 +137,7 @@ namespace pollitika.com_Analyzer_Tests
         }
 
         [TestMethod]
-        public void GetPostComments_Test6()
+        public void ScrapePostComments_VerifyNum_Test6()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -114,7 +149,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(4, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test7()
+        public void ScrapePostComments_VerifyNum_Test7()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -126,7 +161,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(19, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test8()
+        public void ScrapePostComments_VerifyNum_Test8()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -138,7 +173,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(8, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test9()
+        public void ScrapePostComments_VerifyNum_Test9()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -150,7 +185,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(519, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test10()
+        public void ScrapePostComments_VerifyNum_Test10()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -162,7 +197,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(491, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test11()
+        public void ScrapePostComments_VerifyNum_Test11()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -174,7 +209,7 @@ namespace pollitika.com_Analyzer_Tests
             Assert.AreEqual(569, listComments.Count);
         }
         [TestMethod]
-        public void GetPostComments_Test12()
+        public void ScrapePostComments_VerifyNum_Test12()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -192,7 +227,7 @@ namespace pollitika.com_Analyzer_Tests
 
         #region Testing votes in comments
         [TestMethod]
-        public void GetPostComments_TestVotesOnComments()
+        public void ScrapePostComments_VerifyNum_TestVotesOnComments()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 
@@ -256,7 +291,7 @@ namespace pollitika.com_Analyzer_Tests
 
         #region Complex tests
         [TestMethod]
-        public void GetPostComments_TestCompleteCommentList()
+        public void ScrapePostComments_TestCompleteCommentList()
         {
             HtmlWeb htmlWeb = new HtmlWeb();
 

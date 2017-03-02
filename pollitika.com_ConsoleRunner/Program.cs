@@ -18,6 +18,38 @@ namespace pollitika.com_ConsoleRunner
             ModelRepository repo = new ModelRepository();
             List<string> listOfPosts = new List<string>();
 
+            string repoName = "pollitikaNew2.db";
+
+            Logger.Info("Opening data store: " + repoName);
+            repo.CreateNewDataStore(repoName);
+
+            Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
+            for (int j = 0; j <= 600; j += 100)
+                for (int i = 1; i < 20; i++)
+                {
+                    Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
+                    var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);
+
+                    listOfPosts.AddRange(listPosts);
+                }
+
+
+            Logger.Info("\nLIST OF POSTS TO ANALYZE:");
+            for (int i = 0; i < listOfPosts.Count; i++)
+                Logger.Info((i + 1).ToString() + ". " + listOfPosts[i]);
+
+            ContinuousMultiThreadedScrapper.AnalyzeListOfPosts_Multithreaded(listOfPosts, repo, true, true);
+
+            PrintStatistics(repo);
+
+            repo.UpdateDataStore();
+        }
+
+        public void PerformSimpleDownloadOfListOfPosts()
+        {
+            ModelRepository repo = new ModelRepository();
+            List<string> listOfPosts = new List<string>();
+
             string repoName = "pollitikaNew.db";
 
             Logger.Info("Opening data store: " + repoName);
@@ -36,22 +68,6 @@ namespace pollitika.com_ConsoleRunner
                 "/sustavno-trovanje-gradana-dok-sustav-funkcionira",
                 "/o-rusvaju-s-jmbg-om"
             };
-
-
-            //Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:")
-            //for (int j = 0; j <= 600; j += 100)
-            //    for (int i = 1; i < 20; i++)
-            //    {
-            //        Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
-            //        var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);
-
-            //        listOfPosts.AddRange(listPosts);
-            //    }
-
-
-            //Logger.Info("\nLIST OF POSTS TO ANALYZE:");
-            //for (int i = 0; i < listOfPosts.Count; i++)
-            //    Logger.Info((i + 1).ToString() + ". " + listOfPosts[i]);
 
             SimpleMultithreadedScrapper.AnalyzeFrontPage_SimpleMultithreaded(listToDo, repo);
 

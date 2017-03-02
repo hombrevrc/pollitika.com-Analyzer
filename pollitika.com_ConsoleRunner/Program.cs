@@ -25,7 +25,7 @@ namespace pollitika.com_ConsoleRunner
 
             Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
             for (int j = 0; j <= 600; j += 100)
-                for (int i = 1; i < 20; i++)
+                for (int i = 0; i < 1; i++)
                 {
                     Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
                     var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);

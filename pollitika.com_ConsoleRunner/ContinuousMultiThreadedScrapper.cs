@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using log4net;
+using pollitika.com_AnalyzerLib;
 using pollitika.com_Data;
 using pollitika.com_Model;
 using ScrapySharp.Network;
@@ -18,6 +19,9 @@ namespace pollitika.com_ConsoleRunner
             ILog log = log4net.LogManager.GetLogger(typeof(Program));
 
             List<ScrapingBrowser> listLoggedBrowsers = new List<ScrapingBrowser>();
+
+            for(int numConcurrent=0; numConcurrent<5; numConcurrent++)
+                listLoggedBrowsers.Add(Utility.GetLoggedBrowser());
 
             int batchInd = 0;
             int batchSize = 50;

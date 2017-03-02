@@ -16,21 +16,6 @@ namespace pollitika.com_ConsoleRunner
     {
         static public void AnalyzeFrontPage_SimpleMultithreaded(List<string> listOfPosts, ModelRepository repo)
         {
-            //List<string> listOfPosts = new List<string>();
-
-            //for (int j = 0; j <= 600; j += 100)
-            //    for (int i = 20; i < 30; i++)
-            //    {
-            //        Console.WriteLine("DOING PAGE - {0}", j + i);
-
-            //        var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);
-
-            //        listOfPosts.AddRange(listPosts);
-            //    }
-
-            //for (int i = 0; i < listOfPosts.Count; i++)
-            //    Console.WriteLine(listOfPosts[i]);
-
             ScrapingBrowser sc1 = Utility.GetLoggedBrowser();
             ScrapingBrowser sc2 = Utility.GetLoggedBrowser();
             ScrapingBrowser sc3 = Utility.GetLoggedBrowser();

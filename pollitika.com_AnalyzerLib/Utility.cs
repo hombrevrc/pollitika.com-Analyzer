@@ -24,7 +24,7 @@ namespace pollitika.com_AnalyzerLib
 
             PageWebForm form = PageResult.FindFormById("user-login-form");
             // assign values to the form fields
-            form["name"] = "Zvone Radikalni";
+            form["name"] = "Liberty Valance";
             form["pass"] = "economist0";
             form.Method = HttpVerb.Post;
             WebPage resultsPage = form.Submit();

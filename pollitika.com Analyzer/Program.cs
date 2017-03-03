@@ -25,12 +25,15 @@ namespace pollitika.com_Analyzer
 
         static void Main(string[] args)
         {
-            /*string repoName = "pollitikaListTest.db";
+            string repoName = "pollitika.First_060.db";
             ModelRepository repo = new ModelRepository();
 
             Logger.Info("Opening data store: " + repoName);
             repo.OpenDataStore(repoName);
 
+            PrintStatistics(repo);
+
+            /*
             List<string> listPosts = LoadListOfPostsFromFile("ListaPostova.txt");
 
             AnalyzePostsFromList(repo, listPosts, true);

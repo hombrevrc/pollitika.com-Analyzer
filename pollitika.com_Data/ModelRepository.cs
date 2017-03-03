@@ -124,7 +124,7 @@ namespace pollitika.com_Data
 
             if (newUser.NameHtml != "" && _dataStore.Users.Count(p => p.NameHtml == newUser.NameHtml) == 0)
             {
-                Console.WriteLine(newUser.Name + " ; " + newUser.NameHtml);
+                //Console.WriteLine(newUser.Name + " ; " + newUser.NameHtml);
                 _dataStore.Users.Add(newUser);
             }
             else if( newUser.NameHtml == "" && _dataStore.Users.Count(p => p.Name == newUser.Name) == 0)

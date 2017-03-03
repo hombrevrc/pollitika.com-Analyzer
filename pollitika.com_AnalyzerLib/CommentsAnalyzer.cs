@@ -144,6 +144,8 @@ namespace pollitika.com_AnalyzerLib
             {
                 foreach (var comm in listComments)
                 {
+                    // ovaj if bi jako ubrzao stvar ... ali, što ukoliko je dobio dva plus i dva minus glasa, i rezultat je 0?
+                    //if( comm.NumScrappedVotes != 0 )
                     comm.Votes = VotesAnalyzer.ScrapeListVotesForNode(comm.Id, comm.Author, "comment", inRepo, Browser);
                 }
             }

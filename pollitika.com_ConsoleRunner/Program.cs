@@ -18,14 +18,14 @@ namespace pollitika.com_ConsoleRunner
             ModelRepository repo = new ModelRepository();
             List<string> listOfPosts = new List<string>();
 
-            string repoName = "pollitikaNew2.db";
+            string repoName = "pollitikaNew.db";
 
             Logger.Info("Opening data store: " + repoName);
-            repo.CreateNewDataStore(repoName);
+            repo.OpenDataStore(repoName);
 
             Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
             for (int j = 0; j <= 600; j += 100)
-                for (int i = 0; i < 1; i++)
+                for (int i = 20; i < 50; i++)
                 {
                     Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
                     var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);

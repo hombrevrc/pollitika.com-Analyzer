@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -16,19 +17,25 @@ namespace pollitika.com_ConsoleRunner
     {
         static public void AnalyzeListOfPosts_Multithreaded(List<string> listOfPosts, ModelRepository repo, bool isFrontPage, bool fetchCommentVotes)
         {
+            Stopwatch timer = new Stopwatch();
             ILog log = log4net.LogManager.GetLogger(typeof(Program));
 
             List<ScrapingBrowser> listLoggedBrowsers = new List<ScrapingBrowser>();
 
-            for(int numConcurrent=0; numConcurrent<5; numConcurrent++)
+            log.Info("Logging in browsers");
+            const int MaxConcurrentBrowsers = 8;
+            for(int i=0; i<MaxConcurrentBrowsers; i++)
                 listLoggedBrowsers.Add(Utility.GetLoggedBrowser());
 
             int batchInd = 0;
             int batchSize = 50;
             int numBatches = listOfPosts.Count / batchSize + 1;
 
+            timer.Start();
+
             while (batchInd * batchSize < listOfPosts.Count)
             {
+
                 log.InfoFormat("DOING BATCH {0} of {1}", batchInd + 1, numBatches);
 
                 int startInd = batchInd * batchSize;
@@ -52,6 +59,7 @@ namespace pollitika.com_ConsoleRunner
                                                 repo,
                                                 listLoggedBrowsers);
 
+                // when we get to the end of call, some threads are still running
                 log.Debug("Starting wait for tasks to finish!");
                 while (listTasks.Count(task => task.IsCompleted == false) > 0)
                 {
@@ -61,6 +69,9 @@ namespace pollitika.com_ConsoleRunner
                 log.Info("Updating store");
 
                 repo.UpdateDataStore();
+
+                log.InfoFormat("BATCH DONE IN TIME {0}", timer.Elapsed);
+                timer.Restart();
 
                 batchInd++;
             }
@@ -99,7 +110,9 @@ namespace pollitika.com_ConsoleRunner
                         if (listIsBrowserUsed[i] == false)
                         {
                             unusedBrowserIndex = i;
+                            listIsBrowserUsed[i] = true;
                             mutexAccessListUsedBrowsers.ReleaseMutex();
+                            log.DebugFormat("Using browser index - {0}", unusedBrowserIndex);
                             break;
                         }
 
@@ -136,6 +149,8 @@ namespace pollitika.com_ConsoleRunner
                                                                 {
                                                                     listIsBrowserUsed[i] = false;
                                                                     mutexAccessListUsedBrowsers.ReleaseMutex();
+                                                                    log.DebugFormat("Releasing browser index - {0}", i);
+
                                                                     break;
                                                                 }
                                                         }

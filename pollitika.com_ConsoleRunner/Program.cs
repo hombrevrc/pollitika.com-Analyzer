@@ -23,9 +23,12 @@ namespace pollitika.com_ConsoleRunner
             Logger.Info("Opening data store: " + repoName);
             repo.OpenDataStore(repoName);
 
+            var listPosts2 = FrontPageAnalyzer.GetPostLinksFromFrontPage(680);
+            listOfPosts.AddRange(listPosts2);
+
             Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
-            for (int j = 0; j <= 600; j += 100)
-                for (int i = 50; i < 60; i++)
+            for (int j = 0; j <= 500; j += 100)
+                for (int i = 80; i < 100; i++)           // došli smo do 60
                 {
                     Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
                     var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);

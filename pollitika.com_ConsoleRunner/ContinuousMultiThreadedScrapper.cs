@@ -36,7 +36,7 @@ namespace pollitika.com_ConsoleRunner
             while (batchInd * batchSize < listOfPosts.Count)
             {
 
-                log.InfoFormat("DOING BATCH {0} of {1}", batchInd + 1, numBatches);
+                log.InfoFormat("DOING BATCH {0} of {1}, date: {2}", batchInd + 1, numBatches, DateTime.Now);
 
                 int startInd = batchInd * batchSize;
                 List<string> postsToProcessInBatch = new List<string>();
@@ -70,7 +70,7 @@ namespace pollitika.com_ConsoleRunner
 
                 repo.UpdateDataStore();
 
-                log.InfoFormat("BATCH DONE IN TIME {0}", timer.Elapsed);
+                log.InfoFormat("BATCH DONE {0}, BATCH DONE IN TIME {1}", DateTime.Now, timer.Elapsed);
                 timer.Restart();
 
                 batchInd++;

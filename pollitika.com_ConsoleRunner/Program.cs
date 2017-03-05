@@ -15,16 +15,38 @@ namespace pollitika.com_ConsoleRunner
 
         static void Main(string[] args)
         {
+            GetListOfFrontPagePostsToFile("../../../Data/FrontPage_ListOfPosts.txt");
+        }
+
+        public static void GetListOfFrontPagePostsToFile(string inFileName)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(inFileName))
+            {
+                List<string> listOfPosts = new List<string>();
+
+                for (int i = 0; i < 681; i++)
+                {
+                    Logger.InfoFormat("  DOING FRONT PAGE - {0}", i);
+
+                    var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(i);
+
+                    for (int j = 0; j < listPosts.Count; j++)
+                    {
+                        Logger.Info("  ." + listPosts[j]);
+                        file.WriteLine(listPosts[j]);
+                    }
+                    listOfPosts.AddRange(listPosts);
+                }
+            }
+        }
+        public static void StandardDownloadFromFrontpage()
+        {
             ModelRepository repo = new ModelRepository();
             List<string> listOfPosts = new List<string>();
 
             string repoName = "pollitikaNew.db";
-
             Logger.Info("Opening data store: " + repoName);
             repo.OpenDataStore(repoName);
-
-            var listPosts2 = FrontPageAnalyzer.GetPostLinksFromFrontPage(680);
-            listOfPosts.AddRange(listPosts2);
 
             Logger.Info("\nFETCHING POSTS FROM FRONTPAGE:");
             for (int j = 0; j <= 500; j += 100)
@@ -32,10 +54,8 @@ namespace pollitika.com_ConsoleRunner
                 {
                     Logger.InfoFormat("  DOING FRONT PAGE - {0}", j + i);
                     var listPosts = FrontPageAnalyzer.GetPostLinksFromFrontPage(j + i);
-
                     listOfPosts.AddRange(listPosts);
                 }
-
 
             Logger.Info("\nLIST OF POSTS TO ANALYZE:");
             for (int i = 0; i < listOfPosts.Count; i++)
@@ -44,9 +64,9 @@ namespace pollitika.com_ConsoleRunner
             ContinuousMultiThreadedScrapper.AnalyzeListOfPosts_Multithreaded(listOfPosts, repo, true, true);
 
             PrintStatistics(repo);
-
             repo.UpdateDataStore();
         }
+
 
         public void PerformSimpleDownloadOfListOfPosts()
         {

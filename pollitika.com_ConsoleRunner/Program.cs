@@ -26,7 +26,6 @@ namespace pollitika.com_ConsoleRunner
 
             CreateListOfPostsForEachUser("../../../Data/CompleteListOfUsers.txt");
 
-
             //List<string> listUsers = new List<string>() {"zvone-radikalni", "dr-lesar", "marival"};
             //CreateListOfPostsForListOfUsers(listUsers);
 
@@ -41,24 +40,28 @@ namespace pollitika.com_ConsoleRunner
                 int c = 0;
                 while((userName = file.ReadLine()) != null)
                 {
-                    List<string> userPostList = UserPostsAnalyzer.GetListOfUserPosts(userName);
-
-                    if (userPostList.Count > 0)
+                    try
                     {
-                        string userFileName = "../../../Data/UsersLists/" + userName + ".txt";
-                        using (System.IO.StreamWriter fileUser = new System.IO.StreamWriter(userFileName))
+                        List<string> userPostList = UserPostsAnalyzer.GetListOfUserPosts(userName);
+
+                        if (userPostList.Count > 0)
                         {
-                            foreach (string post in userPostList)
-                                fileUser.WriteLine(post);
+                            string userFileName = "../../../Data/UsersLists/" + userName + ".txt";
+                            using (System.IO.StreamWriter fileUser = new System.IO.StreamWriter(userFileName))
+                            {
+                                foreach (string post in userPostList)
+                                    fileUser.WriteLine(post);
+                            }
+
+                            foreach (var s in userPostList)
+                                Logger.Info("   " + s);
                         }
-
-                        foreach (var s in userPostList)
-                            Logger.Info("   " + s);
-
                     }
-                    c++;
-                    if (c == 10)
-                        return;
+                    catch (Exception ex)
+                    {
+                        Logger.Error("Exception thrown. Error message: " + ex.Message);
+                    }
+
                 }
             }
         }

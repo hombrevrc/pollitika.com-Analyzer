@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
+using log4net.Repository.Hierarchy;
 using pollitika.com_AnalyzerLib;
 using pollitika.com_Data;
 
@@ -15,7 +16,27 @@ namespace pollitika.com_ConsoleRunner
 
         static void Main(string[] args)
         {
-            GetListOfFrontPagePostsToFile("../../../Data/FrontPage_ListOfPosts.txt");
+            List<string> listUsers = new List<string>() {"zvone-radikalni", "dr-lesar", "marival"};
+            CreateListOfPostsForListOfUsers(listUsers);
+
+            //GetListOfFrontPagePostsToFile("../../../Data/FrontPage_ListOfPosts.txt");
+        }
+
+        public static void CreateListOfPostsForListOfUsers(List<string> listUserNames)
+        {
+            foreach (var userName in listUserNames)
+            {
+                //Logger.InfoFormat("Doing user: {0}", userName);
+
+                List<string> userList = UserPostsAnalyzer.GetListOfUserPosts(userName);
+
+                string userFileName = "../../../Data/UsersLists/" + userName;
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(userFileName))
+                {
+                    foreach (string post in userList)
+                        file.WriteLine(post);
+                }
+            }
         }
 
         public static void GetListOfFrontPagePostsToFile(string inFileName)

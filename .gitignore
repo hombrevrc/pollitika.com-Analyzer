@@ -251,3 +251,6 @@ paket-files/
 .idea/
 *.sln.iml
 /Testing/SampleScraperClient
+/Data/pollitikaNew.Complete_Front_Page.db
+/Data/pollitikaNew.First_001.db
+/Data/pollitikaNew.First_020.db

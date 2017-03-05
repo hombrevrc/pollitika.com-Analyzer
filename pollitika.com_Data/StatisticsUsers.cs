@@ -16,6 +16,7 @@ namespace pollitika.com_Data
 
             if (user != null)
             {
+                Console.WriteLine("User    : {0}", user.Name);
                 Console.WriteLine("Posts   : {0}", user.PostsByUser.Count);
                 Console.WriteLine("Comments: {0}", user.CommentsByUser.Count);
                 Console.WriteLine("Votes given    : {0}", user.VotesByUser.Count);

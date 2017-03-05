@@ -28,20 +28,30 @@ namespace pollitika.com_AnalyzerLib
             // first, we have to get total number of pages
             int pageCount   = 0;
             string pageUrl1 = "http://www.pollitika.com/blog/" + userName;
-            WebPage startPage = Browser.NavigateToPage(new Uri(pageUrl1));
-            HtmlNode mainContent = startPage.Html.Descendants().Where(x => x.Id == "content-main").First();
 
-            var itemlist = mainContent.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("pager")).ToList();
-            if (itemlist.Count > 0)
+            try
             {
-                string s = itemlist[0].LastChild.PreviousSibling.InnerHtml;
+                WebPage startPage = Browser.NavigateToPage(new Uri(pageUrl1));
+                HtmlNode mainContent = startPage.Html.Descendants().Where(x => x.Id == "content-main").First();
 
-                int n1 = s.IndexOf("?page=");
-                int n2 = s.IndexOf("\"", n1);
-                string num = s.Substring(n1 + 6, n2 - n1 - 6);
+                var itemlist = mainContent.Descendants().Where(n => n.GetAttributeValue("class", "").Equals("pager")).ToList();
+                if (itemlist.Count > 0)
+                {
+                    string s = itemlist[0].LastChild.PreviousSibling.InnerHtml;
 
-                pageCount = Convert.ToInt32(num);
+                    int n1 = s.IndexOf("?page=");
+                    int n2 = s.IndexOf("\"", n1);
+                    string num = s.Substring(n1 + 6, n2 - n1 - 6);
+
+                    pageCount = Convert.ToInt32(num);
+                }
             }
+            catch (Exception ex)
+            {
+                log.Error("NO USER NAME: " + userName);
+                return retList;
+            }
+
 
             log.Info("Getting posts for user " + userName + " Number of pages " + pageCount.ToString());
 

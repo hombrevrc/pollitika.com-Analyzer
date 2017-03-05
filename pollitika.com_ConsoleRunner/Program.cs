@@ -76,6 +76,7 @@ namespace pollitika.com_ConsoleRunner
 
             PrintStatistics(repo);
 
+
             repo.UpdateDataStore();
         }
 

@@ -213,10 +213,15 @@ namespace pollitika.com_Data
             {
                 foreach (User user in _dataStore.Users)
                 {
-                    file.WriteLine(user.Name + " ; " + user.NameHtml);
+                    if( user.NameHtml != "")
+                        file.WriteLine(user.NameHtml);
                 }
             }
-
         }
+
+        public List<string> GetListOfUserNicks()
+        {
+            return _dataStore.Users.Where(p => p.NameHtml != "").Select(p => p.NameHtml).ToList();
+        } 
     }
 }

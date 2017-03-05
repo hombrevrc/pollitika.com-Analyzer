@@ -16,10 +16,64 @@ namespace pollitika.com_ConsoleRunner
 
         static void Main(string[] args)
         {
-            List<string> listUsers = new List<string>() {"zvone-radikalni", "dr-lesar", "marival"};
-            CreateListOfPostsForListOfUsers(listUsers);
+            //ModelRepository repo = new ModelRepository();
+            //List<string> listOfPosts = new List<string>();
+
+            //string repoName = "../../../Data/pollitikaNew.Complete_Front_Page.db";
+
+            //Logger.Info("Opening data store: " + repoName);
+            //repo.OpenDataStore(repoName);
+
+            CreateListOfPostsForEachUser("../../../Data/CompleteListOfUsers.txt");
+
+
+            //List<string> listUsers = new List<string>() {"zvone-radikalni", "dr-lesar", "marival"};
+            //CreateListOfPostsForListOfUsers(listUsers);
 
             //GetListOfFrontPagePostsToFile("../../../Data/FrontPage_ListOfPosts.txt");
+        }
+
+        public static void CreateListOfPostsForEachUser(string inFileNameWithUsersList)
+        {
+            using (System.IO.StreamReader file = new System.IO.StreamReader(inFileNameWithUsersList))
+            {
+                string userName;
+                int c = 0;
+                while((userName = file.ReadLine()) != null)
+                {
+                    List<string> userPostList = UserPostsAnalyzer.GetListOfUserPosts(userName);
+
+                    if (userPostList.Count > 0)
+                    {
+                        string userFileName = "../../../Data/UsersLists/" + userName + ".txt";
+                        using (System.IO.StreamWriter fileUser = new System.IO.StreamWriter(userFileName))
+                        {
+                            foreach (string post in userPostList)
+                                fileUser.WriteLine(post);
+                        }
+
+                        foreach (var s in userPostList)
+                            Logger.Info("   " + s);
+
+                    }
+                    c++;
+                    if (c == 10)
+                        return;
+                }
+            }
+        }
+
+        public static void CreateListOfUsersForRepo(ModelRepository repo, string inFileName)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(inFileName))
+            {
+                var list = repo.GetListOfUserNicks();
+
+                list.Sort();
+
+                foreach (var user in list)
+                    file.WriteLine(user);
+            }
         }
 
         public static void CreateListOfPostsForListOfUsers(List<string> listUserNames)

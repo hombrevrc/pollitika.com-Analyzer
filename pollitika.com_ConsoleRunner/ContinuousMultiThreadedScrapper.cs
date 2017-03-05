@@ -15,6 +15,42 @@ namespace pollitika.com_ConsoleRunner
 {
     public class ContinuousMultiThreadedScrapper
     {
+        static public void AnalyzeListOfPosts_Multithreaded_OneBatch(List<string> listOfPosts, ModelRepository repo, List<ScrapingBrowser> listLoggedBrowsers, bool isFrontPage, bool fetchCommentVotes)
+        {
+            Stopwatch timer = new Stopwatch();
+            ILog log = log4net.LogManager.GetLogger(typeof(Program));
+
+            List<string> postsToProcessInBatch = new List<string>();
+
+            foreach(string s in listOfPosts)
+            {
+                string postUrl = "http://pollitika.com" + s;
+                if (repo.PostAlreadyExists(postUrl) == false)
+                    postsToProcessInBatch.Add(s);
+                else
+                    log.WarnFormat("Post with url {0} ALREADY EXISTS IN DATABASE", s);
+            }
+
+            postsToProcessInBatch.Add(null);    // adding terminator for CrawlListOfPages
+
+            int k = 0;
+            List<Task> listTasks = CrawlListOfPages(() => postsToProcessInBatch[k++],
+                                            (url, neki_repo, browser) => SimpleMultithreadedScrapper.MultithreadedAnalyzePost("http://pollitika.com" + url, repo, isFrontPage, fetchCommentVotes, browser),
+                                            1000,
+                                            repo,
+                                            listLoggedBrowsers);
+
+            // when we get to the end of call, some threads are still running
+            log.Debug("Starting wait for tasks to finish!");
+            while (listTasks.Count(task => task.IsCompleted == false) > 0)
+            {
+                Thread.Sleep(1000);
+            }
+
+            log.InfoFormat("BATCH DONE {0}, BATCH DONE IN TIME {1}", DateTime.Now, timer.Elapsed);
+            timer.Restart();
+
+        }
         static public void AnalyzeListOfPosts_Multithreaded(List<string> listOfPosts, ModelRepository repo, bool isFrontPage, bool fetchCommentVotes)
         {
             Stopwatch timer = new Stopwatch();

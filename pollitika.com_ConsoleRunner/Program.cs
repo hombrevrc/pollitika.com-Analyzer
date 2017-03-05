@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using log4net;
 using log4net.Repository.Hierarchy;
 using pollitika.com_AnalyzerLib;
 using pollitika.com_Data;
+using ScrapySharp.Network;
 
 namespace pollitika.com_ConsoleRunner
 {
@@ -16,20 +18,75 @@ namespace pollitika.com_ConsoleRunner
 
         static void Main(string[] args)
         {
-            //ModelRepository repo = new ModelRepository();
+            ModelRepository repo = new ModelRepository();
             //List<string> listOfPosts = new List<string>();
 
-            //string repoName = "../../../Data/pollitikaNew.Complete_Front_Page.db";
+            string repoName = "../../../Data/pollitikaNew.db";
 
-            //Logger.Info("Opening data store: " + repoName);
-            //repo.OpenDataStore(repoName);
+            Logger.Info("Opening data store: " + repoName);
+            repo.OpenDataStore(repoName);
 
-            CreateListOfPostsForEachUser("../../../Data/CompleteListOfUsers.txt");
+            AnalyzeUsersPosts("../../../Data/UsersLists", repo);
+
+            //CreateListOfPostsForEachUser("../../../Data/CompleteListOfUsers.txt");
 
             //List<string> listUsers = new List<string>() {"zvone-radikalni", "dr-lesar", "marival"};
             //CreateListOfPostsForListOfUsers(listUsers);
 
             //GetListOfFrontPagePostsToFile("../../../Data/FrontPage_ListOfPosts.txt");
+        }
+
+        public static void AnalyzeUsersPosts(string inDirWithLists, ModelRepository repo)
+        {
+            // učitavaj jedan po jedan txt fajl iz direktorija
+            DirectoryInfo d = new DirectoryInfo(inDirWithLists);
+            FileInfo[] Files = d.GetFiles("*.txt");
+
+            List<ScrapingBrowser> listLoggedBrowsers = new List<ScrapingBrowser>();
+
+            Logger.Info("Logging in browsers");
+            const int MaxConcurrentBrowsers = 8;
+            for (int i = 0; i < MaxConcurrentBrowsers; i++)
+                listLoggedBrowsers.Add(Utility.GetLoggedBrowser());
+
+            int c = 0;
+            int notSavedPosts = 0;
+            foreach (FileInfo file in Files)
+            {
+                Logger.Info("WORKING FILE: " + file.FullName);
+
+                // učitaj listu svih postova od korisnika
+                List<string> listPosts = LoadListOfPostsFromFile(file.FullName);
+                List<string> postsToAdd = new List<string>();
+
+                // izbacit ćemo postove koji su već u bazi
+                foreach(string s in listPosts)
+                    if (repo.PostAlreadyExists(s) == false)
+                        postsToAdd.Add(s);
+
+                notSavedPosts += postsToAdd.Count;
+
+                // analiziraj sve postove i dodaj ih u bazu
+                ContinuousMultiThreadedScrapper.AnalyzeListOfPosts_Multithreaded_OneBatch(postsToAdd, repo, listLoggedBrowsers, false, true);
+
+                // prebaci fajl s postovima od korisnika u Done
+                File.Move(file.FullName, "../../../Data/UsersLists/Done/" + file.Name);
+
+                if (notSavedPosts > 100)
+                {
+                    Logger.Info("Updating store");
+
+                    repo.UpdateDataStore();
+
+                    notSavedPosts = 0;
+                }
+            }
+        }
+        public static List<string> LoadListOfPostsFromFile(string inFileName)
+        {
+            List<string> lines = System.IO.File.ReadAllLines(inFileName).ToList();
+
+            return lines;
         }
 
         public static void CreateListOfPostsForEachUser(string inFileNameWithUsersList)

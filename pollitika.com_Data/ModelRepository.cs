@@ -72,7 +72,7 @@ namespace pollitika.com_Data
             }
             catch (Exception e)
             {
-                MessageBox.Show("Exception occured : " + e.Message);
+                log.Error("Exception occured : " + e.Message);
                 return false;
             }
 
@@ -90,7 +90,7 @@ namespace pollitika.com_Data
             }
             catch (Exception e)
             {
-                MessageBox.Show("Exception occured : " + e.Message);
+                log.Error("Exception occured : " + e.Message);
                 return false;
             }
             return true;

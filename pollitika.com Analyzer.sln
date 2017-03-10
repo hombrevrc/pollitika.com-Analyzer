@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pollitika.com Analyzer Tests", "pollitika.com Analyzer Tests\pollitika.com Analyzer Tests.csproj", "{D5B881B0-DD26-44E2-9B18-14EECB96917D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pollitika.com_AnalyzerTests", "pollitika.com Analyzer Tests\pollitika.com_AnalyzerTests.csproj", "{D5B881B0-DD26-44E2-9B18-14EECB96917D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pollitika.com_Model", "pollitika.com_Model\pollitika.com_Model.csproj", "{BB0B0987-EAFC-4F02-A9AF-DEE327291DA3}"
 EndProject

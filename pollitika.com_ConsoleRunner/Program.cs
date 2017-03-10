@@ -28,6 +28,8 @@ namespace pollitika.com_ConsoleRunner
 
             AnalyzeUsersPosts("../../../Data/UsersLists", repo);
 
+            PrintStatistics(repo);
+
             //CreateListOfPostsForEachUser("../../../Data/CompleteListOfUsers.txt");
 
             //List<string> listUsers = new List<string>() {"zvone-radikalni", "dr-lesar", "marival"};

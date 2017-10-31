@@ -1,0 +1,925 @@
+log4net:ERROR XmlHierarchyConfigurator: Cannot find Property [level] to set object on [log4net.Appender.ColoredConsoleAppender]
+INFO   Opening data store: ../../../Data/pollitikaNew.db
+Total number of users   : 3471
+Total number of posts   : 14303
+Total number of comments: 481343
+Total number of votes   : 1119666
+Users with most posts:
+User adfilantrop          - posts 676
+User feniks               - posts 558
+User zoran-ostric         - posts 458
+User mrak                 - posts 390
+User frederik             - posts 315
+User sm                   - posts 276
+User cnn                  - posts 272
+User ppetra               - posts 262
+User rodjen               - posts 256
+User ljubo-ruben-weiss    - posts 220
+User aluzija              - posts 215
+User rebel                - posts 192
+User ivan-cerovac         - posts 191
+User magarac              - posts 190
+User vkrsnik              - posts 189
+User mucke                - posts 186
+User hatzivelkos          - posts 185
+User drlesar              - posts 176
+User busola               - posts 151
+User starpil              - posts 148
+User potjeh               - posts 148
+User bosancero            - posts 146
+User zvone-radikalni      - posts 141
+User demos                - posts 130
+User daniel-n             - posts 130
+User petarbosni4          - posts 124
+User ap                   - posts 123
+User gale                 - posts 115
+User boltek               - posts 114
+User feniks13             - posts 112
+
+Users with most comments:
+User zaphod               - comments 16267
+User gale                 - comments 13569
+User skviki               - comments 13286
+User bigulica             - comments 13271
+User lunoprof             - comments 12638
+User drvosjek             - comments 12193
+User ppetra               - comments 12123
+User sm                   - comments 9519
+User 3103                 - comments 8061
+User foma-fomic           - comments 7813
+User leddevet             - comments 7250
+User mrak                 - comments 7249
+User zoran-ostric         - comments 6882
+User ap                   - comments 6518
+User                      - comments 6364
+User jelenska             - comments 6106
+User grdilin              - comments 5598
+User kukljica             - comments 5362
+User golgota              - comments 5196
+User ljubo-ruben-weiss    - comments 5028
+User mkn                  - comments 4947
+User demos                - comments 4778
+User feniks               - comments 4764
+User rebel                - comments 4442
+User silverci             - comments 4322
+User indian               - comments 4244
+User otpisani             - comments 3914
+User busola               - comments 3886
+User hatzivelkos          - comments 3886
+User nemesis              - comments 3862
+
+Users who gave most votes:
+User pravednik-vz         - votes 37368
+User ppetra               - votes 36560
+User grdilin              - votes 34573
+User skviki               - votes 31694
+User zaphod               - votes 25619
+User bigulica             - votes 24270
+User drvosjek             - votes 24009
+User bube                 - votes 22450
+User mirtaflora           - votes 21827
+User lunoprof             - votes 20408
+User nemesis              - votes 18415
+User janus                - votes 18343
+User kukljica             - votes 18155
+User jelenska             - votes 17702
+User laganini             - votes 17476
+User pjastrela            - votes 16988
+User 3103                 - votes 15503
+User gale                 - votes 13946
+User mrak                 - votes 13480
+User martin               - votes 12454
+User indian               - votes 12311
+User ljubo-ruben-weiss    - votes 12220
+User checkpoint-charlie   - votes 12153
+User luka                 - votes 11864
+User sanja-1968           - votes 10826
+User kitz                 - votes 9281
+User foma-fomic           - votes 9277
+User otpisani             - votes 9249
+User leddevet             - votes 8959
+User zoran-ostric         - votes 8730
+
+Users who gave most negative votes:
+User skviki               - votes 14926
+User ppetra               - votes 11779
+User pravednik-vz         - votes 9277
+User grdilin              - votes 8662
+User zaphod               - votes 8436
+User drvosjek             - votes 8367
+User laganini             - votes 6751
+User janus                - votes 6243
+User bigulica             - votes 6161
+User bube                 - votes 5965
+User lunoprof             - votes 5784
+User mrak                 - votes 5101
+User nemesis              - votes 4841
+User zoran-ostric         - votes 4808
+User kukljica             - votes 4603
+User jelenska             - votes 4117
+User ljubo-ruben-weiss    - votes 3754
+User zrakomlat            - votes 3505
+User otpisani             - votes 3222
+User tenor                - votes 2757
+User kitz                 - votes 2012
+User hdz-ekonomija        - votes 1976
+User rebel                - votes 1936
+User griotta              - votes 1934
+User foma-fomic           - votes 1908
+User gale                 - votes 1896
+User debe                 - votes 1825
+User poveznik             - votes 1783
+User quinquaginta         - votes 1762
+User rmarino69            - votes 1658
+
+Users who received most negative votes:
+User feniks               - votes 15114
+User ppetra               - votes 13631
+User drvosjek             - votes 10490
+User ljubo-ruben-weiss    - votes 10341
+User zaphod               - votes 9936
+User bigulica             - votes 7601
+User skviki               - votes 6767
+User vkrsnik              - votes 5142
+User lunoprof             - votes 4958
+User mkn                  - votes 4860
+User laganini             - votes 4539
+User zoran-ostric         - votes 4144
+User leddevet             - votes 3915
+User gale                 - votes 3747
+User foma-fomic           - votes 3614
+User my-soul              - votes 3092
+User sm                   - votes 2881
+User krrrrekani           - votes 2626
+User sjenka               - votes 2476
+User busola               - votes 2367
+User aisha                - votes 2357
+User jelenska             - votes 2320
+User rebel                - votes 2251
+User tenor                - votes 2166
+User danimir              - votes 2056
+User otpisani             - votes 1922
+User bube                 - votes 1910
+User bijesdrugi           - votes 1890
+User celsou               - votes 1773
+User nemesis              - votes 1737
+
+Users with highest average number of votes per post:
+User lucijan-caric        - votes per post: 40,58, total posts:  12
+User hdz-ekonomija        - votes per post: 35,97, total posts:  36
+User zaphod               - votes per post: 35,08, total posts:  36
+User grdilin              - votes per post: 34,44, total posts:  27
+User nausikaya            - votes per post: 33,31, total posts:  13
+User splica               - votes per post: 32,55, total posts:  38
+User edi3                 - votes per post: 31,62, total posts:  26
+User leddevet             - votes per post: 30,85, total posts:  46
+User opinioiuris          - votes per post: 30,33, total posts:  41
+User kukljica             - votes per post: 30,18, total posts:  11
+User frederik             - votes per post: 29,81, total posts: 315
+User mirtaflora           - votes per post: 28,28, total posts:  36
+User argus                - votes per post: 28,27, total posts:  15
+User hatzivelkos          - votes per post: 27,81, total posts: 185
+User lopovi               - votes per post: 27,80, total posts:  13
+User dcroat               - votes per post: 27,55, total posts:  44
+User pravednik-vz         - votes per post: 27,37, total posts:  35
+User silverci             - votes per post: 27,17, total posts:  56
+User marijuan             - votes per post: 27,08, total posts:  26
+User c-respond            - votes per post: 26,83, total posts:  12
+User aisha                - votes per post: 25,88, total posts:  40
+User solaris              - votes per post: 25,50, total posts:  16
+User vinkovicdejan        - votes per post: 25,38, total posts:  13
+User vesna                - votes per post: 25,30, total posts:  54
+User whatever             - votes per post: 25,09, total posts:  79
+User mrak                 - votes per post: 25,09, total posts: 390
+User martin               - votes per post: 24,70, total posts:  27
+User 2decicrnog           - votes per post: 24,67, total posts:  12
+User red-cavalry          - votes per post: 24,40, total posts:  15
+User griotta              - votes per post: 24,16, total posts:  52
+
+Users with highest average number of votes per comment:
+User scarface             - votes per comment 7,37, total comments  82
+User laufer               - votes per comment 6,76, total comments 222
+User glembay              - votes per comment 5,44, total comments 273
+User bongohead            - votes per comment 5,20, total comments  15
+User nurosev              - votes per comment 4,75, total comments  16
+User editor               - votes per comment 4,64, total comments  95
+User kokoshar             - votes per comment 4,62, total comments  13
+User roseparks            - votes per comment 4,56, total comments 368
+User lucijan-caric        - votes per comment 4,53, total comments 176
+User mate-zmorac          - votes per comment 4,44, total comments  27
+User lignja               - votes per comment 4,43, total comments 1496
+User common-sense         - votes per comment 4,42, total comments 261
+User robin-ud             - votes per comment 4,38, total comments 222
+User vinkovicdejan        - votes per comment 4,34, total comments  29
+User demokrat             - votes per comment 4,31, total comments  16
+User rzlatic              - votes per comment 4,28, total comments 406
+User mawkomawko           - votes per comment 4,25, total comments  20
+User michael              - votes per comment 4,25, total comments  16
+User erpe                 - votes per comment 4,23, total comments  40
+User citas2               - votes per comment 4,21, total comments  91
+User richard              - votes per comment 4,10, total comments 286
+User tonci-majica         - votes per comment 4,07, total comments 727
+User splica               - votes per comment 4,02, total comments 1276
+User mr-brown             - votes per comment 4,02, total comments 120
+User vkrsnik              - votes per comment 4,01, total comments 1554
+User jurisha              - votes per comment 4,00, total comments  12
+User mata                 - votes per comment 3,98, total comments  64
+User vjetarsjuga          - votes per comment 3,79, total comments 209
+User pravednik-vz         - votes per comment 3,78, total comments 1287
+User elnino               - votes per comment 3,77, total comments  62
+
+Users with highest number of posts with over 30 votes:
+User mrak                 - 102 posts
+User frederik             - 100 posts
+User hatzivelkos          - 67 posts
+User feniks               - 35 posts
+User sm                   - 31 posts
+User rebel                - 27 posts
+User zvone-radikalni      - 27 posts
+User splica               - 27 posts
+User hdz-ekonomija        - 24 posts
+User zaphod               - 23 posts
+User zoran-ostric         - 23 posts
+User leddevet             - 22 posts
+User cnn                  - 21 posts
+User papar                - 19 posts
+User starpil              - 19 posts
+User ljubo-ruben-weiss    - 19 posts
+User dcroat               - 19 posts
+User grdilin              - 18 posts
+User acinum               - 17 posts
+User ppetra               - 16 posts
+User mucke                - 16 posts
+User vkrsnik              - 16 posts
+User bet                  - 16 posts
+User opinioiuris          - 16 posts
+User whatever             - 15 posts
+User daniel-n             - 15 posts
+User drlesar              - 15 posts
+User mirtaflora           - 14 posts
+User silverci             - 14 posts
+User marival              - 13 posts
+
+Users with highest number of posts with over 40 votes:
+User frederik             - 49 posts
+User mrak                 - 47 posts
+User hatzivelkos          - 18 posts
+User hdz-ekonomija        - 16 posts
+User zvone-radikalni      - 14 posts
+User zaphod               - 12 posts
+User leddevet             - 11 posts
+User opinioiuris          - 9 posts
+User papar                - 8 posts
+User grdilin              - 7 posts
+User sm                   - 7 posts
+User splica               - 7 posts
+User daniel-n             - 7 posts
+User aisha                - 7 posts
+User dcroat               - 7 posts
+User acinum               - 6 posts
+User lucijan-caric        - 6 posts
+User feniks               - 5 posts
+User nausikaya            - 5 posts
+User edi3                 - 5 posts
+User cnn                  - 5 posts
+User mucke                - 4 posts
+User rebel                - 4 posts
+User mirtaflora           - 4 posts
+User busola               - 4 posts
+User golgota              - 4 posts
+User whatever             - 4 posts
+User marijuan             - 4 posts
+User pravednik-vz         - 3 posts
+User silverci             - 3 posts
+
+Users with highest number of posts with over 50 votes:
+User frederik             - 23 posts
+User mrak                 - 15 posts
+User zaphod               - 6 posts
+User zvone-radikalni      - 6 posts
+User hdz-ekonomija        - 5 posts
+User leddevet             - 3 posts
+User grdilin              - 3 posts
+User daniel-n             - 3 posts
+User lucijan-caric        - 3 posts
+User nausikaya            - 2 posts
+User papar                - 2 posts
+User whatever             - 2 posts
+User aisha                - 2 posts
+User opinioiuris          - 2 posts
+User drvosjek             - 1 posts
+User quinquaginta         - 1 posts
+User feniks               - 1 posts
+User mirtaflora           - 1 posts
+User vkrsnik              - 1 posts
+User sm                   - 1 posts
+User acinum               - 1 posts
+User golgota              - 1 posts
+User splica               - 1 posts
+User edi3                 - 1 posts
+User g-news               - 1 posts
+User hatzivelkos          - 1 posts
+User kresimir-macan       - 1 posts
+User weteran              - 1 posts
+User crazyalen            - 1 posts
+User dcroat               - 1 posts
+
+Posts with most votes:
+Post by mrak              , votes 100, date - 07.04.2010 11:45:00, post - Nekoliko stvari koje mislim da je važno re?i
+Post by mrak              , votes 92 , date - 16.04.2009 08:05:00, post - Sve što Vam nitko nije htio re?i o bira?kim popisima
+Post by mirtaflora        , votes 85 , date - 08.07.2011 06:02:00, post - IN MEMORIAM ZDRAVKO GRACIN
+Post by mrak              , votes 80 , date - 17.02.2010 05:27:00, post - Mea culpa
+Post by leddevet          , votes 76 , date - 25.08.2009 12:07:00, post - Implozija
+Post by frederik          , votes 73 , date - 08.09.2009 11:53:00, post - Splav o?ajnika
+Post by aisha             , votes 70 , date - 23.10.2009 10:14:00, post - Kada umreš više nisi branitelj...
+Post by papar             , votes 68 , date - 05.10.2012 09:42:00, post - Boris Šprem; beatifikacija bezliène politièke ništarije.
+Post by frederik          , votes 68 , date - 18.11.2009 01:15:00, post - Crna humoreska - ili dan kad smo plakali!
+Post by g-news            , votes 67 , date - 24.06.2012 04:01:00, post - dragi sajber-prijatelji...
+Post by aisha             , votes 67 , date - 24.08.2009 01:46:00, post - Kakav je tko, na pollitika.com?
+Post by sm                , votes 66 , date - 28.04.2010 11:11:00, post - Eutanazirana Pollitika.com
+Post by hatzivelkos       , votes 65 , date - 25.04.2011 09:37:00, post - Trgovci dignitetom Domovinskog rata
+Post by leddevet          , votes 65 , date - 19.03.2011 12:19:00, post - Antiintelektualizam novog doba
+Post by hdz-ekonomija     , votes 65 , date - 22.03.2009 01:25:00, post - Njegov prijatelj Ferenc i on
+Post by mrak              , votes 65 , date - 20.11.2007 11:44:00, post - HRT zabranio emitiranje spota pollitika.com
+Post by hdz-ekonomija     , votes 64 , date - 12.05.2009 07:35:00, post - Bunika je zakon! Sanader: &quot;Vlada sprije?ila rast nezaposlenosti&quot;
+Post by lucijan-caric     , votes 64 , date - 09.04.2010 11:30:00, post - Registar, hakeri i obavještajci
+Post by mrak              , votes 63 , date - 12.05.2009 11:16:00, post - Otvoreno pismo novinarima, ?lanovima bira?kih odbora i bira?ima
+Post by frederik          , votes 63 , date - 10.04.2010 02:12:00, post - "Secret gardens" (Tajni vrtovi paranormalne države!)
+Post by tonci-tadic       , votes 63 , date - 17.03.2009 09:55:00, post - Deset mitova hrvatskog turizma
+Post by opinioiuris       , votes 63 , date - 19.02.2009 09:48:00, post - Beware of the troll: Što je to internetski troll?
+Post by hdz-ekonomija     , votes 63 , date - 12.02.2009 09:46:00, post - Pomahnitali Sanader i njegov prijatelj Šuker uništili i Zagreba?ku burzu
+Post by frederik          , votes 63 , date - 25.12.2009 10:21:00, post - Popisi bira?a - ili tko nas i zašto ?ini majmunima!!
+Post by mrak              , votes 63 , date - 09.12.2008 03:56:00, post - Nacrt prijedloga Državnog prora?una Republike Hrvatske za 2009. godinu
+Post by shiky             , votes 62 , date - 31.01.2011 04:12:00, post - Dijalog bez repova
+Post by nausikaya         , votes 61 , date - 02.06.2010 11:47:00, post - Zaigrani Tom Sawyer Hrvatske televizije
+Post by zaphod            , votes 61 , date - 16.03.2011 07:08:00, post - Japan(ci) mojim oèima - nekad i sad (literarno)
+Post by frederik          , votes 61 , date - 13.01.2010 01:01:00, post - Stvarni gubitnik izbora??
+Post by daniel-n          , votes 61 , date - 21.02.2012 12:43:00, post - Nek ustane tko je bio embrij
+
+Post with max sum of votes:
+Post by mrak              , votes 94 , date - 07.04.2010 11:45:00, post - Nekoliko stvari koje mislim da je važno re?i
+Post by mrak              , votes 92 , date - 16.04.2009 08:05:00, post - Sve što Vam nitko nije htio re?i o bira?kim popisima
+Post by mirtaflora        , votes 85 , date - 08.07.2011 06:02:00, post - IN MEMORIAM ZDRAVKO GRACIN
+Post by mrak              , votes 74 , date - 17.02.2010 05:27:00, post - Mea culpa
+Post by leddevet          , votes 72 , date - 25.08.2009 12:07:00, post - Implozija
+Post by aisha             , votes 70 , date - 23.10.2009 10:14:00, post - Kada umreš više nisi branitelj...
+Post by frederik          , votes 69 , date - 08.09.2009 11:53:00, post - Splav o?ajnika
+Post by frederik          , votes 68 , date - 18.11.2009 01:15:00, post - Crna humoreska - ili dan kad smo plakali!
+Post by g-news            , votes 67 , date - 24.06.2012 04:01:00, post - dragi sajber-prijatelji...
+Post by sm                , votes 66 , date - 28.04.2010 11:11:00, post - Eutanazirana Pollitika.com
+Post by lucijan-caric     , votes 64 , date - 09.04.2010 11:30:00, post - Registar, hakeri i obavještajci
+Post by mrak              , votes 63 , date - 12.05.2009 11:16:00, post - Otvoreno pismo novinarima, ?lanovima bira?kih odbora i bira?ima
+Post by mrak              , votes 63 , date - 20.11.2007 11:44:00, post - HRT zabranio emitiranje spota pollitika.com
+Post by frederik          , votes 63 , date - 25.12.2009 10:21:00, post - Popisi bira?a - ili tko nas i zašto ?ini majmunima!!
+Post by mrak              , votes 63 , date - 09.12.2008 03:56:00, post - Nacrt prijedloga Državnog prora?una Republike Hrvatske za 2009. godinu
+Post by shiky             , votes 62 , date - 31.01.2011 04:12:00, post - Dijalog bez repova
+Post by nausikaya         , votes 61 , date - 02.06.2010 11:47:00, post - Zaigrani Tom Sawyer Hrvatske televizije
+Post by zaphod            , votes 61 , date - 16.03.2011 07:08:00, post - Japan(ci) mojim oèima - nekad i sad (literarno)
+Post by tonci-tadic       , votes 61 , date - 17.03.2009 09:55:00, post - Deset mitova hrvatskog turizma
+Post by opinioiuris       , votes 61 , date - 19.02.2009 09:48:00, post - Beware of the troll: Što je to internetski troll?
+Post by dcroat            , votes 61 , date - 04.09.2009 09:17:00, post - System Error
+Post by frederik          , votes 60 , date - 24.05.2009 02:08:00, post - Mentalne zamke (1) - politi?ki formalizam
+Post by hdz-ekonomija     , votes 60 , date - 12.05.2009 07:35:00, post - Bunika je zakon! Sanader: &quot;Vlada sprije?ila rast nezaposlenosti&quot;
+Post by mrak              , votes 60 , date - 22.12.2008 12:17:00, post - Prijedlog za ocjenu ustavnosti Zakona o izboru zastupnika u Hrvatski sabor
+Post by hatzivelkos       , votes 59 , date - 25.04.2011 09:37:00, post - Trgovci dignitetom Domovinskog rata
+Post by leddevet          , votes 59 , date - 19.03.2011 12:19:00, post - Antiintelektualizam novog doba
+Post by man               , votes 59 , date - 07.04.2010 04:01:00, post - Uhi?en Marko Rakar!
+Post by hdz-ekonomija     , votes 59 , date - 22.03.2009 01:25:00, post - Njegov prijatelj Ferenc i on
+Post by frederik          , votes 59 , date - 25.02.2009 03:43:00, post - O "antišambriranju" ili krahu anakrone politike!
+Post by hdz-ekonomija     , votes 59 , date - 12.02.2009 09:46:00, post - Pomahnitali Sanader i njegov prijatelj Šuker uništili i Zagreba?ku burzu
+
+Post with mot negative votes:
+Post by dragan-hazler     , negative votes 31 , date - 21.10.2009 12:16:00, post - Tužba protiv Stjepana Mesi?a
+Post by lovac21           , negative votes 30 , date - 12.06.2011 06:08:00, post - Nije problem u &quot;pederima&quot; nego u pederèinama
+Post by vkrsnik           , negative votes 29 , date - 11.05.2011 10:13:00, post -  Mrakova cenzura, ili uvoðenje verbalnog delikta
+Post by vkrsnik           , negative votes 28 , date - 29.12.2011 09:54:00, post - Pretplatnici HRT-a podržavaju smjenu Šprajca
+Post by c-respond         , negative votes 25 , date - 28.10.2009 09:55:00, post - Zašto uništavati Hrvatsku ili Nobilov pou?ak?
+Post by kitz              , negative votes 25 , date - 16.11.2012 10:20:00, post - ANTU GOTOVINU ZA PREDSJEDNIKA HRVATSKE!!!
+Post by drvosjek          , negative votes 23 , date - 22.11.2013 01:42:00, post - Iskopavanje ustaša
+Post by mkn               , negative votes 23 , date - 23.06.2011 02:13:00, post - &#039;Ko to kaže, &#039;ko to laže (dio drugi)...
+Post by mkn               , negative votes 23 , date - 04.05.2011 05:12:00, post - Stvarni broj civilnih žrtava Oluje
+Post by vkrsnik           , negative votes 23 , date - 27.04.2013 04:48:00, post - Hrvatskoj nisu problem Srbi nego Jugoslaveni, a njihov centar je Zagreb
+Post by vkrsnik           , negative votes 23 , date - 28.10.2012 09:27:00, post - Krug je zatvoren: Titov gardist na Pantovèaku, a Titov omladinac na èelu HRT-a
+Post by vkrsnik           , negative votes 23 , date - 04.01.2012 07:48:00, post - Je li Vesna Pusiæ ministrica Republike Hrvatske ili Zapadnog Balkana
+Post by aisha             , negative votes 22 , date - 24.08.2009 01:46:00, post - Kakav je tko, na pollitika.com?
+Post by busola            , negative votes 22 , date - 10.06.2012 11:35:00, post - Split pretvoren u zatvor?
+Post by c-respond         , negative votes 22 , date - 18.02.2009 12:41:00, post - Gra?anska inicijativa za smjenu Žarka Puhovskog, jeste li za to?
+Post by danimir           , negative votes 22 , date - 04.06.2010 02:53:00, post - Humanitarni konvoj - provokacija Hamasa i drugih ekstremista?
+Post by krrrrekani        , negative votes 22 , date - 10.08.2012 09:58:00, post - Marko Rakar (mrak), kukavièje jaje hrvatske demokracije i režimski poslušnik?!
+Post by mkn               , negative votes 22 , date - 30.08.2014 12:00:00, post - ??????????? ?????: ????????? ????? ???? ? ??????
+Post by drvosjek          , negative votes 21 , date - 19.06.2015 04:36:00, post - Kako prepoznati jugošljam medije, upute
+Post by feniks            , negative votes 21 , date - 02.11.2010 10:53:00, post - Josipovi?eva preobrazba
+Post by feniks            , negative votes 21 , date - 05.08.2010 12:20:00, post - Dan ovoga i onoga
+Post by g-news            , negative votes 21 , date - 05.12.2009 04:22:00, post - Ljenivci su se umorili od nerada i plenumasenja
+Post by mkn               , negative votes 21 , date - 10.10.2011 12:51:00, post - Borise pošalji salate
+Post by my-soul           , negative votes 21 , date - 07.06.2009 02:01:00, post - Vukovar prije i Vukovar poslije ovih lokalnih izbora
+Post by skviki            , negative votes 21 , date - 06.02.2011 08:40:00, post - Informativno obavještajni rat
+Post by c-respond         , negative votes 20 , date - 06.10.2009 11:56:00, post - Televizi?no veleizdajništvo!
+Post by c-respond         , negative votes 20 , date - 21.09.2009 12:11:00, post - Hrvatska je &quot;krava muzara&quot; za pola Balkana!
+Post by celsou            , negative votes 20 , date - 18.02.2013 02:59:00, post - Judith Reisman ili kako zaraditi 15 mil.kuna listajuæi pornjavu
+Post by demos             , negative votes 20 , date - 16.12.2009 06:36:00, post - Milane Bandi?u, zaslužio si moj glas!
+Post by dragan-hazler     , negative votes 20 , date - 20.10.2009 11:12:00, post - Hrvatska je vodila obranbeni a ne domovinski rat
+
+Most controversial posts:
+Post by dragan-hazler     , num.votes 54 , neg.votes 31 , date - 21.10.2009 12:16:00, post - Tužba protiv Stjepana Mesi?a
+Post by lovac21           , num.votes 55 , neg.votes 30 , date - 12.06.2011 06:08:00, post - Nije problem u &quot;pederima&quot; nego u pederèinama
+Post by vkrsnik           , num.votes 52 , neg.votes 29 , date - 11.05.2011 10:13:00, post -  Mrakova cenzura, ili uvoðenje verbalnog delikta
+Post by vkrsnik           , num.votes 50 , neg.votes 28 , date - 29.12.2011 09:54:00, post - Pretplatnici HRT-a podržavaju smjenu Šprajca
+Post by c-respond         , num.votes 40 , neg.votes 25 , date - 28.10.2009 09:55:00, post - Zašto uništavati Hrvatsku ili Nobilov pou?ak?
+Post by kitz              , num.votes 45 , neg.votes 25 , date - 16.11.2012 10:20:00, post - ANTU GOTOVINU ZA PREDSJEDNIKA HRVATSKE!!!
+Post by drvosjek          , num.votes 37 , neg.votes 23 , date - 22.11.2013 01:42:00, post - Iskopavanje ustaša
+Post by mkn               , num.votes 38 , neg.votes 23 , date - 23.06.2011 02:13:00, post - &#039;Ko to kaže, &#039;ko to laže (dio drugi)...
+Post by mkn               , num.votes 40 , neg.votes 23 , date - 04.05.2011 05:12:00, post - Stvarni broj civilnih žrtava Oluje
+Post by vkrsnik           , num.votes 35 , neg.votes 23 , date - 27.04.2013 04:48:00, post - Hrvatskoj nisu problem Srbi nego Jugoslaveni, a njihov centar je Zagreb
+Post by vkrsnik           , num.votes 37 , neg.votes 23 , date - 28.10.2012 09:27:00, post - Krug je zatvoren: Titov gardist na Pantovèaku, a Titov omladinac na èelu HRT-a
+Post by vkrsnik           , num.votes 35 , neg.votes 23 , date - 04.01.2012 07:48:00, post - Je li Vesna Pusiæ ministrica Republike Hrvatske ili Zapadnog Balkana
+Post by aisha             , num.votes 67 , neg.votes 22 , date - 24.08.2009 01:46:00, post - Kakav je tko, na pollitika.com?
+Post by busola            , num.votes 42 , neg.votes 22 , date - 10.06.2012 11:35:00, post - Split pretvoren u zatvor?
+Post by c-respond         , num.votes 38 , neg.votes 22 , date - 18.02.2009 12:41:00, post - Gra?anska inicijativa za smjenu Žarka Puhovskog, jeste li za to?
+Post by danimir           , num.votes 43 , neg.votes 22 , date - 04.06.2010 02:53:00, post - Humanitarni konvoj - provokacija Hamasa i drugih ekstremista?
+Post by krrrrekani        , num.votes 37 , neg.votes 22 , date - 10.08.2012 09:58:00, post - Marko Rakar (mrak), kukavièje jaje hrvatske demokracije i režimski poslušnik?!
+Post by mkn               , num.votes 36 , neg.votes 22 , date - 30.08.2014 12:00:00, post - ??????????? ?????: ????????? ????? ???? ? ??????
+Post by drvosjek          , num.votes 35 , neg.votes 21 , date - 19.06.2015 04:36:00, post - Kako prepoznati jugošljam medije, upute
+Post by feniks            , num.votes 36 , neg.votes 21 , date - 02.11.2010 10:53:00, post - Josipovi?eva preobrazba
+Post by feniks            , num.votes 31 , neg.votes 21 , date - 05.08.2010 12:20:00, post - Dan ovoga i onoga
+Post by g-news            , num.votes 35 , neg.votes 21 , date - 05.12.2009 04:22:00, post - Ljenivci su se umorili od nerada i plenumasenja
+Post by mkn               , num.votes 34 , neg.votes 21 , date - 10.10.2011 12:51:00, post - Borise pošalji salate
+Post by my-soul           , num.votes 38 , neg.votes 21 , date - 07.06.2009 02:01:00, post - Vukovar prije i Vukovar poslije ovih lokalnih izbora
+Post by skviki            , num.votes 38 , neg.votes 21 , date - 06.02.2011 08:40:00, post - Informativno obavještajni rat
+Post by c-respond         , num.votes 38 , neg.votes 20 , date - 06.10.2009 11:56:00, post - Televizi?no veleizdajništvo!
+Post by c-respond         , num.votes 35 , neg.votes 20 , date - 21.09.2009 12:11:00, post - Hrvatska je &quot;krava muzara&quot; za pola Balkana!
+Post by celsou            , num.votes 44 , neg.votes 20 , date - 18.02.2013 02:59:00, post - Judith Reisman ili kako zaraditi 15 mil.kuna listajuæi pornjavu
+Post by demos             , num.votes 42 , neg.votes 20 , date - 16.12.2009 06:36:00, post - Milane Bandi?u, zaslužio si moj glas!
+Post by dragan-hazler     , num.votes 38 , neg.votes 20 , date - 20.10.2009 11:12:00, post - Hrvatska je vodila obranbeni a ne domovinski rat
+
+Most commented posts:
+Post by edi3              , num.comments 1229, date - 26.02.2012 06:39:00, post - Predsjednik Ivo Josipoviæ u korupcijskom skandalu!?
+Post by mkn               , num.comments 887, date - 30.01.2013 11:45:00, post - Kinsey namjesto Marxa
+Post by zaphod            , num.comments 605, date - 10.02.2012 12:24:00, post - Što ACTA jest, a što nije? Koliko je tu laži?
+Post by spvh              , num.comments 580, date - 09.11.2013 09:42:00, post - Zašto æu glasati ZA!
+Post by sjenka            , num.comments 569, date - 23.06.2011 12:03:00, post - EU - skeptik - EURATOM
+Post by demos             , num.comments 554, date - 16.12.2009 06:36:00, post - Milane Bandi?u, zaslužio si moj glas!
+Post by rebel             , num.comments 545, date - 30.05.2012 07:14:00, post - Parada
+Post by sm                , num.comments 519, date - 05.03.2012 02:35:00, post - ZAMP - èekajuæi prava pitanja
+Post by chaos99           , num.comments 491, date - 29.12.2011 10:29:00, post - Prvi potezi vlade
+Post by busola            , num.comments 485, date - 10.06.2012 11:35:00, post - Split pretvoren u zatvor?
+Post by celsou            , num.comments 480, date - 18.02.2013 02:59:00, post - Judith Reisman ili kako zaraditi 15 mil.kuna listajuæi pornjavu
+Post by vonlihtenvalner   , num.comments 460, date - 29.05.2013 12:45:00, post - Kad se prepisuje na ispitu iz ustavnog prava
+Post by libzard           , num.comments 449, date - 06.05.2012 11:11:00, post - Populizmom protiv siromaštva: 1:99
+Post by demos             , num.comments 436, date - 05.06.2012 01:44:00, post - Gay Pride radi prava ili provokacije?!
+Post by sm                , num.comments 421, date - 19.03.2012 01:47:00, post - Ivo Josipoviæ v.s. Marko Vojkoviæ - suèeljavanje
+Post by mrak              , num.comments 406, date - 22.10.2011 01:24:00, post - Izbori 2011
+Post by ljubo-ruben-weiss , num.comments 399, date - 26.04.2013 01:50:00, post - Tko i zašto &quot;brani&quot; Srð?
+Post by ljubo-ruben-weiss , num.comments 394, date - 28.09.2012 04:53:00, post - Auuuschwitz memorabilia - ima li pravo Branko Lustig nevjerovati u B - a!?
+Post by sm                , num.comments 386, date - 09.09.2011 11:29:00, post - Zašto ovaj put treæe?
+Post by ckih              , num.comments 385, date - 12.10.2012 06:55:00, post - Štednja ili licemjerstvo?!
+Post by edi3              , num.comments 380, date - 01.10.2011 12:58:00, post - Što se to zavaljalo po Wall Streetu?
+Post by aisha             , num.comments 377, date - 14.09.2009 09:01:00, post - Novi hrvatski predsjednik - katolik?
+Post by lovac21           , num.comments 377, date - 12.06.2011 06:08:00, post - Nije problem u &quot;pederima&quot; nego u pederèinama
+Post by mrak              , num.comments 369, date - 01.07.2009 12:04:00, post - Pada vlada
+Post by scarface          , num.comments 355, date - 03.09.2013 10:22:00, post - Nemam empatiju prema nasilju nad jednim pismom
+Post by sibenski-konobar  , num.comments 353, date - 25.07.2008 01:47:00, post - Terorista ili heroj
+Post by jelenska          , num.comments 352, date - 17.08.2010 11:04:00, post - Balvan revolucija
+Post by golgota           , num.comments 351, date - 05.02.2012 03:59:00, post - Kako elite perpetuiraju vjeènost "teorijama" zavjera
+Post by lunoprof          , num.comments 349, date - 29.10.2011 03:17:00, post - Placa radniku, profit vlasniku
+Post by zvone-radikalni   , num.comments 346, date - 28.09.2012 06:12:00, post - Josipa Rimac bubnula ... i ostala živa
+
+User    : Zvone Radikalni
+Posts   : 141
+Comments: 1018
+Votes given    : 4395
+      positive : 4026
+      negative : 367
+Votes received : 3228
+      positive : 3080
+      negative : 148
+
+Ordered by date:
+  Post: Hrvatska i MMF                                                                            , Date: 12.11.2006 01:05:00, Votes:   0, Num.comments:  30
+  Post: Anti-antiamerièko jamranje                                                                , Date: 03.12.2006 05:12:00, Votes:   0, Num.comments:  12
+  Post: NATO smo navikli - reply                                                                  , Date: 06.12.2006 01:20:00, Votes:   0, Num.comments:  52
+  Post: Stars and soggy bottoms - iliti Što Economist piše o Hrvatskoj                            , Date: 06.01.2007 04:40:00, Votes:   0, Num.comments:  13
+  Post: Što je na kraju s tim Sunèanim Hvarom ?                                                   , Date: 14.01.2007 11:25:00, Votes:   0, Num.comments:   4
+  Post: Došlo vrijeme za mea culpa                                                                , Date: 28.01.2007 12:53:00, Votes:   0, Num.comments:  24
+  Post: Napisao sam pismo Vesni Pusiæ                                                             , Date: 05.02.2007 02:42:00, Votes:   0, Num.comments:  13
+  Post: Èovjek živi na STABLU - Iliti &quot;Ko je ovdje majmun&quot;                              , Date: 07.02.2007 05:48:00, Votes:   0, Num.comments:   0
+  Post: Odgovorila mi Vesna Pusiæ :-)                                                             , Date: 13.02.2007 02:11:00, Votes:   0, Num.comments:   5
+  Post: Što kaže rektor Bjeliš o školarinama ?                                                    , Date: 21.02.2007 12:17:00, Votes:   0, Num.comments:   6
+  Post: Što znaèi biti siromašan u Americi                                                        , Date: 08.03.2007 10:03:00, Votes:   0, Num.comments:   7
+  Post: Zašto æe Bolonjski proces SIGURNO propasti - insider story                                , Date: 10.03.2007 12:21:00, Votes:   1, Num.comments:  18
+  Post: BOLONJA JE SPAŠENA - Ljubo Jurèiæ "obeæao" dodatnih 2 mlrd kuna !!!                       , Date: 15.03.2007 01:44:00, Votes:   0, Num.comments:   1
+  Post: Aj, aj, aj, ...                                                                           , Date: 27.03.2007 11:20:00, Votes:   0, Num.comments:   5
+  Post: Only death and taxes ...                                                                  , Date: 21.04.2007 11:08:00, Votes:   0, Num.comments:  33
+  Post: O rusvaju s JMBG-om                                                                       , Date: 22.04.2007 06:19:00, Votes:   0, Num.comments:  46
+  Post: HNS predstavio svoj izborni program                                                       , Date: 08.05.2007 11:31:00, Votes:   0, Num.comments:  60
+  Post: Kako izigrati Ustavni sud - o upisu djece branitelja na fakultete                         , Date: 06.06.2007 06:56:00, Votes:   2, Num.comments:  20
+  Post: Sabor HDZa - ko æe popušiti tu demagogiju !?                                              , Date: 30.06.2007 06:36:00, Votes:   0, Num.comments:  45
+  Post: Kakvu stranku želim - iliti What makes me tick !?                                         , Date: 02.07.2007 09:51:00, Votes:   2, Num.comments: 106
+  Post: Ko to kaže da ne trebamo uæi u NATO - KO TO KAŽE !!!!????                                 , Date: 06.07.2007 12:32:00, Votes:   0, Num.comments:  16
+  Post: Hrvatski "amerièki san"                                                                   , Date: 12.07.2007 02:20:00, Votes:   0, Num.comments:  12
+  Post: Što æemo s EU ili &quot;Kako je Zvone Radikalni završio u TV Dnevniku&quot;               , Date: 21.07.2007 04:20:00, Votes:   1, Num.comments:  12
+  Post: GADOVI, GADOVI, GADOVI                                                                    , Date: 26.07.2007 02:05:00, Votes:   0, Num.comments:  14
+  Post: &quot;Roosevelt - iskrivljena povijest&quot; - reply                                      , Date: 06.08.2007 02:34:00, Votes:   0, Num.comments:  14
+  Post: Ljubavni trokut - Kalmeta, Pašaliæ i ... Ante Bundilo                                     , Date: 12.08.2007 05:01:00, Votes:   0, Num.comments:  14
+  Post: Gotovinu pustit da se brani sa slobode !? - DON&#039;T BE RIDIKJULOS                      , Date: 24.08.2007 10:42:00, Votes:   0, Num.comments:  19
+  Post: Zašto je slanje vojnika u Afganistan THE RIGHT THING TO DO                                , Date: 31.08.2007 11:16:00, Votes:   0, Num.comments:  23
+  Post: Ima li nade za Hrvatsku ???                                                               , Date: 03.09.2007 11:18:00, Votes:   1, Num.comments:  38
+  Post: Sviæe NUKLEARNA ZORA :-)                                                                  , Date: 10.09.2007 04:16:00, Votes:   0, Num.comments:  22
+  Post: Kako je SDP svojim programom za obrazovanje - OMAŠIO CEO FUDBAL :-)                       , Date: 16.09.2007 12:19:00, Votes:   1, Num.comments:  27
+  Post: Zašto je SDP-ov program za obrazovanje STRATEŠKI PROMAŠEN - pojašnjenje                   , Date: 22.09.2007 09:50:00, Votes:   0, Num.comments:  28
+  Post: SDP priznao PORAZ !!!!?                                                                   , Date: 01.10.2007 12:16:00, Votes:   4, Num.comments:  25
+  Post: Zvone Radikalni o Latinici (tema - zna se ;-)                                             , Date: 02.10.2007 11:55:00, Votes:   8, Num.comments:  15
+  Post: Umro je Šime Ðodan - i kakve to veze ima s Miljenkom Smojom                               , Date: 05.10.2007 06:35:00, Votes:  10, Num.comments:   7
+  Post: Napisao sam mail prof. Ivu Bancu                                                          , Date: 08.10.2007 12:27:00, Votes:  23, Num.comments: 105
+  Post: "Iznenaðenje" u mailbox-u - odgovor prof. Banca                                           , Date: 09.10.2007 12:26:00, Votes:  21, Num.comments:  41
+  Post: Rezultati (skromne :-) ankete o školarinama                                               , Date: 11.10.2007 11:29:00, Votes:  10, Num.comments:  11
+  Post: Luka Bebiæ kaže DA NE MOŽE, a vi se, gospodo iz oporbe, možete jebati :-)                 , Date: 13.10.2007 01:19:00, Votes:  23, Num.comments:  19
+  Post: Hrvatska u EU 2009. !? Ha, ha, ha, ha ...                                                 , Date: 16.10.2007 10:28:00, Votes:  24, Num.comments:   8
+  Post: The Economist is finally FREE FOR ALL !!!!!!!                                             , Date: 19.10.2007 06:04:00, Votes:  22, Num.comments:  11
+  Post: Još malo o radu Sabora - što kažu saborski novinari ?                                     , Date: 20.10.2007 11:47:00, Votes:  22, Num.comments:  14
+  Post: Evo fajta :-))))                                                                          , Date: 25.10.2007 05:26:00, Votes:  25, Num.comments:  23
+  Post: Zvonin The Economist Newsletter - broj 2                                                  , Date: 26.10.2007 11:36:00, Votes:  14, Num.comments:   6
+  Post: "Taj naš liberalizam" - REPLY                                                             , Date: 27.10.2007 11:38:00, Votes:  26, Num.comments:  39
+  Post: Poruka za KUKAVICE iz SDP-a !!!                                                           , Date: 30.10.2007 01:00:00, Votes:  57, Num.comments: 151
+  Post: FREEDOM FIGHTER is coming to town !!!                                                     , Date: 01.11.2007 12:48:00, Votes:  17, Num.comments:  20
+  Post: Freedom Figter ZA LEGALIZACIJU marihuane !!!                                              , Date: 02.11.2007 04:00:00, Votes:  29, Num.comments:  79
+  Post: Kalmeta i Sanader - ko tu koga DRŽI ZA JAJA :-)                                           , Date: 04.11.2007 08:46:00, Votes:  31, Num.comments:  26
+  Post: Zvoni Radikalnom naðen "kratki spoj u mozgu" !!!                                          , Date: 09.11.2007 10:15:00, Votes:  25, Num.comments:  13
+  Post: Ispravljam cijenjenog Antu Èièina-Šaina, i malo dalje elaboriram ...                      , Date: 12.11.2007 03:41:00, Votes:  17, Num.comments:  12
+  Post: Oda VELIKANU dvadesetog stoljeæa                                                          , Date: 16.11.2007 12:25:00, Votes:  22, Num.comments:  41
+  Post: Poruka za KUKAVICE iz HDZa !!!                                                            , Date: 19.11.2007 11:34:00, Votes:  52, Num.comments:  26
+  Post: "NAJSTRAŠNIJE DOSAD !" - Favorit za Greatest Shits 2007 !!!                               , Date: 20.11.2007 09:26:00, Votes:  27, Num.comments:  20
+  Post: Jel&#039; znate &#039;KO je u Etièkom izbornom povjerenstvu ?                             , Date: 21.11.2007 01:12:00, Votes:  14, Num.comments:  12
+  Post: Zvone Radikalni doživijo ORGAZAM :-)))                                                    , Date: 22.11.2007 09:59:00, Votes:  19, Num.comments:  15
+  Post: Za koga æe glasati Zvone Radikalni ?                                                      , Date: 23.11.2007 01:21:00, Votes:  21, Num.comments:  22
+  Post: Poruka za moje drage SUKOŠANCE i ZADRANE :-)))                                            , Date: 23.11.2007 02:02:00, Votes:  21, Num.comments:  20
+  Post: Freedom Fighter o IZBORNOJ ŠUTNJI !!!!                                                    , Date: 24.11.2007 12:03:00, Votes:  16, Num.comments:  46
+  Post: SKANDALOZNO - Ivo Sanader djeci u vrtiæu dijelio "bombone" :-)                            , Date: 24.11.2007 01:12:00, Votes:  15, Num.comments:  25
+  Post: Prije starta live iz HNS-ovog stožera, zadnje misli :-)                                   , Date: 25.11.2007 02:31:00, Votes:  14, Num.comments:   6
+  Post: LIVE from HNS Headquaters - Over and out !                                                , Date: 25.11.2007 07:03:00, Votes:  21, Num.comments:  34
+  Post: najbolje da ne pišem naslov ...                                                           , Date: 26.11.2007 03:16:00, Votes:  13, Num.comments:   5
+  Post: Ovako æe biti slaðe ;-) - a možda i ne :-(                                                , Date: 26.11.2007 12:03:00, Votes:  23, Num.comments:  59
+  Post: DREAM scenario za SDP/HNS - iliti Hoæe li Josip Frišèiæ imati MUDA ;-) ?                  , Date: 27.11.2007 12:20:00, Votes:  35, Num.comments:  39
+  Post: Što æe odluèiti Josip Frišèiæ ?!                                                          , Date: 28.11.2007 12:13:00, Votes:  23, Num.comments:  40
+  Post: ZVirKla opened for bets - koeficijenti: Ivo 1.15, Zoki 4.5                                , Date: 28.11.2007 09:53:00, Votes:  18, Num.comments:  54
+  Post: Stanje na kladionici - Zoki ide DOLJEEE ...                                               , Date: 29.11.2007 11:56:00, Votes:   9, Num.comments:  21
+  Post: ZVirKla - update koeficijenata - Ivo 1.25, Zoki  3.5                                      , Date: 01.12.2007 09:56:00, Votes:   1, Num.comments:   4
+  Post: Obrat na kladionici - ZOKI prelazi u vodstvo ! Novi koeficijenti - Ivo 2.2, Zoki 1.75     , Date: 02.12.2007 07:19:00, Votes:   9, Num.comments:  13
+  Post: Izgleda da je na "pravom" putu ipak ... Sanader :-(                                       , Date: 04.12.2007 11:53:00, Votes:   7, Num.comments:  10
+  Post: Calling it a day ...                                                                      , Date: 06.12.2007 11:19:00, Votes:  13, Num.comments:   4
+  Post: Tri STRAŠNE prièe iz hrvatskog zdravstva                                                  , Date: 07.12.2007 04:50:00, Votes:  23, Num.comments:  62
+  Post: "Dièni" HRVATSKI doktori - DI STE !!!???                                                  , Date: 08.12.2007 03:22:00, Votes:  25, Num.comments:  71
+  Post: Još malo o "bejzbol palicama" - Što je Zvone Radikalni u stvari htio reæi !?              , Date: 10.12.2007 12:58:00, Votes:  17, Num.comments:  14
+  Post: Izvješæe s pollitika.com meetinga                                                         , Date: 16.12.2007 01:58:00, Votes:  34, Num.comments:  70
+  Post: Što nas èeka u sljedeæe 4 godine ?                                                        , Date: 18.12.2007 12:50:00, Votes:  26, Num.comments:  66
+  Post: Hoæe li HNS odoljeti sirenskom zovu HDZ-a !?                                              , Date: 19.12.2007 02:44:00, Votes:  13, Num.comments:  28
+  Post: Poruka kardinalu Bozaniæu - SHUT THE FUCK UP !!!                                          , Date: 02.01.2008 11:06:00, Votes:  42, Num.comments:  95
+  Post: A sad, malo ozbiljnije o poruci kardinala Bozaniæa ;-)                                    , Date: 04.01.2008 10:56:00, Votes:  20, Num.comments: 110
+  Post: Nasekirala me ekipa iz T-Coma !!!                                                         , Date: 06.01.2008 04:33:00, Votes:  20, Num.comments:  62
+  Post: Èitam i ne vjerujem svojim oèima ... ????                                                 , Date: 08.01.2008 11:39:00, Votes:  11, Num.comments:  75
+  Post: Namršten mi nešto Joža danas u Dnevniku :-)                                               , Date: 09.01.2008 11:05:00, Votes:   8, Num.comments:  12
+  Post: Malo san down :-(                                                                         , Date: 19.01.2008 01:07:00, Votes:  32, Num.comments:  31
+  Post: Veèeras se kroji sudbina svita !!! On-line praæenje :-)                                   , Date: 19.01.2008 05:22:00, Votes:  13, Num.comments:  17
+  Post: Ivo Sanader nema blage veze o ekonomiji !!!!                                              , Date: 21.01.2008 11:23:00, Votes:  26, Num.comments:  49
+  Post: Èekajuæi smrt na Floridi ...                                                              , Date: 29.01.2008 06:09:00, Votes:  15, Num.comments:  21
+  Post: Nasekiro mi se borgman :-)                                                                , Date: 01.02.2008 10:32:00, Votes:  11, Num.comments:  63
+  Post: Dobio sam svoju dr.sc. diplomu - kooonaèno ... :-)                                        , Date: 04.02.2008 02:19:00, Votes:  12, Num.comments:  33
+  Post: "Super Tuesday" is HEREEEEEE :-)                                                          , Date: 05.02.2008 12:15:00, Votes:  15, Num.comments:  28
+  Post: &quot;Super utorak&quot; - live blogging !!!                                              , Date: 05.02.2008 11:53:00, Votes:   2, Num.comments:   2
+  Post: KRETENI na sve strane :-))))))                                                            , Date: 11.02.2008 09:16:00, Votes:  19, Num.comments:  21
+  Post: McCain &amp; Obama - što san van ja govorija :-)))))                                      , Date: 13.02.2008 11:49:00, Votes:  12, Num.comments:  22
+  Post: "Izlaz na toplo more" i novi "Varšavski pakt" !!!???                                      , Date: 24.02.2008 10:53:00, Votes:   9, Num.comments:  28
+  Post: Anti-NATO TRKELJARIJE - ima li im kraja ???                                               , Date: 26.02.2008 10:47:00, Votes:  25, Num.comments:  96
+  Post: Branka Slavica ispalila i ostala živa !?                                                  , Date: 27.02.2008 03:40:00, Votes:   4, Num.comments:   6
+  Post: Poruka za ŠUPKE iz Hrvatske udruge poslodavaca !!!                                        , Date: 28.02.2008 02:33:00, Votes:  19, Num.comments:  38
+  Post: Kraj ili "poèetak kraja" za Demokratsku stranku nakon predizbora u Texasu i Ohiou?        , Date: 05.03.2008 01:25:00, Votes:  12, Num.comments:  21
+  Post: Ekipa o&#039;ladite, NATO je riješena stvar :-)                                           , Date: 23.03.2008 02:36:00, Votes:  22, Num.comments:  82
+  Post: Zablude o &quot;grijesima&quot; Georga W. Busha                                           , Date: 04.04.2008 08:06:00, Votes:  11, Num.comments:  41
+  Post: Kako je izabran George W. Bush                                                            , Date: 05.04.2008 02:43:00, Votes:   5, Num.comments:  16
+  Post: Dragutin Lesar više nije u HNS-u !!!                                                      , Date: 09.04.2008 06:33:00, Votes:  20, Num.comments:  18
+  Post: Zvone Radikalni postao NOVINAR !?                                                         , Date: 12.04.2008 05:15:00, Votes:  27, Num.comments:   8
+  Post: Odgovorili mi iz Narodnog lista :-)                                                       , Date: 16.04.2008 01:55:00, Votes:  26, Num.comments:  19
+  Post: Prekinuto trgovanje XYZ dionicama na burzi !!???                                          , Date: 18.04.2008 05:03:00, Votes:  30, Num.comments:  41
+  Post: O zagrebaèkoj vodi i poljoprivrednom zemljištu                                            , Date: 20.04.2008 12:38:00, Votes:  22, Num.comments:  25
+  Post: Završni pozdrav uz diskusiju o tezama Solarisa Pripametnog                                , Date: 20.04.2008 12:49:00, Votes:  27, Num.comments:  60
+  Post: PRIKUVALO !!!!                                                                            , Date: 20.06.2008 09:38:00, Votes:  46, Num.comments: 108
+  Post: Cenzuriralo Cara Šprajca !!! - prvi sluèaj za blogersku udrugu ?                          , Date: 20.06.2008 11:25:00, Votes:  18, Num.comments:  62
+  Post: I tako smo osnovali blogersku udrugu :-)                                                  , Date: 08.07.2008 12:08:00, Votes:  33, Num.comments: 208
+  Post: Hrvatska Blogerska Organizacija - neki odgovori (iz "predsjednièke" perspektive ;-)       , Date: 10.07.2008 10:47:00, Votes:  23, Num.comments: 117
+  Post: Ninoslav Paviæ i predsjednik HBO-a æakulaju na kavici :-)                                 , Date: 15.07.2008 03:54:00, Votes:  19, Num.comments: 101
+  Post: Silba - "zakoèeni" potencijal!?                                                           , Date: 14.08.2008 11:31:00, Votes:   8, Num.comments:  19
+  Post: Razvoj otoka - don&#039;t bi ridikjulous!                                                 , Date: 21.08.2008 02:54:00, Votes:  22, Num.comments:  16
+  Post: Ne bi ?ovik virova, ali Obama vs. McCain ?e ipak biti GADAN fajt!                         , Date: 29.08.2008 05:25:00, Votes:  36, Num.comments:  50
+  Post: Jel&#039; John McCain LUD ?O&#039;EK??? Ili možda ipak nije ;-)                           , Date: 31.08.2008 06:44:00, Votes:  22, Num.comments:  17
+  Post: Kažu da u Hrvatskoj fali informati?ara! Ozbiljno ;-) !!??                                 , Date: 02.09.2008 08:12:00, Votes:  42, Num.comments: 114
+  Post: Politi?ka platforma za lokalne izbore!?                                                   , Date: 17.09.2008 11:40:00, Votes:  26, Num.comments:  23
+  Post: U gostima na OTVu :-)                                                                     , Date: 26.09.2008 09:47:00, Votes:  35, Num.comments:  52
+  Post: Dow is going down - 1,2 TRILIJUNA US$ otišlo PUF! :-)))                                   , Date: 30.09.2008 12:09:00, Votes:  35, Num.comments:  64
+  Post: Ho?e li "institucije" kona?no profunkcionirati? Ili je REVOLUCIJA jedino rješenje!?       , Date: 06.10.2008 03:24:00, Votes:  45, Num.comments:  69
+  Post: Je li došlo vrijeme da "civilno društvo" digne svoj glas!?                                , Date: 07.10.2008 02:43:00, Votes:  31, Num.comments:  28
+  Post: Odosmo u hela?!!!???                                                                      , Date: 10.10.2008 12:23:00, Votes:  45, Num.comments:  39
+  Post: Održana prva tiskovna konferencija HBO-a                                                  , Date: 17.10.2008 02:23:00, Votes:  50, Num.comments: 173
+  Post: mrak vs. Damir Finti?                                                                     , Date: 22.10.2008 01:14:00, Votes:  28, Num.comments: 150
+  Post: Je li blog sljede?i na meti ZAMP-a!?                                                      , Date: 18.11.2008 11:47:00, Votes:  22, Num.comments:  22
+  Post: Gospodarska kriza Acâ'¬â?o AÂ!to se valja &quot;iza brda&quot;?                          , Date: 28.11.2008 03:45:00, Votes:  36, Num.comments:  14
+  Post: HBO traAÂ3i odgovornost zbog Acâ'¬A3sluA"Â?ajaAcâ'¬A" NikAÂ!e KleA"Â?aka!               , Date: 29.11.2008 05:22:00, Votes:  42, Num.comments:  25
+  Post: Pobrkani lon?i?i u "slu?aju Nikše Kle?aka"                                                , Date: 03.12.2008 03:52:00, Votes:  54, Num.comments:  64
+  Post: Anno Domini 2009 - when the shit hits the fan :-)))                                       , Date: 01.01.2009 05:04:00, Votes:  51, Num.comments:  24
+  Post: Problemi s pristupom EU na Acâ'¬A3domaA"â?!em frontuAcâ'¬A" iliti HoA"â?!e li se SDP KONAA"A'NO trgnuti???, Date: 05.01.2009 08:26:00, Votes:  12, Num.comments:  24
+  Post: Seruckaju mi po HBO-u pa (ipak) moram reagirati :-)                                       , Date: 20.01.2009 12:44:00, Votes:  27, Num.comments: 222
+  Post: Ho?e li Zoran Boha?ek uspjeti "trgnuti" e-Hrvatsku?                                       , Date: 07.02.2009 12:59:00, Votes:  37, Num.comments:  22
+  Post: Otvoreno pismo ministrima Šimonovi?u i Karamarku                                          , Date: 23.02.2009 10:53:00, Votes:  40, Num.comments:  94
+  Post: Odlazak Sanadera - bježanija, ucjena ili master plan!?                                    , Date: 03.08.2009 12:34:00, Votes:  30, Num.comments:  45
+  Post: Jadranka Kosor govori prave stvari! Ali, može li isporu?iti?                              , Date: 22.10.2009 05:41:00, Votes:  25, Num.comments:  33
+  Post: O Slovencima ...                                                                          , Date: 10.11.2009 11:15:00, Votes:  22, Num.comments:  34
+  Post: U prvom krugu za Vesnu Pusi?, u drugom za Ivu Josipovi?a ... i nadati se                  , Date: 22.11.2009 06:04:00, Votes:  44, Num.comments: 200
+  Post: Milan Bandi? - ?ovjek koji "cijeli život živi vjeru"                                      , Date: 02.01.2010 06:29:00, Votes:  53, Num.comments: 149
+  Post: Drmaj Stipe :-)                                                                           , Date: 21.01.2010 12:48:00, Votes:  31, Num.comments: 122
+  Post: Josipa Rimac bubnula ... i ostala živa                                                    , Date: 28.09.2012 06:12:00, Votes:  57, Num.comments: 346
+
+Ordered by number of votes:
+  Post: Poruka za KUKAVICE iz SDP-a !!!                                                           , Date: 30.10.2007 01:00:00, Votes:  57, Num.comments: 151
+  Post: Josipa Rimac bubnula ... i ostala živa                                                    , Date: 28.09.2012 06:12:00, Votes:  57, Num.comments: 346
+  Post: Pobrkani lon?i?i u "slu?aju Nikše Kle?aka"                                                , Date: 03.12.2008 03:52:00, Votes:  54, Num.comments:  64
+  Post: Milan Bandi? - ?ovjek koji "cijeli život živi vjeru"                                      , Date: 02.01.2010 06:29:00, Votes:  53, Num.comments: 149
+  Post: Poruka za KUKAVICE iz HDZa !!!                                                            , Date: 19.11.2007 11:34:00, Votes:  52, Num.comments:  26
+  Post: Anno Domini 2009 - when the shit hits the fan :-)))                                       , Date: 01.01.2009 05:04:00, Votes:  51, Num.comments:  24
+  Post: Održana prva tiskovna konferencija HBO-a                                                  , Date: 17.10.2008 02:23:00, Votes:  50, Num.comments: 173
+  Post: PRIKUVALO !!!!                                                                            , Date: 20.06.2008 09:38:00, Votes:  46, Num.comments: 108
+  Post: Odosmo u hela?!!!???                                                                      , Date: 10.10.2008 12:23:00, Votes:  45, Num.comments:  39
+  Post: Ho?e li "institucije" kona?no profunkcionirati? Ili je REVOLUCIJA jedino rješenje!?       , Date: 06.10.2008 03:24:00, Votes:  45, Num.comments:  69
+  Post: U prvom krugu za Vesnu Pusi?, u drugom za Ivu Josipovi?a ... i nadati se                  , Date: 22.11.2009 06:04:00, Votes:  44, Num.comments: 200
+  Post: HBO traAÂ3i odgovornost zbog Acâ'¬A3sluA"Â?ajaAcâ'¬A" NikAÂ!e KleA"Â?aka!               , Date: 29.11.2008 05:22:00, Votes:  42, Num.comments:  25
+  Post: Kažu da u Hrvatskoj fali informati?ara! Ozbiljno ;-) !!??                                 , Date: 02.09.2008 08:12:00, Votes:  42, Num.comments: 114
+  Post: Poruka kardinalu Bozaniæu - SHUT THE FUCK UP !!!                                          , Date: 02.01.2008 11:06:00, Votes:  42, Num.comments:  95
+  Post: Otvoreno pismo ministrima Šimonovi?u i Karamarku                                          , Date: 23.02.2009 10:53:00, Votes:  40, Num.comments:  94
+  Post: Ho?e li Zoran Boha?ek uspjeti "trgnuti" e-Hrvatsku?                                       , Date: 07.02.2009 12:59:00, Votes:  37, Num.comments:  22
+  Post: Ne bi ?ovik virova, ali Obama vs. McCain ?e ipak biti GADAN fajt!                         , Date: 29.08.2008 05:25:00, Votes:  36, Num.comments:  50
+  Post: Gospodarska kriza Acâ'¬â?o AÂ!to se valja &quot;iza brda&quot;?                          , Date: 28.11.2008 03:45:00, Votes:  36, Num.comments:  14
+  Post: DREAM scenario za SDP/HNS - iliti Hoæe li Josip Frišèiæ imati MUDA ;-) ?                  , Date: 27.11.2007 12:20:00, Votes:  35, Num.comments:  39
+  Post: Dow is going down - 1,2 TRILIJUNA US$ otišlo PUF! :-)))                                   , Date: 30.09.2008 12:09:00, Votes:  35, Num.comments:  64
+  Post: U gostima na OTVu :-)                                                                     , Date: 26.09.2008 09:47:00, Votes:  35, Num.comments:  52
+  Post: Izvješæe s pollitika.com meetinga                                                         , Date: 16.12.2007 01:58:00, Votes:  34, Num.comments:  70
+  Post: I tako smo osnovali blogersku udrugu :-)                                                  , Date: 08.07.2008 12:08:00, Votes:  33, Num.comments: 208
+  Post: Malo san down :-(                                                                         , Date: 19.01.2008 01:07:00, Votes:  32, Num.comments:  31
+  Post: Drmaj Stipe :-)                                                                           , Date: 21.01.2010 12:48:00, Votes:  31, Num.comments: 122
+  Post: Kalmeta i Sanader - ko tu koga DRŽI ZA JAJA :-)                                           , Date: 04.11.2007 08:46:00, Votes:  31, Num.comments:  26
+  Post: Je li došlo vrijeme da "civilno društvo" digne svoj glas!?                                , Date: 07.10.2008 02:43:00, Votes:  31, Num.comments:  28
+  Post: Prekinuto trgovanje XYZ dionicama na burzi !!???                                          , Date: 18.04.2008 05:03:00, Votes:  30, Num.comments:  41
+  Post: Odlazak Sanadera - bježanija, ucjena ili master plan!?                                    , Date: 03.08.2009 12:34:00, Votes:  30, Num.comments:  45
+  Post: Freedom Figter ZA LEGALIZACIJU marihuane !!!                                              , Date: 02.11.2007 04:00:00, Votes:  29, Num.comments:  79
+  Post: mrak vs. Damir Finti?                                                                     , Date: 22.10.2008 01:14:00, Votes:  28, Num.comments: 150
+  Post: Seruckaju mi po HBO-u pa (ipak) moram reagirati :-)                                       , Date: 20.01.2009 12:44:00, Votes:  27, Num.comments: 222
+  Post: Završni pozdrav uz diskusiju o tezama Solarisa Pripametnog                                , Date: 20.04.2008 12:49:00, Votes:  27, Num.comments:  60
+  Post: Zvone Radikalni postao NOVINAR !?                                                         , Date: 12.04.2008 05:15:00, Votes:  27, Num.comments:   8
+  Post: "NAJSTRAŠNIJE DOSAD !" - Favorit za Greatest Shits 2007 !!!                               , Date: 20.11.2007 09:26:00, Votes:  27, Num.comments:  20
+  Post: Odgovorili mi iz Narodnog lista :-)                                                       , Date: 16.04.2008 01:55:00, Votes:  26, Num.comments:  19
+  Post: "Taj naš liberalizam" - REPLY                                                             , Date: 27.10.2007 11:38:00, Votes:  26, Num.comments:  39
+  Post: Ivo Sanader nema blage veze o ekonomiji !!!!                                              , Date: 21.01.2008 11:23:00, Votes:  26, Num.comments:  49
+  Post: Politi?ka platforma za lokalne izbore!?                                                   , Date: 17.09.2008 11:40:00, Votes:  26, Num.comments:  23
+  Post: Što nas èeka u sljedeæe 4 godine ?                                                        , Date: 18.12.2007 12:50:00, Votes:  26, Num.comments:  66
+  Post: "Dièni" HRVATSKI doktori - DI STE !!!???                                                  , Date: 08.12.2007 03:22:00, Votes:  25, Num.comments:  71
+  Post: Zvoni Radikalnom naðen "kratki spoj u mozgu" !!!                                          , Date: 09.11.2007 10:15:00, Votes:  25, Num.comments:  13
+  Post: Evo fajta :-))))                                                                          , Date: 25.10.2007 05:26:00, Votes:  25, Num.comments:  23
+  Post: Anti-NATO TRKELJARIJE - ima li im kraja ???                                               , Date: 26.02.2008 10:47:00, Votes:  25, Num.comments:  96
+  Post: Jadranka Kosor govori prave stvari! Ali, može li isporu?iti?                              , Date: 22.10.2009 05:41:00, Votes:  25, Num.comments:  33
+  Post: Hrvatska u EU 2009. !? Ha, ha, ha, ha ...                                                 , Date: 16.10.2007 10:28:00, Votes:  24, Num.comments:   8
+  Post: Hrvatska Blogerska Organizacija - neki odgovori (iz "predsjednièke" perspektive ;-)       , Date: 10.07.2008 10:47:00, Votes:  23, Num.comments: 117
+  Post: Tri STRAŠNE prièe iz hrvatskog zdravstva                                                  , Date: 07.12.2007 04:50:00, Votes:  23, Num.comments:  62
+  Post: Što æe odluèiti Josip Frišèiæ ?!                                                          , Date: 28.11.2007 12:13:00, Votes:  23, Num.comments:  40
+  Post: Ovako æe biti slaðe ;-) - a možda i ne :-(                                                , Date: 26.11.2007 12:03:00, Votes:  23, Num.comments:  59
+  Post: Luka Bebiæ kaže DA NE MOŽE, a vi se, gospodo iz oporbe, možete jebati :-)                 , Date: 13.10.2007 01:19:00, Votes:  23, Num.comments:  19
+  Post: Napisao sam mail prof. Ivu Bancu                                                          , Date: 08.10.2007 12:27:00, Votes:  23, Num.comments: 105
+  Post: Jel&#039; John McCain LUD ?O&#039;EK??? Ili možda ipak nije ;-)                           , Date: 31.08.2008 06:44:00, Votes:  22, Num.comments:  17
+  Post: Razvoj otoka - don&#039;t bi ridikjulous!                                                 , Date: 21.08.2008 02:54:00, Votes:  22, Num.comments:  16
+  Post: O zagrebaèkoj vodi i poljoprivrednom zemljištu                                            , Date: 20.04.2008 12:38:00, Votes:  22, Num.comments:  25
+  Post: Ekipa o&#039;ladite, NATO je riješena stvar :-)                                           , Date: 23.03.2008 02:36:00, Votes:  22, Num.comments:  82
+  Post: Oda VELIKANU dvadesetog stoljeæa                                                          , Date: 16.11.2007 12:25:00, Votes:  22, Num.comments:  41
+  Post: Još malo o radu Sabora - što kažu saborski novinari ?                                     , Date: 20.10.2007 11:47:00, Votes:  22, Num.comments:  14
+  Post: The Economist is finally FREE FOR ALL !!!!!!!                                             , Date: 19.10.2007 06:04:00, Votes:  22, Num.comments:  11
+  Post: O Slovencima ...                                                                          , Date: 10.11.2009 11:15:00, Votes:  22, Num.comments:  34
+  Post: Je li blog sljede?i na meti ZAMP-a!?                                                      , Date: 18.11.2008 11:47:00, Votes:  22, Num.comments:  22
+  Post: LIVE from HNS Headquaters - Over and out !                                                , Date: 25.11.2007 07:03:00, Votes:  21, Num.comments:  34
+  Post: Poruka za moje drage SUKOŠANCE i ZADRANE :-)))                                            , Date: 23.11.2007 02:02:00, Votes:  21, Num.comments:  20
+  Post: Za koga æe glasati Zvone Radikalni ?                                                      , Date: 23.11.2007 01:21:00, Votes:  21, Num.comments:  22
+  Post: "Iznenaðenje" u mailbox-u - odgovor prof. Banca                                           , Date: 09.10.2007 12:26:00, Votes:  21, Num.comments:  41
+  Post: Dragutin Lesar više nije u HNS-u !!!                                                      , Date: 09.04.2008 06:33:00, Votes:  20, Num.comments:  18
+  Post: Nasekirala me ekipa iz T-Coma !!!                                                         , Date: 06.01.2008 04:33:00, Votes:  20, Num.comments:  62
+  Post: A sad, malo ozbiljnije o poruci kardinala Bozaniæa ;-)                                    , Date: 04.01.2008 10:56:00, Votes:  20, Num.comments: 110
+  Post: Ninoslav Paviæ i predsjednik HBO-a æakulaju na kavici :-)                                 , Date: 15.07.2008 03:54:00, Votes:  19, Num.comments: 101
+  Post: Zvone Radikalni doživijo ORGAZAM :-)))                                                    , Date: 22.11.2007 09:59:00, Votes:  19, Num.comments:  15
+  Post: Poruka za ŠUPKE iz Hrvatske udruge poslodavaca !!!                                        , Date: 28.02.2008 02:33:00, Votes:  19, Num.comments:  38
+  Post: KRETENI na sve strane :-))))))                                                            , Date: 11.02.2008 09:16:00, Votes:  19, Num.comments:  21
+  Post: ZVirKla opened for bets - koeficijenti: Ivo 1.15, Zoki 4.5                                , Date: 28.11.2007 09:53:00, Votes:  18, Num.comments:  54
+  Post: Cenzuriralo Cara Šprajca !!! - prvi sluèaj za blogersku udrugu ?                          , Date: 20.06.2008 11:25:00, Votes:  18, Num.comments:  62
+  Post: Još malo o "bejzbol palicama" - Što je Zvone Radikalni u stvari htio reæi !?              , Date: 10.12.2007 12:58:00, Votes:  17, Num.comments:  14
+  Post: Ispravljam cijenjenog Antu Èièina-Šaina, i malo dalje elaboriram ...                      , Date: 12.11.2007 03:41:00, Votes:  17, Num.comments:  12
+  Post: FREEDOM FIGHTER is coming to town !!!                                                     , Date: 01.11.2007 12:48:00, Votes:  17, Num.comments:  20
+  Post: Freedom Fighter o IZBORNOJ ŠUTNJI !!!!                                                    , Date: 24.11.2007 12:03:00, Votes:  16, Num.comments:  46
+  Post: SKANDALOZNO - Ivo Sanader djeci u vrtiæu dijelio "bombone" :-)                            , Date: 24.11.2007 01:12:00, Votes:  15, Num.comments:  25
+  Post: "Super Tuesday" is HEREEEEEE :-)                                                          , Date: 05.02.2008 12:15:00, Votes:  15, Num.comments:  28
+  Post: Èekajuæi smrt na Floridi ...                                                              , Date: 29.01.2008 06:09:00, Votes:  15, Num.comments:  21
+  Post: Prije starta live iz HNS-ovog stožera, zadnje misli :-)                                   , Date: 25.11.2007 02:31:00, Votes:  14, Num.comments:   6
+  Post: Jel&#039; znate &#039;KO je u Etièkom izbornom povjerenstvu ?                             , Date: 21.11.2007 01:12:00, Votes:  14, Num.comments:  12
+  Post: Zvonin The Economist Newsletter - broj 2                                                  , Date: 26.10.2007 11:36:00, Votes:  14, Num.comments:   6
+  Post: Calling it a day ...                                                                      , Date: 06.12.2007 11:19:00, Votes:  13, Num.comments:   4
+  Post: najbolje da ne pišem naslov ...                                                           , Date: 26.11.2007 03:16:00, Votes:  13, Num.comments:   5
+  Post: Veèeras se kroji sudbina svita !!! On-line praæenje :-)                                   , Date: 19.01.2008 05:22:00, Votes:  13, Num.comments:  17
+  Post: Hoæe li HNS odoljeti sirenskom zovu HDZ-a !?                                              , Date: 19.12.2007 02:44:00, Votes:  13, Num.comments:  28
+  Post: Problemi s pristupom EU na Acâ'¬A3domaA"â?!em frontuAcâ'¬A" iliti HoA"â?!e li se SDP KONAA"A'NO trgnuti???, Date: 05.01.2009 08:26:00, Votes:  12, Num.comments:  24
+  Post: Kraj ili "poèetak kraja" za Demokratsku stranku nakon predizbora u Texasu i Ohiou?        , Date: 05.03.2008 01:25:00, Votes:  12, Num.comments:  21
+  Post: McCain &amp; Obama - što san van ja govorija :-)))))                                      , Date: 13.02.2008 11:49:00, Votes:  12, Num.comments:  22
+  Post: Dobio sam svoju dr.sc. diplomu - kooonaèno ... :-)                                        , Date: 04.02.2008 02:19:00, Votes:  12, Num.comments:  33
+  Post: Èitam i ne vjerujem svojim oèima ... ????                                                 , Date: 08.01.2008 11:39:00, Votes:  11, Num.comments:  75
+  Post: Zablude o &quot;grijesima&quot; Georga W. Busha                                           , Date: 04.04.2008 08:06:00, Votes:  11, Num.comments:  41
+  Post: Nasekiro mi se borgman :-)                                                                , Date: 01.02.2008 10:32:00, Votes:  11, Num.comments:  63
+  Post: Rezultati (skromne :-) ankete o školarinama                                               , Date: 11.10.2007 11:29:00, Votes:  10, Num.comments:  11
+  Post: Umro je Šime Ðodan - i kakve to veze ima s Miljenkom Smojom                               , Date: 05.10.2007 06:35:00, Votes:  10, Num.comments:   7
+  Post: Obrat na kladionici - ZOKI prelazi u vodstvo ! Novi koeficijenti - Ivo 2.2, Zoki 1.75     , Date: 02.12.2007 07:19:00, Votes:   9, Num.comments:  13
+  Post: "Izlaz na toplo more" i novi "Varšavski pakt" !!!???                                      , Date: 24.02.2008 10:53:00, Votes:   9, Num.comments:  28
+  Post: Stanje na kladionici - Zoki ide DOLJEEE ...                                               , Date: 29.11.2007 11:56:00, Votes:   9, Num.comments:  21
+  Post: Zvone Radikalni o Latinici (tema - zna se ;-)                                             , Date: 02.10.2007 11:55:00, Votes:   8, Num.comments:  15
+  Post: Namršten mi nešto Joža danas u Dnevniku :-)                                               , Date: 09.01.2008 11:05:00, Votes:   8, Num.comments:  12
+  Post: Silba - "zakoèeni" potencijal!?                                                           , Date: 14.08.2008 11:31:00, Votes:   8, Num.comments:  19
+  Post: Izgleda da je na "pravom" putu ipak ... Sanader :-(                                       , Date: 04.12.2007 11:53:00, Votes:   7, Num.comments:  10
+  Post: Kako je izabran George W. Bush                                                            , Date: 05.04.2008 02:43:00, Votes:   5, Num.comments:  16
+  Post: Branka Slavica ispalila i ostala živa !?                                                  , Date: 27.02.2008 03:40:00, Votes:   4, Num.comments:   6
+  Post: SDP priznao PORAZ !!!!?                                                                   , Date: 01.10.2007 12:16:00, Votes:   4, Num.comments:  25
+  Post: Kakvu stranku želim - iliti What makes me tick !?                                         , Date: 02.07.2007 09:51:00, Votes:   2, Num.comments: 106
+  Post: &quot;Super utorak&quot; - live blogging !!!                                              , Date: 05.02.2008 11:53:00, Votes:   2, Num.comments:   2
+  Post: Kako izigrati Ustavni sud - o upisu djece branitelja na fakultete                         , Date: 06.06.2007 06:56:00, Votes:   2, Num.comments:  20
+  Post: Ima li nade za Hrvatsku ???                                                               , Date: 03.09.2007 11:18:00, Votes:   1, Num.comments:  38
+  Post: ZVirKla - update koeficijenata - Ivo 1.25, Zoki  3.5                                      , Date: 01.12.2007 09:56:00, Votes:   1, Num.comments:   4
+  Post: Što æemo s EU ili &quot;Kako je Zvone Radikalni završio u TV Dnevniku&quot;               , Date: 21.07.2007 04:20:00, Votes:   1, Num.comments:  12
+  Post: Kako je SDP svojim programom za obrazovanje - OMAŠIO CEO FUDBAL :-)                       , Date: 16.09.2007 12:19:00, Votes:   1, Num.comments:  27
+  Post: Zašto æe Bolonjski proces SIGURNO propasti - insider story                                , Date: 10.03.2007 12:21:00, Votes:   1, Num.comments:  18
+  Post: HNS predstavio svoj izborni program                                                       , Date: 08.05.2007 11:31:00, Votes:   0, Num.comments:  60
+  Post: O rusvaju s JMBG-om                                                                       , Date: 22.04.2007 06:19:00, Votes:   0, Num.comments:  46
+  Post: Only death and taxes ...                                                                  , Date: 21.04.2007 11:08:00, Votes:   0, Num.comments:  33
+  Post: Aj, aj, aj, ...                                                                           , Date: 27.03.2007 11:20:00, Votes:   0, Num.comments:   5
+  Post: BOLONJA JE SPAŠENA - Ljubo Jurèiæ "obeæao" dodatnih 2 mlrd kuna !!!                       , Date: 15.03.2007 01:44:00, Votes:   0, Num.comments:   1
+  Post: Što znaèi biti siromašan u Americi                                                        , Date: 08.03.2007 10:03:00, Votes:   0, Num.comments:   7
+  Post: Što kaže rektor Bjeliš o školarinama ?                                                    , Date: 21.02.2007 12:17:00, Votes:   0, Num.comments:   6
+  Post: Odgovorila mi Vesna Pusiæ :-)                                                             , Date: 13.02.2007 02:11:00, Votes:   0, Num.comments:   5
+  Post: Èovjek živi na STABLU - Iliti &quot;Ko je ovdje majmun&quot;                              , Date: 07.02.2007 05:48:00, Votes:   0, Num.comments:   0
+  Post: Napisao sam pismo Vesni Pusiæ                                                             , Date: 05.02.2007 02:42:00, Votes:   0, Num.comments:  13
+  Post: Došlo vrijeme za mea culpa                                                                , Date: 28.01.2007 12:53:00, Votes:   0, Num.comments:  24
+  Post: Zašto je SDP-ov program za obrazovanje STRATEŠKI PROMAŠEN - pojašnjenje                   , Date: 22.09.2007 09:50:00, Votes:   0, Num.comments:  28
+  Post: Što je na kraju s tim Sunèanim Hvarom ?                                                   , Date: 14.01.2007 11:25:00, Votes:   0, Num.comments:   4
+  Post: Stars and soggy bottoms - iliti Što Economist piše o Hrvatskoj                            , Date: 06.01.2007 04:40:00, Votes:   0, Num.comments:  13
+  Post: Sviæe NUKLEARNA ZORA :-)                                                                  , Date: 10.09.2007 04:16:00, Votes:   0, Num.comments:  22
+  Post: Zašto je slanje vojnika u Afganistan THE RIGHT THING TO DO                                , Date: 31.08.2007 11:16:00, Votes:   0, Num.comments:  23
+  Post: Gotovinu pustit da se brani sa slobode !? - DON&#039;T BE RIDIKJULOS                      , Date: 24.08.2007 10:42:00, Votes:   0, Num.comments:  19
+  Post: Ljubavni trokut - Kalmeta, Pašaliæ i ... Ante Bundilo                                     , Date: 12.08.2007 05:01:00, Votes:   0, Num.comments:  14
+  Post: &quot;Roosevelt - iskrivljena povijest&quot; - reply                                      , Date: 06.08.2007 02:34:00, Votes:   0, Num.comments:  14
+  Post: Anti-antiamerièko jamranje                                                                , Date: 03.12.2006 05:12:00, Votes:   0, Num.comments:  12
+  Post: NATO smo navikli - reply                                                                  , Date: 06.12.2006 01:20:00, Votes:   0, Num.comments:  52
+  Post: Hrvatska i MMF                                                                            , Date: 12.11.2006 01:05:00, Votes:   0, Num.comments:  30
+  Post: GADOVI, GADOVI, GADOVI                                                                    , Date: 26.07.2007 02:05:00, Votes:   0, Num.comments:  14
+  Post: Hrvatski "amerièki san"                                                                   , Date: 12.07.2007 02:20:00, Votes:   0, Num.comments:  12
+  Post: Ko to kaže da ne trebamo uæi u NATO - KO TO KAŽE !!!!????                                 , Date: 06.07.2007 12:32:00, Votes:   0, Num.comments:  16
+  Post: Sabor HDZa - ko æe popušiti tu demagogiju !?                                              , Date: 30.06.2007 06:36:00, Votes:   0, Num.comments:  45
+
+Ordered by number of comments:
+  Post: Josipa Rimac bubnula ... i ostala živa                                                    , Date: 28.09.2012 06:12:00, Votes:  57, Num.comments: 346
+  Post: Seruckaju mi po HBO-u pa (ipak) moram reagirati :-)                                       , Date: 20.01.2009 12:44:00, Votes:  27, Num.comments: 222
+  Post: I tako smo osnovali blogersku udrugu :-)                                                  , Date: 08.07.2008 12:08:00, Votes:  33, Num.comments: 208
+  Post: U prvom krugu za Vesnu Pusi?, u drugom za Ivu Josipovi?a ... i nadati se                  , Date: 22.11.2009 06:04:00, Votes:  44, Num.comments: 200
+  Post: Održana prva tiskovna konferencija HBO-a                                                  , Date: 17.10.2008 02:23:00, Votes:  50, Num.comments: 173
+  Post: Poruka za KUKAVICE iz SDP-a !!!                                                           , Date: 30.10.2007 01:00:00, Votes:  57, Num.comments: 151
+  Post: mrak vs. Damir Finti?                                                                     , Date: 22.10.2008 01:14:00, Votes:  28, Num.comments: 150
+  Post: Milan Bandi? - ?ovjek koji "cijeli život živi vjeru"                                      , Date: 02.01.2010 06:29:00, Votes:  53, Num.comments: 149
+  Post: Drmaj Stipe :-)                                                                           , Date: 21.01.2010 12:48:00, Votes:  31, Num.comments: 122
+  Post: Hrvatska Blogerska Organizacija - neki odgovori (iz "predsjednièke" perspektive ;-)       , Date: 10.07.2008 10:47:00, Votes:  23, Num.comments: 117
+  Post: Kažu da u Hrvatskoj fali informati?ara! Ozbiljno ;-) !!??                                 , Date: 02.09.2008 08:12:00, Votes:  42, Num.comments: 114
+  Post: A sad, malo ozbiljnije o poruci kardinala Bozaniæa ;-)                                    , Date: 04.01.2008 10:56:00, Votes:  20, Num.comments: 110
+  Post: PRIKUVALO !!!!                                                                            , Date: 20.06.2008 09:38:00, Votes:  46, Num.comments: 108
+  Post: Kakvu stranku želim - iliti What makes me tick !?                                         , Date: 02.07.2007 09:51:00, Votes:   2, Num.comments: 106
+  Post: Napisao sam mail prof. Ivu Bancu                                                          , Date: 08.10.2007 12:27:00, Votes:  23, Num.comments: 105
+  Post: Ninoslav Paviæ i predsjednik HBO-a æakulaju na kavici :-)                                 , Date: 15.07.2008 03:54:00, Votes:  19, Num.comments: 101
+  Post: Anti-NATO TRKELJARIJE - ima li im kraja ???                                               , Date: 26.02.2008 10:47:00, Votes:  25, Num.comments:  96
+  Post: Poruka kardinalu Bozaniæu - SHUT THE FUCK UP !!!                                          , Date: 02.01.2008 11:06:00, Votes:  42, Num.comments:  95
+  Post: Otvoreno pismo ministrima Šimonovi?u i Karamarku                                          , Date: 23.02.2009 10:53:00, Votes:  40, Num.comments:  94
+  Post: Ekipa o&#039;ladite, NATO je riješena stvar :-)                                           , Date: 23.03.2008 02:36:00, Votes:  22, Num.comments:  82
+  Post: Freedom Figter ZA LEGALIZACIJU marihuane !!!                                              , Date: 02.11.2007 04:00:00, Votes:  29, Num.comments:  79
+  Post: Èitam i ne vjerujem svojim oèima ... ????                                                 , Date: 08.01.2008 11:39:00, Votes:  11, Num.comments:  75
+  Post: "Dièni" HRVATSKI doktori - DI STE !!!???                                                  , Date: 08.12.2007 03:22:00, Votes:  25, Num.comments:  71
+  Post: Izvješæe s pollitika.com meetinga                                                         , Date: 16.12.2007 01:58:00, Votes:  34, Num.comments:  70
+  Post: Ho?e li "institucije" kona?no profunkcionirati? Ili je REVOLUCIJA jedino rješenje!?       , Date: 06.10.2008 03:24:00, Votes:  45, Num.comments:  69
+  Post: Što nas èeka u sljedeæe 4 godine ?                                                        , Date: 18.12.2007 12:50:00, Votes:  26, Num.comments:  66
+  Post: Pobrkani lon?i?i u "slu?aju Nikše Kle?aka"                                                , Date: 03.12.2008 03:52:00, Votes:  54, Num.comments:  64
+  Post: Dow is going down - 1,2 TRILIJUNA US$ otišlo PUF! :-)))                                   , Date: 30.09.2008 12:09:00, Votes:  35, Num.comments:  64
+  Post: Nasekiro mi se borgman :-)                                                                , Date: 01.02.2008 10:32:00, Votes:  11, Num.comments:  63
+  Post: Tri STRAŠNE prièe iz hrvatskog zdravstva                                                  , Date: 07.12.2007 04:50:00, Votes:  23, Num.comments:  62
+  Post: Cenzuriralo Cara Šprajca !!! - prvi sluèaj za blogersku udrugu ?                          , Date: 20.06.2008 11:25:00, Votes:  18, Num.comments:  62
+  Post: Nasekirala me ekipa iz T-Coma !!!                                                         , Date: 06.01.2008 04:33:00, Votes:  20, Num.comments:  62
+  Post: HNS predstavio svoj izborni program                                                       , Date: 08.05.2007 11:31:00, Votes:   0, Num.comments:  60
+  Post: Završni pozdrav uz diskusiju o tezama Solarisa Pripametnog                                , Date: 20.04.2008 12:49:00, Votes:  27, Num.comments:  60
+  Post: Ovako æe biti slaðe ;-) - a možda i ne :-(                                                , Date: 26.11.2007 12:03:00, Votes:  23, Num.comments:  59
+  Post: ZVirKla opened for bets - koeficijenti: Ivo 1.15, Zoki 4.5                                , Date: 28.11.2007 09:53:00, Votes:  18, Num.comments:  54
+  Post: NATO smo navikli - reply                                                                  , Date: 06.12.2006 01:20:00, Votes:   0, Num.comments:  52
+  Post: U gostima na OTVu :-)                                                                     , Date: 26.09.2008 09:47:00, Votes:  35, Num.comments:  52
+  Post: Ne bi ?ovik virova, ali Obama vs. McCain ?e ipak biti GADAN fajt!                         , Date: 29.08.2008 05:25:00, Votes:  36, Num.comments:  50
+  Post: Ivo Sanader nema blage veze o ekonomiji !!!!                                              , Date: 21.01.2008 11:23:00, Votes:  26, Num.comments:  49
+  Post: Freedom Fighter o IZBORNOJ ŠUTNJI !!!!                                                    , Date: 24.11.2007 12:03:00, Votes:  16, Num.comments:  46
+  Post: O rusvaju s JMBG-om                                                                       , Date: 22.04.2007 06:19:00, Votes:   0, Num.comments:  46
+  Post: Odlazak Sanadera - bježanija, ucjena ili master plan!?                                    , Date: 03.08.2009 12:34:00, Votes:  30, Num.comments:  45
+  Post: Sabor HDZa - ko æe popušiti tu demagogiju !?                                              , Date: 30.06.2007 06:36:00, Votes:   0, Num.comments:  45
+  Post: Prekinuto trgovanje XYZ dionicama na burzi !!???                                          , Date: 18.04.2008 05:03:00, Votes:  30, Num.comments:  41
+  Post: Oda VELIKANU dvadesetog stoljeæa                                                          , Date: 16.11.2007 12:25:00, Votes:  22, Num.comments:  41
+  Post: "Iznenaðenje" u mailbox-u - odgovor prof. Banca                                           , Date: 09.10.2007 12:26:00, Votes:  21, Num.comments:  41
+  Post: Zablude o &quot;grijesima&quot; Georga W. Busha                                           , Date: 04.04.2008 08:06:00, Votes:  11, Num.comments:  41
+  Post: Što æe odluèiti Josip Frišèiæ ?!                                                          , Date: 28.11.2007 12:13:00, Votes:  23, Num.comments:  40
+  Post: DREAM scenario za SDP/HNS - iliti Hoæe li Josip Frišèiæ imati MUDA ;-) ?                  , Date: 27.11.2007 12:20:00, Votes:  35, Num.comments:  39
+  Post: "Taj naš liberalizam" - REPLY                                                             , Date: 27.10.2007 11:38:00, Votes:  26, Num.comments:  39
+  Post: Odosmo u hela?!!!???                                                                      , Date: 10.10.2008 12:23:00, Votes:  45, Num.comments:  39
+  Post: Poruka za ŠUPKE iz Hrvatske udruge poslodavaca !!!                                        , Date: 28.02.2008 02:33:00, Votes:  19, Num.comments:  38
+  Post: Ima li nade za Hrvatsku ???                                                               , Date: 03.09.2007 11:18:00, Votes:   1, Num.comments:  38
+  Post: LIVE from HNS Headquaters - Over and out !                                                , Date: 25.11.2007 07:03:00, Votes:  21, Num.comments:  34
+  Post: O Slovencima ...                                                                          , Date: 10.11.2009 11:15:00, Votes:  22, Num.comments:  34
+  Post: Only death and taxes ...                                                                  , Date: 21.04.2007 11:08:00, Votes:   0, Num.comments:  33
+  Post: Jadranka Kosor govori prave stvari! Ali, može li isporu?iti?                              , Date: 22.10.2009 05:41:00, Votes:  25, Num.comments:  33
+  Post: Dobio sam svoju dr.sc. diplomu - kooonaèno ... :-)                                        , Date: 04.02.2008 02:19:00, Votes:  12, Num.comments:  33
+  Post: Malo san down :-(                                                                         , Date: 19.01.2008 01:07:00, Votes:  32, Num.comments:  31
+  Post: Hrvatska i MMF                                                                            , Date: 12.11.2006 01:05:00, Votes:   0, Num.comments:  30
+  Post: Zašto je SDP-ov program za obrazovanje STRATEŠKI PROMAŠEN - pojašnjenje                   , Date: 22.09.2007 09:50:00, Votes:   0, Num.comments:  28
+  Post: "Super Tuesday" is HEREEEEEE :-)                                                          , Date: 05.02.2008 12:15:00, Votes:  15, Num.comments:  28
+  Post: Je li došlo vrijeme da "civilno društvo" digne svoj glas!?                                , Date: 07.10.2008 02:43:00, Votes:  31, Num.comments:  28
+  Post: Hoæe li HNS odoljeti sirenskom zovu HDZ-a !?                                              , Date: 19.12.2007 02:44:00, Votes:  13, Num.comments:  28
+  Post: "Izlaz na toplo more" i novi "Varšavski pakt" !!!???                                      , Date: 24.02.2008 10:53:00, Votes:   9, Num.comments:  28
+  Post: Kako je SDP svojim programom za obrazovanje - OMAŠIO CEO FUDBAL :-)                       , Date: 16.09.2007 12:19:00, Votes:   1, Num.comments:  27
+  Post: Poruka za KUKAVICE iz HDZa !!!                                                            , Date: 19.11.2007 11:34:00, Votes:  52, Num.comments:  26
+  Post: Kalmeta i Sanader - ko tu koga DRŽI ZA JAJA :-)                                           , Date: 04.11.2007 08:46:00, Votes:  31, Num.comments:  26
+  Post: SKANDALOZNO - Ivo Sanader djeci u vrtiæu dijelio "bombone" :-)                            , Date: 24.11.2007 01:12:00, Votes:  15, Num.comments:  25
+  Post: O zagrebaèkoj vodi i poljoprivrednom zemljištu                                            , Date: 20.04.2008 12:38:00, Votes:  22, Num.comments:  25
+  Post: HBO traAÂ3i odgovornost zbog Acâ'¬A3sluA"Â?ajaAcâ'¬A" NikAÂ!e KleA"Â?aka!               , Date: 29.11.2008 05:22:00, Votes:  42, Num.comments:  25
+  Post: SDP priznao PORAZ !!!!?                                                                   , Date: 01.10.2007 12:16:00, Votes:   4, Num.comments:  25
+  Post: Došlo vrijeme za mea culpa                                                                , Date: 28.01.2007 12:53:00, Votes:   0, Num.comments:  24
+  Post: Problemi s pristupom EU na Acâ'¬A3domaA"â?!em frontuAcâ'¬A" iliti HoA"â?!e li se SDP KONAA"A'NO trgnuti???, Date: 05.01.2009 08:26:00, Votes:  12, Num.comments:  24
+  Post: Anno Domini 2009 - when the shit hits the fan :-)))                                       , Date: 01.01.2009 05:04:00, Votes:  51, Num.comments:  24
+  Post: Evo fajta :-))))                                                                          , Date: 25.10.2007 05:26:00, Votes:  25, Num.comments:  23
+  Post: Zašto je slanje vojnika u Afganistan THE RIGHT THING TO DO                                , Date: 31.08.2007 11:16:00, Votes:   0, Num.comments:  23
+  Post: Politi?ka platforma za lokalne izbore!?                                                   , Date: 17.09.2008 11:40:00, Votes:  26, Num.comments:  23
+  Post: Za koga æe glasati Zvone Radikalni ?                                                      , Date: 23.11.2007 01:21:00, Votes:  21, Num.comments:  22
+  Post: Ho?e li Zoran Boha?ek uspjeti "trgnuti" e-Hrvatsku?                                       , Date: 07.02.2009 12:59:00, Votes:  37, Num.comments:  22
+  Post: Je li blog sljede?i na meti ZAMP-a!?                                                      , Date: 18.11.2008 11:47:00, Votes:  22, Num.comments:  22
+  Post: McCain &amp; Obama - što san van ja govorija :-)))))                                      , Date: 13.02.2008 11:49:00, Votes:  12, Num.comments:  22
+  Post: Sviæe NUKLEARNA ZORA :-)                                                                  , Date: 10.09.2007 04:16:00, Votes:   0, Num.comments:  22
+  Post: Kraj ili "poèetak kraja" za Demokratsku stranku nakon predizbora u Texasu i Ohiou?        , Date: 05.03.2008 01:25:00, Votes:  12, Num.comments:  21
+  Post: KRETENI na sve strane :-))))))                                                            , Date: 11.02.2008 09:16:00, Votes:  19, Num.comments:  21
+  Post: Èekajuæi smrt na Floridi ...                                                              , Date: 29.01.2008 06:09:00, Votes:  15, Num.comments:  21
+  Post: Stanje na kladionici - Zoki ide DOLJEEE ...                                               , Date: 29.11.2007 11:56:00, Votes:   9, Num.comments:  21
+  Post: Poruka za moje drage SUKOŠANCE i ZADRANE :-)))                                            , Date: 23.11.2007 02:02:00, Votes:  21, Num.comments:  20
+  Post: "NAJSTRAŠNIJE DOSAD !" - Favorit za Greatest Shits 2007 !!!                               , Date: 20.11.2007 09:26:00, Votes:  27, Num.comments:  20
+  Post: FREEDOM FIGHTER is coming to town !!!                                                     , Date: 01.11.2007 12:48:00, Votes:  17, Num.comments:  20
+  Post: Kako izigrati Ustavni sud - o upisu djece branitelja na fakultete                         , Date: 06.06.2007 06:56:00, Votes:   2, Num.comments:  20
+  Post: Odgovorili mi iz Narodnog lista :-)                                                       , Date: 16.04.2008 01:55:00, Votes:  26, Num.comments:  19
+  Post: Luka Bebiæ kaže DA NE MOŽE, a vi se, gospodo iz oporbe, možete jebati :-)                 , Date: 13.10.2007 01:19:00, Votes:  23, Num.comments:  19
+  Post: Gotovinu pustit da se brani sa slobode !? - DON&#039;T BE RIDIKJULOS                      , Date: 24.08.2007 10:42:00, Votes:   0, Num.comments:  19
+  Post: Silba - "zakoèeni" potencijal!?                                                           , Date: 14.08.2008 11:31:00, Votes:   8, Num.comments:  19
+  Post: Dragutin Lesar više nije u HNS-u !!!                                                      , Date: 09.04.2008 06:33:00, Votes:  20, Num.comments:  18
+  Post: Zašto æe Bolonjski proces SIGURNO propasti - insider story                                , Date: 10.03.2007 12:21:00, Votes:   1, Num.comments:  18
+  Post: Jel&#039; John McCain LUD ?O&#039;EK??? Ili možda ipak nije ;-)                           , Date: 31.08.2008 06:44:00, Votes:  22, Num.comments:  17
+  Post: Veèeras se kroji sudbina svita !!! On-line praæenje :-)                                   , Date: 19.01.2008 05:22:00, Votes:  13, Num.comments:  17
+  Post: Razvoj otoka - don&#039;t bi ridikjulous!                                                 , Date: 21.08.2008 02:54:00, Votes:  22, Num.comments:  16
+  Post: Ko to kaže da ne trebamo uæi u NATO - KO TO KAŽE !!!!????                                 , Date: 06.07.2007 12:32:00, Votes:   0, Num.comments:  16
+  Post: Kako je izabran George W. Bush                                                            , Date: 05.04.2008 02:43:00, Votes:   5, Num.comments:  16
+  Post: Zvone Radikalni doživijo ORGAZAM :-)))                                                    , Date: 22.11.2007 09:59:00, Votes:  19, Num.comments:  15
+  Post: Zvone Radikalni o Latinici (tema - zna se ;-)                                             , Date: 02.10.2007 11:55:00, Votes:   8, Num.comments:  15
+  Post: Još malo o "bejzbol palicama" - Što je Zvone Radikalni u stvari htio reæi !?              , Date: 10.12.2007 12:58:00, Votes:  17, Num.comments:  14
+  Post: Još malo o radu Sabora - što kažu saborski novinari ?                                     , Date: 20.10.2007 11:47:00, Votes:  22, Num.comments:  14
+  Post: Gospodarska kriza Acâ'¬â?o AÂ!to se valja &quot;iza brda&quot;?                          , Date: 28.11.2008 03:45:00, Votes:  36, Num.comments:  14
+  Post: Ljubavni trokut - Kalmeta, Pašaliæ i ... Ante Bundilo                                     , Date: 12.08.2007 05:01:00, Votes:   0, Num.comments:  14
+  Post: &quot;Roosevelt - iskrivljena povijest&quot; - reply                                      , Date: 06.08.2007 02:34:00, Votes:   0, Num.comments:  14
+  Post: GADOVI, GADOVI, GADOVI                                                                    , Date: 26.07.2007 02:05:00, Votes:   0, Num.comments:  14
+  Post: Zvoni Radikalnom naðen "kratki spoj u mozgu" !!!                                          , Date: 09.11.2007 10:15:00, Votes:  25, Num.comments:  13
+  Post: Napisao sam pismo Vesni Pusiæ                                                             , Date: 05.02.2007 02:42:00, Votes:   0, Num.comments:  13
+  Post: Stars and soggy bottoms - iliti Što Economist piše o Hrvatskoj                            , Date: 06.01.2007 04:40:00, Votes:   0, Num.comments:  13
+  Post: Obrat na kladionici - ZOKI prelazi u vodstvo ! Novi koeficijenti - Ivo 2.2, Zoki 1.75     , Date: 02.12.2007 07:19:00, Votes:   9, Num.comments:  13
+  Post: Jel&#039; znate &#039;KO je u Etièkom izbornom povjerenstvu ?                             , Date: 21.11.2007 01:12:00, Votes:  14, Num.comments:  12
+  Post: Ispravljam cijenjenog Antu Èièina-Šaina, i malo dalje elaboriram ...                      , Date: 12.11.2007 03:41:00, Votes:  17, Num.comments:  12
+  Post: Anti-antiamerièko jamranje                                                                , Date: 03.12.2006 05:12:00, Votes:   0, Num.comments:  12
+  Post: Hrvatski "amerièki san"                                                                   , Date: 12.07.2007 02:20:00, Votes:   0, Num.comments:  12
+  Post: Namršten mi nešto Joža danas u Dnevniku :-)                                               , Date: 09.01.2008 11:05:00, Votes:   8, Num.comments:  12
+  Post: Što æemo s EU ili &quot;Kako je Zvone Radikalni završio u TV Dnevniku&quot;               , Date: 21.07.2007 04:20:00, Votes:   1, Num.comments:  12
+  Post: The Economist is finally FREE FOR ALL !!!!!!!                                             , Date: 19.10.2007 06:04:00, Votes:  22, Num.comments:  11
+  Post: Rezultati (skromne :-) ankete o školarinama                                               , Date: 11.10.2007 11:29:00, Votes:  10, Num.comments:  11
+  Post: Izgleda da je na "pravom" putu ipak ... Sanader :-(                                       , Date: 04.12.2007 11:53:00, Votes:   7, Num.comments:  10
+  Post: Zvone Radikalni postao NOVINAR !?                                                         , Date: 12.04.2008 05:15:00, Votes:  27, Num.comments:   8
+  Post: Hrvatska u EU 2009. !? Ha, ha, ha, ha ...                                                 , Date: 16.10.2007 10:28:00, Votes:  24, Num.comments:   8
+  Post: Što znaèi biti siromašan u Americi                                                        , Date: 08.03.2007 10:03:00, Votes:   0, Num.comments:   7
+  Post: Umro je Šime Ðodan - i kakve to veze ima s Miljenkom Smojom                               , Date: 05.10.2007 06:35:00, Votes:  10, Num.comments:   7
+  Post: Prije starta live iz HNS-ovog stožera, zadnje misli :-)                                   , Date: 25.11.2007 02:31:00, Votes:  14, Num.comments:   6
+  Post: Zvonin The Economist Newsletter - broj 2                                                  , Date: 26.10.2007 11:36:00, Votes:  14, Num.comments:   6
+  Post: Što kaže rektor Bjeliš o školarinama ?                                                    , Date: 21.02.2007 12:17:00, Votes:   0, Num.comments:   6
+  Post: Branka Slavica ispalila i ostala živa !?                                                  , Date: 27.02.2008 03:40:00, Votes:   4, Num.comments:   6
+  Post: najbolje da ne pišem naslov ...                                                           , Date: 26.11.2007 03:16:00, Votes:  13, Num.comments:   5
+  Post: Aj, aj, aj, ...                                                                           , Date: 27.03.2007 11:20:00, Votes:   0, Num.comments:   5
+  Post: Odgovorila mi Vesna Pusiæ :-)                                                             , Date: 13.02.2007 02:11:00, Votes:   0, Num.comments:   5
+  Post: Calling it a day ...                                                                      , Date: 06.12.2007 11:19:00, Votes:  13, Num.comments:   4
+  Post: Što je na kraju s tim Sunèanim Hvarom ?                                                   , Date: 14.01.2007 11:25:00, Votes:   0, Num.comments:   4
+  Post: ZVirKla - update koeficijenata - Ivo 1.25, Zoki  3.5                                      , Date: 01.12.2007 09:56:00, Votes:   1, Num.comments:   4
+  Post: &quot;Super utorak&quot; - live blogging !!!                                              , Date: 05.02.2008 11:53:00, Votes:   2, Num.comments:   2
+  Post: BOLONJA JE SPAŠENA - Ljubo Jurèiæ "obeæao" dodatnih 2 mlrd kuna !!!                       , Date: 15.03.2007 01:44:00, Votes:   0, Num.comments:   1
+  Post: Èovjek živi na STABLU - Iliti &quot;Ko je ovdje majmun&quot;                              , Date: 07.02.2007 05:48:00, Votes:   0, Num.comments:   0
+Press any key to continue . . .

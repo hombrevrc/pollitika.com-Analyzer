@@ -22,11 +22,13 @@ namespace pollitika.com_ConsoleRunner
             //List<string> listOfPosts = new List<string>();
 
             string repoName = "../../../Data/pollitikaNew.db";
+            //string repoName = "../../../Data/pollitikaNew.First_020.db";
+//            string repoName = "../../../Data/pollitikaNew.First_001.db";
 
             Logger.Info("Opening data store: " + repoName);
             repo.OpenDataStore(repoName);
 
-            AnalyzeUsersPosts("../../../Data/UsersLists", repo);
+            //AnalyzeUsersPosts("../../../Data/UsersLists", repo);
 
             PrintStatistics(repo);
 
@@ -241,6 +243,16 @@ namespace pollitika.com_ConsoleRunner
         {
             StatisticsPosts.GetSummary(repo);
 
+            StatisticsPosts.GetPostsWithMostNumberOfVotes(30, repo);
+
+            StatisticsPosts.GetPostsWithMostSumOfVotes(30, repo);
+
+            StatisticsPosts.GetPostsWithMostNegativeVotes(30, repo);
+
+            StatisticsPosts.GetMostControversialPosts(30, repo);
+
+            StatisticsPosts.GetMostCommentedPosts(30, repo);
+
             StatisticsUsers.GetUsersWithMostPosts(30, repo);
 
             StatisticsUsers.GetUsersWithMostComments(30, repo);
@@ -255,21 +267,13 @@ namespace pollitika.com_ConsoleRunner
 
             StatisticsUsers.GetUsersWithBiggestAverageNumberOfVotesPerComment(30, repo);
 
+            StatisticsUsers.GetUsersWithBiggestAverageNumberOfCommentsPerPost(30, repo);
+
             StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 30, repo);
 
             StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 40, repo);
 
             StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 50, repo);
-
-            StatisticsPosts.GetPostsWithMostNumberOfVotes(30, repo);
-
-            StatisticsPosts.GetPostsWithMostSumOfVotes(30, repo);
-
-            StatisticsPosts.GetPostsWithMostNegativeVotes(30, repo);
-
-            StatisticsPosts.GetMostControversialPosts(30, repo);
-
-            StatisticsPosts.GetMostCommentedPosts(30, repo);
 
             StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);
 

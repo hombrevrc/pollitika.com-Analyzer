@@ -104,6 +104,22 @@ namespace pollitika.com_Model
 
             return sum / cnt;
         }
+        public double GetAverageCommentsPerPost()
+        {
+            double sum = 0.0;
+            int cnt = 0;
+            foreach (var post in _listPostsByUser)
+            {
+                if (post.Id > 1485 && post.DatePosted > new DateTime(2007, 9, 22))
+                {
+                    sum = sum + post.GetNumberOfComments();
+                    cnt++;
+                }
+            }
+
+            return sum / cnt;
+        }
+
         public double GetAverageVotesPerComment()
         {
             double sum = _listCommentsByUser.Aggregate(0.0, (current, comment) => current + comment.Votes.Count);

@@ -127,13 +127,23 @@ namespace pollitika.com_Data
             Console.WriteLine("");
         }
 
+        public static void GetUsersWithBiggestAverageNumberOfCommentsPerPost(int numUsers, ModelRepository inRepo)
+        {
+            List<User> list = inRepo._dataStore.Users.Where(p => p.PostsByUser.Count > 10).OrderByDescending(p => p.GetAverageVotesPerPost()).Take(numUsers).ToList();
+
+            Console.WriteLine("Users with highest average number of votes per post:");
+            foreach (var user in list)
+                Console.WriteLine("User {0,-18}   - votes per post: {1:N2}, total posts: {2,3}", user.NameHtml, user.GetAverageVotesPerPost(), user.PostsByUser.Count);
+            Console.WriteLine("");
+        }
+
         public static void GetUsersWithBiggestNumberOfPostsWithOverNVotes(int numUsers, int numVotes, ModelRepository inRepo)
         {
             List<User> list = inRepo._dataStore.Users.Where(p => p.PostsByUser.Count > 10).OrderByDescending(p => p.GetNumberOfPostsWithOverNVotes(numVotes)).Take(numUsers).ToList();
 
             Console.WriteLine("Users with highest number of posts with over {0} votes:", numVotes);
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - votes {1}", user.NameHtml, user.GetNumberOfPostsWithOverNVotes(numVotes));
+                Console.WriteLine("User {0,-18}   - {1} posts", user.NameHtml, user.GetNumberOfPostsWithOverNVotes(numVotes));
             Console.WriteLine("");
         }
 

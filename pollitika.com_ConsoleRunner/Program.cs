@@ -276,7 +276,11 @@ namespace pollitika.com_ConsoleRunner
 
             StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 50, repo);
 
-            StatisticsUsers.GetNumberOfPostInMonthAllTime(repo);
+            //StatisticsUsers.GetNumberOfPostInMonthAllTime(repo);
+
+            StatisticsUsers.GetNumberOfPostMonthlyWithFrontpageStat(repo);
+
+            StatisticsUsers.GetNumberOfCommentsMonthlyAllTime(repo);
 
             // StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);
 

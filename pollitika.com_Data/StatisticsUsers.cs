@@ -149,7 +149,9 @@ namespace pollitika.com_Data
 
         public static void GetNumberOfPostInMonthAllTime(ModelRepository inRepo)
         {
-            SortedDictionary<string, int> num = new SortedDictionary<string, int>();
+            Console.WriteLine("Distribution of number of posts over time:");
+
+            SortedDictionary<string, int> numPosts = new SortedDictionary<string, int>();
 
             // proći kroz sve postove
             foreach (Post p in inRepo._dataStore.Posts)
@@ -157,21 +159,65 @@ namespace pollitika.com_Data
                 // iz datuma kreiraj YYYY-MM oblik stringa
                 string key = p.DatePosted.Year.ToString() + "-" + p.DatePosted.Month.ToString("D2");
 
-                if (num.ContainsKey(key))
+                if (numPosts.ContainsKey(key))
+                    numPosts[key]++;
+                else
+                    numPosts[key] = 1;
+            }
+
+            foreach (var p in numPosts)
+                Console.WriteLine("{0} - {1}", p.Key, p.Value);
+        }
+
+        public static void GetNumberOfCommentsMonthlyAllTime(ModelRepository inRepo)
+        {
+            Console.WriteLine("Distribution of number of comments over time:");
+
+            SortedDictionary<string, int> dictNumComments = new SortedDictionary<string, int>();
+
+            // proći kroz sve postove
+            foreach (Comment p in inRepo._dataStore.Comments)
+            {
+                // iz datuma kreiraj YYYY-MM oblik stringa
+                string key = p.DatePosted.Year.ToString() + "-" + p.DatePosted.Month.ToString("D2");
+
+                if (dictNumComments.ContainsKey(key))
+                    dictNumComments[key]++;
+                else
+                    dictNumComments[key] = 1;
+            }
+
+            foreach (var p in dictNumComments)
+                Console.WriteLine("{0} - {1}", p.Key, p.Value);
+        }
+
+        public static void GetNumberOfPostMonthlyWithFrontpageStat(ModelRepository inRepo)
+        {
+            Console.WriteLine("Distribution of number of posts over time:");
+
+            SortedDictionary<string, int> numPosts = new SortedDictionary<string, int>();
+            SortedDictionary<string, int> numFrontpagePosts = new SortedDictionary<string, int>();
+
+            // proći kroz sve postove
+            foreach (Post p in inRepo._dataStore.Posts)
+            {
+                // iz datuma kreiraj YYYY-MM oblik stringa
+                string key = p.DatePosted.Year.ToString() + "-" + p.DatePosted.Month.ToString("D2");
+
+                if (numPosts.ContainsKey(key))
                 {
-                    num[key]++;
+                    numPosts[key]++;
+                    numFrontpagePosts[key] += p.IsOnFrontPage ? 1 : 0;
                 }
                 else
                 {
-                    num[key] = 1;
+                    numPosts[key] = 1;
+                    numFrontpagePosts[key] = p.IsOnFrontPage ? 1 : 0;
                 }
             }
 
-            foreach (var p in num)
-            {
-                Console.WriteLine("{0} - {1}", p.Key, p.Value);
-
-            }
+            foreach (var p in numPosts)
+                Console.WriteLine("{0} - total posts {1,3}, on front page {2,3}, percentage {3:N1}", p.Key, p.Value, numFrontpagePosts[p.Key], numFrontpagePosts[p.Key] * 100 / p.Value);
         }
 
     }

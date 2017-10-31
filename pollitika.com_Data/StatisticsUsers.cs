@@ -143,11 +143,11 @@ namespace pollitika.com_Data
 
             Console.WriteLine("Users with highest number of posts with over {0} votes:", numVotes);
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - {1} posts", user.NameHtml, user.GetNumberOfPostsWithOverNVotes(numVotes));
+                Console.WriteLine("User {0,-18}   - {1,3} posts", user.NameHtml, user.GetNumberOfPostsWithOverNVotes(numVotes));
             Console.WriteLine("");
         }
 
-        public static void GetNumberOfPostInMonthAllTime(ModelRepository inRepo)
+        public static void GetNumberOfPostMonthlyAllTime(ModelRepository inRepo)
         {
             Console.WriteLine("Distribution of number of posts over time:");
 
@@ -166,7 +166,36 @@ namespace pollitika.com_Data
             }
 
             foreach (var p in numPosts)
-                Console.WriteLine("{0} - {1}", p.Key, p.Value);
+                Console.WriteLine("{0} - {1,4}", p.Key, p.Value);
+
+            Console.WriteLine("");
+        }
+
+        public static void GetNumberOfPostWithOverNVotesMonthlyAllTime(int numVotes, ModelRepository inRepo)
+        {
+            Console.WriteLine("Distribution of number of posts with over {0} votes over time:", numVotes);
+
+            SortedDictionary<string, int> numPosts = new SortedDictionary<string, int>();
+
+            // proći kroz sve postove
+            foreach (Post p in inRepo._dataStore.Posts)
+            {
+                // iz datuma kreiraj YYYY-MM oblik stringa
+                string key = p.DatePosted.Year.ToString() + "-" + p.DatePosted.Month.ToString("D2");
+
+                if (numPosts.ContainsKey(key))
+                {
+                    if(p.GetNumberOfVotes() >= numVotes )
+                        numPosts[key]++;
+                }
+                else
+                    numPosts[key] = p.GetNumberOfVotes() >= numVotes ? 1 : 0;
+            }
+
+            foreach (var p in numPosts)
+                Console.WriteLine("{0} - {1,4}", p.Key, p.Value);
+
+            Console.WriteLine("");
         }
 
         public static void GetNumberOfCommentsMonthlyAllTime(ModelRepository inRepo)
@@ -188,7 +217,9 @@ namespace pollitika.com_Data
             }
 
             foreach (var p in dictNumComments)
-                Console.WriteLine("{0} - {1}", p.Key, p.Value);
+                Console.WriteLine("{0} - {1,5}", p.Key, p.Value);
+
+            Console.WriteLine("");
         }
 
         public static void GetNumberOfPostMonthlyWithFrontpageStat(ModelRepository inRepo)
@@ -218,6 +249,8 @@ namespace pollitika.com_Data
 
             foreach (var p in numPosts)
                 Console.WriteLine("{0} - total posts {1,3}, on front page {2,3}, percentage {3:N1}", p.Key, p.Value, numFrontpagePosts[p.Key], numFrontpagePosts[p.Key] * 100 / p.Value);
+
+            Console.WriteLine("");
         }
 
     }

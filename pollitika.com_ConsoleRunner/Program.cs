@@ -280,6 +280,10 @@ namespace pollitika.com_ConsoleRunner
 
             StatisticsUsers.GetNumberOfPostMonthlyWithFrontpageStat(repo);
 
+            StatisticsUsers.GetNumberOfPostWithOverNVotesMonthlyAllTime(30, repo);
+            StatisticsUsers.GetNumberOfPostWithOverNVotesMonthlyAllTime(40, repo);
+            StatisticsUsers.GetNumberOfPostWithOverNVotesMonthlyAllTime(50, repo);
+
             StatisticsUsers.GetNumberOfCommentsMonthlyAllTime(repo);
 
             // StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);

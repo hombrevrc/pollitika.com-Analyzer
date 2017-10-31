@@ -128,7 +128,7 @@ namespace pollitika.com_Model
         }
         public int GetNumberOfPostsWithOverNVotes(int N)
         {
-            return _listPostsByUser.Count(p => p.GetNumberOfVotes() > N);
+            return _listPostsByUser.Count(p => p.GetNumberOfVotes() >= N);
         }
 
         public void AddPostToList(Post inPost)

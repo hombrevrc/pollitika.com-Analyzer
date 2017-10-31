@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 using pollitika.com_Model;
 
 namespace pollitika.com_Data
@@ -129,11 +129,11 @@ namespace pollitika.com_Data
 
         public static void GetUsersWithBiggestAverageNumberOfCommentsPerPost(int numUsers, ModelRepository inRepo)
         {
-            List<User> list = inRepo._dataStore.Users.Where(p => p.PostsByUser.Count > 10).OrderByDescending(p => p.GetAverageVotesPerPost()).Take(numUsers).ToList();
+            List<User> list = inRepo._dataStore.Users.Where(p => p.PostsByUser.Count > 10).OrderByDescending(p => p.GetAverageCommentsPerPost()).Take(numUsers).ToList();
 
-            Console.WriteLine("Users with highest average number of votes per post:");
+            Console.WriteLine("Users with highest average number of comments per post:");
             foreach (var user in list)
-                Console.WriteLine("User {0,-18}   - votes per post: {1:N2}, total posts: {2,3}", user.NameHtml, user.GetAverageVotesPerPost(), user.PostsByUser.Count);
+                Console.WriteLine("User {0,-18}   - comments per post: {1:N2}, total posts: {2,3}", user.NameHtml, user.GetAverageCommentsPerPost(), user.PostsByUser.Count);
             Console.WriteLine("");
         }
 
@@ -145,6 +145,33 @@ namespace pollitika.com_Data
             foreach (var user in list)
                 Console.WriteLine("User {0,-18}   - {1} posts", user.NameHtml, user.GetNumberOfPostsWithOverNVotes(numVotes));
             Console.WriteLine("");
+        }
+
+        public static void GetNumberOfPostInMonthAllTime(ModelRepository inRepo)
+        {
+            SortedDictionary<string, int> num = new SortedDictionary<string, int>();
+
+            // proći kroz sve postove
+            foreach (Post p in inRepo._dataStore.Posts)
+            {
+                // iz datuma kreiraj YYYY-MM oblik stringa
+                string key = p.DatePosted.Year.ToString() + "-" + p.DatePosted.Month.ToString("D2");
+
+                if (num.ContainsKey(key))
+                {
+                    num[key]++;
+                }
+                else
+                {
+                    num[key] = 1;
+                }
+            }
+
+            foreach (var p in num)
+            {
+                Console.WriteLine("{0} - {1}", p.Key, p.Value);
+
+            }
         }
 
     }

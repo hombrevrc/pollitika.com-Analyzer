@@ -21,9 +21,10 @@ namespace pollitika.com_ConsoleRunner
             ModelRepository repo = new ModelRepository();
             //List<string> listOfPosts = new List<string>();
 
-            string repoName = "../../../Data/pollitikaNew.db";
-            //string repoName = "../../../Data/pollitikaNew.First_020.db";
-//            string repoName = "../../../Data/pollitikaNew.First_001.db";
+            // string repoName = "../../../Data/pollitikaNew.db";
+            string repoName = "../../../Data/pollitikaNew.First_020.db";
+
+            // string repoName = "../../../Data/pollitikaNew.First_001.db";
 
             Logger.Info("Opening data store: " + repoName);
             repo.OpenDataStore(repoName);
@@ -275,7 +276,9 @@ namespace pollitika.com_ConsoleRunner
 
             StatisticsUsers.GetUsersWithBiggestNumberOfPostsWithOverNVotes(30, 50, repo);
 
-            StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);
+            StatisticsUsers.GetNumberOfPostInMonthAllTime(repo);
+
+            // StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);
 
             //StatisticsPosts.GetPostsWithZeroVotes(repo);
         }

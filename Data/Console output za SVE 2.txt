@@ -1,0 +1,1295 @@
+log4net:ERROR XmlHierarchyConfigurator: Cannot find Property [level] to set object on [log4net.Appender.ColoredConsoleAppender]
+INFO   Opening data store: ../../../Data/pollitikaNew.db
+Total number of users   : 3471
+Total number of posts   : 14303
+Total number of comments: 481343
+Total number of votes   : 1119666
+Posts with most votes:
+Post by mrak              , votes 100, date - 07.04.2010 11:45:00, post - Nekoliko stvari koje mislim da je važno re?i
+Post by mrak              , votes 92 , date - 16.04.2009 08:05:00, post - Sve što Vam nitko nije htio re?i o bira?kim popisima
+Post by mirtaflora        , votes 85 , date - 08.07.2011 06:02:00, post - IN MEMORIAM ZDRAVKO GRACIN
+Post by mrak              , votes 80 , date - 17.02.2010 05:27:00, post - Mea culpa
+Post by leddevet          , votes 76 , date - 25.08.2009 12:07:00, post - Implozija
+Post by frederik          , votes 73 , date - 08.09.2009 11:53:00, post - Splav o?ajnika
+Post by aisha             , votes 70 , date - 23.10.2009 10:14:00, post - Kada umreš više nisi branitelj...
+Post by papar             , votes 68 , date - 05.10.2012 09:42:00, post - Boris Šprem; beatifikacija bezliène politièke ništarije.
+Post by frederik          , votes 68 , date - 18.11.2009 01:15:00, post - Crna humoreska - ili dan kad smo plakali!
+Post by g-news            , votes 67 , date - 24.06.2012 04:01:00, post - dragi sajber-prijatelji...
+Post by aisha             , votes 67 , date - 24.08.2009 01:46:00, post - Kakav je tko, na pollitika.com?
+Post by sm                , votes 66 , date - 28.04.2010 11:11:00, post - Eutanazirana Pollitika.com
+Post by hatzivelkos       , votes 65 , date - 25.04.2011 09:37:00, post - Trgovci dignitetom Domovinskog rata
+Post by leddevet          , votes 65 , date - 19.03.2011 12:19:00, post - Antiintelektualizam novog doba
+Post by hdz-ekonomija     , votes 65 , date - 22.03.2009 01:25:00, post - Njegov prijatelj Ferenc i on
+Post by mrak              , votes 65 , date - 20.11.2007 11:44:00, post - HRT zabranio emitiranje spota pollitika.com
+Post by hdz-ekonomija     , votes 64 , date - 12.05.2009 07:35:00, post - Bunika je zakon! Sanader: &quot;Vlada sprije?ila rast nezaposlenosti&quot;
+Post by lucijan-caric     , votes 64 , date - 09.04.2010 11:30:00, post - Registar, hakeri i obavještajci
+Post by mrak              , votes 63 , date - 12.05.2009 11:16:00, post - Otvoreno pismo novinarima, ?lanovima bira?kih odbora i bira?ima
+Post by frederik          , votes 63 , date - 10.04.2010 02:12:00, post - "Secret gardens" (Tajni vrtovi paranormalne države!)
+Post by tonci-tadic       , votes 63 , date - 17.03.2009 09:55:00, post - Deset mitova hrvatskog turizma
+Post by opinioiuris       , votes 63 , date - 19.02.2009 09:48:00, post - Beware of the troll: Što je to internetski troll?
+Post by hdz-ekonomija     , votes 63 , date - 12.02.2009 09:46:00, post - Pomahnitali Sanader i njegov prijatelj Šuker uništili i Zagreba?ku burzu
+Post by frederik          , votes 63 , date - 25.12.2009 10:21:00, post - Popisi bira?a - ili tko nas i zašto ?ini majmunima!!
+Post by mrak              , votes 63 , date - 09.12.2008 03:56:00, post - Nacrt prijedloga Državnog prora?una Republike Hrvatske za 2009. godinu
+Post by shiky             , votes 62 , date - 31.01.2011 04:12:00, post - Dijalog bez repova
+Post by nausikaya         , votes 61 , date - 02.06.2010 11:47:00, post - Zaigrani Tom Sawyer Hrvatske televizije
+Post by zaphod            , votes 61 , date - 16.03.2011 07:08:00, post - Japan(ci) mojim oèima - nekad i sad (literarno)
+Post by frederik          , votes 61 , date - 13.01.2010 01:01:00, post - Stvarni gubitnik izbora??
+Post by daniel-n          , votes 61 , date - 21.02.2012 12:43:00, post - Nek ustane tko je bio embrij
+
+Post with max sum of votes:
+Post by mrak              , votes 94 , date - 07.04.2010 11:45:00, post - Nekoliko stvari koje mislim da je važno re?i
+Post by mrak              , votes 92 , date - 16.04.2009 08:05:00, post - Sve što Vam nitko nije htio re?i o bira?kim popisima
+Post by mirtaflora        , votes 85 , date - 08.07.2011 06:02:00, post - IN MEMORIAM ZDRAVKO GRACIN
+Post by mrak              , votes 74 , date - 17.02.2010 05:27:00, post - Mea culpa
+Post by leddevet          , votes 72 , date - 25.08.2009 12:07:00, post - Implozija
+Post by aisha             , votes 70 , date - 23.10.2009 10:14:00, post - Kada umreš više nisi branitelj...
+Post by frederik          , votes 69 , date - 08.09.2009 11:53:00, post - Splav o?ajnika
+Post by frederik          , votes 68 , date - 18.11.2009 01:15:00, post - Crna humoreska - ili dan kad smo plakali!
+Post by g-news            , votes 67 , date - 24.06.2012 04:01:00, post - dragi sajber-prijatelji...
+Post by sm                , votes 66 , date - 28.04.2010 11:11:00, post - Eutanazirana Pollitika.com
+Post by lucijan-caric     , votes 64 , date - 09.04.2010 11:30:00, post - Registar, hakeri i obavještajci
+Post by mrak              , votes 63 , date - 12.05.2009 11:16:00, post - Otvoreno pismo novinarima, ?lanovima bira?kih odbora i bira?ima
+Post by mrak              , votes 63 , date - 20.11.2007 11:44:00, post - HRT zabranio emitiranje spota pollitika.com
+Post by frederik          , votes 63 , date - 25.12.2009 10:21:00, post - Popisi bira?a - ili tko nas i zašto ?ini majmunima!!
+Post by mrak              , votes 63 , date - 09.12.2008 03:56:00, post - Nacrt prijedloga Državnog prora?una Republike Hrvatske za 2009. godinu
+Post by shiky             , votes 62 , date - 31.01.2011 04:12:00, post - Dijalog bez repova
+Post by nausikaya         , votes 61 , date - 02.06.2010 11:47:00, post - Zaigrani Tom Sawyer Hrvatske televizije
+Post by zaphod            , votes 61 , date - 16.03.2011 07:08:00, post - Japan(ci) mojim oèima - nekad i sad (literarno)
+Post by tonci-tadic       , votes 61 , date - 17.03.2009 09:55:00, post - Deset mitova hrvatskog turizma
+Post by opinioiuris       , votes 61 , date - 19.02.2009 09:48:00, post - Beware of the troll: Što je to internetski troll?
+Post by dcroat            , votes 61 , date - 04.09.2009 09:17:00, post - System Error
+Post by frederik          , votes 60 , date - 24.05.2009 02:08:00, post - Mentalne zamke (1) - politi?ki formalizam
+Post by hdz-ekonomija     , votes 60 , date - 12.05.2009 07:35:00, post - Bunika je zakon! Sanader: &quot;Vlada sprije?ila rast nezaposlenosti&quot;
+Post by mrak              , votes 60 , date - 22.12.2008 12:17:00, post - Prijedlog za ocjenu ustavnosti Zakona o izboru zastupnika u Hrvatski sabor
+Post by hatzivelkos       , votes 59 , date - 25.04.2011 09:37:00, post - Trgovci dignitetom Domovinskog rata
+Post by leddevet          , votes 59 , date - 19.03.2011 12:19:00, post - Antiintelektualizam novog doba
+Post by man               , votes 59 , date - 07.04.2010 04:01:00, post - Uhi?en Marko Rakar!
+Post by hdz-ekonomija     , votes 59 , date - 22.03.2009 01:25:00, post - Njegov prijatelj Ferenc i on
+Post by frederik          , votes 59 , date - 25.02.2009 03:43:00, post - O "antišambriranju" ili krahu anakrone politike!
+Post by hdz-ekonomija     , votes 59 , date - 12.02.2009 09:46:00, post - Pomahnitali Sanader i njegov prijatelj Šuker uništili i Zagreba?ku burzu
+
+Post with mot negative votes:
+Post by dragan-hazler     , negative votes 31 , date - 21.10.2009 12:16:00, post - Tužba protiv Stjepana Mesi?a
+Post by lovac21           , negative votes 30 , date - 12.06.2011 06:08:00, post - Nije problem u &quot;pederima&quot; nego u pederèinama
+Post by vkrsnik           , negative votes 29 , date - 11.05.2011 10:13:00, post -  Mrakova cenzura, ili uvoðenje verbalnog delikta
+Post by vkrsnik           , negative votes 28 , date - 29.12.2011 09:54:00, post - Pretplatnici HRT-a podržavaju smjenu Šprajca
+Post by c-respond         , negative votes 25 , date - 28.10.2009 09:55:00, post - Zašto uništavati Hrvatsku ili Nobilov pou?ak?
+Post by kitz              , negative votes 25 , date - 16.11.2012 10:20:00, post - ANTU GOTOVINU ZA PREDSJEDNIKA HRVATSKE!!!
+Post by drvosjek          , negative votes 23 , date - 22.11.2013 01:42:00, post - Iskopavanje ustaša
+Post by mkn               , negative votes 23 , date - 23.06.2011 02:13:00, post - &#039;Ko to kaže, &#039;ko to laže (dio drugi)...
+Post by mkn               , negative votes 23 , date - 04.05.2011 05:12:00, post - Stvarni broj civilnih žrtava Oluje
+Post by vkrsnik           , negative votes 23 , date - 27.04.2013 04:48:00, post - Hrvatskoj nisu problem Srbi nego Jugoslaveni, a njihov centar je Zagreb
+Post by vkrsnik           , negative votes 23 , date - 28.10.2012 09:27:00, post - Krug je zatvoren: Titov gardist na Pantovèaku, a Titov omladinac na èelu HRT-a
+Post by vkrsnik           , negative votes 23 , date - 04.01.2012 07:48:00, post - Je li Vesna Pusiæ ministrica Republike Hrvatske ili Zapadnog Balkana
+Post by aisha             , negative votes 22 , date - 24.08.2009 01:46:00, post - Kakav je tko, na pollitika.com?
+Post by busola            , negative votes 22 , date - 10.06.2012 11:35:00, post - Split pretvoren u zatvor?
+Post by c-respond         , negative votes 22 , date - 18.02.2009 12:41:00, post - Gra?anska inicijativa za smjenu Žarka Puhovskog, jeste li za to?
+Post by danimir           , negative votes 22 , date - 04.06.2010 02:53:00, post - Humanitarni konvoj - provokacija Hamasa i drugih ekstremista?
+Post by krrrrekani        , negative votes 22 , date - 10.08.2012 09:58:00, post - Marko Rakar (mrak), kukavièje jaje hrvatske demokracije i režimski poslušnik?!
+Post by mkn               , negative votes 22 , date - 30.08.2014 12:00:00, post - ??????????? ?????: ????????? ????? ???? ? ??????
+Post by drvosjek          , negative votes 21 , date - 19.06.2015 04:36:00, post - Kako prepoznati jugošljam medije, upute
+Post by feniks            , negative votes 21 , date - 02.11.2010 10:53:00, post - Josipovi?eva preobrazba
+Post by feniks            , negative votes 21 , date - 05.08.2010 12:20:00, post - Dan ovoga i onoga
+Post by g-news            , negative votes 21 , date - 05.12.2009 04:22:00, post - Ljenivci su se umorili od nerada i plenumasenja
+Post by mkn               , negative votes 21 , date - 10.10.2011 12:51:00, post - Borise pošalji salate
+Post by my-soul           , negative votes 21 , date - 07.06.2009 02:01:00, post - Vukovar prije i Vukovar poslije ovih lokalnih izbora
+Post by skviki            , negative votes 21 , date - 06.02.2011 08:40:00, post - Informativno obavještajni rat
+Post by c-respond         , negative votes 20 , date - 06.10.2009 11:56:00, post - Televizi?no veleizdajništvo!
+Post by c-respond         , negative votes 20 , date - 21.09.2009 12:11:00, post - Hrvatska je &quot;krava muzara&quot; za pola Balkana!
+Post by celsou            , negative votes 20 , date - 18.02.2013 02:59:00, post - Judith Reisman ili kako zaraditi 15 mil.kuna listajuæi pornjavu
+Post by demos             , negative votes 20 , date - 16.12.2009 06:36:00, post - Milane Bandi?u, zaslužio si moj glas!
+Post by dragan-hazler     , negative votes 20 , date - 20.10.2009 11:12:00, post - Hrvatska je vodila obranbeni a ne domovinski rat
+
+Most controversial posts:
+Post by dragan-hazler     , num.votes 54 , neg.votes 31 , date - 21.10.2009 12:16:00, post - Tužba protiv Stjepana Mesi?a
+Post by lovac21           , num.votes 55 , neg.votes 30 , date - 12.06.2011 06:08:00, post - Nije problem u &quot;pederima&quot; nego u pederèinama
+Post by vkrsnik           , num.votes 52 , neg.votes 29 , date - 11.05.2011 10:13:00, post -  Mrakova cenzura, ili uvoðenje verbalnog delikta
+Post by vkrsnik           , num.votes 50 , neg.votes 28 , date - 29.12.2011 09:54:00, post - Pretplatnici HRT-a podržavaju smjenu Šprajca
+Post by c-respond         , num.votes 40 , neg.votes 25 , date - 28.10.2009 09:55:00, post - Zašto uništavati Hrvatsku ili Nobilov pou?ak?
+Post by kitz              , num.votes 45 , neg.votes 25 , date - 16.11.2012 10:20:00, post - ANTU GOTOVINU ZA PREDSJEDNIKA HRVATSKE!!!
+Post by drvosjek          , num.votes 37 , neg.votes 23 , date - 22.11.2013 01:42:00, post - Iskopavanje ustaša
+Post by mkn               , num.votes 38 , neg.votes 23 , date - 23.06.2011 02:13:00, post - &#039;Ko to kaže, &#039;ko to laže (dio drugi)...
+Post by mkn               , num.votes 40 , neg.votes 23 , date - 04.05.2011 05:12:00, post - Stvarni broj civilnih žrtava Oluje
+Post by vkrsnik           , num.votes 35 , neg.votes 23 , date - 27.04.2013 04:48:00, post - Hrvatskoj nisu problem Srbi nego Jugoslaveni, a njihov centar je Zagreb
+Post by vkrsnik           , num.votes 37 , neg.votes 23 , date - 28.10.2012 09:27:00, post - Krug je zatvoren: Titov gardist na Pantovèaku, a Titov omladinac na èelu HRT-a
+Post by vkrsnik           , num.votes 35 , neg.votes 23 , date - 04.01.2012 07:48:00, post - Je li Vesna Pusiæ ministrica Republike Hrvatske ili Zapadnog Balkana
+Post by aisha             , num.votes 67 , neg.votes 22 , date - 24.08.2009 01:46:00, post - Kakav je tko, na pollitika.com?
+Post by busola            , num.votes 42 , neg.votes 22 , date - 10.06.2012 11:35:00, post - Split pretvoren u zatvor?
+Post by c-respond         , num.votes 38 , neg.votes 22 , date - 18.02.2009 12:41:00, post - Gra?anska inicijativa za smjenu Žarka Puhovskog, jeste li za to?
+Post by danimir           , num.votes 43 , neg.votes 22 , date - 04.06.2010 02:53:00, post - Humanitarni konvoj - provokacija Hamasa i drugih ekstremista?
+Post by krrrrekani        , num.votes 37 , neg.votes 22 , date - 10.08.2012 09:58:00, post - Marko Rakar (mrak), kukavièje jaje hrvatske demokracije i režimski poslušnik?!
+Post by mkn               , num.votes 36 , neg.votes 22 , date - 30.08.2014 12:00:00, post - ??????????? ?????: ????????? ????? ???? ? ??????
+Post by drvosjek          , num.votes 35 , neg.votes 21 , date - 19.06.2015 04:36:00, post - Kako prepoznati jugošljam medije, upute
+Post by feniks            , num.votes 36 , neg.votes 21 , date - 02.11.2010 10:53:00, post - Josipovi?eva preobrazba
+Post by feniks            , num.votes 31 , neg.votes 21 , date - 05.08.2010 12:20:00, post - Dan ovoga i onoga
+Post by g-news            , num.votes 35 , neg.votes 21 , date - 05.12.2009 04:22:00, post - Ljenivci su se umorili od nerada i plenumasenja
+Post by mkn               , num.votes 34 , neg.votes 21 , date - 10.10.2011 12:51:00, post - Borise pošalji salate
+Post by my-soul           , num.votes 38 , neg.votes 21 , date - 07.06.2009 02:01:00, post - Vukovar prije i Vukovar poslije ovih lokalnih izbora
+Post by skviki            , num.votes 38 , neg.votes 21 , date - 06.02.2011 08:40:00, post - Informativno obavještajni rat
+Post by c-respond         , num.votes 38 , neg.votes 20 , date - 06.10.2009 11:56:00, post - Televizi?no veleizdajništvo!
+Post by c-respond         , num.votes 35 , neg.votes 20 , date - 21.09.2009 12:11:00, post - Hrvatska je &quot;krava muzara&quot; za pola Balkana!
+Post by celsou            , num.votes 44 , neg.votes 20 , date - 18.02.2013 02:59:00, post - Judith Reisman ili kako zaraditi 15 mil.kuna listajuæi pornjavu
+Post by demos             , num.votes 42 , neg.votes 20 , date - 16.12.2009 06:36:00, post - Milane Bandi?u, zaslužio si moj glas!
+Post by dragan-hazler     , num.votes 38 , neg.votes 20 , date - 20.10.2009 11:12:00, post - Hrvatska je vodila obranbeni a ne domovinski rat
+
+Most commented posts:
+Post by edi3              , num.comments 1229, date - 26.02.2012 06:39:00, post - Predsjednik Ivo Josipoviæ u korupcijskom skandalu!?
+Post by mkn               , num.comments 887, date - 30.01.2013 11:45:00, post - Kinsey namjesto Marxa
+Post by zaphod            , num.comments 605, date - 10.02.2012 12:24:00, post - Što ACTA jest, a što nije? Koliko je tu laži?
+Post by spvh              , num.comments 580, date - 09.11.2013 09:42:00, post - Zašto æu glasati ZA!
+Post by sjenka            , num.comments 569, date - 23.06.2011 12:03:00, post - EU - skeptik - EURATOM
+Post by demos             , num.comments 554, date - 16.12.2009 06:36:00, post - Milane Bandi?u, zaslužio si moj glas!
+Post by rebel             , num.comments 545, date - 30.05.2012 07:14:00, post - Parada
+Post by sm                , num.comments 519, date - 05.03.2012 02:35:00, post - ZAMP - èekajuæi prava pitanja
+Post by chaos99           , num.comments 491, date - 29.12.2011 10:29:00, post - Prvi potezi vlade
+Post by busola            , num.comments 485, date - 10.06.2012 11:35:00, post - Split pretvoren u zatvor?
+Post by celsou            , num.comments 480, date - 18.02.2013 02:59:00, post - Judith Reisman ili kako zaraditi 15 mil.kuna listajuæi pornjavu
+Post by vonlihtenvalner   , num.comments 460, date - 29.05.2013 12:45:00, post - Kad se prepisuje na ispitu iz ustavnog prava
+Post by libzard           , num.comments 449, date - 06.05.2012 11:11:00, post - Populizmom protiv siromaštva: 1:99
+Post by demos             , num.comments 436, date - 05.06.2012 01:44:00, post - Gay Pride radi prava ili provokacije?!
+Post by sm                , num.comments 421, date - 19.03.2012 01:47:00, post - Ivo Josipoviæ v.s. Marko Vojkoviæ - suèeljavanje
+Post by mrak              , num.comments 406, date - 22.10.2011 01:24:00, post - Izbori 2011
+Post by ljubo-ruben-weiss , num.comments 399, date - 26.04.2013 01:50:00, post - Tko i zašto &quot;brani&quot; Srð?
+Post by ljubo-ruben-weiss , num.comments 394, date - 28.09.2012 04:53:00, post - Auuuschwitz memorabilia - ima li pravo Branko Lustig nevjerovati u B - a!?
+Post by sm                , num.comments 386, date - 09.09.2011 11:29:00, post - Zašto ovaj put treæe?
+Post by ckih              , num.comments 385, date - 12.10.2012 06:55:00, post - Štednja ili licemjerstvo?!
+Post by edi3              , num.comments 380, date - 01.10.2011 12:58:00, post - Što se to zavaljalo po Wall Streetu?
+Post by aisha             , num.comments 377, date - 14.09.2009 09:01:00, post - Novi hrvatski predsjednik - katolik?
+Post by lovac21           , num.comments 377, date - 12.06.2011 06:08:00, post - Nije problem u &quot;pederima&quot; nego u pederèinama
+Post by mrak              , num.comments 369, date - 01.07.2009 12:04:00, post - Pada vlada
+Post by scarface          , num.comments 355, date - 03.09.2013 10:22:00, post - Nemam empatiju prema nasilju nad jednim pismom
+Post by sibenski-konobar  , num.comments 353, date - 25.07.2008 01:47:00, post - Terorista ili heroj
+Post by jelenska          , num.comments 352, date - 17.08.2010 11:04:00, post - Balvan revolucija
+Post by golgota           , num.comments 351, date - 05.02.2012 03:59:00, post - Kako elite perpetuiraju vjeènost "teorijama" zavjera
+Post by lunoprof          , num.comments 349, date - 29.10.2011 03:17:00, post - Placa radniku, profit vlasniku
+Post by zvone-radikalni   , num.comments 346, date - 28.09.2012 06:12:00, post - Josipa Rimac bubnula ... i ostala živa
+
+Users with most posts:
+User adfilantrop          - posts 676
+User feniks               - posts 558
+User zoran-ostric         - posts 458
+User mrak                 - posts 390
+User frederik             - posts 315
+User sm                   - posts 276
+User cnn                  - posts 272
+User ppetra               - posts 262
+User rodjen               - posts 256
+User ljubo-ruben-weiss    - posts 220
+User aluzija              - posts 215
+User rebel                - posts 192
+User ivan-cerovac         - posts 191
+User magarac              - posts 190
+User vkrsnik              - posts 189
+User mucke                - posts 186
+User hatzivelkos          - posts 185
+User drlesar              - posts 176
+User busola               - posts 151
+User starpil              - posts 148
+User potjeh               - posts 148
+User bosancero            - posts 146
+User zvone-radikalni      - posts 141
+User demos                - posts 130
+User daniel-n             - posts 130
+User petarbosni4          - posts 124
+User ap                   - posts 123
+User gale                 - posts 115
+User boltek               - posts 114
+User feniks13             - posts 112
+
+Users with most comments:
+User zaphod               - comments 16267
+User gale                 - comments 13569
+User skviki               - comments 13286
+User bigulica             - comments 13271
+User lunoprof             - comments 12638
+User drvosjek             - comments 12193
+User ppetra               - comments 12123
+User sm                   - comments 9519
+User 3103                 - comments 8061
+User foma-fomic           - comments 7813
+User leddevet             - comments 7250
+User mrak                 - comments 7249
+User zoran-ostric         - comments 6882
+User ap                   - comments 6518
+User                      - comments 6364
+User jelenska             - comments 6106
+User grdilin              - comments 5598
+User kukljica             - comments 5362
+User golgota              - comments 5196
+User ljubo-ruben-weiss    - comments 5028
+User mkn                  - comments 4947
+User demos                - comments 4778
+User feniks               - comments 4764
+User rebel                - comments 4442
+User silverci             - comments 4322
+User indian               - comments 4244
+User otpisani             - comments 3914
+User busola               - comments 3886
+User hatzivelkos          - comments 3886
+User nemesis              - comments 3862
+
+Users who gave most votes:
+User pravednik-vz         - votes 37368
+User ppetra               - votes 36560
+User grdilin              - votes 34573
+User skviki               - votes 31694
+User zaphod               - votes 25619
+User bigulica             - votes 24270
+User drvosjek             - votes 24009
+User bube                 - votes 22450
+User mirtaflora           - votes 21827
+User lunoprof             - votes 20408
+User nemesis              - votes 18415
+User janus                - votes 18343
+User kukljica             - votes 18155
+User jelenska             - votes 17702
+User laganini             - votes 17476
+User pjastrela            - votes 16988
+User 3103                 - votes 15503
+User gale                 - votes 13946
+User mrak                 - votes 13480
+User martin               - votes 12454
+User indian               - votes 12311
+User ljubo-ruben-weiss    - votes 12220
+User checkpoint-charlie   - votes 12153
+User luka                 - votes 11864
+User sanja-1968           - votes 10826
+User kitz                 - votes 9281
+User foma-fomic           - votes 9277
+User otpisani             - votes 9249
+User leddevet             - votes 8959
+User zoran-ostric         - votes 8730
+
+Users who gave most negative votes:
+User skviki               - votes 14926
+User ppetra               - votes 11779
+User pravednik-vz         - votes 9277
+User grdilin              - votes 8662
+User zaphod               - votes 8436
+User drvosjek             - votes 8367
+User laganini             - votes 6751
+User janus                - votes 6243
+User bigulica             - votes 6161
+User bube                 - votes 5965
+User lunoprof             - votes 5784
+User mrak                 - votes 5101
+User nemesis              - votes 4841
+User zoran-ostric         - votes 4808
+User kukljica             - votes 4603
+User jelenska             - votes 4117
+User ljubo-ruben-weiss    - votes 3754
+User zrakomlat            - votes 3505
+User otpisani             - votes 3222
+User tenor                - votes 2757
+User kitz                 - votes 2012
+User hdz-ekonomija        - votes 1976
+User rebel                - votes 1936
+User griotta              - votes 1934
+User foma-fomic           - votes 1908
+User gale                 - votes 1896
+User debe                 - votes 1825
+User poveznik             - votes 1783
+User quinquaginta         - votes 1762
+User rmarino69            - votes 1658
+
+Users who received most negative votes:
+User feniks               - votes 15114
+User ppetra               - votes 13631
+User drvosjek             - votes 10490
+User ljubo-ruben-weiss    - votes 10341
+User zaphod               - votes 9936
+User bigulica             - votes 7601
+User skviki               - votes 6767
+User vkrsnik              - votes 5142
+User lunoprof             - votes 4958
+User mkn                  - votes 4860
+User laganini             - votes 4539
+User zoran-ostric         - votes 4144
+User leddevet             - votes 3915
+User gale                 - votes 3747
+User foma-fomic           - votes 3614
+User my-soul              - votes 3092
+User sm                   - votes 2881
+User krrrrekani           - votes 2626
+User sjenka               - votes 2476
+User busola               - votes 2367
+User aisha                - votes 2357
+User jelenska             - votes 2320
+User rebel                - votes 2251
+User tenor                - votes 2166
+User danimir              - votes 2056
+User otpisani             - votes 1922
+User bube                 - votes 1910
+User bijesdrugi           - votes 1890
+User celsou               - votes 1773
+User nemesis              - votes 1737
+
+Users with highest average number of votes per post:
+User lucijan-caric        - votes per post: 40,58, total posts:  12
+User hdz-ekonomija        - votes per post: 35,97, total posts:  36
+User zaphod               - votes per post: 35,08, total posts:  36
+User grdilin              - votes per post: 34,44, total posts:  27
+User nausikaya            - votes per post: 33,31, total posts:  13
+User splica               - votes per post: 32,55, total posts:  38
+User edi3                 - votes per post: 31,62, total posts:  26
+User leddevet             - votes per post: 30,85, total posts:  46
+User opinioiuris          - votes per post: 30,33, total posts:  41
+User kukljica             - votes per post: 30,18, total posts:  11
+User frederik             - votes per post: 29,81, total posts: 315
+User mirtaflora           - votes per post: 28,28, total posts:  36
+User argus                - votes per post: 28,27, total posts:  15
+User hatzivelkos          - votes per post: 27,81, total posts: 185
+User lopovi               - votes per post: 27,80, total posts:  13
+User dcroat               - votes per post: 27,55, total posts:  44
+User pravednik-vz         - votes per post: 27,37, total posts:  35
+User silverci             - votes per post: 27,17, total posts:  56
+User marijuan             - votes per post: 27,08, total posts:  26
+User c-respond            - votes per post: 26,83, total posts:  12
+User aisha                - votes per post: 25,88, total posts:  40
+User solaris              - votes per post: 25,50, total posts:  16
+User vinkovicdejan        - votes per post: 25,38, total posts:  13
+User vesna                - votes per post: 25,30, total posts:  54
+User whatever             - votes per post: 25,09, total posts:  79
+User mrak                 - votes per post: 25,09, total posts: 390
+User martin               - votes per post: 24,70, total posts:  27
+User 2decicrnog           - votes per post: 24,67, total posts:  12
+User red-cavalry          - votes per post: 24,40, total posts:  15
+User griotta              - votes per post: 24,16, total posts:  52
+
+Users with highest average number of votes per comment:
+User scarface             - votes per comment 7,37, total comments  82
+User laufer               - votes per comment 6,76, total comments 222
+User glembay              - votes per comment 5,44, total comments 273
+User bongohead            - votes per comment 5,20, total comments  15
+User nurosev              - votes per comment 4,75, total comments  16
+User editor               - votes per comment 4,64, total comments  95
+User kokoshar             - votes per comment 4,62, total comments  13
+User roseparks            - votes per comment 4,56, total comments 368
+User lucijan-caric        - votes per comment 4,53, total comments 176
+User mate-zmorac          - votes per comment 4,44, total comments  27
+User lignja               - votes per comment 4,43, total comments 1496
+User common-sense         - votes per comment 4,42, total comments 261
+User robin-ud             - votes per comment 4,38, total comments 222
+User vinkovicdejan        - votes per comment 4,34, total comments  29
+User demokrat             - votes per comment 4,31, total comments  16
+User rzlatic              - votes per comment 4,28, total comments 406
+User mawkomawko           - votes per comment 4,25, total comments  20
+User michael              - votes per comment 4,25, total comments  16
+User erpe                 - votes per comment 4,23, total comments  40
+User citas2               - votes per comment 4,21, total comments  91
+User richard              - votes per comment 4,10, total comments 286
+User tonci-majica         - votes per comment 4,07, total comments 727
+User splica               - votes per comment 4,02, total comments 1276
+User mr-brown             - votes per comment 4,02, total comments 120
+User vkrsnik              - votes per comment 4,01, total comments 1554
+User jurisha              - votes per comment 4,00, total comments  12
+User mata                 - votes per comment 3,98, total comments  64
+User vjetarsjuga          - votes per comment 3,79, total comments 209
+User pravednik-vz         - votes per comment 3,78, total comments 1287
+User elnino               - votes per comment 3,77, total comments  62
+
+Users with highest average number of comments per post:
+User edi3                 - comments per post: 166,58, total posts:  26
+User zaphod               - comments per post: 114,44, total posts:  36
+User celsou               - comments per post: 111,63, total posts:  24
+User libzard              - comments per post: 108,08, total posts:  12
+User golgota              - comments per post: 100,58, total posts:  69
+User jelenska             - comments per post: 99,90, total posts:  51
+User mkn                  - comments per post: 98,69, total posts:  72
+User kapitalac            - comments per post: 97,06, total posts:  17
+User weteran              - comments per post: 85,93, total posts:  44
+User aisha                - comments per post: 85,78, total posts:  40
+User c-respond            - comments per post: 81,00, total posts:  12
+User grdilin              - comments per post: 80,33, total posts:  27
+User otpisani             - comments per post: 78,00, total posts:  41
+User jedinohrvatska       - comments per post: 75,58, total posts:  19
+User vesna                - comments per post: 74,87, total posts:  54
+User lucijan-caric        - comments per post: 72,25, total posts:  12
+User lion-queen           - comments per post: 70,72, total posts:  30
+User red-cavalry          - comments per post: 69,00, total posts:  15
+User lunoprof             - comments per post: 67,94, total posts:  71
+User provinciopolis-a     - comments per post: 66,70, total posts:  27
+User argus                - comments per post: 65,67, total posts:  15
+User drvosjek             - comments per post: 65,10, total posts: 108
+User veli-joze            - comments per post: 64,79, total posts:  24
+User zoompolitikon        - comments per post: 64,41, total posts:  52
+User mrak                 - comments per post: 63,57, total posts: 390
+User gale                 - comments per post: 62,98, total posts: 115
+User splica               - comments per post: 62,82, total posts:  38
+User danimir              - comments per post: 61,92, total posts:  71
+User doza                 - comments per post: 61,24, total posts:  25
+User ljubo-ruben-weiss    - comments per post: 60,62, total posts: 220
+
+Users with highest number of posts with over 30 votes:
+User mrak                 - 110 posts
+User frederik             - 109 posts
+User hatzivelkos          -  76 posts
+User feniks               -  40 posts
+User rebel                -  33 posts
+User sm                   -  33 posts
+User zvone-radikalni      -  29 posts
+User splica               -  28 posts
+User zoran-ostric         -  25 posts
+User ljubo-ruben-weiss    -  25 posts
+User hdz-ekonomija        -  25 posts
+User cnn                  -  24 posts
+User leddevet             -  23 posts
+User zaphod               -  23 posts
+User papar                -  22 posts
+User dcroat               -  21 posts
+User acinum               -  20 posts
+User starpil              -  20 posts
+User whatever             -  19 posts
+User bet                  -  19 posts
+User grdilin              -  18 posts
+User vkrsnik              -  18 posts
+User drlesar              -  18 posts
+User ppetra               -  17 posts
+User mucke                -  17 posts
+User marival              -  16 posts
+User mirtaflora           -  16 posts
+User edi3                 -  16 posts
+User daniel-n             -  16 posts
+User opinioiuris          -  16 posts
+
+Users with highest number of posts with over 40 votes:
+User frederik             -  51 posts
+User mrak                 -  49 posts
+User hatzivelkos          -  23 posts
+User hdz-ekonomija        -  16 posts
+User zvone-radikalni      -  15 posts
+User leddevet             -  12 posts
+User zaphod               -  12 posts
+User splica               -  10 posts
+User opinioiuris          -  10 posts
+User papar                -   8 posts
+User aisha                -   8 posts
+User grdilin              -   7 posts
+User rebel                -   7 posts
+User sm                   -   7 posts
+User acinum               -   7 posts
+User daniel-n             -   7 posts
+User dcroat               -   7 posts
+User feniks               -   6 posts
+User lucijan-caric        -   6 posts
+User mucke                -   5 posts
+User mirtaflora           -   5 posts
+User nausikaya            -   5 posts
+User busola               -   5 posts
+User edi3                 -   5 posts
+User cnn                  -   5 posts
+User zoran-ostric         -   4 posts
+User golgota              -   4 posts
+User whatever             -   4 posts
+User marijuan             -   4 posts
+User bet                  -   4 posts
+
+Users with highest number of posts with over 50 votes:
+User frederik             -  24 posts
+User mrak                 -  15 posts
+User zvone-radikalni      -   7 posts
+User zaphod               -   6 posts
+User hdz-ekonomija        -   5 posts
+User leddevet             -   4 posts
+User grdilin              -   4 posts
+User papar                -   3 posts
+User daniel-n             -   3 posts
+User lucijan-caric        -   3 posts
+User drvosjek             -   2 posts
+User feniks               -   2 posts
+User vkrsnik              -   2 posts
+User nausikaya            -   2 posts
+User whatever             -   2 posts
+User hatzivelkos          -   2 posts
+User aisha                -   2 posts
+User opinioiuris          -   2 posts
+User quinquaginta         -   1 posts
+User mirtaflora           -   1 posts
+User sm                   -   1 posts
+User acinum               -   1 posts
+User golgota              -   1 posts
+User splica               -   1 posts
+User edi3                 -   1 posts
+User g-news               -   1 posts
+User kresimir-macan       -   1 posts
+User weteran              -   1 posts
+User crazyalen            -   1 posts
+User dcroat               -   1 posts
+
+Distribution of number of posts over time:
+2006-09 - total posts  12, on front page   9, percentage 75,0
+2006-10 - total posts  69, on front page  54, percentage 78,0
+2006-11 - total posts 104, on front page  87, percentage 83,0
+2006-12 - total posts 105, on front page  83, percentage 79,0
+2007-01 - total posts 149, on front page 131, percentage 87,0
+2007-02 - total posts  89, on front page  67, percentage 75,0
+2007-03 - total posts 123, on front page  98, percentage 79,0
+2007-04 - total posts 139, on front page 103, percentage 74,0
+2007-05 - total posts 141, on front page  94, percentage 66,0
+2007-06 - total posts 199, on front page 151, percentage 75,0
+2007-07 - total posts 196, on front page 107, percentage 54,0
+2007-08 - total posts 202, on front page 147, percentage 72,0
+2007-09 - total posts 245, on front page 123, percentage 50,0
+2007-10 - total posts 321, on front page 197, percentage 61,0
+2007-11 - total posts 404, on front page 239, percentage 59,0
+2007-12 - total posts 286, on front page 190, percentage 66,0
+2008-01 - total posts 292, on front page 206, percentage 70,0
+2008-02 - total posts 236, on front page 145, percentage 61,0
+2008-03 - total posts 170, on front page 110, percentage 64,0
+2008-04 - total posts 160, on front page 113, percentage 70,0
+2008-05 - total posts 120, on front page  87, percentage 72,0
+2008-06 - total posts 116, on front page  82, percentage 70,0
+2008-07 - total posts 128, on front page  86, percentage 67,0
+2008-08 - total posts 114, on front page  91, percentage 79,0
+2008-09 - total posts 148, on front page 110, percentage 74,0
+2008-10 - total posts 181, on front page 121, percentage 66,0
+2008-11 - total posts 170, on front page 116, percentage 68,0
+2008-12 - total posts 234, on front page 134, percentage 57,0
+2009-01 - total posts 179, on front page 109, percentage 60,0
+2009-02 - total posts 152, on front page  97, percentage 63,0
+2009-03 - total posts 185, on front page 104, percentage 56,0
+2009-04 - total posts 164, on front page  87, percentage 53,0
+2009-05 - total posts 151, on front page  81, percentage 53,0
+2009-06 - total posts 106, on front page  57, percentage 53,0
+2009-07 - total posts 153, on front page  92, percentage 60,0
+2009-08 - total posts 111, on front page  65, percentage 58,0
+2009-09 - total posts 139, on front page  75, percentage 53,0
+2009-10 - total posts 166, on front page  86, percentage 51,0
+2009-11 - total posts 170, on front page  64, percentage 37,0
+2009-12 - total posts 153, on front page  69, percentage 45,0
+2010-01 - total posts 183, on front page  99, percentage 54,0
+2010-02 - total posts 147, on front page  92, percentage 62,0
+2010-03 - total posts 182, on front page  98, percentage 53,0
+2010-04 - total posts 184, on front page 107, percentage 58,0
+2010-05 - total posts 160, on front page  90, percentage 56,0
+2010-06 - total posts 117, on front page  69, percentage 58,0
+2010-07 - total posts 115, on front page  68, percentage 59,0
+2010-08 - total posts 129, on front page  67, percentage 51,0
+2010-09 - total posts 126, on front page  81, percentage 64,0
+2010-10 - total posts 155, on front page  82, percentage 52,0
+2010-11 - total posts 147, on front page  72, percentage 48,0
+2010-12 - total posts 135, on front page  74, percentage 54,0
+2011-01 - total posts 140, on front page  72, percentage 51,0
+2011-02 - total posts 175, on front page  85, percentage 48,0
+2011-03 - total posts 169, on front page  88, percentage 52,0
+2011-04 - total posts 114, on front page  60, percentage 52,0
+2011-05 - total posts 112, on front page  56, percentage 50,0
+2011-06 - total posts 108, on front page  53, percentage 49,0
+2011-07 - total posts  95, on front page  69, percentage 72,0
+2011-08 - total posts  94, on front page  49, percentage 52,0
+2011-09 - total posts 105, on front page  54, percentage 51,0
+2011-10 - total posts 101, on front page  47, percentage 46,0
+2011-11 - total posts 116, on front page  42, percentage 36,0
+2011-12 - total posts 106, on front page  48, percentage 45,0
+2012-01 - total posts 121, on front page  35, percentage 28,0
+2012-02 - total posts 113, on front page  40, percentage 35,0
+2012-03 - total posts  97, on front page  26, percentage 26,0
+2012-04 - total posts  97, on front page  27, percentage 27,0
+2012-05 - total posts  96, on front page  31, percentage 32,0
+2012-06 - total posts  86, on front page  31, percentage 36,0
+2012-07 - total posts  78, on front page  35, percentage 44,0
+2012-08 - total posts  80, on front page  33, percentage 41,0
+2012-09 - total posts  88, on front page  36, percentage 40,0
+2012-10 - total posts  67, on front page  25, percentage 37,0
+2012-11 - total posts  97, on front page  30, percentage 30,0
+2012-12 - total posts 100, on front page  27, percentage 27,0
+2013-01 - total posts  94, on front page  28, percentage 29,0
+2013-02 - total posts  51, on front page  15, percentage 29,0
+2013-03 - total posts  93, on front page  20, percentage 21,0
+2013-04 - total posts 100, on front page  38, percentage 38,0
+2013-05 - total posts  86, on front page  27, percentage 31,0
+2013-06 - total posts  88, on front page  24, percentage 27,0
+2013-07 - total posts  68, on front page  17, percentage 25,0
+2013-08 - total posts  58, on front page  21, percentage 36,0
+2013-09 - total posts  71, on front page  15, percentage 21,0
+2013-10 - total posts  97, on front page  15, percentage 15,0
+2013-11 - total posts 101, on front page  16, percentage 15,0
+2013-12 - total posts 123, on front page  19, percentage 15,0
+2014-01 - total posts  91, on front page  28, percentage 30,0
+2014-02 - total posts  84, on front page  18, percentage 21,0
+2014-03 - total posts  75, on front page  11, percentage 14,0
+2014-04 - total posts  52, on front page  13, percentage 25,0
+2014-05 - total posts  67, on front page   7, percentage 10,0
+2014-06 - total posts  51, on front page   6, percentage 11,0
+2014-07 - total posts  45, on front page   6, percentage 13,0
+2014-08 - total posts  31, on front page   5, percentage 16,0
+2014-09 - total posts  54, on front page   5, percentage 9,0
+2014-10 - total posts  71, on front page  10, percentage 14,0
+2014-11 - total posts  65, on front page   8, percentage 12,0
+2014-12 - total posts  88, on front page   9, percentage 10,0
+2015-01 - total posts  98, on front page   7, percentage 7,0
+2015-02 - total posts  58, on front page   4, percentage 6,0
+2015-03 - total posts  48, on front page   3, percentage 6,0
+2015-04 - total posts  55, on front page   8, percentage 14,0
+2015-05 - total posts  75, on front page   6, percentage 8,0
+2015-06 - total posts  69, on front page   4, percentage 5,0
+2015-07 - total posts  69, on front page   4, percentage 5,0
+2015-08 - total posts  46, on front page   2, percentage 4,0
+2015-09 - total posts  45, on front page   1, percentage 2,0
+2015-10 - total posts  62, on front page   2, percentage 3,0
+2015-11 - total posts  71, on front page   1, percentage 1,0
+2015-12 - total posts  79, on front page   1, percentage 1,0
+2016-01 - total posts  52, on front page   2, percentage 3,0
+2016-02 - total posts  59, on front page   1, percentage 1,0
+2016-03 - total posts  62, on front page   2, percentage 3,0
+2016-04 - total posts  54, on front page   0, percentage 0,0
+2016-05 - total posts  66, on front page   0, percentage 0,0
+2016-06 - total posts  60, on front page   1, percentage 1,0
+2016-07 - total posts  50, on front page   1, percentage 2,0
+2016-08 - total posts  48, on front page   1, percentage 2,0
+2016-09 - total posts  47, on front page   0, percentage 0,0
+2016-10 - total posts  45, on front page   1, percentage 2,0
+2016-11 - total posts  42, on front page   1, percentage 2,0
+2016-12 - total posts  50, on front page   0, percentage 0,0
+2017-01 - total posts  32, on front page   0, percentage 0,0
+2017-02 - total posts  31, on front page   0, percentage 0,0
+2017-03 - total posts   9, on front page   0, percentage 0,0
+
+Distribution of number of posts with over 30 votes over time:
+2006-09 -    0
+2006-10 -    0
+2006-11 -    0
+2006-12 -    0
+2007-01 -    0
+2007-02 -    0
+2007-03 -    0
+2007-04 -    0
+2007-05 -    0
+2007-06 -    0
+2007-07 -    0
+2007-08 -    0
+2007-09 -    0
+2007-10 -    6
+2007-11 -   22
+2007-12 -   13
+2008-01 -   31
+2008-02 -   15
+2008-03 -   16
+2008-04 -   22
+2008-05 -   15
+2008-06 -    6
+2008-07 -    8
+2008-08 -   14
+2008-09 -   31
+2008-10 -   44
+2008-11 -   34
+2008-12 -   45
+2009-01 -   32
+2009-02 -   33
+2009-03 -   31
+2009-04 -   29
+2009-05 -   18
+2009-06 -   22
+2009-07 -   36
+2009-08 -   34
+2009-09 -   37
+2009-10 -   28
+2009-11 -   27
+2009-12 -   23
+2010-01 -   28
+2010-02 -   29
+2010-03 -   26
+2010-04 -   37
+2010-05 -   32
+2010-06 -   33
+2010-07 -   24
+2010-08 -   17
+2010-09 -   21
+2010-10 -   29
+2010-11 -   25
+2010-12 -   23
+2011-01 -   30
+2011-02 -   35
+2011-03 -   30
+2011-04 -   17
+2011-05 -   25
+2011-06 -   24
+2011-07 -   13
+2011-08 -   22
+2011-09 -   20
+2011-10 -   19
+2011-11 -   19
+2011-12 -   19
+2012-01 -   19
+2012-02 -   16
+2012-03 -   12
+2012-04 -    9
+2012-05 -   12
+2012-06 -   13
+2012-07 -   13
+2012-08 -   16
+2012-09 -   13
+2012-10 -   12
+2012-11 -   12
+2012-12 -   13
+2013-01 -   18
+2013-02 -   10
+2013-03 -    9
+2013-04 -   15
+2013-05 -    9
+2013-06 -    8
+2013-07 -    5
+2013-08 -    7
+2013-09 -    6
+2013-10 -    3
+2013-11 -    9
+2013-12 -    7
+2014-01 -    9
+2014-02 -    3
+2014-03 -    5
+2014-04 -    4
+2014-05 -    3
+2014-06 -    3
+2014-07 -    1
+2014-08 -    5
+2014-09 -    3
+2014-10 -    4
+2014-11 -    3
+2014-12 -    1
+2015-01 -    2
+2015-02 -    2
+2015-03 -    1
+2015-04 -    3
+2015-05 -    3
+2015-06 -    2
+2015-07 -    1
+2015-08 -    0
+2015-09 -    0
+2015-10 -    0
+2015-11 -    0
+2015-12 -    0
+2016-01 -    0
+2016-02 -    1
+2016-03 -    1
+2016-04 -    0
+2016-05 -    0
+2016-06 -    1
+2016-07 -    0
+2016-08 -    0
+2016-09 -    0
+2016-10 -    0
+2016-11 -    0
+2016-12 -    0
+2017-01 -    0
+2017-02 -    0
+2017-03 -    0
+
+Distribution of number of posts with over 40 votes over time:
+2006-09 -    0
+2006-10 -    0
+2006-11 -    0
+2006-12 -    0
+2007-01 -    0
+2007-02 -    0
+2007-03 -    0
+2007-04 -    0
+2007-05 -    0
+2007-06 -    0
+2007-07 -    0
+2007-08 -    0
+2007-09 -    0
+2007-10 -    1
+2007-11 -    8
+2007-12 -    1
+2008-01 -    5
+2008-02 -    3
+2008-03 -    3
+2008-04 -    3
+2008-05 -    2
+2008-06 -    1
+2008-07 -    2
+2008-08 -    1
+2008-09 -    8
+2008-10 -   13
+2008-11 -   15
+2008-12 -   12
+2009-01 -   13
+2009-02 -   17
+2009-03 -   13
+2009-04 -    8
+2009-05 -    6
+2009-06 -    9
+2009-07 -   14
+2009-08 -   13
+2009-09 -   12
+2009-10 -   10
+2009-11 -   12
+2009-12 -   11
+2010-01 -    9
+2010-02 -   10
+2010-03 -    5
+2010-04 -   18
+2010-05 -    9
+2010-06 -   11
+2010-07 -    7
+2010-08 -    4
+2010-09 -    5
+2010-10 -    5
+2010-11 -   10
+2010-12 -    8
+2011-01 -    7
+2011-02 -   10
+2011-03 -   11
+2011-04 -    5
+2011-05 -    9
+2011-06 -    8
+2011-07 -    8
+2011-08 -    6
+2011-09 -    5
+2011-10 -    7
+2011-11 -    8
+2011-12 -    5
+2012-01 -    4
+2012-02 -    5
+2012-03 -    1
+2012-04 -    3
+2012-05 -    1
+2012-06 -    3
+2012-07 -    2
+2012-08 -    3
+2012-09 -    5
+2012-10 -    2
+2012-11 -    4
+2012-12 -    3
+2013-01 -    2
+2013-02 -    1
+2013-03 -    0
+2013-04 -    0
+2013-05 -    1
+2013-06 -    2
+2013-07 -    1
+2013-08 -    1
+2013-09 -    0
+2013-10 -    1
+2013-11 -    2
+2013-12 -    0
+2014-01 -    2
+2014-02 -    0
+2014-03 -    2
+2014-04 -    1
+2014-05 -    0
+2014-06 -    0
+2014-07 -    1
+2014-08 -    0
+2014-09 -    0
+2014-10 -    0
+2014-11 -    0
+2014-12 -    1
+2015-01 -    0
+2015-02 -    0
+2015-03 -    1
+2015-04 -    2
+2015-05 -    1
+2015-06 -    0
+2015-07 -    0
+2015-08 -    0
+2015-09 -    0
+2015-10 -    0
+2015-11 -    0
+2015-12 -    0
+2016-01 -    0
+2016-02 -    0
+2016-03 -    1
+2016-04 -    0
+2016-05 -    0
+2016-06 -    0
+2016-07 -    0
+2016-08 -    0
+2016-09 -    0
+2016-10 -    0
+2016-11 -    0
+2016-12 -    0
+2017-01 -    0
+2017-02 -    0
+2017-03 -    0
+
+Distribution of number of posts with over 50 votes over time:
+2006-09 -    0
+2006-10 -    0
+2006-11 -    0
+2006-12 -    0
+2007-01 -    0
+2007-02 -    0
+2007-03 -    0
+2007-04 -    0
+2007-05 -    0
+2007-06 -    0
+2007-07 -    0
+2007-08 -    0
+2007-09 -    0
+2007-10 -    1
+2007-11 -    3
+2007-12 -    0
+2008-01 -    0
+2008-02 -    0
+2008-03 -    0
+2008-04 -    0
+2008-05 -    0
+2008-06 -    0
+2008-07 -    0
+2008-08 -    0
+2008-09 -    2
+2008-10 -    2
+2008-11 -    2
+2008-12 -    4
+2009-01 -    1
+2009-02 -    3
+2009-03 -    6
+2009-04 -    2
+2009-05 -    4
+2009-06 -    5
+2009-07 -    3
+2009-08 -    4
+2009-09 -    4
+2009-10 -    3
+2009-11 -    3
+2009-12 -    5
+2010-01 -    4
+2010-02 -    3
+2010-03 -    1
+2010-04 -   10
+2010-05 -    1
+2010-06 -    3
+2010-07 -    3
+2010-08 -    1
+2010-09 -    0
+2010-10 -    1
+2010-11 -    1
+2010-12 -    2
+2011-01 -    3
+2011-02 -    2
+2011-03 -    4
+2011-04 -    2
+2011-05 -    1
+2011-06 -    2
+2011-07 -    1
+2011-08 -    1
+2011-09 -    1
+2011-10 -    2
+2011-11 -    1
+2011-12 -    2
+2012-01 -    0
+2012-02 -    3
+2012-03 -    0
+2012-04 -    1
+2012-05 -    0
+2012-06 -    1
+2012-07 -    0
+2012-08 -    0
+2012-09 -    2
+2012-10 -    1
+2012-11 -    0
+2012-12 -    0
+2013-01 -    1
+2013-02 -    0
+2013-03 -    0
+2013-04 -    0
+2013-05 -    0
+2013-06 -    1
+2013-07 -    0
+2013-08 -    1
+2013-09 -    0
+2013-10 -    0
+2013-11 -    0
+2013-12 -    0
+2014-01 -    0
+2014-02 -    0
+2014-03 -    0
+2014-04 -    0
+2014-05 -    0
+2014-06 -    0
+2014-07 -    0
+2014-08 -    0
+2014-09 -    0
+2014-10 -    0
+2014-11 -    0
+2014-12 -    0
+2015-01 -    0
+2015-02 -    0
+2015-03 -    0
+2015-04 -    2
+2015-05 -    0
+2015-06 -    0
+2015-07 -    0
+2015-08 -    0
+2015-09 -    0
+2015-10 -    0
+2015-11 -    0
+2015-12 -    0
+2016-01 -    0
+2016-02 -    0
+2016-03 -    0
+2016-04 -    0
+2016-05 -    0
+2016-06 -    0
+2016-07 -    0
+2016-08 -    0
+2016-09 -    0
+2016-10 -    0
+2016-11 -    0
+2016-12 -    0
+2017-01 -    0
+2017-02 -    0
+2017-03 -    0
+
+Distribution of number of comments over time:
+1970-01 -     1
+2006-09 -    24
+2006-10 -   212
+2006-11 -   694
+2006-12 -   788
+2007-01 -  1263
+2007-02 -  1025
+2007-03 -  1250
+2007-04 -  1990
+2007-05 -  1826
+2007-06 -  3329
+2007-07 -  2898
+2007-08 -  4323
+2007-09 -  5048
+2007-10 -  5603
+2007-11 -  7864
+2007-12 -  6424
+2008-01 -  7850
+2008-02 -  5295
+2008-03 -  4402
+2008-04 -  3822
+2008-05 -  3864
+2008-06 -  4412
+2008-07 -  4121
+2008-08 -  5264
+2008-09 -  5977
+2008-10 -  5730
+2008-11 -  5249
+2008-12 -  6805
+2009-01 -  6483
+2009-02 -  5586
+2009-03 -  7712
+2009-04 -  5947
+2009-05 -  5348
+2009-06 -  5768
+2009-07 -  6363
+2009-08 -  5868
+2009-09 -  6207
+2009-10 -  5772
+2009-11 -  6246
+2009-12 -  6227
+2010-01 -  7871
+2010-02 -  5464
+2010-03 -  5886
+2010-04 -  5800
+2010-05 -  4440
+2010-06 -  4190
+2010-07 -  3856
+2010-08 -  5249
+2010-09 -  4273
+2010-10 -  5470
+2010-11 -  4365
+2010-12 -  5053
+2011-01 -  5970
+2011-02 -  6743
+2011-03 -  6940
+2011-04 -  4848
+2011-05 -  4388
+2011-06 -  4771
+2011-07 -  4017
+2011-08 -  4785
+2011-09 -  5096
+2011-10 -  5802
+2011-11 -  5094
+2011-12 -  4509
+2012-01 -  5266
+2012-02 -  7046
+2012-03 -  4469
+2012-04 -  3606
+2012-05 -  5625
+2012-06 -  5073
+2012-07 -  4616
+2012-08 -  5014
+2012-09 -  5505
+2012-10 -  4882
+2012-11 -  4480
+2012-12 -  4709
+2013-01 -  5630
+2013-02 -  4767
+2013-03 -  3671
+2013-04 -  4668
+2013-05 -  3536
+2013-06 -  4149
+2013-07 -  2499
+2013-08 -  2054
+2013-09 -  3348
+2013-10 -  3117
+2013-11 -  4291
+2013-12 -  3710
+2014-01 -  2519
+2014-02 -  2068
+2014-03 -  1773
+2014-04 -  1604
+2014-05 -  1916
+2014-06 -  1684
+2014-07 -  1331
+2014-08 -  1256
+2014-09 -  1609
+2014-10 -  2897
+2014-11 -  2691
+2014-12 -  2981
+2015-01 -  2802
+2015-02 -  3037
+2015-03 -  2581
+2015-04 -  1488
+2015-05 -  2781
+2015-06 -  3382
+2015-07 -  2404
+2015-08 -  1805
+2015-09 -  1841
+2015-10 -  1501
+2015-11 -  1146
+2015-12 -  1455
+2016-01 -  1200
+2016-02 -  1857
+2016-03 -  1981
+2016-04 -  1992
+2016-05 -  2420
+2016-06 -  2757
+2016-07 -  1317
+2016-08 -   596
+2016-09 -  1154
+2016-10 -  1169
+2016-11 -   564
+2016-12 -  1207
+2017-01 -   515
+2017-02 -   460
+2017-03 -   111
+
+Distribution of number of active users over time:
+1970-01 -     1
+2006-09 -     7
+2006-10 -    29
+2006-11 -    53
+2006-12 -    57
+2007-01 -    63
+2007-02 -    56
+2007-03 -    62
+2007-04 -    77
+2007-05 -    75
+2007-06 -   102
+2007-07 -    97
+2007-08 -    86
+2007-09 -   102
+2007-10 -   140
+2007-11 -   214
+2007-12 -   194
+2008-01 -   204
+2008-02 -   185
+2008-03 -   173
+2008-04 -   190
+2008-05 -   159
+2008-06 -   145
+2008-07 -   156
+2008-08 -   154
+2008-09 -   166
+2008-10 -   177
+2008-11 -   182
+2008-12 -   238
+2009-01 -   199
+2009-02 -   197
+2009-03 -   235
+2009-04 -   223
+2009-05 -   210
+2009-06 -   189
+2009-07 -   215
+2009-08 -   190
+2009-09 -   193
+2009-10 -   198
+2009-11 -   190
+2009-12 -   187
+2010-01 -   208
+2010-02 -   190
+2010-03 -   197
+2010-04 -   223
+2010-05 -   203
+2010-06 -   194
+2010-07 -   170
+2010-08 -   179
+2010-09 -   150
+2010-10 -   171
+2010-11 -   165
+2010-12 -   160
+2011-01 -   171
+2011-02 -   177
+2011-03 -   184
+2011-04 -   138
+2011-05 -   137
+2011-06 -   152
+2011-07 -   143
+2011-08 -   136
+2011-09 -   140
+2011-10 -   157
+2011-11 -   144
+2011-12 -   146
+2012-01 -   139
+2012-02 -   140
+2012-03 -   116
+2012-04 -   121
+2012-05 -   117
+2012-06 -   133
+2012-07 -   110
+2012-08 -   116
+2012-09 -   115
+2012-10 -   107
+2012-11 -   123
+2012-12 -   118
+2013-01 -   115
+2013-02 -   107
+2013-03 -   102
+2013-04 -   117
+2013-05 -   108
+2013-06 -   112
+2013-07 -    99
+2013-08 -    96
+2013-09 -   105
+2013-10 -    99
+2013-11 -    92
+2013-12 -   103
+2014-01 -    98
+2014-02 -    93
+2014-03 -    92
+2014-04 -    91
+2014-05 -    85
+2014-06 -    90
+2014-07 -    72
+2014-08 -    66
+2014-09 -    79
+2014-10 -    82
+2014-11 -    78
+2014-12 -    92
+2015-01 -    87
+2015-02 -    78
+2015-03 -    79
+2015-04 -    76
+2015-05 -    80
+2015-06 -    70
+2015-07 -    71
+2015-08 -    58
+2015-09 -    69
+2015-10 -    61
+2015-11 -    65
+2015-12 -    63
+2016-01 -    58
+2016-02 -    59
+2016-03 -    56
+2016-04 -    55
+2016-05 -    53
+2016-06 -    60
+2016-07 -    59
+2016-08 -    47
+2016-09 -    52
+2016-10 -    48
+2016-11 -    48
+2016-12 -    49
+2017-01 -    27
+2017-02 -    33
+2017-03 -    20
+
+Press any key to continue . . .

@@ -253,5 +253,50 @@ namespace pollitika.com_Data
             Console.WriteLine("");
         }
 
+        public static void GetNumberOfActiveUsersOverTime(ModelRepository inRepo)
+        {
+            Console.WriteLine("Distribution of number of active users over time:");
+
+            SortedDictionary<string, int> dictNumActiveUsers = new SortedDictionary<string, int>();
+
+            // proći kroz sve users
+            foreach (User user in inRepo._dataStore.Users)
+            {
+                // za svakog usera ćemo kreirati dictionary za analizirati njegovu aktivnost
+                SortedDictionary<string, bool> dictUserActivity = new SortedDictionary<string, bool>();
+
+                // za svakog usera najprije proći kroz sve njegove postove
+                foreach (Post post in user.PostsByUser)
+                {
+                    string key = post.DatePosted.Year.ToString() + "-" + post.DatePosted.Month.ToString("D2");
+
+                    dictUserActivity[key] = true;       // bilježimo da je u tom mjesecu user bio aktivan
+                }
+                // a zatim proći kroz sve njegove komentare
+                foreach (Comment comment in user.CommentsByUser)
+                {
+                    string key = comment.DatePosted.Year.ToString() + "-" + comment.DatePosted.Month.ToString("D2");
+
+                    dictUserActivity[key] = true;       // bilježimo da je u tom mjesecu user bio aktivan
+                }
+
+                // sada treba aktivnost korisnika prebaciti u sumarni dictionary
+                foreach (var activity in dictUserActivity)
+                {
+                    if (dictNumActiveUsers.ContainsKey(activity.Key))
+                        dictNumActiveUsers[activity.Key]++;
+                    else
+                        dictNumActiveUsers[activity.Key] = 1;
+                }
+
+            }
+
+            foreach (var p in dictNumActiveUsers)
+                Console.WriteLine("{0} - {1,5}", p.Key, p.Value);
+
+            Console.WriteLine("");
+        }
+
+
     }
 }

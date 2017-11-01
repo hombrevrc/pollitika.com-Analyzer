@@ -21,8 +21,8 @@ namespace pollitika.com_ConsoleRunner
             ModelRepository repo = new ModelRepository();
             //List<string> listOfPosts = new List<string>();
 
-            // string repoName = "../../../Data/pollitikaNew.db";
-            string repoName = "../../../Data/pollitikaNew.First_020.db";
+            string repoName = "../../../Data/pollitikaNew.db";
+            // string repoName = "../../../Data/pollitikaNew.First_020.db";
 
             // string repoName = "../../../Data/pollitikaNew.First_001.db";
 
@@ -285,6 +285,8 @@ namespace pollitika.com_ConsoleRunner
             StatisticsUsers.GetNumberOfPostWithOverNVotesMonthlyAllTime(50, repo);
 
             StatisticsUsers.GetNumberOfCommentsMonthlyAllTime(repo);
+
+            StatisticsUsers.GetNumberOfActiveUsersOverTime(repo);
 
             // StatisticsUsers.GetUserStatistics("Zvone Radikalni", repo);
 
